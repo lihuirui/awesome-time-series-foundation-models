@@ -14,7 +14,7 @@
 **Maintainer focus:** 龙明盛/THUML · 金明 groups · Chronos-family · major TSFMs.
 
 
-**Stats:** 79 verified papers in [`data/papers.json`](data/papers.json) (updated 2026-09-24).
+**Stats:** 93 verified papers in [`data/papers.json`](data/papers.json) (updated 2026-09-24).
 
 
 ## Visual Landscape / 演化图景
@@ -40,6 +40,7 @@
 
 ## Surveys / 综述
 
+- **Tracing the Evidence Behind Zero-Shot Time-Series Forecasting: A Source-First Taxonomy and Audit Framework** — Delun Kong, Wanyun Ling, Chenxi Liu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.21425)] *(ACM AI Summit 2026)* — _Source-first taxonomy and audit framework separating frozen LLM prior reuse, parametric TSFM pretraining, and RAG._
 - **Foundation Models for Time Series Analysis: A Tutorial and Survey** — Yuxuan Liang, Haomin Wen, Yuqi Nie et al. (2024) [[arXiv](https://arxiv.org/abs/2403.14735)] *(ACM SIGKDD 2024)* — _KDD'24 tutorial/survey; methodology-centric FM taxonomy._
 - **Large Language Models for Time Series: A Survey** — Xiyuan Zhang, Ranak Roy Chowdhury, Rajesh K. Gupta et al. (2024) [[arXiv](https://arxiv.org/abs/2402.01801)] [[Code](https://github.com/xiyuanzh/awesome-llm-time-series)]
 - **Large Models for Time Series and Spatio-Temporal Data: A Survey and Outlook** — Ming Jin, Yaxuan Kong, Yuxuan Liang et al. (2023) [[arXiv](https://arxiv.org/abs/2310.10196)] *(ACM Computing Surveys)* [[Code](https://github.com/qingsongedu/Awesome-TimeSeries-SpatioTemporal-LM-LLM)] — _Jin/Wen survey; LM4TS & LM4STD taxonomy._
@@ -49,12 +50,19 @@
 ## Time-Series Foundation Models / 时序基础模型
 
 - **$t_0$: A Time-Series Foundation Model for Forecasting with Context** — Lucas Meyer, Claudio Sole, Huikan Xiang et al. (2026) [[arXiv](https://arxiv.org/abs/2609.24559)] — _t₀; TSFM for forecasting with context._
+- **DiTS: Multimodal Diffusion Transformers Are Time Series Forecasters** — Haoran Zhang, Haixuan Liu, Yong Liu et al. (2026) [[arXiv](https://arxiv.org/abs/2602.06597)] — _THUML multimodal diffusion transformer (DiT) framework for high-dimensional and cross-modal time series forecasting._
 - **EIDOS: Latent-Space Predictive Learning for Time Series Foundation Models** — Xinxing Zhou, Qingren Yao, Yiji Zhao et al. (2026) [[arXiv](https://arxiv.org/abs/2602.14024)] — _金明 coauthor; latent-space predictive learning for TSFMs._
+- **FlowTSFM: Turning Encoder Depth into Quantile Transport** — Bahaeddine Abdessalem, Shifeng Xie, Zehao Xiao et al. (2026) [[arXiv](https://arxiv.org/abs/2609.13640)] — _FlowTSFM: 38.8M param encoder interpreting depth as recurrent quantile transport with pinball loss and path supervision._
+- **Interweaving Marginals into Multivariate Sample Paths: Training-Free Dependence Construction for Probabilistic Time Series Foundation Models** — Jinmyeong Choi, Jinkwan Jang, Seul Lee et al. (2026) [[arXiv](https://arxiv.org/abs/2609.25980)] — _Training-free post-processing coupling frozen univariate TSFM marginal distributions into joint multivariate forecast paths._
+- **OATS: Online Data Augmentation for Time Series Foundation Models** — Junwei Deng, Chang Xu, Jiaqi W. Ma et al. (2026) [[arXiv](https://arxiv.org/abs/2601.19040)] [[Code](https://github.com/microsoft/TimeCraft)] — _Online dynamic data augmentation via diffusion for pretraining TSFMs; part of Microsoft TimeCraft._
+- **QUALS: Corpus Equilibrium for Universal Forecasting via Pattern Quantization and Learnability Synchronization** — Yujie Li, Zezhi Shao, Chengqing Yu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.20156)] *(VLDB 2027)* — _VLDB 2027; resolves multi-domain corpus imbalance and forgetting in TSFMs via pattern quantization and learnability synchronization._
+- **SOTER: A Generative Time-Series Foundation Model for Wearable Human Physiological Signals** — Fangke Chen, Sirry Chen, Wei Chen et al. (2026) [[arXiv](https://arxiv.org/abs/2609.16804)] — _Generative foundation model for physiological signals; PSD-guided MoE and neural CDE decoder pretrained on 226B points._
 - **TRACE: A Temporal Conditional Estimation for Multimodal Time Series Foundation Models** — Ziwen Kan, Yishuo Chen, Kecheng Li et al. (2026) [[arXiv](https://arxiv.org/abs/2606.06285)] — _TRACE; multimodal time series foundation models._
 - **Tabby: An Open Pretraining Recipe for Time Series Foundation Models** — Shifeng Xie, Bahaeddine Abdessalem, Zehao Xiao et al. (2026) [[arXiv](https://arxiv.org/abs/2609.13956)] — _Tabby; open pretraining recipe for TSFMs._
 - **Timer-S1: A Billion-Scale Time Series Foundation Model with Serial Scaling** — Yong Liu, Xingjian Su, Shiyu Wang et al. (2026) [[arXiv](https://arxiv.org/abs/2603.04791)] [[Code](https://github.com/thuml/Large-Time-Series-Model)] — _THUML / 龙明盛; Timer-S1 8.3B MoE with Serial-Token Prediction; TimeBench._
 - **Toto 2.0: Time Series Forecasting Enters the Scaling Era** — Emaad Khwaja, Chris Lettieri, Gerald Woo et al. (2026) [[arXiv](https://arxiv.org/abs/2605.20119)] [[Code](https://github.com/DataDog/toto)] — _Datadog Toto 2.0; scaling time series foundation models up to 2.5B parameters._
 - **Chronos-2: From Univariate to Universal Forecasting** — Abdul Fatir Ansari, Oleksandr Shchur, Jaris Küken et al. (2025) [[arXiv](https://arxiv.org/abs/2510.15821)] [[Code](https://github.com/amazon-science/chronos-forecasting)] — _Native multivariate + covariate ICL._
+- **CoRA: Covariate-Aware Adaptation of Time Series Foundation Models** — Guo Qin, Zhi Chen, Yong Liu et al. (2025) [[arXiv](https://arxiv.org/abs/2510.12681)]
 - **FLAME: Flow Enhanced Legendre Memory Models for General Time Series Forecasting** — Xingjian Wu, Hanyin Cheng, Xiangfei Qiu et al. (2025) [[arXiv](https://arxiv.org/abs/2512.14253)] — _FLAME; flow-enhanced Legendre memory for general forecasting._
 - **FlowState: Sampling-Rate-Equivariant Time-Series Forecasting** — Lars Graf, Thomas Ortner, Stanisław Woźniak et al. (2025) [[arXiv](https://arxiv.org/abs/2508.05287)] [[Code](https://huggingface.co/ibm-granite/granite-timeseries-flowstate-r1)] — _IBM FlowState; sampling-rate-equivariant SSM+functional decoder; also in granite-tsfm._
 - **From Tables to Time: Extending TabPFN-v2 to Time Series Forecasting** — Shi Bin Hoo, Samuel Müller, David Salinas et al. (2025) [[arXiv](https://arxiv.org/abs/2501.02945)] [[Code](https://github.com/PriorLabs/tabpfn-time-series)] — _TabPFN-TS; tabular foundation model extended to time series._
@@ -89,6 +97,9 @@
 ## LLM for Time Series / 大模型赋能时序
 
 - **Forecast Workflow Bench: Evaluating Language-Model Decisions with Budgeted Forecast Tools** — Shunya Nagashima (2026) [[arXiv](https://arxiv.org/abs/2609.27385)] — _Forecast Workflow Bench; evaluates LLM-based agentic decision making with budgeted time-series forecasting tools._
+- **LLM as Forecasting Planner: Training-Free Text Conditioning for Time-Series Foundation Models** — Huu Hiep Nguyen, Dung Nguyen, Minh Hoang Nguyen et al. (2026) [[arXiv](https://arxiv.org/abs/2607.24892)] — _Training-free text conditioning using LLMs as forecasting planners to decompose numerical and textual context for frozen TSFMs._
+- **STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning** — Juntong Ni, Shiyu Wang, Qi He et al. (2026) [[arXiv](https://arxiv.org/abs/2601.03248)] *(ACL 2026)* [[Code](https://github.com/LingFengGold/STReasoner)]
+- **When Tomorrow Becomes Today: Self-Evolving Policies for Agentic Time-Series Forecasting** — Yifan Hu, Xilin Dai, Zhiyuan Qu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.24862)] — _TimEvolve: self-evolving policy framework for agentic TSF converting realized deployment outcomes into persistent orchestration updates._
 - **$\textbf{S}^2$IP-LLM: Semantic Space Informed Prompt Learning with LLM for Time Series Forecasting** — Zijie Pan, Yushan Jiang, Sahil Garg et al. (2024) [[arXiv](https://arxiv.org/abs/2403.05798)]
 - **AutoTimes: Autoregressive Time Series Forecasters via Large Language Models** — Yong Liu, Guo Qin, Xiangdong Huang et al. (2024) [[arXiv](https://arxiv.org/abs/2402.02370)] *(NeurIPS 2024)* [[Code](https://github.com/thuml/AutoTimes)] — _THUML._
 - **CALF: Aligning LLMs for Time Series Forecasting via Cross-modal Fine-Tuning** — Peiyuan Liu, Hang Guo, Tao Dai et al. (2024) [[arXiv](https://arxiv.org/abs/2403.07300)] [[Code](https://github.com/Hank0626/LLaTA)]
@@ -116,6 +127,8 @@
 - **TAC-Time: Texts as Channels For Multimodal Time Series Forecasting** — Jiayi Liang, Xiaotian Gu, Xinyu Xie et al. (2026) [[arXiv](https://arxiv.org/abs/2609.24156)] — _TAC-Time; texts as channels for multimodal TS forecasting._
 - **TimeInteract: Towards Real-Time Interactive Intelligence for Streaming Time Series** — Sheng Pan, Yongli Gu, Yiqing Guo et al. (2026) [[arXiv](https://arxiv.org/abs/2609.26389)] — _金明; TimeInteract — real-time interactive streaming TS intelligence._
 - **TimeOmni-VL: Unified Models for Time Series Understanding and Generation** — Tong Guan, Sheng Pan, Johan Barthelemy et al. (2026) [[arXiv](https://arxiv.org/abs/2602.17149)] *(ICML 2026)* — _金明; ICML 2026; Bi-TSI + understanding-guided generation._
+- **TimeSage-EV: A Live Benchmark for Agentic Time Series Analysis in Evolving Environments** — Qingren Yao, Yaxuan Kong, Yuqi Nie et al. (2026) [[arXiv](https://arxiv.org/abs/2608.14270)] — _Live benchmark tracking 60 institutional scenarios with 1,485 scenario-period QA pairs evaluating agents in evolving temporal environments._
+- **TimeSage-MT: A Multi-Turn Benchmark for Evaluating Agentic Time Series Reasoning** — Yaxuan Kong, Qingren Yao, Yuqi Nie et al. (2026) [[arXiv](https://arxiv.org/abs/2606.01498)] — _Multi-turn benchmark for agentic TS reasoning with 240 tasks and 2,680 dialogue turns across 8 domains._
 - **TimeVista: Exploring and Exploiting Vision-Language Models as Judges for Time Series Forecasting** — Zhi Chen, Yuxuan Wang, Jialong Wu et al. (2026) [[arXiv](https://arxiv.org/abs/2606.16173)] — _THUML / 龙明盛; Vision-Language Models as evaluators and judges for time series forecasting._
 - **Insight Miner: A Time Series Analysis Dataset for Cross-Domain Alignment with Natural Language** — Yunkai Zhang, Yawen Zhang, Ming Zheng et al. (2025) [[arXiv](https://arxiv.org/abs/2512.11251)] [[Code](https://huggingface.co/datasets/zhykoties/time-series-language-alignment)] — _Insight Miner; cross-domain TS–language alignment dataset._
 - **OpenTSLM: Time-Series Language Models for Reasoning over Multivariate Medical Text- and Time-Series Data** — Patrick Langer, Thomas Kaar, Max Rosenblattl et al. (2025) [[arXiv](https://arxiv.org/abs/2510.02410)] [[Code](https://github.com/StanfordBDHG/OpenTSLM)] — _OpenTSLM (not OpenTSLab); medical text+TS reasoning._
@@ -128,6 +141,7 @@
 
 ## Benchmarks & Datasets / 基准与数据集
 
+- **A Later Test Set Is Not a New Domain: Pretraining Familiarity Survives a Contamination-Free Hold-Out** — Mahdi Naser Moghadasi, Faezeh Ghaderi (2026) [[arXiv](https://arxiv.org/abs/2609.10357)] [[Code](https://github.com/mahdinaser/tsfm-bench)] — _Critical evaluation of pretraining contamination in TSFMs; designs a strict time-delayed holdout postdating model release dates._
 - **AION: Next-Generation Tasks and Practical Harness for Time Series** — Tianxiang Zhan, Xiaobao Song, Tong Guan et al. (2026) [[arXiv](https://arxiv.org/abs/2605.25045)] [[Code](https://github.com/ztxtech/aion)] — _金明; AION harness / next-gen TS tasks._
 - **Evaluating Accuracy and Probabilistic Reliability of Zero-Shot Time Series Foundation Models** — Panagiotis Michael, Moysis Symeonides, Demetris Trihinas (2026) [[arXiv](https://arxiv.org/abs/2609.25788)] *(ADBIS 2026)* — _ADBIS 2026; benchmark study on zero-shot TSFMs analyzing predictive accuracy and probabilistic calibration trade-offs._
 - **It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks** — Zhongzheng Qiao, Sheng Pan, Anni Wang et al. (2026) [[arXiv](https://arxiv.org/abs/2602.12147)] [[Code](https://huggingface.co/spaces/Real-TSF/TIME-leaderboard)] — _ICML 2026; THUML+Jin coauthors; leakage-aware zero-shot._

@@ -72,7 +72,9 @@ def plot_timeline(papers: list[dict]) -> None:
         ("Moirai 2.0", "2025-11-17", "Salesforce", 4.8),
         ("Timer-S1", "2026-03-05", "THUML", -4.6),
         ("Toto 2.0", "2026-05-19", "Datadog", 3.6),
-        ("Tabby", "2026-09-14", "Academia", -2.6),
+        ("FlowTSFM", "2026-09-12", "Academia", 1.8),
+        ("Tabby", "2026-09-12", "Academia", -2.6),
+        ("QUALS", "2026-09-17", "Academia", 5.2),
         ("t_0", "2026-09-21", "Academia", -4.8)
     ]
 
@@ -133,11 +135,11 @@ def plot_timeline(papers: list[dict]) -> None:
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
     fig.autofmt_xdate(rotation=0, ha="center")
 
-    ax.set_ylim(-6.8, 6.8)
+    ax.set_ylim(-7.0, 7.5)
     ax.set_yticks([])
-    ax.set_title("Evolution of Time Series Foundation Models (2023 - 2026)", fontsize=16, fontweight="bold", pad=20)
+    ax.set_title("Evolution of Time Series Foundation Models (2023 - 2026)", fontsize=16, fontweight="bold", pad=36)
 
-    # Legend placed in upper right where space is abundant
+    # Legend placed at top center to avoid occluding any milestones
     legend_elements = [
         plt.Line2D([0], [0], marker='o', color='w', label=k, markerfacecolor=v, markersize=8)
         for k, v in [
@@ -151,7 +153,7 @@ def plot_timeline(papers: list[dict]) -> None:
             ("IBM (TTM)", palette["IBM"])
         ]
     ]
-    ax.legend(handles=legend_elements, loc="upper right", frameon=True, fontsize=9.5, facecolor="#ffffff", edgecolor="#e0e0e0")
+    ax.legend(handles=legend_elements, loc="upper center", bbox_to_anchor=(0.5, 1.06), ncol=4, frameon=True, fontsize=9.5, facecolor="#ffffff", edgecolor="#e0e0e0")
 
     for spine in ["top", "left", "right", "bottom"]:
         ax.spines[spine].set_visible(False)
@@ -253,31 +255,31 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (14, [
-            ("Decoder-Only: Next-Patch / Autoregressive\n• TimesFM, Timer, Sundial, Chronos-2, Toto 2.0", 60),
-            ("Sparse Mixture of Experts (MoE)\n• Time-MoE (2.4B), Moirai-MoE (1.1B), Timer-S1 (8.3B)", 45),
-            ("Unified Any-Variate Encoder-Decoder\n• Moirai, Moirai 2.0, UniTS, TTM (8M)", 30),
-            ("Continuous Flow & Diffusion Generation\n• FlowState, FLAME, Sundial TimeFlow", 15)
+            ("Decoder-Only: Next-Patch / Autoregressive\n• TimesFM, Timer, Sundial, Chronos-2, Toto, Tabby, QUALS", 60),
+            ("Sparse Mixture of Experts (MoE)\n• Time-MoE (2.4B), Moirai-MoE, Timer-S1 (8.3B), SOTER", 45),
+            ("Unified Any-Variate & Quantile Transport\n• Moirai, Moirai 2.0, UniTS, TTM (8M), FlowTSFM", 30),
+            ("Continuous Flow & Diffusion Generation\n• FlowState, FLAME, DiTS, OATS, Sundial TimeFlow", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (38, [
-            ("Model Reprogramming\n• Time-LLM, One Fits All (GPT4TS), LLM4TS", 60),
-            ("Text Tokenization & Direct Prompting\n• LLMTime, PromptCast, LSTPrompt", 45),
-            ("Cross-Modal Semantic Alignment\n• S2IP-LLM, CALF, AutoTimes", 30),
-            ("Multi-Scale In-Context Adaptation\n• LLM-Mixer, In-Context Predictor", 15)
+            ("Model Reprogramming & Adapters\n• Time-LLM, GPT4TS, CoRA, LLM4TS", 60),
+            ("Text Tokenization & Direct Prompting\n• LLMTime, PromptCast, LLM as Planner", 45),
+            ("Cross-Modal Semantic & Spatial RL\n• S2IP-LLM, CALF, AutoTimes, STReasoner", 30),
+            ("Multi-Scale In-Context Adaptation\n• LLM-Mixer, In-Context Predictor, Align-RAG", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62, [
-            ("Text-TS Joint Reasoning & Chat\n• ChatTS, ChatTime, OpenTSLM, SciTS", 60),
-            ("Visual Time Series Alignment (VLM)\n• VisionTS, Time-VLM, TimeOmni-VL", 45),
-            ("Interactive Streaming & Querying\n• Sonar-TS, TimeInteract, TimeOmni-1", 30),
-            ("Channel-Level Text Condition\n• TAC-Time, TRACE, Spectral Text Fusion", 15)
+            ("Text-TS Joint Reasoning & Chat\n• ChatTS, ChatTime, OpenTSLM, SciTS, STReasoner", 60),
+            ("Visual Time Series Alignment & Diffusion\n• VisionTS, Time-VLM, TimeOmni-VL, DiTS", 45),
+            ("Interactive Streaming & Self-Evolving Agents\n• Sonar-TS, TimeInteract, TimEvolve, TimeOmni-1", 30),
+            ("Channel-Level Text & Context Condition\n• TAC-Time, TRACE, SpecTF, t_0", 15)
         ], "#feebc8", "#9c4221"),
 
         (86, [
             ("Zero-Shot Forecasting Benchmarks\n• GIFT-Eval, It's TIME, LiveHouse-TS", 60),
-            ("Probabilistic Calibration & Leakage\n• ADBIS 2026, Rethinking Evaluation", 45),
-            ("Agentic Decision & VLM-as-Judge\n• TimeVista, Forecast Workflow Bench", 30),
-            ("Heterogeneous Multimodal Benchmarks\n• Time-MMD, Beyond Numerical TS, AION", 15)
+            ("Contamination Audit & Evidence Bounds\n• Contamination-Free Holdout, Tracing Evidence", 45),
+            ("Probabilistic Calibration & Reliability\n• ADBIS 2026, Rethinking Eval, Interweaving", 30),
+            ("Agentic Multi-Turn & Live Benchmarks\n• TimeSage-EV, TimeSage-MT, TimeVista, ForecastBench", 15)
         ], "#faf5ff", "#6b46c1")
     ]
 
@@ -365,6 +367,7 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
         "2403.00131": ("UniTS (10M)", 25, 8),
         "2501.02945": ("TabPFN-v2 (19M)", 0, 8),
         "2505.23719": ("TiRex (35M)", 0, 8),
+        "2609.13640": ("FlowTSFM (38.8M)", -20, -14),
         "2402.02368": ("Timer (84M)", 0, 8),
         "2609.13956": ("Tabby (145M)", -15, -14),
         "2310.10688": ("TimesFM (200M)", 0, 8),
@@ -452,9 +455,12 @@ def plot_open_weight_share(papers: list[dict]) -> None:
     colors = ["#2ca02c", "#d62728", "#1f77b4"]
     explode = (0.05, 0.05, 0.05)
 
+    def clean_autopct(pct):
+        return f"{pct:.1f}%" if pct > 3.0 else ""
+
     wedges, texts, autotexts = ax.pie(
         sizes, explode=explode, labels=labels, colors=colors,
-        autopct="%1.1f%%", startangle=140, pctdistance=0.75,
+        autopct=clean_autopct, startangle=140, pctdistance=0.75,
         textprops=dict(color="#222222", fontsize=9.5),
         wedgeprops=dict(width=0.45, edgecolor="#ffffff", linewidth=2)
     )

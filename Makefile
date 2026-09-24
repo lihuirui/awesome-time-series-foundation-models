@@ -1,11 +1,13 @@
-.PHONY: all figures survey-check bibtex validate readme count fetch help
+.PHONY: all check figures survey-check bibtex validate readme count fetch search help
 
 PYTHON ?= python3
 
 all: validate figures survey-check bibtex readme
 
+check: validate survey-check
+
 help:
-	@echo "Targets: all | figures | survey-check | bibtex | validate | count | readme | fetch"
+	@echo "Targets: all | check | figures | survey-check | bibtex | validate | count | readme | fetch | search"
 
 validate:
 	$(PYTHON) scripts/validate.py
@@ -27,3 +29,6 @@ count:
 
 fetch:
 	$(PYTHON) scripts/fetch_arxiv.py
+
+search:
+	$(PYTHON) scripts/search_arxiv.py

@@ -1,5 +1,5 @@
 {
-  "verified_count": 79,
+  "verified_count": 93,
   "verified_ids": [
     "2202.07125",
     "2210.08964",
@@ -55,12 +55,16 @@
     "2509.25826",
     "2510.02410",
     "2510.03255",
+    "2510.12681",
     "2510.13654",
     "2510.15821",
     "2511.11698",
     "2512.11251",
     "2512.14253",
+    "2601.03248",
+    "2601.19040",
     "2602.01588",
+    "2602.06597",
     "2602.12147",
     "2602.14024",
     "2602.17001",
@@ -69,15 +73,25 @@
     "2605.09395",
     "2605.20119",
     "2605.25045",
+    "2606.01498",
     "2606.06285",
     "2606.16173",
     "2607.06973",
+    "2607.24892",
+    "2608.14270",
     "2608.17299",
+    "2609.10357",
+    "2609.13640",
     "2609.13956",
     "2609.15087",
+    "2609.16804",
+    "2609.20156",
+    "2609.21425",
     "2609.24156",
     "2609.24559",
+    "2609.24862",
     "2609.25788",
+    "2609.25980",
     "2609.26389",
     "2609.27385"
   ],
@@ -117,6 +131,51 @@
       "timestamp": "2026-09-24T15:06:56+08:00",
       "query": "Full batch arXiv metadata fetch for 79 papers",
       "result": "Successfully fetched published dates, venues, authors, titles and summaries."
+    },
+    {
+      "iteration": 2,
+      "timestamp": "2026-09-24T18:23:00+08:00",
+      "action": "re-verify previous run papers and verify 14 new candidates",
+      "re-verified_ids": [
+        "2605.20119",
+        "2606.16173",
+        "2609.25788",
+        "2609.27385"
+      ],
+      "newly_verified_ids": [
+        "2510.12681",
+        "2601.03248",
+        "2601.19040",
+        "2602.06597",
+        "2606.01498",
+        "2607.24892",
+        "2608.14270",
+        "2609.10357",
+        "2609.13640",
+        "2609.16804",
+        "2609.20156",
+        "2609.21425",
+        "2609.24862",
+        "2609.25980"
+      ],
+      "github_api_checks": [
+        {
+          "repo": "microsoft/TimeCraft",
+          "status": 200,
+          "verified": true
+        },
+        {
+          "repo": "mahdinaser/tsfm-bench",
+          "status": 200,
+          "verified": true
+        },
+        {
+          "repo": "LingFengGold/STReasoner",
+          "status": 200,
+          "verified": true
+        }
+      ],
+      "result": "All 14 candidates verified via arXiv Atom API (HTTPS). Code links checked via GitHub API."
     }
   ],
   "failed_or_mismatched": [

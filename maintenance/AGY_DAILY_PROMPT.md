@@ -68,7 +68,7 @@ and a selection in the README.
 ## 6. README and tooling
 Regenerate the Awesome list in `README.md` from `data/papers.json`; add a prominent link to the survey and updated stats.
 Extend `Makefile`: `make figures`, `make survey-check` (every `[arXiv:…]` cited in the survey exists in `data/papers.json`,
-every referenced figure file exists, no broken internal links), keep `make validate`, `make readme`, `make fetch`.
+every referenced figure file exists, no broken internal links), keep `make validate`, `make check`, `make readme`, `make fetch`, `make search`.
 Add a `make all` that runs everything.
 
 ## 7. Quality gates, then commit and push
@@ -83,3 +83,6 @@ git commit -am/-m "<concise message>"  &&  git push origin main
 ## 8. Report
 Append today's entry to `docs/DAILY_LOG.md`, and print a final report **in Chinese**, concise:
 新增论文（arXiv ID + 标题）· 综述改动的章节 · 重新生成/替换的图 · 当前论文总数 · 提交哈希与是否已推送 · 遇到的问题 · 下一轮重点.
+
+## Iteration 2 focus
+Re-verify any papers added in the last run via arXiv API before expanding. Prefer last-45-day search, THUML/Jin Ming/Chronos priority. Cap +~15 papers. Deepen the weakest survey chapter and regenerate/visually check all figures. Commit and push; print Chinese report. Stay within ~90 minutes.
