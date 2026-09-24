@@ -1,0 +1,1548 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-24",
+  "description": "Verified arXiv metadata for Awesome Time-Series Foundation Models & Multimodal Temporal Models. Do not invent entries; refresh via scripts/fetch_arxiv.py.",
+  "notes": "Metadata verified via arXiv Atom API (export.arxiv.org) over HTTPS. TimesNet/Autoformer/iTransformer remain TSlib-only (not separate entries). Chronos-Bolt has no standalone paper. OpenTSLab → OpenTSLM 2510.02410. TimeMixer++ code_url still null — see verification_log.",
+  "papers": [
+    {
+      "arxiv_id": "2202.07125",
+      "title": "Transformers in Time Series: A Survey",
+      "authors": [
+        "Qingsong Wen",
+        "Tian Zhou",
+        "Chaoli Zhang",
+        "Weiqi Chen",
+        "Ziqing Ma",
+        "Junchi Yan",
+        "Liang Sun"
+      ],
+      "year": 2022,
+      "categories": [
+        "survey"
+      ],
+      "code_url": "https://github.com/qingsongedu/time-series-transformers-review",
+      "notes": "Pre-TSFM Transformer survey; useful background."
+    },
+    {
+      "arxiv_id": "2210.08964",
+      "title": "PromptCast: A New Prompt-based Learning Paradigm for Time Series Forecasting",
+      "authors": [
+        "Hao Xue",
+        "Flora D. Salim"
+      ],
+      "year": 2022,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": "https://github.com/HaoUNSW/PISA",
+      "notes": "Early prompt-to-forecast paradigm."
+    },
+    {
+      "arxiv_id": "2302.11939",
+      "title": "One Fits All:Power General Time Series Analysis by Pretrained LM",
+      "authors": [
+        "Tian Zhou",
+        "PeiSong Niu",
+        "Xue Wang",
+        "Liang Sun",
+        "Rong Jin"
+      ],
+      "year": 2023,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": "https://github.com/DAMO-DI-ML/One_Fits_All",
+      "notes": "GPT4TS / FPT; NeurIPS 2023 Spotlight."
+    },
+    {
+      "arxiv_id": "2308.08469",
+      "title": "LLM4TS: Aligning Pre-Trained LLMs as Data-Efficient Time-Series Forecasters",
+      "authors": [
+        "Ching Chang",
+        "Wei-Yao Wang",
+        "Wen-Chih Peng",
+        "Tien-Fu Chen"
+      ],
+      "year": 2023,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": "https://github.com/blacksnail789521/LLM4TS",
+      "notes": null
+    },
+    {
+      "arxiv_id": "2310.01728",
+      "title": "Time-LLM: Time Series Forecasting by Reprogramming Large Language Models",
+      "authors": [
+        "Ming Jin",
+        "Shiyu Wang",
+        "Lintao Ma",
+        "Zhixuan Chu",
+        "James Y. Zhang",
+        "Xiaoming Shi",
+        "Pin-Yu Chen",
+        "Yuxuan Liang",
+        "Yuan-Fang Li",
+        "Shirui Pan",
+        "Qingsong Wen"
+      ],
+      "year": 2023,
+      "categories": [
+        "llm4ts",
+        "jin"
+      ],
+      "code_url": null,
+      "notes": "金明; ICLR 2024."
+    },
+    {
+      "arxiv_id": "2310.04948",
+      "title": "TEMPO: Prompt-based Generative Pre-trained Transformer for Time Series Forecasting",
+      "authors": [
+        "Defu Cao",
+        "Furong Jia",
+        "Sercan O Arik",
+        "Tomas Pfister",
+        "Yixiang Zheng",
+        "Wen Ye",
+        "Yan Liu"
+      ],
+      "year": 2023,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": null,
+      "notes": "ICLR 2024."
+    },
+    {
+      "arxiv_id": "2310.07820",
+      "title": "Large Language Models Are Zero-Shot Time Series Forecasters",
+      "authors": [
+        "Nate Gruver",
+        "Marc Finzi",
+        "Shikai Qiu",
+        "Andrew Gordon Wilson"
+      ],
+      "year": 2023,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": "https://github.com/ngruver/llmtime",
+      "notes": "LLMTime; NeurIPS 2023."
+    },
+    {
+      "arxiv_id": "2310.08278",
+      "title": "Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting",
+      "authors": [
+        "Kashif Rasul",
+        "Arjun Ashok",
+        "Andrew Robert Williams",
+        "Hena Ghonia",
+        "Rishika Bhagwatkar",
+        "Arian Khorasani",
+        "Mohammad Javad Darvishi Bayazi",
+        "George Adamopoulos",
+        "Roland Riachi",
+        "Nadhir Hassen",
+        "Marin Biloš",
+        "Sahil Garg",
+        "Anderson Schneider",
+        "Nicolas Chapados",
+        "Alexandre Drouin",
+        "Valentina Zantedeschi",
+        "Yuriy Nevmyvaka",
+        "Irina Rish"
+      ],
+      "year": 2023,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/time-series-foundation-models/lag-llama",
+      "notes": null
+    },
+    {
+      "arxiv_id": "2310.09751",
+      "title": "UniTime: A Language-Empowered Unified Model for Cross-Domain Time Series Forecasting",
+      "authors": [
+        "Xu Liu",
+        "Junfeng Hu",
+        "Yuan Li",
+        "Shizhe Diao",
+        "Yuxuan Liang",
+        "Bryan Hooi",
+        "Roger Zimmermann"
+      ],
+      "year": 2023,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": null,
+      "notes": null
+    },
+    {
+      "arxiv_id": "2310.10196",
+      "title": "Large Models for Time Series and Spatio-Temporal Data: A Survey and Outlook",
+      "authors": [
+        "Ming Jin",
+        "Yaxuan Kong",
+        "Yuxuan Liang",
+        "Chaoli Zhang",
+        "Siqiao Xue",
+        "Xue Wang",
+        "James Zhang",
+        "Yi Wang",
+        "Haifeng Chen",
+        "Xiaoli Li",
+        "Vincent S. Tseng",
+        "Yu Zheng",
+        "Lei Chen",
+        "Hui Xiong",
+        "Shirui Pan",
+        "Qingsong Wen"
+      ],
+      "year": 2023,
+      "categories": [
+        "survey"
+      ],
+      "code_url": "https://github.com/qingsongedu/Awesome-TimeSeries-SpatioTemporal-LM-LLM",
+      "notes": "Jin/Wen survey; LM4TS & LM4STD taxonomy."
+    },
+    {
+      "arxiv_id": "2310.10688",
+      "title": "A decoder-only foundation model for time-series forecasting",
+      "authors": [
+        "Abhimanyu Das",
+        "Weihao Kong",
+        "Rajat Sen",
+        "Yichen Zhou"
+      ],
+      "year": 2023,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/google-research/timesfm",
+      "notes": "TimesFM (Google); ICML 2024."
+    },
+    {
+      "arxiv_id": "2311.01933",
+      "title": "ForecastPFN: Synthetically-Trained Zero-Shot Forecasting",
+      "authors": [
+        "Samuel Dooley",
+        "Gurnoor Singh Khurana",
+        "Chirag Mohapatra",
+        "Siddartha Naidu",
+        "Colin White"
+      ],
+      "year": 2023,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "NeurIPS 2023; synthetic PFN prior."
+    },
+    {
+      "arxiv_id": "2401.03955",
+      "title": "Tiny Time Mixers (TTMs): Fast Pre-trained Models for Enhanced Zero/Few-Shot Forecasting of Multivariate Time Series",
+      "authors": [
+        "Vijay Ekambaram",
+        "Arindam Jati",
+        "Pankaj Dayama",
+        "Sumanta Mukherjee",
+        "Nam H. Nguyen",
+        "Wesley M. Gifford",
+        "Chandra Reddy",
+        "Jayant Kalagnanam"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2",
+      "notes": "IBM Granite TTM; NeurIPS 2024."
+    },
+    {
+      "arxiv_id": "2402.01801",
+      "title": "Large Language Models for Time Series: A Survey",
+      "authors": [
+        "Xiyuan Zhang",
+        "Ranak Roy Chowdhury",
+        "Rajesh K. Gupta",
+        "Jingbo Shang"
+      ],
+      "year": 2024,
+      "categories": [
+        "survey"
+      ],
+      "code_url": "https://github.com/xiyuanzh/awesome-llm-time-series",
+      "notes": null
+    },
+    {
+      "arxiv_id": "2402.02368",
+      "title": "Timer: Generative Pre-trained Transformers Are Large Time Series Models",
+      "authors": [
+        "Yong Liu",
+        "Haoran Zhang",
+        "Chenyu Li",
+        "Xiangdong Huang",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "thuml"
+      ],
+      "code_url": "https://github.com/thuml/Large-Time-Series-Model",
+      "notes": "THUML / 龙明盛 group."
+    },
+    {
+      "arxiv_id": "2402.02370",
+      "title": "AutoTimes: Autoregressive Time Series Forecasters via Large Language Models",
+      "authors": [
+        "Yong Liu",
+        "Guo Qin",
+        "Xiangdong Huang",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts",
+        "thuml"
+      ],
+      "code_url": "https://github.com/thuml/AutoTimes",
+      "notes": "THUML."
+    },
+    {
+      "arxiv_id": "2402.02592",
+      "title": "Unified Training of Universal Time Series Forecasting Transformers",
+      "authors": [
+        "Gerald Woo",
+        "Chenghao Liu",
+        "Akshat Kumar",
+        "Caiming Xiong",
+        "Silvio Savarese",
+        "Doyen Sahoo"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
+      "notes": "Moirai / LOTSA; Salesforce."
+    },
+    {
+      "arxiv_id": "2402.03885",
+      "title": "MOMENT: A Family of Open Time-series Foundation Models",
+      "authors": [
+        "Mononito Goswami",
+        "Konrad Szafer",
+        "Arjun Choudhry",
+        "Yifu Cai",
+        "Shuo Li",
+        "Artur Dubrawski"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://huggingface.co/AutonLab/MOMENT-1-large",
+      "notes": "Time Series Pile; ICML 2024."
+    },
+    {
+      "arxiv_id": "2402.16132",
+      "title": "LSTPrompt: Large Language Models as Zero-Shot Time Series Forecasters by Long-Short-Term Prompting",
+      "authors": [
+        "Haoxin Liu",
+        "Zhiyuan Zhao",
+        "Jindong Wang",
+        "Harshavardhan Kamarthi",
+        "B. Aditya Prakash"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": null,
+      "notes": null
+    },
+    {
+      "arxiv_id": "2402.19072",
+      "title": "TimeXer: Empowering Transformers for Time Series Forecasting with Exogenous Variables",
+      "authors": [
+        "Yuxuan Wang",
+        "Haixu Wu",
+        "Jiaxiang Dong",
+        "Guo Qin",
+        "Haoran Zhang",
+        "Yong Liu",
+        "Yunzhong Qiu",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "thuml",
+        "related"
+      ],
+      "code_url": "https://github.com/thuml/TimeXer",
+      "notes": "THUML; exogenous-variable Transformer (NeurIPS 2024); not a separate TimesNet/Autoformer/iTransformer entry."
+    },
+    {
+      "arxiv_id": "2403.00131",
+      "title": "UniTS: A Unified Multi-Task Time Series Model",
+      "authors": [
+        "Shanghua Gao",
+        "Teddy Koker",
+        "Owen Queen",
+        "Thomas Hartvigsen",
+        "Theodoros Tsiligkaridis",
+        "Marinka Zitnik"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/mims-harvard/UniTS",
+      "notes": "NeurIPS 2024."
+    },
+    {
+      "arxiv_id": "2403.05798",
+      "title": "$\\textbf{S}^2$IP-LLM: Semantic Space Informed Prompt Learning with LLM for Time Series Forecasting",
+      "authors": [
+        "Zijie Pan",
+        "Yushan Jiang",
+        "Sahil Garg",
+        "Anderson Schneider",
+        "Yuriy Nevmyvaka",
+        "Dongjin Song"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": null,
+      "notes": null
+    },
+    {
+      "arxiv_id": "2403.07300",
+      "title": "CALF: Aligning LLMs for Time Series Forecasting via Cross-modal Fine-Tuning",
+      "authors": [
+        "Peiyuan Liu",
+        "Hang Guo",
+        "Tao Dai",
+        "Naiqi Li",
+        "Jigang Bao",
+        "Xudong Ren",
+        "Yong Jiang",
+        "Shu-Tao Xia"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": "https://github.com/Hank0626/LLaTA",
+      "notes": null
+    },
+    {
+      "arxiv_id": "2403.07815",
+      "title": "Chronos: Learning the Language of Time Series",
+      "authors": [
+        "Abdul Fatir Ansari",
+        "Lorenzo Stella",
+        "Caner Turkmen",
+        "Xiyuan Zhang",
+        "Pedro Mercado",
+        "Huibin Shen",
+        "Oleksandr Shchur",
+        "Syama Sundar Rangapuram",
+        "Sebastian Pineda Arango",
+        "Shubham Kapoor",
+        "Jasper Zschiegner",
+        "Danielle C. Maddix",
+        "Hao Wang",
+        "Michael W. Mahoney",
+        "Kari Torkkola",
+        "Andrew Gordon Wilson",
+        "Michael Bohlke-Schneider",
+        "Yuyang Wang"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "chronos"
+      ],
+      "code_url": "https://github.com/amazon-science/chronos-forecasting",
+      "notes": "Chronos-Bolt is a later patch-based variant in the same repo/AWS blog; no standalone arXiv paper found (as of 2026-09-24)."
+    },
+    {
+      "arxiv_id": "2403.14735",
+      "title": "Foundation Models for Time Series Analysis: A Tutorial and Survey",
+      "authors": [
+        "Yuxuan Liang",
+        "Haomin Wen",
+        "Yuqi Nie",
+        "Yushan Jiang",
+        "Ming Jin",
+        "Dongjin Song",
+        "Shirui Pan",
+        "Qingsong Wen"
+      ],
+      "year": 2024,
+      "categories": [
+        "survey"
+      ],
+      "code_url": null,
+      "notes": "KDD'24 tutorial/survey; methodology-centric FM taxonomy."
+    },
+    {
+      "arxiv_id": "2405.14616",
+      "title": "TimeMixer: Decomposable Multiscale Mixing for Time Series Forecasting",
+      "authors": [
+        "Shiyu Wang",
+        "Haixu Wu",
+        "Xiaoming Shi",
+        "Tengge Hu",
+        "Huakun Luo",
+        "Lintao Ma",
+        "James Y. Zhang",
+        "Jun Zhou"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "related"
+      ],
+      "code_url": "https://github.com/thuml/Time-Series-Library",
+      "notes": "Included as major multiscale mixer; also in TSlib."
+    },
+    {
+      "arxiv_id": "2405.14982",
+      "title": "In-context Time Series Predictor",
+      "authors": [
+        "Jiecheng Lu",
+        "Yan Sun",
+        "Shihao Yang"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts",
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "ICTSP; in-context time series predictor (ICLR 2025)."
+    },
+    {
+      "arxiv_id": "2405.17478",
+      "title": "Towards a General Time Series Forecasting Model with Unified Representation and Adaptive Transfer",
+      "authors": [
+        "Yihang Wang",
+        "Yuying Qiu",
+        "Peng Chen",
+        "Kai Zhao",
+        "Yang Shu",
+        "Zhongwen Rao",
+        "Lujia Pan",
+        "Bin Yang",
+        "Chenjuan Guo"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/decisionintelligence/ROSE",
+      "notes": "ROSE (Register Assisted / decomposed frequency learning); arXiv v1 title used ROSE acronym; current title emphasizes unified representation + adaptive transfer."
+    },
+    {
+      "arxiv_id": "2406.01638",
+      "title": "TimeCMA: Towards LLM-Empowered Multivariate Time Series Forecasting via Cross-Modality Alignment",
+      "authors": [
+        "Chenxi Liu",
+        "Qianxiong Xu",
+        "Hao Miao",
+        "Sun Yang",
+        "Lingzheng Zhang",
+        "Cheng Long",
+        "Ziyue Li",
+        "Rui Zhao"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": null,
+      "notes": "AAAI 2025 Oral."
+    },
+    {
+      "arxiv_id": "2406.08627",
+      "title": "Time-MMD: Multi-Domain Multimodal Dataset for Time Series Analysis",
+      "authors": [
+        "Haoxin Liu",
+        "Shangqing Xu",
+        "Zhiyuan Zhao",
+        "Lingkai Kong",
+        "Harshavardhan Kamarthi",
+        "Aditya B. Sasanur",
+        "Megha Sharma",
+        "Jiaming Cui",
+        "Qingsong Wen",
+        "Chao Zhang",
+        "B. Aditya Prakash"
+      ],
+      "year": 2024,
+      "categories": [
+        "multimodal",
+        "benchmark"
+      ],
+      "code_url": "https://github.com/AdityaLab/Time-MMD",
+      "notes": "NeurIPS 2024 D&B; MM-TSFlib."
+    },
+    {
+      "arxiv_id": "2408.17253",
+      "title": "VisionTS: Visual Masked Autoencoders Are Free-Lunch Zero-Shot Time Series Forecasters",
+      "authors": [
+        "Mouxiang Chen",
+        "Lefei Shen",
+        "Zhuo Li",
+        "Xiaoyun Joy Wang",
+        "Jianling Sun",
+        "Chenghao Liu"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "multimodal"
+      ],
+      "code_url": "https://github.com/Keytoyze/VisionTS",
+      "notes": "ImageNet MAE as TSFM; ICML 2025."
+    },
+    {
+      "arxiv_id": "2409.16040",
+      "title": "Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts",
+      "authors": [
+        "Xiaoming Shi",
+        "Shiyu Wang",
+        "Yuqi Nie",
+        "Dianqi Li",
+        "Zhou Ye",
+        "Qingsong Wen",
+        "Ming Jin"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "jin"
+      ],
+      "code_url": null,
+      "notes": "金明 group; ICLR 2025; up to 2.4B params."
+    },
+    {
+      "arxiv_id": "2410.04803",
+      "title": "Timer-XL: Long-Context Transformers for Unified Time Series Forecasting",
+      "authors": [
+        "Yong Liu",
+        "Guo Qin",
+        "Xiangdong Huang",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "thuml"
+      ],
+      "code_url": "https://github.com/thuml/Timer-XL",
+      "notes": "THUML."
+    },
+    {
+      "arxiv_id": "2410.10393",
+      "title": "GIFT-Eval: A Benchmark For General Time Series Forecasting Model Evaluation",
+      "authors": [
+        "Taha Aksu",
+        "Gerald Woo",
+        "Juncheng Liu",
+        "Xu Liu",
+        "Chenghao Liu",
+        "Silvio Savarese",
+        "Caiming Xiong",
+        "Doyen Sahoo"
+      ],
+      "year": 2024,
+      "categories": [
+        "benchmark"
+      ],
+      "code_url": "https://github.com/SalesforceAIResearch/gift-eval",
+      "notes": null
+    },
+    {
+      "arxiv_id": "2410.10469",
+      "title": "Moirai-MoE: Empowering Time Series Foundation Models with Sparse Mixture of Experts",
+      "authors": [
+        "Xu Liu",
+        "Juncheng Liu",
+        "Gerald Woo",
+        "Taha Aksu",
+        "Yuxuan Liang",
+        "Roger Zimmermann",
+        "Chenghao Liu",
+        "Silvio Savarese",
+        "Caiming Xiong",
+        "Doyen Sahoo"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
+      "notes": null
+    },
+    {
+      "arxiv_id": "2410.11674",
+      "title": "LLM-Mixer: Multiscale Mixing in LLMs for Time Series Forecasting",
+      "authors": [
+        "Md Kowsher",
+        "Md. Shohanur Islam Sobuj",
+        "Nusrat Jahan Prottasha",
+        "E. Alejandro Alanis",
+        "Ozlem Ozmen Garibay",
+        "Niloofar Yousefi"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts"
+      ],
+      "code_url": null,
+      "notes": null
+    },
+    {
+      "arxiv_id": "2410.14752",
+      "title": "TimeSeriesExam: A time series understanding exam",
+      "authors": [
+        "Yifu Cai",
+        "Arjun Choudhry",
+        "Mononito Goswami",
+        "Artur Dubrawski"
+      ],
+      "year": 2024,
+      "categories": [
+        "benchmark"
+      ],
+      "code_url": null,
+      "notes": "NeurIPS'24 workshop; LLM TS understanding exam."
+    },
+    {
+      "arxiv_id": "2410.16032",
+      "title": "TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis",
+      "authors": [
+        "Shiyu Wang",
+        "Jiawei Li",
+        "Xiaoming Shi",
+        "Zhou Ye",
+        "Baichuan Mo",
+        "Wenze Lin",
+        "Shengtong Ju",
+        "Zhixuan Chu",
+        "Ming Jin"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm",
+        "jin",
+        "related"
+      ],
+      "code_url": null,
+      "notes": "ICLR 2025; official permanent public code URL still unconfirmed (2026-09-24). Paper appendix points to https://github.com/kwuking/TimeMixer; review code at https://anonymous.4open.science/r/TimeMixerPP; authors cite company open-source approval pending; not in THUML Time-Series-Library (issue #839). Leave code_url null."
+    },
+    {
+      "arxiv_id": "2410.24087",
+      "title": "In-Context Fine-Tuning for Time-Series Foundation Models",
+      "authors": [
+        "Abhimanyu Das",
+        "Matthew Faw",
+        "Rajat Sen",
+        "Yichen Zhou"
+      ],
+      "year": 2024,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "TimesFM-family / Google; in-context fine-tuning for TSFMs."
+    },
+    {
+      "arxiv_id": "2412.03104",
+      "title": "ChatTS: Aligning Time Series with LLMs via Synthetic Data for Enhanced Understanding and Reasoning",
+      "authors": [
+        "Zhe Xie",
+        "Zeyan Li",
+        "Xiao He",
+        "Longlong Xu",
+        "Xidao Wen",
+        "Tieying Zhang",
+        "Jianjun Chen",
+        "Rui Shi",
+        "Dan Pei"
+      ],
+      "year": 2024,
+      "categories": [
+        "multimodal",
+        "llm4ts"
+      ],
+      "code_url": "https://github.com/NetManAIOps/ChatTS",
+      "notes": "ChatTS; align multivariate TS with LLMs via synthetic data."
+    },
+    {
+      "arxiv_id": "2412.11376",
+      "title": "ChatTime: A Unified Multimodal Time Series Foundation Model Bridging Numerical and Textual Data",
+      "authors": [
+        "Chengsen Wang",
+        "Qi Qi",
+        "Jingyu Wang",
+        "Haifeng Sun",
+        "Zirui Zhuang",
+        "Jinming Wu",
+        "Lei Zhang",
+        "Jianxin Liao"
+      ],
+      "year": 2024,
+      "categories": [
+        "llm4ts",
+        "multimodal"
+      ],
+      "code_url": null,
+      "notes": "AAAI 2025."
+    },
+    {
+      "arxiv_id": "2501.02945",
+      "title": "From Tables to Time: Extending TabPFN-v2 to Time Series Forecasting",
+      "authors": [
+        "Shi Bin Hoo",
+        "Samuel Müller",
+        "David Salinas",
+        "Frank Hutter"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/PriorLabs/tabpfn-time-series",
+      "notes": "TabPFN-TS; tabular foundation model extended to time series."
+    },
+    {
+      "arxiv_id": "2502.00816",
+      "title": "Sundial: A Family of Highly Capable Time Series Foundation Models",
+      "authors": [
+        "Yong Liu",
+        "Guo Qin",
+        "Zhiyuan Shi",
+        "Zhi Chen",
+        "Caiyin Yang",
+        "Xiangdong Huang",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm",
+        "thuml"
+      ],
+      "code_url": "https://github.com/thuml/Sundial",
+      "notes": "THUML; TimeFlow Loss; TimeBench."
+    },
+    {
+      "arxiv_id": "2502.04395",
+      "title": "Time-VLM: Exploring Multimodal Vision-Language Models for Augmented Time Series Forecasting",
+      "authors": [
+        "Siru Zhong",
+        "Weilin Ruan",
+        "Ming Jin",
+        "Huan Li",
+        "Qingsong Wen",
+        "Yuxuan Liang"
+      ],
+      "year": 2025,
+      "categories": [
+        "multimodal",
+        "jin"
+      ],
+      "code_url": "https://github.com/CityMind-Lab/ICML25-TimeVLM",
+      "notes": "金明; ICML 2025 Time-VLM — temporal + vision + text via VLMs."
+    },
+    {
+      "arxiv_id": "2503.01875",
+      "title": "Time-MQA: Time Series Multi-Task Question Answering with Context Enhancement",
+      "authors": [
+        "Yaxuan Kong",
+        "Yiyuan Yang",
+        "Yoontae Hwang",
+        "Wenjie Du",
+        "Stefan Zohren",
+        "Zhangyang Wang",
+        "Ming Jin",
+        "Qingsong Wen"
+      ],
+      "year": 2025,
+      "categories": [
+        "multimodal",
+        "benchmark"
+      ],
+      "code_url": null,
+      "notes": "Time-MQA; multi-task TS question answering with context."
+    },
+    {
+      "arxiv_id": "2505.14766",
+      "title": "This Time is Different: An Observability Perspective on Time Series Foundation Models",
+      "authors": [
+        "Ben Cohen",
+        "Emaad Khwaja",
+        "Youssef Doubli",
+        "Salahidine Lemaachi",
+        "Chris Lettieri",
+        "Charles Masson",
+        "Hugo Miccinilli",
+        "Elise Ramé",
+        "Qiqi Ren",
+        "Afshin Rostamizadeh",
+        "Jean Ogier du Terrail",
+        "Anna-Monica Toon",
+        "Kan Wang",
+        "Stephan Xie",
+        "Zongzhe Xu",
+        "Viktoriya Zhukova",
+        "David Asker",
+        "Ameet Talwalkar",
+        "Othmane Abou-Amal"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/DataDog/toto",
+      "notes": "Toto (Datadog) + BOOM benchmark."
+    },
+    {
+      "arxiv_id": "2505.23719",
+      "title": "TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning",
+      "authors": [
+        "Andreas Auer",
+        "Patrick Podest",
+        "Daniel Klotz",
+        "Sebastian Böck",
+        "Günter Klambauer",
+        "Sepp Hochreiter"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "xLSTM-based; NeurIPS 2025."
+    },
+    {
+      "arxiv_id": "2506.06005",
+      "title": "LightGTS: A Lightweight General Time Series Forecasting Model",
+      "authors": [
+        "Yihang Wang",
+        "Yuying Qiu",
+        "Peng Chen",
+        "Yang Shu",
+        "Zhongwen Rao",
+        "Lujia Pan",
+        "Bin Yang",
+        "Chenjuan Guo"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/decisionintelligence/LightGTS",
+      "notes": "ICML 2025; periodical tokenization + parallel decoding; ~4M params."
+    },
+    {
+      "arxiv_id": "2506.11029",
+      "title": "Output Scaling: YingLong-Delayed Chain of Thought in a Large Pretrained Time Series Forecasting Model",
+      "authors": [
+        "Xue Wang",
+        "Tian Zhou",
+        "Jinyang Gao",
+        "Bolin Ding",
+        "Jingren Zhou"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://huggingface.co/qcw1314/YingLong_300m",
+      "notes": "YingLong; encoder-only pretrained TSFM with delayed CoT / output scaling."
+    },
+    {
+      "arxiv_id": "2508.05287",
+      "title": "FlowState: Sampling-Rate-Equivariant Time-Series Forecasting",
+      "authors": [
+        "Lars Graf",
+        "Thomas Ortner",
+        "Stanisław Woźniak",
+        "Angeliki Pantazi"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://huggingface.co/ibm-granite/granite-timeseries-flowstate-r1",
+      "notes": "IBM FlowState; sampling-rate-equivariant SSM+functional decoder; also in granite-tsfm."
+    },
+    {
+      "arxiv_id": "2509.24803",
+      "title": "TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models",
+      "authors": [
+        "Tong Guan",
+        "Zijie Meng",
+        "Dianqi Li",
+        "Shiyu Wang",
+        "Chao-Han Huck Yang",
+        "Qingsong Wen",
+        "Zuozhu Liu",
+        "Sabato Marco Siniscalchi",
+        "Ming Jin",
+        "Shirui Pan"
+      ],
+      "year": 2025,
+      "categories": [
+        "multimodal",
+        "jin"
+      ],
+      "code_url": null,
+      "notes": "金明; ICLR 2026; TSR-Suite."
+    },
+    {
+      "arxiv_id": "2509.25826",
+      "title": "Kairos: Toward Adaptive and Parameter-Efficient Time Series Foundation Models",
+      "authors": [
+        "Kun Feng",
+        "Shaocheng Lan",
+        "Yuchen Fang",
+        "Wenchao He",
+        "Sihan Lu",
+        "Shuqi Gu",
+        "Lintao Ma",
+        "Xingyu Lu",
+        "Kan Ren"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/foundation-model-research/Kairos",
+      "notes": "Mixture-of-Size tokenization; PreSTS corpus; project page also at foundation-model-research.github.io/Kairos."
+    },
+    {
+      "arxiv_id": "2510.02410",
+      "title": "OpenTSLM: Time-Series Language Models for Reasoning over Multivariate Medical Text- and Time-Series Data",
+      "authors": [
+        "Patrick Langer",
+        "Thomas Kaar",
+        "Max Rosenblattl",
+        "Maxwell A. Xu",
+        "Winnie Chow",
+        "Martin Maritsch",
+        "Robert Jakob",
+        "Ning Wang",
+        "Juncheng Liu",
+        "Aradhana Verma",
+        "Brian Han",
+        "Daniel Seung Kim",
+        "Henry Chubb",
+        "Scott Ceresnak",
+        "Aydin Zahedivash",
+        "Alexander Tarlochan Singh Sandhu",
+        "Fatima Rodriguez",
+        "Daniel McDuff",
+        "Elgar Fleisch",
+        "Oliver Aalami",
+        "Filipe Barata",
+        "Paul Schmiedmayer"
+      ],
+      "year": 2025,
+      "categories": [
+        "multimodal"
+      ],
+      "code_url": "https://github.com/StanfordBDHG/OpenTSLM",
+      "notes": "OpenTSLM (not OpenTSLab); medical text+TS reasoning."
+    },
+    {
+      "arxiv_id": "2510.03255",
+      "title": "SciTS: Scientific Time Series Understanding and Generation with LLMs",
+      "authors": [
+        "Wen Wu",
+        "Ziyang Zhang",
+        "Liwei Liu",
+        "Xuenan Xu",
+        "Jimin Zhuang",
+        "Ke Fan",
+        "Qitan Lv",
+        "Junlin Liu",
+        "Chen Zhang",
+        "Zheqi Yuan",
+        "Siyuan Hou",
+        "Tianyi Lin",
+        "Kai Chen",
+        "Bowen Zhou",
+        "Chao Zhang"
+      ],
+      "year": 2025,
+      "categories": [
+        "multimodal",
+        "benchmark"
+      ],
+      "code_url": null,
+      "notes": "ICLR 2026; SciTS benchmark + TimeOmni framework."
+    },
+    {
+      "arxiv_id": "2510.13654",
+      "title": "Rethinking Evaluation in the Era of Time Series Foundation Models: (Un)known Information Leakage Challenges",
+      "authors": [
+        "Marcel Meyer",
+        "Sascha Kaltenpoth",
+        "Kevin Zalipski",
+        "Oliver Müller"
+      ],
+      "year": 2025,
+      "categories": [
+        "benchmark"
+      ],
+      "code_url": null,
+      "notes": "Leakage risks for TSFM eval."
+    },
+    {
+      "arxiv_id": "2510.15821",
+      "title": "Chronos-2: From Univariate to Universal Forecasting",
+      "authors": [
+        "Abdul Fatir Ansari",
+        "Oleksandr Shchur",
+        "Jaris Küken",
+        "Andreas Auer",
+        "Boran Han",
+        "Pedro Mercado",
+        "Syama Sundar Rangapuram",
+        "Huibin Shen",
+        "Lorenzo Stella",
+        "Xiyuan Zhang",
+        "Mononito Goswami",
+        "Shubham Kapoor",
+        "Danielle C. Maddix",
+        "Pablo Guerron",
+        "Tony Hu",
+        "Junming Yin",
+        "Nick Erickson",
+        "Prateek Mutalik Desai",
+        "Hao Wang",
+        "Huzefa Rangwala",
+        "George Karypis",
+        "Yuyang Wang",
+        "Michael Bohlke-Schneider"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm",
+        "chronos"
+      ],
+      "code_url": "https://github.com/amazon-science/chronos-forecasting",
+      "notes": "Native multivariate + covariate ICL."
+    },
+    {
+      "arxiv_id": "2511.11698",
+      "title": "Moirai 2.0: When Less Is More for Time Series Forecasting",
+      "authors": [
+        "Chenghao Liu",
+        "Taha Aksu",
+        "Juncheng Liu",
+        "Xu Liu",
+        "Hanshu Yan",
+        "Quang Pham",
+        "Silvio Savarese",
+        "Doyen Sahoo",
+        "Caiming Xiong",
+        "Junnan Li"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
+      "notes": "Moirai 2.0 (Salesforce); decoder-only / quantile + multi-token prediction."
+    },
+    {
+      "arxiv_id": "2512.11251",
+      "title": "Insight Miner: A Time Series Analysis Dataset for Cross-Domain Alignment with Natural Language",
+      "authors": [
+        "Yunkai Zhang",
+        "Yawen Zhang",
+        "Ming Zheng",
+        "Kezhen Chen",
+        "Chongyang Gao",
+        "Ruian Ge",
+        "Siyuan Teng",
+        "Amine Jelloul",
+        "Jinmeng Rao",
+        "Xiaoyuan Guo",
+        "Chiang-Wei Fang",
+        "Zeyu Zheng",
+        "Jie Yang"
+      ],
+      "year": 2025,
+      "categories": [
+        "multimodal",
+        "benchmark"
+      ],
+      "code_url": "https://huggingface.co/datasets/zhykoties/time-series-language-alignment",
+      "notes": "Insight Miner; cross-domain TS–language alignment dataset."
+    },
+    {
+      "arxiv_id": "2512.14253",
+      "title": "FLAME: Flow Enhanced Legendre Memory Models for General Time Series Forecasting",
+      "authors": [
+        "Xingjian Wu",
+        "Hanyin Cheng",
+        "Xiangfei Qiu",
+        "Zhengyu Li",
+        "Jilin Hu",
+        "Chenjuan Guo",
+        "Bin Yang"
+      ],
+      "year": 2025,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "FLAME; flow-enhanced Legendre memory for general forecasting."
+    },
+    {
+      "arxiv_id": "2602.01588",
+      "title": "Spectral Text Fusion: A Frequency-Aware Approach to Multimodal Time-Series Forecasting",
+      "authors": [
+        "Huu Hiep Nguyen",
+        "Minh Hoang Nguyen",
+        "Dung Nguyen",
+        "Hung Le"
+      ],
+      "year": 2026,
+      "categories": [
+        "multimodal"
+      ],
+      "code_url": "https://github.com/hiepnh137/SpecTF",
+      "notes": "Spectral Text Fusion for multimodal TS forecasting."
+    },
+    {
+      "arxiv_id": "2602.12147",
+      "title": "It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks",
+      "authors": [
+        "Zhongzheng Qiao",
+        "Sheng Pan",
+        "Anni Wang",
+        "Viktoriya Zhukova",
+        "Yong Liu",
+        "Xudong Jiang",
+        "Qingsong Wen",
+        "Mingsheng Long",
+        "Ming Jin",
+        "Chenghao Liu"
+      ],
+      "year": 2026,
+      "categories": [
+        "benchmark",
+        "thuml",
+        "jin"
+      ],
+      "code_url": "https://huggingface.co/spaces/Real-TSF/TIME-leaderboard",
+      "notes": "ICML 2026; THUML+Jin coauthors; leakage-aware zero-shot."
+    },
+    {
+      "arxiv_id": "2602.14024",
+      "title": "EIDOS: Latent-Space Predictive Learning for Time Series Foundation Models",
+      "authors": [
+        "Xinxing Zhou",
+        "Qingren Yao",
+        "Yiji Zhao",
+        "Chenghao Liu",
+        "Flora Salim",
+        "Xiaojie Yuan",
+        "Yanlong Wen",
+        "Ming Jin"
+      ],
+      "year": 2026,
+      "categories": [
+        "tsfm",
+        "jin"
+      ],
+      "code_url": null,
+      "notes": "金明 coauthor; latent-space predictive learning for TSFMs."
+    },
+    {
+      "arxiv_id": "2602.17001",
+      "title": "Sonar-TS: Search-Then-Verify Natural Language Querying for Time Series Databases",
+      "authors": [
+        "Zhao Tan",
+        "Yiji Zhao",
+        "Shiyu Wang",
+        "Chang Xu",
+        "Yuxuan Liang",
+        "Xiping Liu",
+        "Shirui Pan",
+        "Ming Jin"
+      ],
+      "year": 2026,
+      "categories": [
+        "multimodal",
+        "jin"
+      ],
+      "code_url": null,
+      "notes": "金明; ICML 2026; NLQ4TSDB + NLQTSBench."
+    },
+    {
+      "arxiv_id": "2602.17149",
+      "title": "TimeOmni-VL: Unified Models for Time Series Understanding and Generation",
+      "authors": [
+        "Tong Guan",
+        "Sheng Pan",
+        "Johan Barthelemy",
+        "Zhao Li",
+        "Yujun Cai",
+        "Cesare Alippi",
+        "Ming Jin",
+        "Shirui Pan"
+      ],
+      "year": 2026,
+      "categories": [
+        "multimodal",
+        "jin"
+      ],
+      "code_url": null,
+      "notes": "金明; ICML 2026; Bi-TSI + understanding-guided generation."
+    },
+    {
+      "arxiv_id": "2603.04791",
+      "title": "Timer-S1: A Billion-Scale Time Series Foundation Model with Serial Scaling",
+      "authors": [
+        "Yong Liu",
+        "Xingjian Su",
+        "Shiyu Wang",
+        "Haoran Zhang",
+        "Haixuan Liu",
+        "Yuxuan Wang",
+        "Zhou Ye",
+        "Yang Xiang",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2026,
+      "categories": [
+        "tsfm",
+        "thuml"
+      ],
+      "code_url": "https://github.com/thuml/Large-Time-Series-Model",
+      "notes": "THUML / 龙明盛; Timer-S1 8.3B MoE with Serial-Token Prediction; TimeBench."
+    },
+    {
+      "arxiv_id": "2605.09395",
+      "title": "Empowering VLMs for Few-Shot Multimodal Time Series Classification via Tailored Agentic Reasoning",
+      "authors": [
+        "Lin Li",
+        "Jiawei Huang",
+        "Qihao Quan",
+        "Dan Li",
+        "Boxin Li",
+        "Xiao Zhang",
+        "Erli Meng",
+        "Wenjie Feng",
+        "Jian Lou",
+        "See-Kiong Ng"
+      ],
+      "year": 2026,
+      "categories": [
+        "multimodal"
+      ],
+      "code_url": "https://github.com/HuangJW0821/MarsTSC",
+      "notes": "VLM agentic reasoning for few-shot multimodal TS classification."
+    },
+    {
+      "arxiv_id": "2605.25045",
+      "title": "AION: Next-Generation Tasks and Practical Harness for Time Series",
+      "authors": [
+        "Tianxiang Zhan",
+        "Xiaobao Song",
+        "Tong Guan",
+        "Shirui Pan",
+        "Ming Jin"
+      ],
+      "year": 2026,
+      "categories": [
+        "benchmark",
+        "jin"
+      ],
+      "code_url": "https://github.com/ztxtech/aion",
+      "notes": "金明; AION harness / next-gen TS tasks."
+    },
+    {
+      "arxiv_id": "2606.06285",
+      "title": "TRACE: A Temporal Conditional Estimation for Multimodal Time Series Foundation Models",
+      "authors": [
+        "Ziwen Kan",
+        "Yishuo Chen",
+        "Kecheng Li",
+        "Andrew Wen",
+        "Xiaomeng Wang",
+        "Liwei Wang",
+        "Jihao Duan",
+        "Song Wang",
+        "Hongfang Liu",
+        "Tianlong Chen"
+      ],
+      "year": 2026,
+      "categories": [
+        "multimodal",
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "TRACE; multimodal time series foundation models."
+    },
+    {
+      "arxiv_id": "2607.06973",
+      "title": "Rethinking Multimodal Time-Series Forecasting Evaluation",
+      "authors": [
+        "Haoxin Liu",
+        "Yichen Zhou",
+        "Rajat Sen",
+        "B. Aditya Prakash",
+        "Abhimanyu Das"
+      ],
+      "year": 2026,
+      "categories": [
+        "benchmark",
+        "multimodal"
+      ],
+      "code_url": null,
+      "notes": "Rethinking multimodal time-series forecasting evaluation."
+    },
+    {
+      "arxiv_id": "2608.17299",
+      "title": "LiveHouse-TS: An Open-world Living Benchmark for Time Series Foundation Models",
+      "authors": [
+        "Haomin Wen",
+        "Ziyu Zhou",
+        "Qingxiang Liu",
+        "Siru Zhong",
+        "Yuxuan Liang"
+      ],
+      "year": 2026,
+      "categories": [
+        "benchmark"
+      ],
+      "code_url": null,
+      "notes": "LiveHouse-TS; open-world living benchmark for TSFMs."
+    },
+    {
+      "arxiv_id": "2609.13956",
+      "title": "Tabby: An Open Pretraining Recipe for Time Series Foundation Models",
+      "authors": [
+        "Shifeng Xie",
+        "Bahaeddine Abdessalem",
+        "Zehao Xiao",
+        "Youssef Attia El Hili",
+        "Ambroise Odonnat",
+        "Zhiwei Dong",
+        "Lei Zan",
+        "Themis Palpanas",
+        "Jianfeng Zhang",
+        "Lujia Pan",
+        "Keli Zhang",
+        "Malik Tiomoko"
+      ],
+      "year": 2026,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "Tabby; open pretraining recipe for TSFMs."
+    },
+    {
+      "arxiv_id": "2609.15087",
+      "title": "Beyond Numerical Time Series: A Unified Benchmark for Multimodal Forecasting with Heterogeneous Context",
+      "authors": [
+        "Peng Chen",
+        "Zhihao Zhuang",
+        "Hongzhou Chen",
+        "Junhao Huang",
+        "Aiping Yang",
+        "Mengsen Wu",
+        "Yiding Liu",
+        "Xilin Dai",
+        "Zewei Dong"
+      ],
+      "year": 2026,
+      "categories": [
+        "benchmark",
+        "multimodal"
+      ],
+      "code_url": null,
+      "notes": "Unified multimodal forecasting benchmark with heterogeneous context."
+    },
+    {
+      "arxiv_id": "2609.24156",
+      "title": "TAC-Time: Texts as Channels For Multimodal Time Series Forecasting",
+      "authors": [
+        "Jiayi Liang",
+        "Xiaotian Gu",
+        "Xinyu Xie",
+        "Yuanbin Wu",
+        "Xiaoling Wang"
+      ],
+      "year": 2026,
+      "categories": [
+        "multimodal"
+      ],
+      "code_url": null,
+      "notes": "TAC-Time; texts as channels for multimodal TS forecasting."
+    },
+    {
+      "arxiv_id": "2609.24559",
+      "title": "$t_0$: A Time-Series Foundation Model for Forecasting with Context",
+      "authors": [
+        "Lucas Meyer",
+        "Claudio Sole",
+        "Huikan Xiang",
+        "Nicolas Li",
+        "Lucas Franceschino",
+        "Arnau Quera-Bofarull",
+        "Maarten P. Scholl",
+        "Joachim Fainberg",
+        "Geoffrey Négiar"
+      ],
+      "year": 2026,
+      "categories": [
+        "tsfm"
+      ],
+      "code_url": null,
+      "notes": "t₀; TSFM for forecasting with context."
+    },
+    {
+      "arxiv_id": "2609.26389",
+      "title": "TimeInteract: Towards Real-Time Interactive Intelligence for Streaming Time Series",
+      "authors": [
+        "Sheng Pan",
+        "Yongli Gu",
+        "Yiqing Guo",
+        "Warren Jin",
+        "Bo Du",
+        "Shirui Pan",
+        "Ming Jin"
+      ],
+      "year": 2026,
+      "categories": [
+        "multimodal",
+        "jin"
+      ],
+      "code_url": null,
+      "notes": "金明; TimeInteract — real-time interactive streaming TS intelligence."
+    }
+  ]
+}
