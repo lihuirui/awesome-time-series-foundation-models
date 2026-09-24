@@ -1,8 +1,5 @@
 {
-  "schema_version": 1,
   "updated": "2026-09-24",
-  "description": "Verified arXiv metadata for Awesome Time-Series Foundation Models & Multimodal Temporal Models. Do not invent entries; refresh via scripts/fetch_arxiv.py.",
-  "notes": "Metadata verified via arXiv Atom API (export.arxiv.org) over HTTPS. TimesNet/Autoformer/iTransformer remain TSlib-only (not separate entries). Chronos-Bolt has no standalone paper. OpenTSLab → OpenTSLM 2510.02410. TimeMixer++ code_url still null — see verification_log.",
   "papers": [
     {
       "arxiv_id": "2202.07125",
@@ -17,10 +14,24 @@
         "Liang Sun"
       ],
       "year": 2022,
+      "release_date": "2022-02-15",
+      "venue": "IJCAI 2023",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "survey"
+      ],
+      "open_weights": null,
+      "code_url": "https://github.com/qingsongedu/time-series-transformers-review",
       "categories": [
         "survey"
       ],
-      "code_url": "https://github.com/qingsongedu/time-series-transformers-review",
       "notes": "Pre-TSFM Transformer survey; useful background."
     },
     {
@@ -31,10 +42,25 @@
         "Flora D. Salim"
       ],
       "year": 2022,
+      "release_date": "2022-09-20",
+      "venue": "IEEE TKDE",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/HaoUNSW/PISA",
       "categories": [
         "llm4ts"
       ],
-      "code_url": "https://github.com/HaoUNSW/PISA",
       "notes": "Early prompt-to-forecast paradigm."
     },
     {
@@ -48,10 +74,28 @@
         "Rong Jin"
       ],
       "year": 2023,
+      "release_date": "2023-02-23",
+      "venue": "NeurIPS 2023",
+      "group": "DAMO",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "classification",
+        "anomaly_detection",
+        "imputation"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/DAMO-DI-ML/One_Fits_All",
       "categories": [
         "llm4ts"
       ],
-      "code_url": "https://github.com/DAMO-DI-ML/One_Fits_All",
       "notes": "GPT4TS / FPT; NeurIPS 2023 Spotlight."
     },
     {
@@ -64,10 +108,25 @@
         "Tien-Fu Chen"
       ],
       "year": 2023,
+      "release_date": "2023-08-16",
+      "venue": "ACM TIST 2025",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/blacksnail789521/LLM4TS",
       "categories": [
         "llm4ts"
       ],
-      "code_url": "https://github.com/blacksnail789521/LLM4TS",
       "notes": null
     },
     {
@@ -87,11 +146,26 @@
         "Qingsong Wen"
       ],
       "year": 2023,
+      "release_date": "2023-10-03",
+      "venue": "ICLR 2024",
+      "group": "Ming Jin",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "7B",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts",
         "jin"
       ],
-      "code_url": null,
       "notes": "金明; ICLR 2024."
     },
     {
@@ -107,10 +181,25 @@
         "Yan Liu"
       ],
       "year": 2023,
+      "release_date": "2023-10-08",
+      "venue": "ICLR 2024",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts"
       ],
-      "code_url": null,
       "notes": "ICLR 2024."
     },
     {
@@ -123,10 +212,25 @@
         "Andrew Gordon Wilson"
       ],
       "year": 2023,
+      "release_date": "2023-10-11",
+      "venue": "NeurIPS 2023",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/ngruver/llmtime",
       "categories": [
         "llm4ts"
       ],
-      "code_url": "https://github.com/ngruver/llmtime",
       "notes": "LLMTime; NeurIPS 2023."
     },
     {
@@ -153,10 +257,24 @@
         "Irina Rish"
       ],
       "year": 2023,
+      "release_date": "2023-10-12",
+      "venue": "ICML 2024 Workshop",
+      "group": "Morgan Stanley / Mila",
+      "architecture": "decoder-only",
+      "tokenization": "lag",
+      "modalities": [
+        "ts"
+      ],
+      "params": "2.4M",
+      "pretrain_corpus": "GluonTS (7922 datasets)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/time-series-foundation-models/lag-llama",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/time-series-foundation-models/lag-llama",
       "notes": null
     },
     {
@@ -172,10 +290,25 @@
         "Roger Zimmermann"
       ],
       "year": 2023,
+      "release_date": "2023-10-15",
+      "venue": "WWW 2024",
+      "group": null,
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts"
       ],
-      "code_url": null,
       "notes": null
     },
     {
@@ -200,10 +333,25 @@
         "Qingsong Wen"
       ],
       "year": 2023,
+      "release_date": "2023-10-16",
+      "venue": "ACM Computing Surveys",
+      "group": "Ming Jin",
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "survey"
+      ],
+      "open_weights": null,
+      "code_url": "https://github.com/qingsongedu/Awesome-TimeSeries-SpatioTemporal-LM-LLM",
       "categories": [
         "survey"
       ],
-      "code_url": "https://github.com/qingsongedu/Awesome-TimeSeries-SpatioTemporal-LM-LLM",
       "notes": "Jin/Wen survey; LM4TS & LM4STD taxonomy."
     },
     {
@@ -216,10 +364,24 @@
         "Yichen Zhou"
       ],
       "year": 2023,
+      "release_date": "2023-10-14",
+      "venue": "ICML 2024",
+      "group": "Google",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "200M",
+      "pretrain_corpus": "100B real & synthetic points",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/google-research/timesfm",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/google-research/timesfm",
       "notes": "TimesFM (Google); ICML 2024."
     },
     {
@@ -233,10 +395,24 @@
         "Colin White"
       ],
       "year": 2023,
+      "release_date": "2023-11-03",
+      "venue": "NeurIPS 2023",
+      "group": "Prior Labs",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "Synthetic priors",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm"
       ],
-      "code_url": null,
       "notes": "NeurIPS 2023; synthetic PFN prior."
     },
     {
@@ -253,10 +429,24 @@
         "Jayant Kalagnanam"
       ],
       "year": 2024,
+      "release_date": "2024-01-08",
+      "venue": "NeurIPS 2024",
+      "group": "IBM",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "8M",
+      "pretrain_corpus": "Monash + synthetic multi-domain",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://huggingface.co/ibm-granite/granite-timeseries-ttm-r2",
       "notes": "IBM Granite TTM; NeurIPS 2024."
     },
     {
@@ -269,10 +459,25 @@
         "Jingbo Shang"
       ],
       "year": 2024,
+      "release_date": "2024-02-02",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "survey"
+      ],
+      "open_weights": null,
+      "code_url": "https://github.com/xiyuanzh/awesome-llm-time-series",
       "categories": [
         "survey"
       ],
-      "code_url": "https://github.com/xiyuanzh/awesome-llm-time-series",
       "notes": null
     },
     {
@@ -287,11 +492,25 @@
         "Mingsheng Long"
       ],
       "year": 2024,
+      "release_date": "2024-02-04",
+      "venue": "ICML 2024",
+      "group": "THUML",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "84M",
+      "pretrain_corpus": "UTSD (1B points)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/thuml/Large-Time-Series-Model",
       "categories": [
         "tsfm",
         "thuml"
       ],
-      "code_url": "https://github.com/thuml/Large-Time-Series-Model",
       "notes": "THUML / 龙明盛 group."
     },
     {
@@ -305,11 +524,26 @@
         "Mingsheng Long"
       ],
       "year": 2024,
+      "release_date": "2024-02-04",
+      "venue": "NeurIPS 2024",
+      "group": "THUML",
+      "architecture": "decoder-only",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "7B",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/thuml/AutoTimes",
       "categories": [
         "llm4ts",
         "thuml"
       ],
-      "code_url": "https://github.com/thuml/AutoTimes",
       "notes": "THUML."
     },
     {
@@ -324,10 +558,24 @@
         "Doyen Sahoo"
       ],
       "year": 2024,
+      "release_date": "2024-02-04",
+      "venue": "ICML 2024",
+      "group": "Salesforce",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "311M",
+      "pretrain_corpus": "LOTSA (27B observations)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
       "notes": "Moirai / LOTSA; Salesforce."
     },
     {
@@ -342,10 +590,27 @@
         "Artur Dubrawski"
       ],
       "year": 2024,
+      "release_date": "2024-02-06",
+      "venue": "ICML 2024",
+      "group": "CMU",
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "385M",
+      "pretrain_corpus": "Time-series Pile (13M sequences)",
+      "tasks": [
+        "forecasting",
+        "classification",
+        "anomaly_detection",
+        "imputation"
+      ],
+      "open_weights": true,
+      "code_url": "https://huggingface.co/AutonLab/MOMENT-1-large",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://huggingface.co/AutonLab/MOMENT-1-large",
       "notes": "Time Series Pile; ICML 2024."
     },
     {
@@ -359,10 +624,25 @@
         "B. Aditya Prakash"
       ],
       "year": 2024,
+      "release_date": "2024-02-25",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts"
       ],
-      "code_url": null,
       "notes": null
     },
     {
@@ -380,12 +660,26 @@
         "Mingsheng Long"
       ],
       "year": 2024,
+      "release_date": "2024-02-29",
+      "venue": "NeurIPS 2024",
+      "group": "THUML",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/thuml/TimeXer",
       "categories": [
         "tsfm",
         "thuml",
         "related"
       ],
-      "code_url": "https://github.com/thuml/TimeXer",
       "notes": "THUML; exogenous-variable Transformer (NeurIPS 2024); not a separate TimesNet/Autoformer/iTransformer entry."
     },
     {
@@ -400,10 +694,27 @@
         "Marinka Zitnik"
       ],
       "year": 2024,
+      "release_date": "2024-02-29",
+      "venue": "NeurIPS 2024",
+      "group": "Harvard",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "10M",
+      "pretrain_corpus": "Multi-domain 38 datasets",
+      "tasks": [
+        "forecasting",
+        "classification",
+        "anomaly_detection",
+        "imputation"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/mims-harvard/UniTS",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/mims-harvard/UniTS",
       "notes": "NeurIPS 2024."
     },
     {
@@ -418,10 +729,25 @@
         "Dongjin Song"
       ],
       "year": 2024,
+      "release_date": "2024-03-09",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts"
       ],
-      "code_url": null,
       "notes": null
     },
     {
@@ -438,10 +764,25 @@
         "Shu-Tao Xia"
       ],
       "year": 2024,
+      "release_date": "2024-03-12",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/Hank0626/LLaTA",
       "categories": [
         "llm4ts"
       ],
-      "code_url": "https://github.com/Hank0626/LLaTA",
       "notes": null
     },
     {
@@ -468,11 +809,25 @@
         "Yuyang Wang"
       ],
       "year": 2024,
+      "release_date": "2024-03-12",
+      "venue": "Transactions on Machine Learning Research (TMLR)",
+      "group": "Amazon",
+      "architecture": "decoder-only",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": "710M",
+      "pretrain_corpus": "TSMix + synthetic Gaussian processes (84B observations)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/amazon-science/chronos-forecasting",
       "categories": [
         "tsfm",
         "chronos"
       ],
-      "code_url": "https://github.com/amazon-science/chronos-forecasting",
       "notes": "Chronos-Bolt is a later patch-based variant in the same repo/AWS blog; no standalone arXiv paper found (as of 2026-09-24)."
     },
     {
@@ -489,10 +844,24 @@
         "Qingsong Wen"
       ],
       "year": 2024,
+      "release_date": "2024-03-21",
+      "venue": "ACM SIGKDD 2024",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "survey"
+      ],
+      "open_weights": null,
+      "code_url": null,
       "categories": [
         "survey"
       ],
-      "code_url": null,
       "notes": "KDD'24 tutorial/survey; methodology-centric FM taxonomy."
     },
     {
@@ -509,11 +878,25 @@
         "Jun Zhou"
       ],
       "year": 2024,
+      "release_date": "2024-05-23",
+      "venue": "ICLR 2024",
+      "group": "Ming Jin",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/thuml/Time-Series-Library",
       "categories": [
         "tsfm",
         "related"
       ],
-      "code_url": "https://github.com/thuml/Time-Series-Library",
       "notes": "Included as major multiscale mixer; also in TSlib."
     },
     {
@@ -525,11 +908,25 @@
         "Shihao Yang"
       ],
       "year": 2024,
+      "release_date": "2024-05-23",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts",
         "tsfm"
       ],
-      "code_url": null,
       "notes": "ICTSP; in-context time series predictor (ICLR 2025)."
     },
     {
@@ -547,10 +944,24 @@
         "Chenjuan Guo"
       ],
       "year": 2024,
+      "release_date": "2024-05-24",
+      "venue": "ICML 2024",
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/decisionintelligence/ROSE",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/decisionintelligence/ROSE",
       "notes": "ROSE (Register Assisted / decomposed frequency learning); arXiv v1 title used ROSE acronym; current title emphasizes unified representation + adaptive transfer."
     },
     {
@@ -567,10 +978,25 @@
         "Rui Zhao"
       ],
       "year": 2024,
+      "release_date": "2024-06-03",
+      "venue": null,
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts"
       ],
-      "code_url": null,
       "notes": "AAAI 2025 Oral."
     },
     {
@@ -590,11 +1016,27 @@
         "B. Aditya Prakash"
       ],
       "year": 2024,
+      "release_date": "2024-06-12",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": "https://github.com/AdityaLab/Time-MMD",
       "categories": [
         "multimodal",
         "benchmark"
       ],
-      "code_url": "https://github.com/AdityaLab/Time-MMD",
       "notes": "NeurIPS 2024 D&B; MM-TSFlib."
     },
     {
@@ -609,11 +1051,26 @@
         "Chenghao Liu"
       ],
       "year": 2024,
+      "release_date": "2024-08-30",
+      "venue": "NeurIPS 2024",
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": "ImageNet (visual MAE)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/Keytoyze/VisionTS",
       "categories": [
         "tsfm",
         "multimodal"
       ],
-      "code_url": "https://github.com/Keytoyze/VisionTS",
       "notes": "ImageNet MAE as TSFM; ICML 2025."
     },
     {
@@ -629,11 +1086,25 @@
         "Ming Jin"
       ],
       "year": 2024,
+      "release_date": "2024-09-24",
+      "venue": "ICLR 2025",
+      "group": "Ming Jin",
+      "architecture": "MoE",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "2.4B",
+      "pretrain_corpus": "Time-300B (300B points)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm",
         "jin"
       ],
-      "code_url": null,
       "notes": "金明 group; ICLR 2025; up to 2.4B params."
     },
     {
@@ -647,11 +1118,25 @@
         "Mingsheng Long"
       ],
       "year": 2024,
+      "release_date": "2024-10-07",
+      "venue": "NeurIPS 2024",
+      "group": "THUML",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "84M",
+      "pretrain_corpus": "UTSD-2",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/thuml/Timer-XL",
       "categories": [
         "tsfm",
         "thuml"
       ],
-      "code_url": "https://github.com/thuml/Timer-XL",
       "notes": "THUML."
     },
     {
@@ -668,10 +1153,24 @@
         "Doyen Sahoo"
       ],
       "year": 2024,
+      "release_date": "2024-10-14",
+      "venue": null,
+      "group": "Salesforce",
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": "https://github.com/SalesforceAIResearch/gift-eval",
       "categories": [
         "benchmark"
       ],
-      "code_url": "https://github.com/SalesforceAIResearch/gift-eval",
       "notes": null
     },
     {
@@ -690,10 +1189,24 @@
         "Doyen Sahoo"
       ],
       "year": 2024,
+      "release_date": "2024-10-14",
+      "venue": null,
+      "group": "Salesforce",
+      "architecture": "MoE",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "1.1B",
+      "pretrain_corpus": "LOTSA (27B observations)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
       "notes": null
     },
     {
@@ -708,10 +1221,25 @@
         "Niloofar Yousefi"
       ],
       "year": 2024,
+      "release_date": "2024-10-15",
+      "venue": null,
+      "group": null,
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts"
       ],
-      "code_url": null,
       "notes": null
     },
     {
@@ -724,10 +1252,25 @@
         "Artur Dubrawski"
       ],
       "year": 2024,
+      "release_date": "2024-10-18",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
       "categories": [
         "benchmark"
       ],
-      "code_url": null,
       "notes": "NeurIPS'24 workshop; LLM TS understanding exam."
     },
     {
@@ -745,12 +1288,29 @@
         "Ming Jin"
       ],
       "year": 2024,
+      "release_date": "2024-10-21",
+      "venue": "ICLR 2025",
+      "group": "Ming Jin",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "classification",
+        "anomaly_detection",
+        "imputation"
+      ],
+      "open_weights": false,
+      "code_url": null,
       "categories": [
         "tsfm",
         "jin",
         "related"
       ],
-      "code_url": null,
       "notes": "ICLR 2025; official permanent public code URL still unconfirmed (2026-09-24). Paper appendix points to https://github.com/kwuking/TimeMixer; review code at https://anonymous.4open.science/r/TimeMixerPP; authors cite company open-source approval pending; not in THUML Time-Series-Library (issue #839). Leave code_url null."
     },
     {
@@ -763,10 +1323,24 @@
         "Yichen Zhou"
       ],
       "year": 2024,
+      "release_date": "2024-10-31",
+      "venue": null,
+      "group": "Google",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "200M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm"
       ],
-      "code_url": null,
       "notes": "TimesFM-family / Google; in-context fine-tuning for TSFMs."
     },
     {
@@ -784,11 +1358,27 @@
         "Dan Pei"
       ],
       "year": 2024,
+      "release_date": "2024-12-04",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "7B",
+      "pretrain_corpus": null,
+      "tasks": [
+        "reasoning",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/NetManAIOps/ChatTS",
       "categories": [
         "multimodal",
         "llm4ts"
       ],
-      "code_url": "https://github.com/NetManAIOps/ChatTS",
       "notes": "ChatTS; align multivariate TS with LLMs via synthetic data."
     },
     {
@@ -805,11 +1395,27 @@
         "Jianxin Liao"
       ],
       "year": 2024,
+      "release_date": "2024-12-16",
+      "venue": "AAAI 2025",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "7B",
+      "pretrain_corpus": null,
+      "tasks": [
+        "understanding",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "llm4ts",
         "multimodal"
       ],
-      "code_url": null,
       "notes": "AAAI 2025."
     },
     {
@@ -822,10 +1428,24 @@
         "Frank Hutter"
       ],
       "year": 2025,
+      "release_date": "2025-01-06",
+      "venue": null,
+      "group": "Prior Labs",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": "19M",
+      "pretrain_corpus": "Synthetic priors",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/PriorLabs/tabpfn-time-series",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/PriorLabs/tabpfn-time-series",
       "notes": "TabPFN-TS; tabular foundation model extended to time series."
     },
     {
@@ -842,11 +1462,25 @@
         "Mingsheng Long"
       ],
       "year": 2025,
+      "release_date": "2025-02-02",
+      "venue": null,
+      "group": "THUML",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "1.5B",
+      "pretrain_corpus": "UTSD-3 (>10B points)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/thuml/Sundial",
       "categories": [
         "tsfm",
         "thuml"
       ],
-      "code_url": "https://github.com/thuml/Sundial",
       "notes": "THUML; TimeFlow Loss; TimeBench."
     },
     {
@@ -861,11 +1495,27 @@
         "Yuxuan Liang"
       ],
       "year": 2025,
+      "release_date": "2025-02-06",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/CityMind-Lab/ICML25-TimeVLM",
       "categories": [
         "multimodal",
         "jin"
       ],
-      "code_url": "https://github.com/CityMind-Lab/ICML25-TimeVLM",
       "notes": "金明; ICML 2025 Time-VLM — temporal + vision + text via VLMs."
     },
     {
@@ -882,11 +1532,28 @@
         "Qingsong Wen"
       ],
       "year": 2025,
+      "release_date": "2025-02-26",
+      "venue": "ACL 2025",
+      "group": "Ming Jin",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "8B",
+      "pretrain_corpus": null,
+      "tasks": [
+        "question_answering",
+        "forecasting",
+        "anomaly_detection"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal",
         "benchmark"
       ],
-      "code_url": null,
       "notes": "Time-MQA; multi-task TS question answering with context."
     },
     {
@@ -914,10 +1581,25 @@
         "Othmane Abou-Amal"
       ],
       "year": 2025,
+      "release_date": "2025-05-20",
+      "venue": null,
+      "group": "Datadog",
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "observability"
+      ],
+      "open_weights": null,
+      "code_url": "https://github.com/DataDog/toto",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/DataDog/toto",
       "notes": "Toto (Datadog) + BOOM benchmark."
     },
     {
@@ -932,10 +1614,24 @@
         "Sepp Hochreiter"
       ],
       "year": 2025,
+      "release_date": "2025-05-29",
+      "venue": null,
+      "group": "NXAI",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "35M",
+      "pretrain_corpus": "LOTSA subset",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm"
       ],
-      "code_url": null,
       "notes": "xLSTM-based; NeurIPS 2025."
     },
     {
@@ -952,10 +1648,24 @@
         "Chenjuan Guo"
       ],
       "year": 2025,
+      "release_date": "2025-06-06",
+      "venue": "ICML 2025",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/decisionintelligence/LightGTS",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/decisionintelligence/LightGTS",
       "notes": "ICML 2025; periodical tokenization + parallel decoding; ~4M params."
     },
     {
@@ -969,10 +1679,24 @@
         "Jingren Zhou"
       ],
       "year": 2025,
+      "release_date": "2025-05-20",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "300M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://huggingface.co/qcw1314/YingLong_300m",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://huggingface.co/qcw1314/YingLong_300m",
       "notes": "YingLong; encoder-only pretrained TSFM with delayed CoT / output scaling."
     },
     {
@@ -985,10 +1709,24 @@
         "Angeliki Pantazi"
       ],
       "year": 2025,
+      "release_date": "2025-08-07",
+      "venue": null,
+      "group": null,
+      "architecture": "flow",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://huggingface.co/ibm-granite/granite-timeseries-flowstate-r1",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://huggingface.co/ibm-granite/granite-timeseries-flowstate-r1",
       "notes": "IBM FlowState; sampling-rate-equivariant SSM+functional decoder; also in granite-tsfm."
     },
     {
@@ -1007,11 +1745,27 @@
         "Shirui Pan"
       ],
       "year": 2025,
+      "release_date": "2025-09-29",
+      "venue": "ICLR 2026",
+      "group": "Ming Jin",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "8B",
+      "pretrain_corpus": "TimeOmni-Dataset",
+      "tasks": [
+        "reasoning",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal",
         "jin"
       ],
-      "code_url": null,
       "notes": "金明; ICLR 2026; TSR-Suite."
     },
     {
@@ -1029,10 +1783,24 @@
         "Kan Ren"
       ],
       "year": 2025,
+      "release_date": "2025-09-30",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/foundation-model-research/Kairos",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/foundation-model-research/Kairos",
       "notes": "Mixture-of-Size tokenization; PreSTS corpus; project page also at foundation-model-research.github.io/Kairos."
     },
     {
@@ -1063,10 +1831,26 @@
         "Paul Schmiedmayer"
       ],
       "year": 2025,
+      "release_date": "2025-10-02",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "3B",
+      "pretrain_corpus": "Medical text and time-series",
+      "tasks": [
+        "reasoning",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/StanfordBDHG/OpenTSLM",
       "categories": [
         "multimodal"
       ],
-      "code_url": "https://github.com/StanfordBDHG/OpenTSLM",
       "notes": "OpenTSLM (not OpenTSLab); medical text+TS reasoning."
     },
     {
@@ -1090,11 +1874,27 @@
         "Chao Zhang"
       ],
       "year": 2025,
+      "release_date": "2025-09-26",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "7B",
+      "pretrain_corpus": "Scientific TS",
+      "tasks": [
+        "understanding",
+        "generation"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal",
         "benchmark"
       ],
-      "code_url": null,
       "notes": "ICLR 2026; SciTS benchmark + TimeOmni framework."
     },
     {
@@ -1107,10 +1907,24 @@
         "Oliver Müller"
       ],
       "year": 2025,
+      "release_date": "2025-10-15",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
       "categories": [
         "benchmark"
       ],
-      "code_url": null,
       "notes": "Leakage risks for TSFM eval."
     },
     {
@@ -1142,11 +1956,25 @@
         "Michael Bohlke-Schneider"
       ],
       "year": 2025,
+      "release_date": "2025-10-17",
+      "venue": null,
+      "group": "Amazon",
+      "architecture": "decoder-only",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": "710M",
+      "pretrain_corpus": "Extended TSMix + synthetic kernels",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/amazon-science/chronos-forecasting",
       "categories": [
         "tsfm",
         "chronos"
       ],
-      "code_url": "https://github.com/amazon-science/chronos-forecasting",
       "notes": "Native multivariate + covariate ICL."
     },
     {
@@ -1165,10 +1993,24 @@
         "Junnan Li"
       ],
       "year": 2025,
+      "release_date": "2025-11-12",
+      "venue": null,
+      "group": "Salesforce",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "311M",
+      "pretrain_corpus": "LOTSA v2",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
       "categories": [
         "tsfm"
       ],
-      "code_url": "https://github.com/SalesforceAIResearch/uni2ts",
       "notes": "Moirai 2.0 (Salesforce); decoder-only / quantile + multi-token prediction."
     },
     {
@@ -1190,11 +2032,26 @@
         "Jie Yang"
       ],
       "year": 2025,
+      "release_date": "2025-12-12",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": "https://huggingface.co/datasets/zhykoties/time-series-language-alignment",
       "categories": [
         "multimodal",
         "benchmark"
       ],
-      "code_url": "https://huggingface.co/datasets/zhykoties/time-series-language-alignment",
       "notes": "Insight Miner; cross-domain TS–language alignment dataset."
     },
     {
@@ -1210,10 +2067,24 @@
         "Bin Yang"
       ],
       "year": 2025,
+      "release_date": "2025-12-16",
+      "venue": null,
+      "group": null,
+      "architecture": "flow",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm"
       ],
-      "code_url": null,
       "notes": "FLAME; flow-enhanced Legendre memory for general forecasting."
     },
     {
@@ -1226,10 +2097,25 @@
         "Hung Le"
       ],
       "year": 2026,
+      "release_date": "2026-02-02",
+      "venue": null,
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/hiepnh137/SpecTF",
       "categories": [
         "multimodal"
       ],
-      "code_url": "https://github.com/hiepnh137/SpecTF",
       "notes": "Spectral Text Fusion for multimodal TS forecasting."
     },
     {
@@ -1248,12 +2134,26 @@
         "Chenghao Liu"
       ],
       "year": 2026,
+      "release_date": "2026-02-12",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": "https://huggingface.co/spaces/Real-TSF/TIME-leaderboard",
       "categories": [
         "benchmark",
         "thuml",
         "jin"
       ],
-      "code_url": "https://huggingface.co/spaces/Real-TSF/TIME-leaderboard",
       "notes": "ICML 2026; THUML+Jin coauthors; leakage-aware zero-shot."
     },
     {
@@ -1270,11 +2170,25 @@
         "Ming Jin"
       ],
       "year": 2026,
+      "release_date": "2026-02-15",
+      "venue": null,
+      "group": null,
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm",
         "jin"
       ],
-      "code_url": null,
       "notes": "金明 coauthor; latent-space predictive learning for TSFMs."
     },
     {
@@ -1291,11 +2205,27 @@
         "Ming Jin"
       ],
       "year": 2026,
+      "release_date": "2026-02-19",
+      "venue": null,
+      "group": "Ming Jin",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "querying",
+        "retrieval"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal",
         "jin"
       ],
-      "code_url": null,
       "notes": "金明; ICML 2026; NLQ4TSDB + NLQTSBench."
     },
     {
@@ -1312,11 +2242,29 @@
         "Shirui Pan"
       ],
       "year": 2026,
+      "release_date": "2026-02-19",
+      "venue": "ICML 2026",
+      "group": "Ming Jin",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": "8B",
+      "pretrain_corpus": null,
+      "tasks": [
+        "understanding",
+        "generation",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal",
         "jin"
       ],
-      "code_url": null,
       "notes": "金明; ICML 2026; Bi-TSI + understanding-guided generation."
     },
     {
@@ -1335,11 +2283,25 @@
         "Mingsheng Long"
       ],
       "year": 2026,
+      "release_date": "2026-03-05",
+      "venue": null,
+      "group": "THUML",
+      "architecture": "MoE",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "8.3B",
+      "pretrain_corpus": "UTSD-3",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/thuml/Large-Time-Series-Model",
       "categories": [
         "tsfm",
         "thuml"
       ],
-      "code_url": "https://github.com/thuml/Large-Time-Series-Model",
       "notes": "THUML / 龙明盛; Timer-S1 8.3B MoE with Serial-Token Prediction; TimeBench."
     },
     {
@@ -1358,11 +2320,66 @@
         "See-Kiong Ng"
       ],
       "year": 2026,
+      "release_date": "2026-05-10",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/HuangJW0821/MarsTSC",
       "categories": [
         "multimodal"
       ],
-      "code_url": "https://github.com/HuangJW0821/MarsTSC",
       "notes": "VLM agentic reasoning for few-shot multimodal TS classification."
+    },
+    {
+      "arxiv_id": "2605.20119",
+      "title": "Toto 2.0: Time Series Forecasting Enters the Scaling Era",
+      "authors": [
+        "Emaad Khwaja",
+        "Chris Lettieri",
+        "Gerald Woo",
+        "Eden Belouadah",
+        "Marc Cenac",
+        "Guillaume Jarry",
+        "Enguerrand Paquin",
+        "Xunyi Zhao",
+        "Viktoriya Zhukov",
+        "Othmane Abou-Amal",
+        "Chenghao Liu",
+        "Ameet Talwalkar",
+        "David Asker"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-19",
+      "venue": null,
+      "group": "Datadog",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "2.5B",
+      "pretrain_corpus": "1T time series points",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/DataDog/toto",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Datadog Toto 2.0; scaling time series foundation models up to 2.5B parameters."
     },
     {
       "arxiv_id": "2605.25045",
@@ -1375,11 +2392,25 @@
         "Ming Jin"
       ],
       "year": 2026,
+      "release_date": "2026-05-24",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": "https://github.com/ztxtech/aion",
       "categories": [
         "benchmark",
         "jin"
       ],
-      "code_url": "https://github.com/ztxtech/aion",
       "notes": "金明; AION harness / next-gen TS tasks."
     },
     {
@@ -1398,12 +2429,65 @@
         "Tianlong Chen"
       ],
       "year": 2026,
+      "release_date": "2026-06-04",
+      "venue": null,
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal",
         "tsfm"
       ],
-      "code_url": null,
       "notes": "TRACE; multimodal time series foundation models."
+    },
+    {
+      "arxiv_id": "2606.16173",
+      "title": "TimeVista: Exploring and Exploiting Vision-Language Models as Judges for Time Series Forecasting",
+      "authors": [
+        "Zhi Chen",
+        "Yuxuan Wang",
+        "Jialong Wu",
+        "Yong Liu",
+        "Haoran Zhang",
+        "Xingjian Su",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-15",
+      "venue": null,
+      "group": "THUML",
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "evaluation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "multimodal",
+        "thuml"
+      ],
+      "notes": "THUML / 龙明盛; Vision-Language Models as evaluators and judges for time series forecasting."
     },
     {
       "arxiv_id": "2607.06973",
@@ -1416,11 +2500,26 @@
         "Abhimanyu Das"
       ],
       "year": 2026,
+      "release_date": "2026-07-08",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
       "categories": [
         "benchmark",
         "multimodal"
       ],
-      "code_url": null,
       "notes": "Rethinking multimodal time-series forecasting evaluation."
     },
     {
@@ -1434,10 +2533,24 @@
         "Yuxuan Liang"
       ],
       "year": 2026,
+      "release_date": "2026-08-18",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
       "categories": [
         "benchmark"
       ],
-      "code_url": null,
       "notes": "LiveHouse-TS; open-world living benchmark for TSFMs."
     },
     {
@@ -1458,10 +2571,24 @@
         "Malik Tiomoko"
       ],
       "year": 2026,
+      "release_date": "2026-09-12",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "145M",
+      "pretrain_corpus": "OpenTS-Archive",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm"
       ],
-      "code_url": null,
       "notes": "Tabby; open pretraining recipe for TSFMs."
     },
     {
@@ -1479,11 +2606,26 @@
         "Zewei Dong"
       ],
       "year": 2026,
+      "release_date": "2026-09-14",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
       "categories": [
         "benchmark",
         "multimodal"
       ],
-      "code_url": null,
       "notes": "Unified multimodal forecasting benchmark with heterogeneous context."
     },
     {
@@ -1497,10 +2639,25 @@
         "Xiaoling Wang"
       ],
       "year": 2026,
+      "release_date": "2026-09-21",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal"
       ],
-      "code_url": null,
       "notes": "TAC-Time; texts as channels for multimodal TS forecasting."
     },
     {
@@ -1518,11 +2675,55 @@
         "Geoffrey Négiar"
       ],
       "year": 2026,
+      "release_date": "2026-09-21",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "256M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "tsfm"
       ],
-      "code_url": null,
       "notes": "t₀; TSFM for forecasting with context."
+    },
+    {
+      "arxiv_id": "2609.25788",
+      "title": "Evaluating Accuracy and Probabilistic Reliability of Zero-Shot Time Series Foundation Models",
+      "authors": [
+        "Panagiotis Michael",
+        "Moysis Symeonides",
+        "Demetris Trihinas"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-22",
+      "venue": "ADBIS 2026",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark"
+      ],
+      "notes": "ADBIS 2026; benchmark study on zero-shot TSFMs analyzing predictive accuracy and probabilistic calibration trade-offs."
     },
     {
       "arxiv_id": "2609.26389",
@@ -1537,12 +2738,59 @@
         "Ming Jin"
       ],
       "year": 2026,
+      "release_date": "2026-09-22",
+      "venue": null,
+      "group": "Ming Jin",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "streaming",
+        "interaction",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
       "categories": [
         "multimodal",
         "jin"
       ],
-      "code_url": null,
       "notes": "金明; TimeInteract — real-time interactive streaming TS intelligence."
+    },
+    {
+      "arxiv_id": "2609.27385",
+      "title": "Forecast Workflow Bench: Evaluating Language-Model Decisions with Budgeted Forecast Tools",
+      "authors": [
+        "Shunya Nagashima"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-23",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "llm4ts"
+      ],
+      "notes": "Forecast Workflow Bench; evaluates LLM-based agentic decision making with budgeted time-series forecasting tools."
     }
   ]
 }

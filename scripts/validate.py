@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate data/papers.json structure and uniqueness."""
+"""Validate data/papers.json structure, schema, and uniqueness."""
 from __future__ import annotations
 
 import json
@@ -11,7 +11,17 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "papers.json"
 ARXIV_RE = re.compile(r"^(\d{4}\.\d{4,5}|[a-z\-]+/\d{7})$")
 
-REQUIRED = {"arxiv_id", "title", "authors", "year", "categories"}
+REQUIRED = {
+    "arxiv_id",
+    "title",
+    "authors",
+    "year",
+    "release_date",
+    "categories",
+    "modalities",
+    "tasks",
+    "code_url",
+}
 
 
 def main() -> int:
@@ -40,6 +50,10 @@ def main() -> int:
             errors.append(f"[{i}] bad year ({aid}): {p['year']!r}")
         if not isinstance(p["categories"], list) or not p["categories"]:
             errors.append(f"[{i}] categories must be non-empty list ({aid})")
+        if not isinstance(p["modalities"], list) or not p["modalities"]:
+            errors.append(f"[{i}] modalities must be non-empty list ({aid})")
+        if not isinstance(p["tasks"], list) or not p["tasks"]:
+            errors.append(f"[{i}] tasks must be non-empty list ({aid})")
         if "code_url" not in p:
             errors.append(f"[{i}] code_url key required (use null) ({aid})")
         if p.get("title", "").strip() == "":

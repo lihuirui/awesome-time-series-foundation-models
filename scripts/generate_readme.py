@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate README.md from data/papers.json."""
+"""Regenerate README.md from data/papers.json with survey links and visual assets."""
 from __future__ import annotations
 
 import json
@@ -27,10 +27,12 @@ def authors_short(authors: list[str], n: int = 3) -> str:
 def entry_md(p: dict) -> str:
     link = f"https://arxiv.org/abs/{p['arxiv_id']}"
     line = f"- **{p['title']}** — {authors_short(p['authors'])} ({p['year']}) [[arXiv]({link})]"
+    if p.get("venue"):
+        line += f" *({p['venue']})*"
     if p.get("code_url"):
         line += f" [[Code]({p['code_url']})]"
     notes = p.get("notes")
-    if notes and len(notes) < 120:
+    if notes and len(notes) < 140:
         line += f" — _{notes}_"
     return line
 
@@ -57,13 +59,28 @@ def main() -> None:
         "> Curated list of **Time-Series Foundation Models (TSFMs)** and "
         "**Multimodal / Temporal VL** papers with **verified arXiv metadata only**.\n"
     )
-    lines.append("> 仅收录经 arXiv API 核验的论文条目；禁止编造标题/作者/年份/链接。\n")
+    lines.append("> 仅收录经 arXiv API 核验的论文条目；严禁编造标题、作者、年份或链接。\n")
+
+    lines.append("\n### 📖 Living Survey / 活体综述\n")
+    lines.append(
+        "- **[Comprehensive Living Survey (时序基础模型全面综述)](survey/SURVEY.md)** — "
+        "涵盖数学定义、四大技术路线、模型对比表、跨模态前沿、评测基准与开放挑战。\n"
+        "- **[BibTeX References (参考文献库)](survey/references.bib)** — "
+        "由 `data/papers.json` 自动生成的完整 BibTeX 数据库。\n"
+    )
+
     lines.append("\n**Maintainer focus:** 龙明盛/THUML · 金明 groups · Chronos-family · major TSFMs.\n")
     lines.append(
         f"\n**Stats:** {len(papers)} verified papers in "
         f"[`data/papers.json`](data/papers.json) (updated {data.get('updated', 'n/a')}).\n"
     )
+
+    lines.append("\n## Visual Landscape / 演化图景\n")
+    lines.append("![TSFM Timeline](survey/figures/tsfm_timeline.png)\n")
+
     lines.append("\n## Table of Contents\n")
+    lines.append("- [Living Survey / 活体综述](#-living-survey--活体综述)")
+    lines.append("- [Visual Landscape / 演化图景](#visual-landscape--演化图景)")
     for _, title in SECTION_MAP:
         anchor = title.split(" / ")[0].lower().replace(" ", "-").replace("&", "").replace(",", "")
         lines.append(f"- [{title}](#{anchor})")
@@ -101,6 +118,10 @@ def main() -> None:
         "- **OpenLTM / Large-Time-Series-Model** — THUML Timer family. "
         "[[GitHub](https://github.com/thuml/Large-Time-Series-Model)]"
     )
+    lines.append(
+        "- **Toto** — Datadog Toto 2.0 open-weights TSFM library. "
+        "[[GitHub](https://github.com/DataDog/toto)]"
+    )
     lines.append("")
 
     lines.append("\n## Resources / 资源\n")
@@ -128,10 +149,14 @@ def main() -> None:
     lines.append("")
 
     lines.append("\n## Maintenance\n")
-    lines.append("```bash\nmake fetch    # refresh titles/authors/years from arXiv HTTPS API\n"
-                 "make validate # schema + count checks\n"
-                 "make count    # print paper count\n"
-                 "make readme   # regenerate this README from data/papers.json\n```\n")
+    lines.append("```bash\nmake all          # run validate, figures, survey-check, bibtex, readme\n"
+                 "make fetch        # refresh titles/authors/years from arXiv HTTPS API\n"
+                 "make validate     # schema + count checks\n"
+                 "make figures      # regenerate all 5 reproducible figures\n"
+                 "make survey-check # verify survey citations, figures and links\n"
+                 "make bibtex       # regenerate survey/references.bib\n"
+                 "make count        # print paper count\n"
+                 "make readme       # regenerate this README from data/papers.json\n```\n")
     lines.append("See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/MAINTENANCE.md](docs/MAINTENANCE.md).\n")
     lines.append("\n## License\n")
     lines.append("CC0-1.0 (see [LICENSE](LICENSE)).\n")
