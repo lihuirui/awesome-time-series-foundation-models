@@ -278,36 +278,6 @@
       "notes": null
     },
     {
-      "arxiv_id": "2310.10688",
-      "title": "A decoder-only foundation model for time-series forecasting",
-      "authors": [
-        "Abhimanyu Das",
-        "Weihao Kong",
-        "Rajat Sen",
-        "Yichen Zhou"
-      ],
-      "year": 2023,
-      "release_date": "2023-10-14",
-      "venue": "ICML 2024",
-      "group": "Google",
-      "architecture": "decoder-only",
-      "tokenization": "patch",
-      "modalities": [
-        "ts"
-      ],
-      "params": "200M",
-      "pretrain_corpus": "100B real & synthetic points",
-      "tasks": [
-        "forecasting"
-      ],
-      "open_weights": true,
-      "code_url": "https://github.com/google-research/timesfm",
-      "categories": [
-        "tsfm"
-      ],
-      "notes": "TimesFM (Google); ICML 2024."
-    },
-    {
       "arxiv_id": "2310.09751",
       "title": "UniTime: A Language-Empowered Unified Model for Cross-Domain Time Series Forecasting",
       "authors": [
@@ -383,6 +353,36 @@
         "survey"
       ],
       "notes": "Jin/Wen survey; LM4TS & LM4STD taxonomy."
+    },
+    {
+      "arxiv_id": "2310.10688",
+      "title": "A decoder-only foundation model for time-series forecasting",
+      "authors": [
+        "Abhimanyu Das",
+        "Weihao Kong",
+        "Rajat Sen",
+        "Yichen Zhou"
+      ],
+      "year": 2023,
+      "release_date": "2023-10-14",
+      "venue": "ICML 2024",
+      "group": "Google",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "200M",
+      "pretrain_corpus": "100B real & synthetic points",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/google-research/timesfm",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "TimesFM (Google); ICML 2024."
     },
     {
       "arxiv_id": "2311.01933",
@@ -1519,6 +1519,43 @@
       "notes": "金明; ICML 2025 Time-VLM — temporal + vision + text via VLMs."
     },
     {
+      "arxiv_id": "2502.21245",
+      "title": "TimesBERT: A BERT-Style Foundation Model for Time Series Understanding",
+      "authors": [
+        "Haoran Zhang",
+        "Yong Liu",
+        "Yunzhong Qiu",
+        "Haixuan Liu",
+        "Zhongyi Pei",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2025,
+      "release_date": "2025-02-28",
+      "venue": null,
+      "group": "THUML",
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "260 billion time points",
+      "tasks": [
+        "understanding",
+        "classification",
+        "imputation",
+        "anomaly_detection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "thuml"
+      ],
+      "notes": "THUML BERT-style encoder foundation model for multi-granularity time series understanding across classification, imputation, and anomaly detection."
+    },
+    {
       "arxiv_id": "2503.01875",
       "title": "Time-MQA: Time Series Multi-Task Question Answering with Context Enhancement",
       "authors": [
@@ -1555,43 +1592,6 @@
         "benchmark"
       ],
       "notes": "Time-MQA; multi-task TS question answering with context."
-    },
-    {
-      "arxiv_id": "2502.21245",
-      "title": "TimesBERT: A BERT-Style Foundation Model for Time Series Understanding",
-      "authors": [
-        "Haoran Zhang",
-        "Yong Liu",
-        "Yunzhong Qiu",
-        "Haixuan Liu",
-        "Zhongyi Pei",
-        "Jianmin Wang",
-        "Mingsheng Long"
-      ],
-      "year": 2025,
-      "release_date": "2025-02-28",
-      "venue": null,
-      "group": "THUML",
-      "architecture": "encoder-only",
-      "tokenization": "patch",
-      "modalities": [
-        "ts"
-      ],
-      "params": null,
-      "pretrain_corpus": "260 billion time points",
-      "tasks": [
-        "understanding",
-        "classification",
-        "imputation",
-        "anomaly_detection"
-      ],
-      "open_weights": null,
-      "code_url": null,
-      "categories": [
-        "tsfm",
-        "thuml"
-      ],
-      "notes": "THUML BERT-style encoder foundation model for multi-granularity time series understanding across classification, imputation, and anomaly detection."
     },
     {
       "arxiv_id": "2505.14766",
@@ -1638,37 +1638,6 @@
         "tsfm"
       ],
       "notes": "Toto (Datadog) + BOOM benchmark."
-    },
-    {
-      "arxiv_id": "2506.11029",
-      "title": "Output Scaling: YingLong-Delayed Chain of Thought in a Large Pretrained Time Series Forecasting Model",
-      "authors": [
-        "Xue Wang",
-        "Tian Zhou",
-        "Jinyang Gao",
-        "Bolin Ding",
-        "Jingren Zhou"
-      ],
-      "year": 2025,
-      "release_date": "2025-05-20",
-      "venue": null,
-      "group": null,
-      "architecture": "decoder-only",
-      "tokenization": "patch",
-      "modalities": [
-        "ts"
-      ],
-      "params": "300M",
-      "pretrain_corpus": null,
-      "tasks": [
-        "forecasting"
-      ],
-      "open_weights": true,
-      "code_url": "https://huggingface.co/qcw1314/YingLong_300m",
-      "categories": [
-        "tsfm"
-      ],
-      "notes": "YingLong; encoder-only pretrained TSFM with delayed CoT / output scaling."
     },
     {
       "arxiv_id": "2505.23719",
@@ -1737,6 +1706,37 @@
       "notes": "ICML 2025; periodical tokenization + parallel decoding; ~4M params."
     },
     {
+      "arxiv_id": "2506.11029",
+      "title": "Output Scaling: YingLong-Delayed Chain of Thought in a Large Pretrained Time Series Forecasting Model",
+      "authors": [
+        "Xue Wang",
+        "Tian Zhou",
+        "Jinyang Gao",
+        "Bolin Ding",
+        "Jingren Zhou"
+      ],
+      "year": 2025,
+      "release_date": "2025-05-20",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "300M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://huggingface.co/qcw1314/YingLong_300m",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "YingLong; encoder-only pretrained TSFM with delayed CoT / output scaling."
+    },
+    {
       "arxiv_id": "2508.05287",
       "title": "FlowState: Sampling-Rate-Equivariant Time-Series Forecasting",
       "authors": [
@@ -1765,50 +1765,6 @@
         "tsfm"
       ],
       "notes": "IBM FlowState; sampling-rate-equivariant SSM+functional decoder; also in granite-tsfm."
-    },
-    {
-      "arxiv_id": "2510.03255",
-      "title": "SciTS: Scientific Time Series Understanding and Generation with LLMs",
-      "authors": [
-        "Wen Wu",
-        "Ziyang Zhang",
-        "Liwei Liu",
-        "Xuenan Xu",
-        "Jimin Zhuang",
-        "Ke Fan",
-        "Qitan Lv",
-        "Junlin Liu",
-        "Chen Zhang",
-        "Zheqi Yuan",
-        "Siyuan Hou",
-        "Tianyi Lin",
-        "Kai Chen",
-        "Bowen Zhou",
-        "Chao Zhang"
-      ],
-      "year": 2025,
-      "release_date": "2025-09-26",
-      "venue": null,
-      "group": null,
-      "architecture": "decoder-only",
-      "tokenization": "patch",
-      "modalities": [
-        "ts",
-        "text"
-      ],
-      "params": "7B",
-      "pretrain_corpus": "Scientific TS",
-      "tasks": [
-        "understanding",
-        "generation"
-      ],
-      "open_weights": true,
-      "code_url": null,
-      "categories": [
-        "multimodal",
-        "benchmark"
-      ],
-      "notes": "ICLR 2026; SciTS benchmark + TimeOmni framework."
     },
     {
       "arxiv_id": "2509.23695",
@@ -1918,6 +1874,40 @@
       "notes": "Mixture-of-Size tokenization; PreSTS corpus; project page also at foundation-model-research.github.io/Kairos."
     },
     {
+      "arxiv_id": "2510.02084",
+      "title": "KAIROS: Unified Training for Universal Non-Autoregressive Time Series Forecasting",
+      "authors": [
+        "Kuiye Ding",
+        "Fanda Fan",
+        "Zheya Wang",
+        "Hongxiao Li",
+        "Yifan Wang",
+        "Lei Wang",
+        "Chunjie Luo",
+        "Jianfeng Zhan"
+      ],
+      "year": 2025,
+      "release_date": "2025-10-03",
+      "venue": null,
+      "group": null,
+      "architecture": "non-autoregressive",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "Universal multi-domain corpus (>1B observations)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Disambiguated from Kairos (2509.25826); universal non-autoregressive segment-level multi-peak distribution modeling."
+    },
+    {
       "arxiv_id": "2510.02410",
       "title": "OpenTSLM: Time-Series Language Models for Reasoning over Multivariate Medical Text- and Time-Series Data",
       "authors": [
@@ -1968,38 +1958,48 @@
       "notes": "OpenTSLM (not OpenTSLab); medical text+TS reasoning."
     },
     {
-      "arxiv_id": "2510.02084",
-      "title": "KAIROS: Unified Training for Universal Non-Autoregressive Time Series Forecasting",
+      "arxiv_id": "2510.03255",
+      "title": "SciTS: Scientific Time Series Understanding and Generation with LLMs",
       "authors": [
-        "Kuiye Ding",
-        "Fanda Fan",
-        "Zheya Wang",
-        "Hongxiao Li",
-        "Yifan Wang",
-        "Lei Wang",
-        "Chunjie Luo",
-        "Jianfeng Zhan"
+        "Wen Wu",
+        "Ziyang Zhang",
+        "Liwei Liu",
+        "Xuenan Xu",
+        "Jimin Zhuang",
+        "Ke Fan",
+        "Qitan Lv",
+        "Junlin Liu",
+        "Chen Zhang",
+        "Zheqi Yuan",
+        "Siyuan Hou",
+        "Tianyi Lin",
+        "Kai Chen",
+        "Bowen Zhou",
+        "Chao Zhang"
       ],
       "year": 2025,
-      "release_date": "2025-10-03",
+      "release_date": "2025-09-26",
       "venue": null,
       "group": null,
-      "architecture": "non-autoregressive",
+      "architecture": "decoder-only",
       "tokenization": "patch",
       "modalities": [
-        "ts"
+        "ts",
+        "text"
       ],
-      "params": null,
-      "pretrain_corpus": "Universal multi-domain corpus (>1B observations)",
+      "params": "7B",
+      "pretrain_corpus": "Scientific TS",
       "tasks": [
-        "forecasting"
+        "understanding",
+        "generation"
       ],
-      "open_weights": null,
+      "open_weights": true,
       "code_url": null,
       "categories": [
-        "tsfm"
+        "multimodal",
+        "benchmark"
       ],
-      "notes": "Disambiguated from Kairos (2509.25826); universal non-autoregressive segment-level multi-peak distribution modeling."
+      "notes": "ICLR 2026; SciTS benchmark + TimeOmni framework."
     },
     {
       "arxiv_id": "2510.12681",
@@ -2374,6 +2374,40 @@
       "notes": "Online dynamic data augmentation via diffusion for pretraining TSFMs; part of Microsoft TimeCraft."
     },
     {
+      "arxiv_id": "2601.19151",
+      "title": "Multimodal Collaborative Debate for Zero-Shot Time Series Reasoning",
+      "authors": [
+        "Patara Trirat",
+        "Jin Myung Kwak",
+        "Jay Heo",
+        "Heejun Lee",
+        "Sung Ju Hwang"
+      ],
+      "year": 2026,
+      "release_date": "2026-01-27",
+      "venue": "EMNLP 2026",
+      "group": null,
+      "architecture": "multi-agent reasoning protocol (TS-Debate)",
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "llm4ts"
+      ],
+      "notes": "EMNLP 2026; TS-Debate inference-time multi-agent protocol coordinating text, vision, and numerical agents."
+    },
+    {
       "arxiv_id": "2602.01588",
       "title": "Spectral Text Fusion: A Frequency-Aware Approach to Multimodal Time-Series Forecasting",
       "authors": [
@@ -2627,6 +2661,77 @@
       "notes": "THUML / 龙明盛; Timer-S1 8.3B MoE with Serial-Token Prediction; TimeBench."
     },
     {
+      "arxiv_id": "2604.10544",
+      "title": "WaveMoE: A Wavelet-Enhanced Mixture-of-Experts Foundation Model for Time Series Forecasting",
+      "authors": [
+        "Shunyu Wu",
+        "Jiawei Huang",
+        "Weibin Feng",
+        "Boxin Li",
+        "Xiao Zhang",
+        "Erli Meng",
+        "Dan Li",
+        "Jian Lou",
+        "See-Kiong Ng"
+      ],
+      "year": 2026,
+      "release_date": "2026-04-12",
+      "venue": "ICLR 2026 TSALM Workshop",
+      "group": null,
+      "architecture": "MoE",
+      "tokenization": "wavelet / patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "ICLR 2026 TSALM; Wavelet-enhanced MoE foundation model routing sub-frequency temporal components."
+    },
+    {
+      "arxiv_id": "2605.09081",
+      "title": "FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models",
+      "authors": [
+        "Karim Othman",
+        "Jonas Petersen",
+        "Matei Ignuta-Ciuncanu",
+        "Camilla Mazzoleni",
+        "Nader Ghrab",
+        "Michael Kroll",
+        "Gerd Kiener",
+        "Michael Weyrich"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-03",
+      "venue": "ICML 2026",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "51M points across 23k executions on 6 industrial embodiments",
+      "tasks": [
+        "pretraining",
+        "benchmark"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/Forgis-Labs/FactoryNet",
+      "categories": [
+        "benchmark",
+        "tsfm"
+      ],
+      "notes": "First universal pretraining corpus for industrial robotics and manufacturing time series across physical embodiments."
+    },
+    {
       "arxiv_id": "2605.09395",
       "title": "Empowering VLMs for Few-Shot Multimodal Time Series Classification via Tailored Agentic Reasoning",
       "authors": [
@@ -2663,6 +2768,104 @@
         "multimodal"
       ],
       "notes": "VLM agentic reasoning for few-shot multimodal TS classification."
+    },
+    {
+      "arxiv_id": "2605.10292",
+      "title": "LeapTS: Rethinking Time Series Forecasting as Adaptive Multi-Horizon Scheduling",
+      "authors": [
+        "Sheng Pan",
+        "Ming Jin",
+        "Bo Du",
+        "Shirui Pan"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-11",
+      "venue": "arXiv",
+      "group": "Ming Jin",
+      "architecture": "hierarchical controller + neural CDE",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "jin"
+      ],
+      "notes": "Ming Jin et al.; reformulates forecasting as dynamic multi-horizon scheduling with hierarchical controller and continuous neural CDE state evolution."
+    },
+    {
+      "arxiv_id": "2605.13711",
+      "title": "MILM: Large Language Models for Multimodal Irregular Time Series with Informative Sampling",
+      "authors": [
+        "Hsing-Huan Chung",
+        "Shijun Li",
+        "Yoav Wald",
+        "Xing Han",
+        "Suchi Saria",
+        "Joydeep Ghosh"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-13",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "LLM-based (XML triplets, two-stage)",
+      "tokenization": "point / XML triplet",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "imputation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "llm4ts"
+      ],
+      "notes": "Represents multimodal irregular time series as XML triplets with informative sampling in LLMs."
+    },
+    {
+      "arxiv_id": "2605.17340",
+      "title": "Olivia: Harmonizing Time Series Foundation Models with Power Spectral Density",
+      "authors": [
+        "Jingru Fei",
+        "Kun Yi",
+        "Alex Xing Wang",
+        "Qingsong Wen",
+        "Xiangxiang Zhu",
+        "Wei Fan"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-17",
+      "venue": "ICML 2026",
+      "group": null,
+      "architecture": "encoder-decoder (spectral harmonized)",
+      "tokenization": "spectral / patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/TSTS13/Olivia",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "ICML 2026; Introduces Harmonizer module to align heterogeneous datasets in power spectral density domain."
     },
     {
       "arxiv_id": "2605.20119",
@@ -2704,6 +2907,40 @@
       "notes": "Datadog Toto 2.0; scaling time series foundation models up to 2.5B parameters."
     },
     {
+      "arxiv_id": "2605.20268",
+      "title": "Chronicle: A Multimodal Foundation Model for Joint Language and Time Series Understanding",
+      "authors": [
+        "Paul Quinlan",
+        "Jeremy Levasseur",
+        "Qingguo Li",
+        "Xiaodan Zhu"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-18",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch + BPE",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "324M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "understanding",
+        "classification",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "tsfm"
+      ],
+      "notes": "324M parameter unified decoder-only transformer trained from scratch on natural language and time series."
+    },
+    {
       "arxiv_id": "2605.25045",
       "title": "AION: Next-Generation Tasks and Practical Harness for Time Series",
       "authors": [
@@ -2734,6 +2971,74 @@
         "jin"
       ],
       "notes": "金明; AION harness / next-gen TS tasks."
+    },
+    {
+      "arxiv_id": "2605.27286",
+      "title": "Falcon-X: A Time Series Foundation Model for Heterogeneous Multivariate Modeling",
+      "authors": [
+        "Yiding Liu",
+        "Yifan Hu",
+        "Hongjie Xia",
+        "Peiyuan Liu",
+        "Hongzhou Chen",
+        "Xilin Dai",
+        "Zewei Dong",
+        "Jiang-Ming Yang"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-26",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "decoder-only / unified prototype diff-attention",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Decouples heterogeneous variates and maps into a unified latent prototype space with Prototype Diff-Attention."
+    },
+    {
+      "arxiv_id": "2605.29401",
+      "title": "Rethinking Post-Training Recipes for Multimodal Time-Series Forecasting",
+      "authors": [
+        "Haoxin Liu",
+        "Yichen Zhou",
+        "Rajat Sen",
+        "B. Aditya Prakash",
+        "Abhimanyu Das"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-28",
+      "venue": "arXiv",
+      "group": "Georgia Tech / Amazon",
+      "architecture": "post-training (PostTime: SFT + RLVR)",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "post-training",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "llm4ts"
+      ],
+      "notes": "PostTime: combines SFT and RLVR to teach LLMs to act as context-guided revisors for numerical TSFM priors."
     },
     {
       "arxiv_id": "2606.01498",
@@ -2775,42 +3080,6 @@
       "notes": "Multi-turn benchmark for agentic TS reasoning with 240 tasks and 2,680 dialogue turns across 8 domains."
     },
     {
-      "arxiv_id": "2605.09081",
-      "title": "FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models",
-      "authors": [
-        "Karim Othman",
-        "Jonas Petersen",
-        "Matei Ignuta-Ciuncanu",
-        "Camilla Mazzoleni",
-        "Nader Ghrab",
-        "Michael Kroll",
-        "Gerd Kiener",
-        "Michael Weyrich"
-      ],
-      "year": 2026,
-      "release_date": "2026-06-03",
-      "venue": "ICML 2026",
-      "group": null,
-      "architecture": null,
-      "tokenization": null,
-      "modalities": [
-        "ts"
-      ],
-      "params": null,
-      "pretrain_corpus": "51M points across 23k executions on 6 industrial embodiments",
-      "tasks": [
-        "pretraining",
-        "benchmark"
-      ],
-      "open_weights": true,
-      "code_url": "https://github.com/Forgis-Labs/FactoryNet",
-      "categories": [
-        "benchmark",
-        "tsfm"
-      ],
-      "notes": "First universal pretraining corpus for industrial robotics and manufacturing time series across physical embodiments."
-    },
-    {
       "arxiv_id": "2606.06285",
       "title": "TRACE: A Temporal Conditional Estimation for Multimodal Time Series Foundation Models",
       "authors": [
@@ -2847,6 +3116,36 @@
         "tsfm"
       ],
       "notes": "TRACE; multimodal time series foundation models."
+    },
+    {
+      "arxiv_id": "2606.10798",
+      "title": "CITRAS-FM: Tiny Time Series Foundation Model for Covariate-Informed Zero-Shot Forecasting",
+      "authors": [
+        "Yosuke Yamaguchi",
+        "Issei Suemitsu",
+        "Yuki Kajihara",
+        "Wenpeng Wei"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-09",
+      "venue": "EUSIPCO 2026",
+      "group": "Hitachi",
+      "architecture": "decoder-only Transformer",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "7M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/hitachi-ais/citras-fm",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "EUSIPCO 2026; 7M-parameter tiny TSFM optimized for real-time CPU inference with covariates."
     },
     {
       "arxiv_id": "2606.16173",
@@ -2887,6 +3186,69 @@
       "notes": "THUML / 龙明盛; Vision-Language Models as evaluators and judges for time series forecasting."
     },
     {
+      "arxiv_id": "2606.18367",
+      "title": "Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting",
+      "authors": [
+        "Yingshuo Wang",
+        "Xian Sun",
+        "Lingdong Kong",
+        "Wei Gao",
+        "Yanhang Li",
+        "Zhichao Fan",
+        "Zexin Zhuang"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-16",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "evaluation",
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark"
+      ],
+      "notes": "Introduces regime-stratified evaluation for traffic speed benchmarks, revealing severe failure modes during congestion phase transitions."
+    },
+    {
+      "arxiv_id": "2606.28670",
+      "title": "MACROCAST: A Vintage-Consistent Time Series Foundation Model for Real-Time Macroeconomic Forecasting",
+      "authors": [
+        "Andrea Carriero",
+        "Davide Pettenuzzo",
+        "Shubhranshu Shekhar"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-27",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "FRED-MD & synthetic macro trajectories",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Vintage-consistent macroeconomic TSFM strictly avoiding revision leakage via synthetic pretraining."
+    },
+    {
       "arxiv_id": "2607.00958",
       "title": "LeNEPA: No-Augmentation Next-Latent Prediction for Time-Series Representation Learning",
       "authors": [
@@ -2917,6 +3279,70 @@
         "tsfm"
       ],
       "notes": "No-augmentation next-latent prediction (JEPA-style) representation learning avoiding destructive time series data augmentations."
+    },
+    {
+      "arxiv_id": "2607.01918",
+      "title": "Zeus: Towards Tuning-Free Foundation Model for Time Series Analysis",
+      "authors": [
+        "Yisong Fu",
+        "Zezhi Shao",
+        "Chengqing Yu",
+        "Yujie Li",
+        "Yongjun Xu",
+        "Xueqi Cheng",
+        "Fei Wang"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-02",
+      "venue": "ICML 2026",
+      "group": "ICT CAS",
+      "architecture": "multi-scale Transformer (U-shaped hierarchy)",
+      "tokenization": "point / patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "imputation",
+        "anomaly_detection",
+        "classification"
+      ],
+      "open_weights": true,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "ICML 2026; Unified tuning-free TSFM with U-shaped hierarchy and Multi-Objective Temporal Masking (MOTM)."
+    },
+    {
+      "arxiv_id": "2607.04919",
+      "title": "When Do Foundation Models Pay Off? A Break-Even Analysis of Pretrained Time Series Forecasters",
+      "authors": [
+        "Nicholas Tan Jerome",
+        "Frank Simon"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-06",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "evaluation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark"
+      ],
+      "notes": "Break-even economic and accuracy analysis comparing TSFMs (Chronos, Moirai, Lag-Llama) against XGBoost/ARIMA across 30 datasets."
     },
     {
       "arxiv_id": "2607.06973",
@@ -2950,6 +3376,40 @@
         "multimodal"
       ],
       "notes": "Rethinking multimodal time-series forecasting evaluation."
+    },
+    {
+      "arxiv_id": "2607.20002",
+      "title": "Post-Training in Time Series Foundation Models: A Unifying Framework",
+      "authors": [
+        "Shifeng Xie",
+        "Ambroise Odonnat",
+        "Zehao Xiao",
+        "Lei Zan",
+        "Linxiao Yang",
+        "Ruichu Cai",
+        "Ievgen Redko"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-15",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "survey"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "survey",
+        "tsfm"
+      ],
+      "notes": "Unifying taxonomy and survey covering post-training paradigms: adaptation, context augmentation, composition, output processing, and specialization."
     },
     {
       "arxiv_id": "2607.24892",
@@ -3081,6 +3541,42 @@
       "notes": "Reinforcement learning post-training for TSFMs with ground-truth neighborhood regularization to prevent reward collapse."
     },
     {
+      "arxiv_id": "2608.13741",
+      "title": "GALA: Generation-Aware Cross-Modal Alignment for Text-to-Time-Series Synthesis",
+      "authors": [
+        "Haochen Zhang",
+        "Gengwei Zhang",
+        "Laura Yao",
+        "Nicholas Konz",
+        "Maciej M. Drozdowski",
+        "Yuan Zhuang",
+        "Hanxun Huang",
+        "Minhao Cheng"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-17",
+      "venue": null,
+      "group": null,
+      "architecture": "diffusion",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "synthesis",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal"
+      ],
+      "notes": "Generation-aware cross-modal alignment framework for high-fidelity text-to-time-series conditional diffusion synthesis."
+    },
+    {
       "arxiv_id": "2608.14106",
       "title": "Forecast Collapse in Time-Series Foundation Models",
       "authors": [
@@ -3184,23 +3680,20 @@
       "notes": "Agentic demand forecasting framework with selective semantic reasoning triggering LLM reasoning only on volatile non-stationarities."
     },
     {
-      "arxiv_id": "2608.13741",
-      "title": "GALA: Generation-Aware Cross-Modal Alignment for Text-to-Time-Series Synthesis",
+      "arxiv_id": "2608.17164",
+      "title": "SCENARIODIFF: A Scenario-level Guidance Framework for Multimodal Time Series Forecasting--Extended Version",
       "authors": [
-        "Haochen Zhang",
-        "Gengwei Zhang",
-        "Laura Yao",
-        "Nicholas Konz",
-        "Maciej M. Drozdowski",
-        "Yuan Zhuang",
-        "Hanxun Huang",
-        "Minhao Cheng"
+        "Tuan-Binh Tran",
+        "Dat Nguyen Cong",
+        "Duc-Trong Le",
+        "Thanh Trung Huynh",
+        "Tung Kieu"
       ],
       "year": 2026,
       "release_date": "2026-08-17",
-      "venue": null,
+      "venue": "arXiv",
       "group": null,
-      "architecture": "diffusion",
+      "architecture": "diffusion (Multimodal Diffusion Transformer)",
       "tokenization": "patch",
       "modalities": [
         "ts",
@@ -3209,7 +3702,6 @@
       "params": null,
       "pretrain_corpus": null,
       "tasks": [
-        "synthesis",
         "forecasting"
       ],
       "open_weights": null,
@@ -3217,7 +3709,7 @@
       "categories": [
         "multimodal"
       ],
-      "notes": "Generation-aware cross-modal alignment framework for high-fidelity text-to-time-series conditional diffusion synthesis."
+      "notes": "Hierarchical reasoning framework decomposing news/reports into scenarios and anchors to guide multimodal diffusion forecasters."
     },
     {
       "arxiv_id": "2608.17299",
@@ -3374,34 +3866,6 @@
       "notes": "Causal analysis framework evaluating failure modes, concentration risks, and bias towards overestimating persistence on Chronos-2 and TimesFM 2.5."
     },
     {
-      "arxiv_id": "2609.06008",
-      "title": "Cadence: Error-Bounded Lossy Compression of Demand Time Series with a Time-Series Foundation Model",
-      "authors": [
-        "Roberto Tacconelli"
-      ],
-      "year": 2026,
-      "release_date": "2026-09-05",
-      "venue": null,
-      "group": null,
-      "architecture": "decoder-only",
-      "tokenization": "patch",
-      "modalities": [
-        "ts"
-      ],
-      "params": "330M",
-      "pretrain_corpus": "TimesFM-3 pretraining corpus",
-      "tasks": [
-        "compression",
-        "forecasting"
-      ],
-      "open_weights": true,
-      "code_url": null,
-      "categories": [
-        "tsfm"
-      ],
-      "notes": "Error-bounded lossy compression pairing Google TimesFM-3 (330M) with adaptive arithmetic coding guaranteeing strict error bounds."
-    },
-    {
       "arxiv_id": "2609.04239",
       "title": "EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series",
       "authors": [
@@ -3430,6 +3894,34 @@
         "tsfm"
       ],
       "notes": "Attention-free state-space / recurrent time series foundation model from LG AI Research specialized for high-frequency financial forecasting."
+    },
+    {
+      "arxiv_id": "2609.06008",
+      "title": "Cadence: Error-Bounded Lossy Compression of Demand Time Series with a Time-Series Foundation Model",
+      "authors": [
+        "Roberto Tacconelli"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-05",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "330M",
+      "pretrain_corpus": "TimesFM-3 pretraining corpus",
+      "tasks": [
+        "compression",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Error-bounded lossy compression pairing Google TimesFM-3 (330M) with adaptive arithmetic coding guaranteeing strict error bounds."
     },
     {
       "arxiv_id": "2609.09586",
@@ -3662,40 +4154,6 @@
       "notes": "Unified multimodal forecasting benchmark with heterogeneous context."
     },
     {
-      "arxiv_id": "2607.20002",
-      "title": "Post-Training in Time Series Foundation Models: A Unifying Framework",
-      "authors": [
-        "Shifeng Xie",
-        "Ambroise Odonnat",
-        "Zehao Xiao",
-        "Lei Zan",
-        "Linxiao Yang",
-        "Ruichu Cai",
-        "Ievgen Redko"
-      ],
-      "year": 2026,
-      "release_date": "2026-09-15",
-      "venue": null,
-      "group": null,
-      "architecture": null,
-      "tokenization": null,
-      "modalities": [
-        "ts"
-      ],
-      "params": null,
-      "pretrain_corpus": null,
-      "tasks": [
-        "survey"
-      ],
-      "open_weights": null,
-      "code_url": null,
-      "categories": [
-        "survey",
-        "tsfm"
-      ],
-      "notes": "Unifying taxonomy and survey covering post-training paradigms: adaptation, context augmentation, composition, output processing, and specialization."
-    },
-    {
       "arxiv_id": "2609.16804",
       "title": "SOTER: A Generative Time-Series Foundation Model for Wearable Human Physiological Signals",
       "authors": [
@@ -3727,35 +4185,6 @@
         "tsfm"
       ],
       "notes": "Generative foundation model for physiological signals; PSD-guided MoE and neural CDE decoder pretrained on 226B points."
-    },
-    {
-      "arxiv_id": "2609.28506",
-      "title": "TW3Cast: A Frozen Router of Lightly Fine-Tuned Foundation Models for Time-Series Forecasting on GIFT-Eval, Selected Entirely on the Training Split",
-      "authors": [
-        "Nathan Thierry",
-        "Andre-Louis Rochet"
-      ],
-      "year": 2026,
-      "release_date": "2026-09-16",
-      "venue": null,
-      "group": null,
-      "architecture": "MoE",
-      "tokenization": "other",
-      "modalities": [
-        "ts"
-      ],
-      "params": null,
-      "pretrain_corpus": null,
-      "tasks": [
-        "forecasting"
-      ],
-      "open_weights": null,
-      "code_url": null,
-      "categories": [
-        "tsfm",
-        "benchmark"
-      ],
-      "notes": "A frozen routing table selecting lightly fine-tuned TSFM specialists (Chronos-2, TiRex, Toto) on GIFT-Eval achieving rank 3 out of 130 without LLM agents."
     },
     {
       "arxiv_id": "2609.20156",
@@ -3885,6 +4314,39 @@
         "benchmark"
       ],
       "notes": "Source-first taxonomy and audit framework separating frozen LLM prior reuse, parametric TSFM pretraining, and RAG."
+    },
+    {
+      "arxiv_id": "2609.22836",
+      "title": "A Hybrid Attention Model Learning Unified Time-aware Patch Representation for Irregular Multivariate Time Series Forecasting",
+      "authors": [
+        "Zhihao Lin",
+        "Li Lin",
+        "Qi Zhang",
+        "Kaiwen Xia",
+        "Shuai Wang",
+        "Jialin Qiao"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-19",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "decoder-only Transformer (hybrid causal mask)",
+      "tokenization": "time-aware patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "VersaTSA (30B observations)",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "benchmark"
+      ],
+      "notes": "Introduces VersaTSA (30B observations) and hybrid attention model learning unified time-aware patch representations for irregular multivariate series."
     },
     {
       "arxiv_id": "2609.24156",
@@ -4113,6 +4575,35 @@
         "llm4ts"
       ],
       "notes": "Forecast Workflow Bench; evaluates LLM-based agentic decision making with budgeted time-series forecasting tools."
+    },
+    {
+      "arxiv_id": "2609.28506",
+      "title": "TW3Cast: A Frozen Router of Lightly Fine-Tuned Foundation Models for Time-Series Forecasting on GIFT-Eval, Selected Entirely on the Training Split",
+      "authors": [
+        "Nathan Thierry",
+        "Andre-Louis Rochet"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-16",
+      "venue": null,
+      "group": null,
+      "architecture": "MoE",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "benchmark"
+      ],
+      "notes": "A frozen routing table selecting lightly fine-tuned TSFM specialists (Chronos-2, TiRex, Toto) on GIFT-Eval achieving rank 3 out of 130 without LLM agents."
     },
     {
       "arxiv_id": "2609.28576",

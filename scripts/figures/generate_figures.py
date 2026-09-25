@@ -73,20 +73,28 @@ def plot_timeline(papers: list[dict]) -> None:
         ("Chronos-2", "2025-10-21", "Amazon", -2.0, 12),
         ("Moirai 2.0", "2025-11-17", "Salesforce", 4.8),
         ("UniShape", "2026-01-10", "Academia", 2.0),
-        ("Timer-S1", "2026-03-05", "THUML", -4.6),
-        ("Toto 2.0", "2026-05-19", "Datadog", 3.6, 0),
-        ("FactoryNet", "2026-06-03", "Academia", -2.8, 0),
-        ("LeNEPA", "2026-07-01", "Ming Jin", 2.2, 0),
-        ("Align-RAG", "2026-08-06", "Harvard", 3.8, -5),
+        ("Timer-S1", "2026-03-05", "THUML", -4.6, 0),
+        ("WaveMoE", "2026-04-12", "Academia", 2.4, -18),
+        ("LeapTS", "2026-05-11", "Ming Jin", -3.8, -15),
+        ("Olivia", "2026-05-17", "Academia", -1.8, -8),
+        ("Chronicle", "2026-05-18", "Academia", 5.6, -14),
+        ("Toto 2.0", "2026-05-19", "Datadog", 4.0, -10),
+        ("Falcon-X", "2026-05-26", "Academia", 1.4, -10),
+        ("FactoryNet", "2026-06-03", "Academia", -5.0, 0),
+        ("CITRAS-FM", "2026-06-09", "Hitachi", -3.2, 12),
+        ("MACROCAST", "2026-06-27", "Academia", 5.2, 0),
+        ("Zeus", "2026-07-02", "Academia", 3.4, 0),
+        ("LeNEPA", "2026-07-01", "Ming Jin", 2.0, 0),
+        ("Align-RAG", "2026-08-06", "Harvard", 4.4, 5),
         ("ReasonCast", "2026-08-15", "Academia", -4.4, 0),
         ("Cadence", "2026-09-05", "Academia", -2.0, -22),
-        ("EXAONE Fin", "2026-09-07", "LG AI", 5.8, -25),
-        ("FlowTSFM", "2026-09-12", "Academia", 1.6, -14),
+        ("EXAONE Fin", "2026-09-07", "LG AI", 5.8, -6),
+        ("FlowTSFM", "2026-09-12", "Academia", 2.4, -10),
         ("Tabby", "2026-09-12", "Academia", -3.8, -5),
         ("TW3Cast", "2026-09-16", "Academia", 3.6, 0),
-        ("QUALS", "2026-09-17", "Academia", 5.2, 22),
+        ("QUALS", "2026-09-17", "Academia", 5.0, 22),
         ("t_0", "2026-09-21", "Academia", -5.4, 0),
-        ("TimeBraid", "2026-09-24", "Academia", 1.8, 16),
+        ("TimeBraid", "2026-09-24", "Academia", 1.4, 16),
         ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22)
     ]
 
@@ -111,6 +119,7 @@ def plot_timeline(papers: list[dict]) -> None:
         "ZJU": "#637939",
         "NXAI": "#843c39",
         "LG AI": "#a55194",
+        "Hitachi": "#b35806",
         "Academia": "#5254a3"
     }
 
@@ -287,30 +296,30 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.5, [
-            ("Decoder-Only & Lossy Compression\n• TimesFM, Timer, Sundial, Chronos-2, Toto, Cadence", 60),
-            ("Non-AR & Attention-Free Routes\n• KAIROS-NAR, EXAONE Finance 1.0, Scale-Aware", 45),
-            ("Sparse MoE & Latent Representation\n• Time-MoE (2.4B), Timer-S1 (8.3B), LeNEPA, TW3Cast", 30),
-            ("Shapelets, Quantiles & PFNs\n• UniShape, FlowTSFM, SwitchPFN, TimesBERT, TTM", 15)
+            ("Decoder-Only, Dynamic Scheduling & Compression\n• TimesFM, Timer, Sundial, LeapTS, Chronos-2, Cadence", 60),
+            ("Non-AR, Attention-Free & Unified\n• KAIROS-NAR, EXAONE Fin, Zeus, Falcon-X, MACROCAST", 45),
+            ("Sparse MoE, Wavelet & Spectral\n• Time-MoE, Timer-S1, WaveMoE, Olivia, TW3Cast", 30),
+            ("Tiny Edge, Shapelets & Quantiles\n• CITRAS-FM (7M), TTM, UniShape, FlowTSFM, VersaTSA", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.8, [
-            ("Model Reprogramming & Adaptation\n• Time-LLM, GPT4TS, CoRA, FedChronos, Post-Training", 60),
-            ("Text Tokenization & Direct Prompting\n• LLMTime, PromptCast, LLM as Planner", 45),
+            ("Model Reprogramming & Adaptation\n• Time-LLM, GPT4TS, CoRA, FedChronos, PostTime", 60),
+            ("Text Tokenization & Direct Prompting\n• LLMTime, PromptCast, LLM as Planner, MILM", 45),
             ("Semantic Alignment & Spatial/RL\n• S2IP-LLM, CALF, STReasoner, RL Post-Training", 30),
             ("In-Context Adaptation & Chorus\n• Align-RAG, ChorusTIC, LLM-Mixer, In-Context Probe", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.2, [
-            ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, GALA, OpenTSLM, ChatTS, SciTS", 60),
-            ("Agentic Reasoning & Orchestration\n• TimeAgent, ReasonCast, ChatAD, TimEvolve", 45),
+            ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 60),
+            ("Agentic Reasoning & Debate\n• TimeAgent, TS-Debate, ReasonCast, ChatAD, TimEvolve", 45),
             ("Visual Time Series & Embodied Sensing\n• VisionTS, Time-VLM, TimeOmni-VL, FactoryNet", 30),
             ("Financial Simulators & Dynamic Harness\n• FINESSE, AION, TAC-Time, TRACE, KG-Chronos-2", 15)
         ], "#feebc8", "#9c4221"),
 
         (86.5, [
-            ("Zero-Shot Forecasting & Leaderboards\n• GIFT-Eval, It's TIME, LiveHouse-TS, TW3Cast", 60),
-            ("Contamination, Revision & Leakage\n• Look-Ahead Bias, Contamination Holdout, VINTAGE-TS", 45),
-            ("Forecast Collapse & Uncertainty\n• Forecast Collapse, SGA Uncertainty, ADBIS 2026", 30),
+            ("Zero-Shot Forecasting & Leaderboards\n• GIFT-Eval, It's TIME, LiveHouse-TS, VersaTSA", 60),
+            ("Contamination, Revision & Break-Even\n• Look-Ahead Bias, Break-Even Analysis, VINTAGE-TS", 45),
+            ("Forecast Collapse & Regime Failures\n• Forecast Collapse, Regime-Dependent, SGA Uncertainty", 30),
             ("Hardware Profiling & Industrial Cost\n• HoliBench, Cost-Aware Study, TimeSage-EV", 15)
         ], "#faf5ff", "#6b46c1")
     ]
@@ -396,6 +405,7 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
     custom_offsets = {
         "2310.08278": ("Lag-Llama (2.4M)", 0, 8),
         "2401.03955": ("TTM (8M)", -25, -14),
+        "2606.10798": ("CITRAS-FM (7M)", 0, -14),
         "2403.00131": ("UniTS (10M)", 25, 8),
         "2501.02945": ("TabPFN-v2 (19M)", 0, 8),
         "2505.23719": ("TiRex (35M)", 0, 8),
@@ -403,7 +413,8 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
         "2402.02368": ("Timer (84M)", 0, 8),
         "2609.13956": ("Tabby (145M)", -15, -14),
         "2310.10688": ("TimesFM (200M)", 0, 8),
-        "2609.06008": ("Cadence (330M)", -32, 10),
+        "2605.20268": ("Chronicle (324M)", -28, 10),
+        "2609.06008": ("Cadence (330M)", 12, 10),
         "2609.24559": ("t_0 (256M)", 28, -12),
         "2403.07815": ("Chronos (710M)", 0, 8),
         "2410.10469": ("Moirai-MoE (1.1B)", 0, -15),

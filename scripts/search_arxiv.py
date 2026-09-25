@@ -38,7 +38,7 @@ def strip_version(aid: str) -> str:
     return re.sub(r"v\d+$", "", aid.strip())
 
 
-def run_query(query: str, max_results: int = 30) -> list[dict]:
+def run_query(query: str, max_results: int = 30, retries: int = 4) -> list[dict]:
     params = {
         "search_query": query,
         "sortBy": "submittedDate",
@@ -47,11 +47,25 @@ def run_query(query: str, max_results: int = 30) -> list[dict]:
     }
     url = f"{API}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(req, timeout=45) as resp:
-            data = resp.read()
-    except Exception as e:
-        print(f"Error querying {query}: {e}")
+    data = None
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                data = resp.read()
+            break
+        except urllib.error.HTTPError as e:
+            wait = 15 * (attempt + 1)
+            if e.code == 429:
+                wait = 25 * (attempt + 1)
+            print(f"  HTTP {e.code} querying '{query[:30]}...'; sleeping {wait}s (attempt {attempt+1}/{retries})", flush=True)
+            time.sleep(wait)
+        except Exception as e:
+            wait = 10 * (attempt + 1)
+            print(f"  Error {e!r}; sleeping {wait}s", flush=True)
+            time.sleep(wait)
+
+    if data is None:
+        print(f"Failed to query {query}")
         return []
 
     root = ET.fromstring(data)
@@ -102,7 +116,7 @@ def main():
                 candidates[aid] = r
                 new_count += 1
         print(f"  Found {len(res)} results, {new_count} new candidates")
-        time.sleep(3.5)
+        time.sleep(6.0)
 
     print(f"\nTotal new unique candidates found: {len(candidates)}")
     # Sort candidates by publication date descending

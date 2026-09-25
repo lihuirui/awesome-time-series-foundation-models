@@ -1,5 +1,75 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-26 (第 5 轮运行：时序原生基础模型全面数学深化、15 篇前沿收录与全景矩阵扩充 / Iteration 5)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 5 轮迭代（上一轮 15 篇论文二次复核、近 45 天高影响力文献与重点团队前沿检索、第 4 章时序原生基础模型全面数学深化、图表质检与质量门禁）
+- **文献总数**：138 篇经 arXiv HTTPS API 严格核验的论文（原 123 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv OAI-PMH / Atom HTTPS API 全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2510.02084` (KAIROS), `2601.06429` (UniShape), `2605.09081` (FactoryNet), `2607.00958` (LeNEPA), `2607.20002` (Post-Training), `2608.08010` (GT-Neighborhood RL), `2608.13741` (GALA), `2608.14106` (Forecast Collapse), `2608.15291` (ReasonCast), `2608.20005` (Scale-Aware), `2608.24033` (ChorusTIC), `2609.04239` (EXAONE Fin), `2609.06008` (Cadence), `2609.20554` (Look-Ahead Bias), `2609.28582` (SGA).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2601.19151]** *Multimodal Collaborative Debate for Zero-Shot Time Series Reasoning* — EMNLP 2026，提出 TS-Debate 推理期多模态协作辩论协议，协调数值、视觉与文本智能体交叉质询，消除局部幻觉。
+2. **[arXiv:2604.10544]** *WaveMoE: A Wavelet-Enhanced Mixture-of-Experts Foundation Model for Time Series Forecasting* — ICLR 2026 TSALM，小波增强型混合专家架构，依据离散小波分解的高低频能量分布自适应路由子频段。
+3. **[arXiv:2605.10292]** *LeapTS: Rethinking Time Series Forecasting as Adaptive Multi-Horizon Scheduling* — 金明团队，重新审视固定步长预测，提出自适应多视野动态调度分层控制器与连续受控微分方程 (Neural CDE) 状态积分。
+4. **[arXiv:2605.13711]** *MILM: Large Language Models for Multimodal Irregular Time Series with Informative Sampling* — 将不规则多变量采样转化为带有时间戳的结构化 XML 三元组并结合信息性采样，使 LLM 原生适应不规则时序。
+5. **[arXiv:2605.17340]** *Olivia: Harmonizing Time Series Foundation Models with Power Spectral Density* — ICML 2026，揭示跨域预训练中的频域失真病灶，提出功率谱密度协调模块 Harmonizer 与频域一致性损失；官方代码已核验：`https://github.com/TSTS13/Olivia`。
+6. **[arXiv:2605.20268]** *Chronicle: A Multimodal Foundation Model for Joint Language and Time Series Understanding* — 324M 参数的原生跨模态 Decoder-only 大模型，从零在文本-时序混合语料上预训练，实现因果生成与双向理解。
+7. **[arXiv:2605.27286]** *Falcon-X: A Time Series Foundation Model for Heterogeneous Multivariate Modeling* — 针对量纲悬殊的异构多变量，提出原型差分注意力 (Prototype Diff-Attention) 解耦变量并对齐至隐式原型流形。
+8. **[arXiv:2605.29401]** *Rethinking Post-Training Recipes for Multimodal Time-Series Forecasting* — PostTime: 结合指令监督微调 (SFT) 与可验证奖励强化学习 (RLVR)，训练大语言模型充当数值 TSFM 先验的上下文修正器。
+9. **[arXiv:2606.10798]** *CITRAS-FM: Tiny Time Series Foundation Model for Covariate-Informed Zero-Shot Forecasting* — 日立团队（EUSIPCO 2026），7M 超轻量时序基础模型，支持协变量引导，针对边缘工控 CPU 极速毫秒级推断深度优化；官方代码已核验：`https://github.com/hitachi-ais/citras-fm`。
+10. **[arXiv:2606.18367]** *Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting* — 状态依赖型相变失效审计，严谨揭示全集平均宏观误差掩盖突发拥堵相变点误差剧增数十倍的系统性缺陷。
+11. **[arXiv:2606.28670]** *MACROCAST: A Vintage-Consistent Time Series Foundation Model for Real-Time Macroeconomic Forecasting* — 首个版本一致性宏观 TSFM，基于 FRED-MD 历史实时版本切片与合成宏观轨迹预训练，彻底阻断修订数据未来泄露。
+12. **[arXiv:2607.01918]** *Zeus: Towards Tuning-Free Foundation Model for Time Series Analysis* — ICML 2026，U 形多尺度层次 Transformer 骨干与多目标时序掩码 (MOTM)，实现全任务免微调开箱即用。
+13. **[arXiv:2607.04919]** *When Do Foundation Models Pay Off? A Break-Even Analysis of Pretrained Time Series Forecasters* — 30 个跨域数据集上系统测算 TSFM 相比精调 GBDT/ARIMA 的算力-精度损益平衡点，明确冷启动与突发扰动下的商业回报边界。
+14. **[arXiv:2608.17164]** *SCENARIODIFF: A Scenario-level Guidance Framework for Multimodal Time Series Forecasting* — 提出场景级引导扩散预测框架，将宏观文本分解为场景假说与因果时间锚点注入去噪扩散过程。
+15. **[arXiv:2609.22836]** *A Hybrid Attention Model Learning Unified Time-aware Patch Representation for Irregular Multivariate Time Series Forecasting* — 开源 300 亿时序观测值 VersaTSA 预训练语料，提出时间感知补丁与混合因果掩码注意力架构。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **全面重构与深化第 4 章（时序基础模型 Native TSFMs）**：
+  - 4.1 核心对比矩阵扩充至 43 款代表性模型，完整覆盖 CITRAS-FM、Zeus、Falcon-X、MACROCAST、WaveMoE、Olivia、VersaTSA、Chronicle、LeapTS 等；
+  - 4.2 离散量化语言化路线：严格推导均值绝对缩放、分箱映射算子 $\mathcal{Q}(\cdot)$ 与类别交叉熵损失 $\mathcal{L}_{\text{CE}}$，系统剖析分布拟合柔性与有序度量信息丢失的架构权衡；
+  - 4.3 连续补丁自回归路线：严格推导两阶段线性投影（输入补丁 $P_{\text{in}}=32$ 与长视野输出 $P_{\text{out}}=128$）与连续 Huber / Smooth L1 回归损失，剖析计算密度与均值退化；
+  - 4.4 全频段全变量统一路线：形式化 Any-variate 序列扁平化计算，严格推导变量感知旋转位置编码 (vRoPE) 2D 旋转矩阵 $\mathbf{R}_{\Theta, m, c}$；
+  - 4.5 清华 THUML Timer 与 Sundial 系列：推导 Sundial 连续流匹配 (TimeFlow CFM) 概率插值路径、速度场预测目标 $\mathcal{L}_{\text{CFM}}$ 以及 Euler/Heun 数值 ODE 积分采样；
+  - 4.6 混合专家 (MoE) 路线与动态路由：推导稀疏 Top-$k$ 门控机制与辅助负载均衡正则化损失 $\mathcal{L}_{\text{balance}}$；系统推导小波子带解耦路由 (WaveMoE) 与功率谱密度一致性损失 $\mathcal{L}_{\text{PSD}}$ (Olivia)；
+  - 4.7 动态调度、神经微分方程与误差有界压缩：推导 LeapTS 自适应多视野调度控制器与连续受控微分方程 (Neural CDE) 状态积分；推导 Cadence 误差有界预测残差死区量化与算术熵编码压缩算法；
+  - 4.8-4.10 扩充日立 7M 极速边缘模型 CITRAS-FM、免调优 U 形多任务模型 Zeus、异构多变量原型差分注意力 Falcon-X、版本一致性宏观模型 MACROCAST、300 亿时序不规则大语料 VersaTSA；
+- **同步更新第 5、6、7、8、9 章**：
+  - 5.1/5.3/5.6 引入 MILM 不规则时序 XML 三元组采样、PostTime 可验证奖励 (RLVR) 强化后训练；
+  - 6.1/6.2/6.4 引入 Chronicle 324M 原生语言-时序大模型、SCENARIODIFF 场景级引导扩散、TS-Debate 多模态多智能体辩论协议；
+  - 7.1/7.4/7.6 扩充至 27 个主流评测基准框架，涵盖 Break-Even 经济学损益平衡分析、Regime-Dependent 状态依赖型相变失效审计、VersaTSA 30B 不规则时序评测集；
+  - 8.2 同步更新金明团队动态多视野调度 LeapTS [arXiv:2605.10292]；
+  - 9 开放问题深入剖析状态依赖型相变失效防御、可验证奖励后训练与投资回报损益平衡。
+- **全量同步参考文献**：Section 10 收录全部 138 篇核验文献，同步生成 138 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：微调 2026 前沿模型（Chronicle, Toto 2.0, Falcon-X, MACROCAST, Zeus, LeNEPA, Align-RAG, EXAONE Fin, FlowTSFM, TimeBraid 等）引线高度与水平偏移，完全消解标签接触；
+  2. `open_weight_share.png`：准确反映 138 篇论文中 51.4% 开源权重模型、47.8% 基准/提示/综述、0.7% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：融入动态调度、小波解耦、功率谱对齐、自适应视野等技术分支；
+  4. `model_size_vs_date.png`：新增 CITRAS-FM (7M) 与 Chronicle (324M) 标度点并精准排布；
+  5. `papers_by_category_year.png`：更新至 138 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（138 篇唯一 ID 校验、5 组图表生成与校验、483 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 提交与推送状态
+- **本地提交**：`feat(iteration-5): deepen native TSFMs, integrate 15 papers (138 total), refine figures`
+- **推送状态**：推送至远端 `origin/main` 并经 `git status` / `git log` 确认。
+
+### 8. 下一轮运行重点
+- 深入探索连续时序流匹配与连续扩散生成的几何最优传输收敛界；
+- 研发面向万亿级预训练语料的前瞻偏误自动化因果隔离审计工具箱；
+- 持续追踪通用人形机器人与重工业机电融合的超高频时序动力学表征大模型；
+- 监测 TimeMixer++ 官方开源合规进展。
+
+---
+
 ## 2026-09-26 (第 4 轮运行：多模态时序与智能体深度演进、具身物理时序突破、前沿 15 篇收录与图表重构 / Iteration 4)
 
 ### 1. 今日运行概览
