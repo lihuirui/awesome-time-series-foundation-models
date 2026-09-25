@@ -67,25 +67,32 @@ def plot_timeline(papers: list[dict]) -> None:
         ("Sundial", "2025-02-03", "THUML", -2.2),
         ("TimesBERT", "2025-02-28", "THUML", 4.9),
         ("TiRex", "2025-05-27", "NXAI", 3.2),
-        ("FlowState", "2025-08-08", "Academia", -1.8),
+        ("FlowState", "2025-08-08", "Academia", -1.8, -10),
         ("Kairos", "2025-09-25", "Academia", 4.2),
-        ("Chronos-2", "2025-10-21", "Amazon", -3.3),
+        ("KAIROS-NAR", "2025-10-03", "Academia", -3.8, 0),
+        ("Chronos-2", "2025-10-21", "Amazon", -2.0, 12),
         ("Moirai 2.0", "2025-11-17", "Salesforce", 4.8),
+        ("UniShape", "2026-01-10", "Academia", 2.0),
         ("Timer-S1", "2026-03-05", "THUML", -4.6),
         ("Toto 2.0", "2026-05-19", "Datadog", 3.6, 0),
-        ("Align-RAG", "2026-08-06", "Harvard", 2.2, 0),
-        ("FlowTSFM", "2026-09-12", "Academia", 1.8, -8),
-        ("Tabby", "2026-09-12", "Academia", -3.6, 0),
+        ("FactoryNet", "2026-06-03", "Academia", -2.8, 0),
+        ("LeNEPA", "2026-07-01", "Ming Jin", 2.2, 0),
+        ("Align-RAG", "2026-08-06", "Harvard", 3.8, -5),
+        ("ReasonCast", "2026-08-15", "Academia", -4.4, 0),
+        ("Cadence", "2026-09-05", "Academia", -2.0, -22),
+        ("EXAONE Fin", "2026-09-07", "LG AI", 5.8, -25),
+        ("FlowTSFM", "2026-09-12", "Academia", 1.6, -14),
+        ("Tabby", "2026-09-12", "Academia", -3.8, -5),
         ("TW3Cast", "2026-09-16", "Academia", 3.6, 0),
-        ("QUALS", "2026-09-17", "Academia", 5.4, 0),
-        ("t_0", "2026-09-21", "Academia", -5.3, 0),
-        ("TimeBraid", "2026-09-24", "Academia", 1.8, 8),
-        ("SwitchPFN", "2026-09-24", "Academia", -1.8, 0)
+        ("QUALS", "2026-09-17", "Academia", 5.2, 22),
+        ("t_0", "2026-09-21", "Academia", -5.4, 0),
+        ("TimeBraid", "2026-09-24", "Academia", 1.8, 16),
+        ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22)
     ]
 
     dates = [datetime.datetime.strptime(m[1], "%Y-%m-%d") for m in milestones]
 
-    fig, ax = plt.subplots(figsize=(18, 9))
+    fig, ax = plt.subplots(figsize=(19, 9.5))
     fig.patch.set_facecolor("#ffffff")
     ax.set_facecolor("#ffffff")
 
@@ -103,6 +110,7 @@ def plot_timeline(papers: list[dict]) -> None:
         "Harvard": "#393b79",
         "ZJU": "#637939",
         "NXAI": "#843c39",
+        "LG AI": "#a55194",
         "Academia": "#5254a3"
     }
 
@@ -279,30 +287,30 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.5, [
-            ("Decoder-Only: Next-Patch / AR\n• TimesFM, Timer, Sundial, Chronos-2, Toto, Tabby", 60),
-            ("Sparse MoE & Training Routers\n• Time-MoE (2.4B), Timer-S1 (8.3B), SOTER, TW3Cast", 45),
-            ("Encoder-Only & Quantile Transport\n• MOMENT, TimesBERT, FlowTSFM, SwitchPFN, TTM", 30),
-            ("Continuous Flow & Diffusion\n• FlowState, FLAME, DiTS, OATS, QUALS", 15)
+            ("Decoder-Only & Lossy Compression\n• TimesFM, Timer, Sundial, Chronos-2, Toto, Cadence", 60),
+            ("Non-AR & Attention-Free Routes\n• KAIROS-NAR, EXAONE Finance 1.0, Scale-Aware", 45),
+            ("Sparse MoE & Latent Representation\n• Time-MoE (2.4B), Timer-S1 (8.3B), LeNEPA, TW3Cast", 30),
+            ("Shapelets, Quantiles & PFNs\n• UniShape, FlowTSFM, SwitchPFN, TimesBERT, TTM", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.8, [
-            ("Model Reprogramming & Adapters\n• Time-LLM, GPT4TS, CoRA, LLM4TS, FedChronos", 60),
+            ("Model Reprogramming & Adaptation\n• Time-LLM, GPT4TS, CoRA, FedChronos, Post-Training", 60),
             ("Text Tokenization & Direct Prompting\n• LLMTime, PromptCast, LLM as Planner", 45),
-            ("Cross-Modal Semantic & Spatial RL\n• S2IP-LLM, CALF, AutoTimes, STReasoner, TimeBraid", 30),
-            ("Training-Free In-Context Adaptation\n• Align-RAG, LLM-Mixer, In-Context Predictor", 15)
+            ("Semantic Alignment & Spatial/RL\n• S2IP-LLM, CALF, STReasoner, RL Post-Training", 30),
+            ("In-Context Adaptation & Chorus\n• Align-RAG, ChorusTIC, LLM-Mixer, In-Context Probe", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.2, [
-            ("Unified TS-Text & Reasoning\n• TimeBraid, OpenTSLM, ChatTS, ChatTime, SciTS", 60),
-            ("Anomaly Reasoning & Dialog Agents\n• ChatAD, Sonar-TS, TimeInteract, TimEvolve", 45),
-            ("Visual Time Series Alignment & Diffusion\n• VisionTS, Time-VLM, TimeOmni-VL, DiTS", 30),
-            ("Financial Simulators & Context Channels\n• FINESSE, TAC-Time, TRACE, KG-Chronos-2, t_0", 15)
+            ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, GALA, OpenTSLM, ChatTS, SciTS", 60),
+            ("Agentic Reasoning & Orchestration\n• TimeAgent, ReasonCast, ChatAD, TimEvolve", 45),
+            ("Visual Time Series & Embodied Sensing\n• VisionTS, Time-VLM, TimeOmni-VL, FactoryNet", 30),
+            ("Financial Simulators & Dynamic Harness\n• FINESSE, AION, TAC-Time, TRACE, KG-Chronos-2", 15)
         ], "#feebc8", "#9c4221"),
 
         (86.5, [
             ("Zero-Shot Forecasting & Leaderboards\n• GIFT-Eval, It's TIME, LiveHouse-TS, TW3Cast", 60),
-            ("Data Contamination & Revision Audit\n• Contamination Holdout, VINTAGE-TS, Tracing", 45),
-            ("Calibration, Dependence & Causal\n• ADBIS 2026, Causal Analysis, Interweaving", 30),
+            ("Contamination, Revision & Leakage\n• Look-Ahead Bias, Contamination Holdout, VINTAGE-TS", 45),
+            ("Forecast Collapse & Uncertainty\n• Forecast Collapse, SGA Uncertainty, ADBIS 2026", 30),
             ("Hardware Profiling & Industrial Cost\n• HoliBench, Cost-Aware Study, TimeSage-EV", 15)
         ], "#faf5ff", "#6b46c1")
     ]
@@ -395,10 +403,8 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
         "2402.02368": ("Timer (84M)", 0, 8),
         "2609.13956": ("Tabby (145M)", -15, -14),
         "2310.10688": ("TimesFM (200M)", 0, 8),
-        "2609.24559": ("t_0 (256M)", 10, 8),
-        "2506.11029": ("YingLong (300M)", 0, 8),
-        "2402.02592": ("Moirai (311M)", 20, -14),
-        "2402.03885": ("MOMENT (385M)", -20, 8),
+        "2609.06008": ("Cadence (330M)", -32, 10),
+        "2609.24559": ("t_0 (256M)", 28, -12),
         "2403.07815": ("Chronos (710M)", 0, 8),
         "2410.10469": ("Moirai-MoE (1.1B)", 0, -15),
         "2502.00816": ("Sundial (1.5B)", 35, -5),

@@ -1,5 +1,5 @@
 {
-  "verified_count": 93,
+  "verified_count": 123,
   "verified_ids": [
     "2202.07125",
     "2210.08964",
@@ -45,14 +45,17 @@
     "2501.02945",
     "2502.00816",
     "2502.04395",
+    "2502.21245",
     "2503.01875",
     "2505.14766",
     "2505.23719",
     "2506.06005",
     "2506.11029",
     "2508.05287",
+    "2509.23695",
     "2509.24803",
     "2509.25826",
+    "2510.02084",
     "2510.02410",
     "2510.03255",
     "2510.12681",
@@ -62,6 +65,8 @@
     "2512.11251",
     "2512.14253",
     "2601.03248",
+    "2601.06429",
+    "2601.13546",
     "2601.19040",
     "2602.01588",
     "2602.06597",
@@ -70,22 +75,42 @@
     "2602.17001",
     "2602.17149",
     "2603.04791",
+    "2605.09081",
     "2605.09395",
     "2605.20119",
     "2605.25045",
     "2606.01498",
     "2606.06285",
     "2606.16173",
+    "2607.00958",
     "2607.06973",
+    "2607.20002",
     "2607.24892",
+    "2608.01290",
+    "2608.05571",
+    "2608.08010",
+    "2608.13741",
+    "2608.14106",
     "2608.14270",
+    "2608.15291",
     "2608.17299",
+    "2608.20005",
+    "2608.22968",
+    "2608.24033",
+    "2608.24303",
+    "2609.04239",
+    "2609.06008",
+    "2609.09586",
     "2609.10357",
+    "2609.11993",
+    "2609.12412",
     "2609.13640",
     "2609.13956",
     "2609.15087",
     "2609.16804",
     "2609.20156",
+    "2609.20554",
+    "2609.21381",
     "2609.21425",
     "2609.24156",
     "2609.24559",
@@ -93,7 +118,12 @@
     "2609.25788",
     "2609.25980",
     "2609.26389",
-    "2609.27385"
+    "2609.27385",
+    "2609.28506",
+    "2609.28576",
+    "2609.28582",
+    "2609.29792",
+    "2609.29814"
   ],
   "added_this_cycle": [
     "2605.20119",
@@ -203,7 +233,7 @@
     "decision": "Leave code_url null; do not invent a link. Document intended kwuking/TimeMixer + anonymous.4open URLs in notes/log only."
   },
   "method": "arXiv Atom API via HTTPS (export.arxiv.org) + title/author cross-check; GitHub API (api.github.com/repos/...) for code_url verification",
-  "date": "2026-09-25",
+  "date": "2026-09-26",
   "runs": [
     {
       "date": "2026-09-25",
@@ -268,6 +298,77 @@
         }
       ],
       "result": "All 15 new candidate papers verified via arXiv Atom API (HTTPS). Code links checked via GitHub / git ls-remote. Total papers increased from 93 to 108."
+    },
+    {
+      "date": "2026-09-26",
+      "run": 4,
+      "re_verified_prior_run": [
+        "2502.21245",
+        "2509.23695",
+        "2601.13546",
+        "2608.01290",
+        "2608.05571",
+        "2608.22968",
+        "2608.24303",
+        "2609.09586",
+        "2609.11993",
+        "2609.12412",
+        "2609.21381",
+        "2609.28506",
+        "2609.28576",
+        "2609.29792",
+        "2609.29814"
+      ],
+      "re_verification_result": "All 15 papers from Iteration 3 re-verified via official HTTPS arXiv OAI-PMH API (title/author/date match 100%).",
+      "query_strategy": [
+        "au:Long_Mingsheng (priority THUML check)",
+        "au:Jin_Ming AND (ti:\"time\" OR abs:\"time series\") (priority Ming Jin check)",
+        "all:\"Chronos\" AND all:\"time series\" (priority Chronos family check)",
+        "ti:\"time series foundation model\" OR abs:\"time series foundation model\"",
+        "all:\"foundation model\" AND all:\"time series\" AND (all:\"forecasting\" OR all:\"zero-shot\")",
+        "all:\"multimodal\" AND all:\"time series\" AND (all:\"foundation\" OR all:\"reasoning\" OR all:\"agent\")",
+        "all:\"time series\" AND all:\"reasoning\" AND all:\"agent\"",
+        "\"robotics\" AND \"time series\" AND \"foundation model\"",
+        "\"embodied\" AND \"time series\""
+      ],
+      "verified_added": [
+        "2510.02084",
+        "2601.06429",
+        "2605.09081",
+        "2607.00958",
+        "2607.20002",
+        "2608.08010",
+        "2608.13741",
+        "2608.14106",
+        "2608.15291",
+        "2608.20005",
+        "2608.24033",
+        "2609.04239",
+        "2609.06008",
+        "2609.20554",
+        "2609.28582"
+      ],
+      "github_api_checks": [
+        {
+          "repo": "Forgis-Labs/FactoryNet",
+          "status": 200,
+          "verified": true,
+          "note": "Public repository confirmed via git ls-remote (returncode 0)."
+        },
+        {
+          "repo": "ztxtech/aion",
+          "status": 200,
+          "verified": true,
+          "note": "Public repository confirmed via git ls-remote (returncode 0)."
+        },
+        {
+          "repo": "langotime/lenepa-milets-2026",
+          "status": 200,
+          "verified": true,
+          "note": "Public repository confirmed via git ls-remote (returncode 0)."
+        }
+      ],
+      "result": "All 15 new candidate papers verified via official arXiv OAI-PMH API (HTTPS). Code links checked via git ls-remote. Total papers increased from 108 to 123."
     }
   ]
 }

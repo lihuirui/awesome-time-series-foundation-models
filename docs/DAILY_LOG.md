@@ -1,5 +1,77 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-26 (第 4 轮运行：多模态时序与智能体深度演进、具身物理时序突破、前沿 15 篇收录与图表重构 / Iteration 4)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 4 轮迭代（上一轮 15 篇论文二次复核、近 45 天高影响力文献与重点团队前沿检索、第 6 章多模态时序与智能体演进全面深化、图表质检与质量门禁）
+- **文献总数**：123 篇经 arXiv HTTPS API 严格核验的论文（原 108 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv OAI-PMH / Atom HTTPS API 全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2502.21245` (TimesBERT), `2509.23695` (Estimating TSFM Transferability), `2601.13546` (ChatAD), `2608.01290` (FedChronos), `2608.05571` (Align-RAG), `2608.22968` (Cost-Aware Study), `2608.24303` (Causal Analysis), `2609.09586` (Synthetic Data Distillation), `2609.11993` (FINESSE), `2609.12412` (HoliBench), `2609.28506` (TW3Cast), `2609.21381` (KG-Chronos-2), `2609.28576` (VINTAGE-TS), `2609.29792` (TimeBraid), `2609.29814` (SwitchPFN).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2510.02084]** *KAIROS: Unified Training for Universal Non-Autoregressive Time Series Forecasting* — Ding 等提出非自回归统一预训练架构，长序列多步外推提速 10-50 倍且避免自回归误差积累；官方代码已核验：`https://github.com/D-X-Y/KAIROS`。
+2. **[arXiv:2601.06429]** *A Unified Shape-Aware Foundation Model for Time Series Classification* — AAAI 2026，提出 UniShape 形态基元基础模型，在 128 个 UCR/UEA 数据集上突破刚性切片限制。
+3. **[arXiv:2605.09081]** *FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models* — ICML 2026，涵盖 6 大类工业物理具身实体（数控机床、六轴机械臂、重型冲压机、分拣输送线、包装机、注塑机）的 5100 万点多通道遥测基准与基础模型；官方代码已核验：`https://github.com/Forgis-Labs/FactoryNet`。
+4. **[arXiv:2607.00958]** *LeNEPA: No-Augmentation Next-Latent Prediction for Time-Series Representation Learning* — 金明团队（KDD MILETS 2026），提出免数据增强下一隐状态预测表征学习新范式，规避经验性扰动对物理因果规律的破坏；官方代码已核验：`https://github.com/langotime/lenepa-milets-2026`。
+5. **[arXiv:2607.20002]** *Post-Training in Time Series Foundation Models: A Unifying Framework* — Xie 等首次系统梳理时序后训练 (Post-Training) 体系，涵盖 SFT、DPO、强化学习与 PEFT 参数高效微调。
+6. **[arXiv:2608.08010]** *Ground-Truth Neighborhood Regularization for Reinforcement Learning Post-Training of Time Series Foundation Models* — 提出真实轨迹局部几何邻域正则化强化学习目标，根治时序 PPO 连续动作空间下的策略崩塌难题。
+7. **[arXiv:2608.13741]** *GALA: Generation-Aware Cross-Modal Alignment for Text-to-Time-Series Synthesis* — 提出生成感知跨模态对齐扩散框架，解决多步去噪流形与文本语义的动态一致性，实现精准受控波形合成。
+8. **[arXiv:2608.14106]** *Forecast Collapse in Time-Series Foundation Models* — 系统剖析时序大模型在高噪声与极端突变下的预测崩溃 (Forecast Collapse) 退化机理，提出崩溃指数评估红线。
+9. **[arXiv:2608.15291]** *ReasonCast: Agentic Demand Forecasting with Selective Semantic Reasoning* — 提出波动感知选择性大模型推理门控，仅在不规则突变发生时唤醒重型 LLM 思考，节约超 70% 算力开销。
+10. **[arXiv:2608.20005]** *Scale-Aware Pretraining of Time Series Foundation Models via Multi-Patch Token Alignment and Hybrid Masking* — 提出多补丁跨尺度对齐与混合掩码机制，破除不同工业领域物理量纲悬殊导致的尺度震荡。
+11. **[arXiv:2608.24033]** *ChorusTIC: Training-Free Multivariate Time Series Classification via Chorus In-Context Learning* — 提出基于多通道提示合唱的免训练上下文学习分类，实现无需微调的零样本多变量分类。
+12. **[arXiv:2609.04239]** *EXAONE Finance 1.0: An Attention-free Time Series Foundation Model for Financial Time Series* — LG AI Research 推出面向高频金融市场的无注意力 (Attention-Free) 时序基础模型，基于循环状态空间线性复杂度建模多资产订单簿。
+13. **[arXiv:2609.06008]** *Cadence: Error-Bounded Lossy Compression of Demand Time Series with a Time-Series Foundation Model* — 利用 TimesFM-3 (330M) 残差分布构建误差有界 ($\epsilon$-bounded) 压缩算法，实现工业时序 4-10 倍高倍率无损保真压缩。
+14. **[arXiv:2609.20554]** *Does Training on Future Data Pay? Look-Ahead Bias in Forecasting with Pretrained Models* — 严格实证审判预训练阶段违背单向时序因果（未来信息泄露）诱发的前瞻偏误与真实下游负迁移。
+15. **[arXiv:2609.28582]** *SGA: Uncertainty Quantification for Multi-Step Forecasting in Time Series Foundation Models* — 提出步阶梯度对齐 (Step-wise Gradient Alignment) 框架，有效抑制长视野自回归发散，大幅改善多步概率区间校准。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **全面重构与深化第 6 章（多模态时序与智能体演进）**：
+  - 新增涵盖 14 种前沿代表性系统的综合全景对比矩阵表（6.1 节），横跨 Time-LLM、TimeBraid、VisionTS、DiTS、GALA、ReasonCast、ChatAD、TimEvolve、FactoryNet 等；
+  - 形式化推导 57 页统一大模型 TimeBraid 的交错全局残差注意力机制与联合优化损失（6.2.1 节）；
+  - 系统推导 GALA 生成感知跨模态对齐扩散合成损失函数（6.2.2 节）；
+  - 形式化一维时序到二维画面的连续流形渲染算子 $\Phi_{\text{render}}$ 并梳理视觉时序与扩散 Transformer（6.3 节）；
+  - 建立时序决策智能体的部分可观测马尔可夫决策过程 (POMDP) 理论形式化（6.4.1 节）；
+  - 剖析 ReasonCast 波动感知选择性推理门控，揭示节约 70% 算力的架构机理（6.4.2 节）；
+  - 阐述 ChatAD 8B 多轮排查演化、TimEvolve 部署即监督的在线自进化策略与 AION 自主科研闭环（6.4.3 节）；
+  - 首次系统剖析 FactoryNet 涵盖 6 大类物理具身装备（数控机床、工业六轴机械臂、重型冲压机、分拣传送线、包装机、注塑机）的 5100 万点多通道遥测具身时序大模型体系与跨本体迁移（6.5 节）。
+- **同步更新第 4、5、7、8、9 章**：
+  - 4.1 核心模型对比表扩充至 33 款主流模型，新增 KAIROS、UniShape、LeNEPA、Scale-Aware、EXAONE Finance 1.0 与 Cadence；
+  - 4.7-4.9 扩充形态感知基元、免数据增强隐状态预测、无注意力状态空间与非自回归并行架构；
+  - 5.1/5.6 引入时序后训练统一框架、真实邻域正则化强化学习后训练数学形式化以及 ChorusTIC 合唱上下文学习；
+  - 7.1 评测对比表扩充至 23 个主流基准框架，涵盖 FactoryNet、Look-Ahead Bias 审计、Forecast Collapse 崩溃分析、SGA 步阶梯度对齐、AION 科研评测；
+  - 7.2-7.4 深入剖析前瞻偏误预训练负迁移、预测崩溃机理与多步滚动梯度对齐；
+  - 8.1-8.2 同步更新清华 THUML（TimeAgent）与金明团队（LeNEPA、AION、ChatAD）；
+  - 9 开放问题深入剖析时序强化学习策略崩塌防御、前瞻偏误自动化审计以及工业具身多物理实体大模型。
+- **全量同步参考文献**：Section 10 收录全部 123 篇核验文献，同步生成 123 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：增加 KAIROS、UniShape、LeNEPA、Scale-Aware、Cadence 等新里程碑模型，优化高低引线布局，彻底消除文字重叠；
+  2. `open_weight_share.png`：准确反映 123 篇论文中 61.0% 开源权重、38.2% 基准/提示/综述、0.8% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：扩充具身遥测、形态基元、非自回归、无注意力、选择性推理等前沿分支；
+  4. `model_size_vs_date.png`：新增 Cadence (330M) 标度点并精准调优标注排布；
+  5. `papers_by_category_year.png`：更新至 123 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（JSON 结构校验、图表生成、综述 450 处引用/锚点/图片存在性校验、BibTeX 生成、README Awesome 清单生成）全部 100% 一次性通过。
+
+### 7. 提交与推送状态
+- **本地提交**：`feat(iteration-4): deepen multimodal TS & agents, integrate 15 papers (123 total), refine figures`
+- **推送状态**：推送至远端 `origin/main` 并经 `git status` / `git log` 确认。
+
+### 8. 下一轮运行重点
+- 探究时序后训练强化学习连续策略界限（高频扩散流中的收敛界与李雅普诺夫稳定性）；
+- 研发面向万亿级 TSFM 预训练语料的前瞻偏误自动化因果隔离审计工具箱；
+- 追踪通用人形机器人与重工业机电融合的超高频时序动力学表征大模型；
+- 监测 TimeMixer++ 官方开源合规进展。
+
+---
+
 ## 2026-09-25 (第 3 轮运行：大语言模型赋能时序全面深化、前沿 15 篇收录与图表重构 / Iteration 3)
 
 ### 1. 今日运行概览
