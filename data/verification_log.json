@@ -203,5 +203,71 @@
     "decision": "Leave code_url null; do not invent a link. Document intended kwuking/TimeMixer + anonymous.4open URLs in notes/log only."
   },
   "method": "arXiv Atom API via HTTPS (export.arxiv.org) + title/author cross-check; GitHub API (api.github.com/repos/...) for code_url verification",
-  "date": "2026-09-24"
+  "date": "2026-09-25",
+  "runs": [
+    {
+      "date": "2026-09-25",
+      "run": 3,
+      "re_verified_prior_run": [
+        "2510.12681",
+        "2601.03248",
+        "2601.19040",
+        "2602.06597",
+        "2606.01498",
+        "2607.24892",
+        "2608.14270",
+        "2609.10357",
+        "2609.13640",
+        "2609.16804",
+        "2609.20156",
+        "2609.21425",
+        "2609.24862",
+        "2609.25980"
+      ],
+      "re_verification_result": "All 14 papers from Iteration 2 re-verified via HTTPS arXiv Atom API (title/author/date match 100%).",
+      "query_strategy": [
+        "au:Long_Mingsheng (priority THUML check)",
+        "au:Jin_Ming AND (ti:\"time\" OR abs:\"time series\") (priority Ming Jin check)",
+        "all:\"Chronos\" AND all:\"time series\" (priority Chronos family check)",
+        "ti:\"time series foundation model\" OR abs:\"time series foundation model\"",
+        "all:\"foundation model\" AND all:\"time series\" AND (all:\"forecasting\" OR all:\"zero-shot\")",
+        "all:\"multimodal\" AND all:\"time series\" AND (all:\"foundation\" OR all:\"reasoning\" OR all:\"agent\")",
+        "all:\"time series\" AND all:\"reasoning\" AND all:\"agent\"",
+        "all:\"time series\" AND (all:\"vision\" OR all:\"image\") AND all:\"language\" AND all:\"forecasting\"",
+        "all:\"time series\" AND all:\"benchmark\" AND all:\"foundation\""
+      ],
+      "verified_added": [
+        "2502.21245",
+        "2509.23695",
+        "2601.13546",
+        "2608.01290",
+        "2608.05571",
+        "2608.22968",
+        "2608.24303",
+        "2609.09586",
+        "2609.11993",
+        "2609.12412",
+        "2609.21381",
+        "2609.28506",
+        "2609.28576",
+        "2609.29792",
+        "2609.29814"
+      ],
+      "github_api_checks": [
+        {
+          "repo": "masadi-99/align-rag",
+          "status": 200,
+          "verified": true,
+          "note": "Public repository confirmed via git ls-remote and web fetch."
+        },
+        {
+          "repo": "beesfleas/HoliBench",
+          "status": 404,
+          "verified": false,
+          "note": "Private or unreleased GitHub repository; code_url kept null per Hard Rule 1."
+        }
+      ],
+      "result": "All 15 new candidate papers verified via arXiv Atom API (HTTPS). Code links checked via GitHub / git ls-remote. Total papers increased from 93 to 108."
+    }
+  ]
 }

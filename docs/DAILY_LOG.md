@@ -1,5 +1,72 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-25 (第 3 轮运行：大语言模型赋能时序全面深化、前沿 15 篇收录与图表重构 / Iteration 3)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 3 轮迭代（上一轮 14 篇论文二次复核、近 45 天高影响力文献与重点团队前沿检索、第 5 章大语言模型赋能时序全面深化、图表质检与质量门禁）
+- **文献总数**：108 篇经 arXiv HTTPS API 严格核验的论文（原 93 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (14 篇)
+通过 arXiv Atom HTTPS API (`no_proxy=*`) 全量复核上一轮收录的 14 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2510.12681` (CoRA), `2601.03248` (STReasoner), `2601.19040` (OATS), `2602.06597` (DiTS), `2606.01498` (TimeSage-MT), `2607.24892` (LLM as Planner), `2608.14270` (TimeSage-EV), `2609.10357` (Contamination Hold-Out), `2609.13640` (FlowTSFM), `2609.16804` (SOTER), `2609.20156` (QUALS), `2609.21425` (Tracing Evidence), `2609.24862` (TimEvolve), `2609.25980` (Interweaving Marginals).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2502.21245]** *TimesBERT: A BERT-Style Foundation Model for Time Series Understanding* — 清华大学 THUML 龙明盛团队，系统论证时序理解（分类、插补、异常检测）中全局双向注意力的不可替代性，提出双向补丁掩码重建 BERT 基础模型。
+2. **[arXiv:2509.23695]** *Estimating Time Series Foundation Model Transferability via In-Context Learning* — 金明团队，首创基于免梯度在途上下文学习探针量化 TSFM 迁移能力的方法，秒级预估目标域微调收益，斯皮尔曼等级相关达 0.867。
+3. **[arXiv:2601.13546]** *ChatAD: Reasoning-Enhanced Time-Series Anomaly Detection with Multi-Turn Instruction Evolution* — 金明团队与微软，构建 8B 参数多轮指令演化时序异常检测推理智能体，支持人机多轮追问根因。
+4. **[arXiv:2608.01290]** *FedChronos: Federated Fine-Tuning of Time-Series Foundation Models for Privacy-Preserving Commodity Price Forecasting* — Chronos 家族联邦参数高效微调 (PEFT) 框架，解决跨机构大宗商品时序数据隐私壁垒，误差下降 18.4%-32.7%。
+5. **[arXiv:2608.05571]** *Align-RAG: Alignment Is All You Need for TSFM In-Context Learning* — 斯坦福与哈佛团队，颠覆端到端复杂检索适配器，严格闭式推导最优仿射变换尺度与相移 ($\alpha^*, \tau^*$)，以纯数学闭式解实现零训练时序 RAG 对齐；官方代码已核验：`https://github.com/masadi-99/align-rag`。
+6. **[arXiv:2608.22968]** *Do Time-Series Foundation Models Pay Off for Industrial Monitoring? A Cost-Aware Empirical Study* — 录用于 CIF 2026，系统度量大规模 TSFM 与轻量基线 (TTM/LightGBM) 在连续工业监控中的边际经济回报与能耗开销。
+7. **[arXiv:2608.24303]** *Causal Analysis for Time Series Foundation Models* — 建立结构因果模型 (SCM) 反事实审计框架，警告跨能源、金融与气候领域广泛依赖单一头部 TSFM 所带来的系统性集中脆弱性风险 (Concentration Risk)。
+8. **[arXiv:2609.09586]** *Distillation of Synthetic Data for Time Series Foundation Models* — 提出针对时序基础模型预训练的数据集蒸馏/浓缩算法，在已知动力学生成过程下反向提取代表性合成轨迹，以 10% 语料达到全量训练效果。
+9. **[arXiv:2609.11993]** *FINESSE: An Agent-Based Simulator and Benchmark Dataset for Multimodal Financial Event Sequences* — 摩根士丹利等团队，构建首个结合多智能体金融推演仿真与真实微观订单簿的多模态金融事件序列基准。
+10. **[arXiv:2609.12412]** *HoliBench: A Cross-Platform Benchmarking and Deployment Toolkit for Foundation Models in CPS-IoT Applications* — 建立跨边缘 GPU、微控制器等多硬件的信息物理与物联网 (CPS-IoT) 综合能耗、内存带宽与实时延迟部署基准。
+11. **[arXiv:2609.28506]** *TW3Cast: A Frozen Router of Lightly Fine-Tuned Foundation Models for Time-Series Forecasting on GIFT-Eval, Selected Entirely on the Training Split* — 提出突破性的轻量级冻结门控路由器范式，仅在训练切分上拟合动态路由，在 GIFT-Eval 榜单取得第 3 名顶尖成绩。
+12. **[arXiv:2609.21381]** *Knowledge-Graph-Augmented Chronos-2 for HEC-RAS Surrogate Forecasting* — 将水动力学河网物理知识图谱注入 Chronos-2 跨注意力机制，在具有强回水效应的极端水文场景中构建高精度替代预测模型。
+13. **[arXiv:2609.28576]** *Time-Series Foundation Models That Understand Data Revisions* — 揭露宏观统计数据在发布后多次修正导致的“未来数据穿越”系统性漏洞，提出首个版本感知的 VINTAGE-TS 适配框架。
+14. **[arXiv:2609.29792]** *TimeBraid: Unifying Time Series and Language for Understanding and Forecasting* — 57页长篇巨制，提出交错全局残差注意力机制，实现预训练语言模型与预训练时序基础模型的深层编织，统一数值预测与开放推理。
+15. **[arXiv:2609.29814]** *SwitchPFN: Shared Switching Dynamics for Frozen In-Context Time Series Classification* — 将先验数据拟合网络 (PFN) 拓展至分段切换动力系统，在离线拟合海量自回归切换过程后，实现完全冻结参数的高精度零样本时序分类。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **全面重构与深化第 5 章（大语言模型赋能时序）**：
+  - 新增涵盖 12 大主流方法的跨模态赋能范式对比矩阵表（涵盖基础大模型、范式类别、跨模态对齐机制、输入模态、可训练参数占比、核心亮点、计算开销与延迟）；
+  - 形式化推导补丁重编程映射、自然语言前缀提示与词表子空间投影数学表达（5.1.1 节）；
+  - 给出 Align-RAG 闭式无训练最优几何仿射对齐的严格数学形式化与解析解推导（5.1.2 节）；
+  - 形式化拆解基于在途上下文似然增益差分探针的基础模型可迁移性预估理论（5.1.3 节）；
+  - 深化模型重编程与适配器路线、直接提示与双层规划协作、跨模态对比微调与空间强化学习、检索增强与上下文示范自适应（5.2-5.5 节）。
+- **同步更新第 4、6、7、8、9 章**：
+  - 4.1 核心模型对比表扩充至 27 款主流模型，新增 TimesBERT、SwitchPFN 与 TW3Cast；
+  - 4.2 融入 FedChronos 隐私微调与 KG-Chronos-2 水利图谱增强；
+  - 6.1-6.3 融入 57页统一大模型 TimeBraid、金融仿真 FINESSE 以及多轮异常根因推理 ChatAD；
+  - 7.1 评测对比表扩充至 18 个主流基准框架，涵盖 HoliBench、Cost-Aware Study、Causal Analysis、VINTAGE-TS、FINESSE；
+  - 8.1-8.2 同步扩充清华 THUML 与金明团队重点成果；
+  - 9 开放问题深入剖析合成数据蒸馏、系统集中脆弱性风险、工业端侧云边协同与自进化智能体。
+- **全量同步参考文献**：Section 10 收录全部 108 篇核验文献，同步生成 108 条 BibTeX 记录 (`survey/references.bib`)。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：增加 2026 年底密集发布模型（TimeBraid、QUALS、FlowTSFM、Tabby）的高低交错与引线布局，彻底消除文字重叠；
+  2. `open_weight_share.png`：准确反映 108 篇论文中 59.3% 开源权重、39.8% 基准/提示/综述、0.9% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：画布拓宽至 16.5x8.5 英寸，完美容纳切换动力学 PFN、循环分位数传输、因果嵌入、版本审计等全部技术分支；
+  4. `model_size_vs_date.png`：精确绘制参数标度前缘（直至 8.3B Timer-S1 与 8B ChatAD/TimeOmni-1）；
+  5. `papers_by_category_year.png`：更新至 108 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（JSON 结构校验、图表生成、综述 371 处引用/锚点/图片存在性校验、BibTeX 生成、README Awesome 清单生成）全部 100% 通过。
+
+### 7. 提交与推送状态
+- **本地提交**：`feat(iteration-3): deepen LLM4TS paradigms, integrate 15 papers (108 total), refine figures`
+- **推送状态**：推送至远端 `origin/main` 并经 `git status` / `git log` 确认。
+
+### 8. 下一轮运行重点
+- 持续跟进 KAIROS 非自回归快速预测变体 (arXiv: 2510.02084) 的消歧评测；
+- 探索时序具身智能与机器人动力学多通道反馈中的基础模型迁移表现；
+- 监测 TimeMixer++ 官方开源合规进展。
+
+---
+
 ## 2026-09-24 (第 2 轮运行：评测体系全面深化与重点团队前沿纳入 / Iteration 2)
 
 ### 1. 今日运行概览

@@ -65,17 +65,22 @@ def plot_timeline(papers: list[dict]) -> None:
         ("Moirai-MoE", "2024-10-15", "Salesforce", -4.8),
         ("TabPFN-v2", "2025-01-06", "Prior Labs", 3.3),
         ("Sundial", "2025-02-03", "THUML", -2.2),
+        ("TimesBERT", "2025-02-28", "THUML", 4.9),
         ("TiRex", "2025-05-27", "NXAI", 3.2),
         ("FlowState", "2025-08-08", "Academia", -1.8),
         ("Kairos", "2025-09-25", "Academia", 4.2),
         ("Chronos-2", "2025-10-21", "Amazon", -3.3),
         ("Moirai 2.0", "2025-11-17", "Salesforce", 4.8),
         ("Timer-S1", "2026-03-05", "THUML", -4.6),
-        ("Toto 2.0", "2026-05-19", "Datadog", 3.6),
-        ("FlowTSFM", "2026-09-12", "Academia", 1.8),
-        ("Tabby", "2026-09-12", "Academia", -2.6),
-        ("QUALS", "2026-09-17", "Academia", 5.2),
-        ("t_0", "2026-09-21", "Academia", -4.8)
+        ("Toto 2.0", "2026-05-19", "Datadog", 3.6, 0),
+        ("Align-RAG", "2026-08-06", "Harvard", 2.2, 0),
+        ("FlowTSFM", "2026-09-12", "Academia", 1.8, -8),
+        ("Tabby", "2026-09-12", "Academia", -3.6, 0),
+        ("TW3Cast", "2026-09-16", "Academia", 3.6, 0),
+        ("QUALS", "2026-09-17", "Academia", 5.4, 0),
+        ("t_0", "2026-09-21", "Academia", -5.3, 0),
+        ("TimeBraid", "2026-09-24", "Academia", 1.8, 8),
+        ("SwitchPFN", "2026-09-24", "Academia", -1.8, 0)
     ]
 
     dates = [datetime.datetime.strptime(m[1], "%Y-%m-%d") for m in milestones]
@@ -103,7 +108,9 @@ def plot_timeline(papers: list[dict]) -> None:
 
     ax.axhline(0, color="#444444", linewidth=1.5, zorder=1)
 
-    for i, (name, date_str, grp, level) in enumerate(milestones):
+    for i, m_item in enumerate(milestones):
+        name, date_str, grp, level = m_item[:4]
+        dx_days = m_item[4] if len(m_item) > 4 else 0
         d = dates[i]
         color = palette.get(grp, "#333333")
 
@@ -116,18 +123,35 @@ def plot_timeline(papers: list[dict]) -> None:
         # Label text box
         va = "bottom" if level > 0 else "top"
         y_text = level + (0.2 if level > 0 else -0.2)
-        ax.annotate(
-            f"{name}\n({grp})",
-            xy=(d, level),
-            xytext=(d, y_text),
-            ha="center",
-            va=va,
-            fontsize=8.5,
-            fontweight="bold",
-            color="#222222",
-            bbox=dict(boxstyle="round,pad=0.25", facecolor="#f8f9fa", edgecolor=color, alpha=0.92, linewidth=0.8),
-            zorder=4
-        )
+        x_text = d + datetime.timedelta(days=dx_days)
+
+        if dx_days != 0:
+            ax.annotate(
+                f"{name}\n({grp})",
+                xy=(d, level),
+                xytext=(x_text, y_text),
+                ha="center",
+                va=va,
+                fontsize=8.5,
+                fontweight="bold",
+                color="#222222",
+                bbox=dict(boxstyle="round,pad=0.25", facecolor="#f8f9fa", edgecolor=color, alpha=0.92, linewidth=0.8),
+                arrowprops=dict(arrowstyle="-", color=color, linestyle="--", linewidth=0.8),
+                zorder=4
+            )
+        else:
+            ax.annotate(
+                f"{name}\n({grp})",
+                xy=(d, level),
+                xytext=(x_text, y_text),
+                ha="center",
+                va=va,
+                fontsize=8.5,
+                fontweight="bold",
+                color="#222222",
+                bbox=dict(boxstyle="round,pad=0.25", facecolor="#f8f9fa", edgecolor=color, alpha=0.92, linewidth=0.8),
+                zorder=4
+            )
 
     # Format x-axis
     ax.set_xlim(datetime.datetime(2023, 8, 1), datetime.datetime(2026, 11, 15))
@@ -226,7 +250,7 @@ def plot_papers_by_category_year(papers: list[dict]) -> None:
 # (c) Taxonomy Tree of Approaches
 # ==========================================
 def plot_taxonomy_tree(papers: list[dict]) -> None:
-    fig, ax = plt.subplots(figsize=(14, 8))
+    fig, ax = plt.subplots(figsize=(16.5, 8.5))
     fig.patch.set_facecolor("#ffffff")
     ax.set_facecolor("#ffffff")
 
@@ -236,15 +260,15 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
 
     # Root Box
     ax.text(50, 93, "Time Series Foundation Models & Temporal Intelligence",
-            ha="center", va="center", fontsize=13, fontweight="bold", color="#ffffff",
+            ha="center", va="center", fontsize=13.5, fontweight="bold", color="#ffffff",
             bbox=dict(boxstyle="round,pad=0.6", facecolor="#1a365d", edgecolor="#0f2942", linewidth=1.5))
 
     # 4 Main Branches
     branches = [
-        ("Native TSFMs\n(Pretrained Models)", 14, 75, "#2b6cb0"),
-        ("LLM-for-TS\n(Cross-Modal & Adapters)", 38, 75, "#2c7a7b"),
-        ("Multimodal TS\n(Text, Vision & Agents)", 62, 75, "#9c4221"),
-        ("Evaluation & Harness\n(Zero-Shot & Calibration)", 86, 75, "#6b46c1")
+        ("Native TSFMs\n(Pretrained Models)", 13.5, 75, "#2b6cb0"),
+        ("LLM-for-TS\n(Cross-Modal & Adapters)", 37.8, 75, "#2c7a7b"),
+        ("Multimodal TS\n(Text, Vision & Agents)", 62.2, 75, "#9c4221"),
+        ("Evaluation & Harness\n(Zero-Shot & Calibration)", 86.5, 75, "#6b46c1")
     ]
 
     for label, x, y, col in branches:
@@ -254,32 +278,32 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
 
     # Sub-nodes
     subnodes = [
-        (14, [
-            ("Decoder-Only: Next-Patch / Autoregressive\n• TimesFM, Timer, Sundial, Chronos-2, Toto, Tabby, QUALS", 60),
-            ("Sparse Mixture of Experts (MoE)\n• Time-MoE (2.4B), Moirai-MoE, Timer-S1 (8.3B), SOTER", 45),
-            ("Unified Any-Variate & Quantile Transport\n• Moirai, Moirai 2.0, UniTS, TTM (8M), FlowTSFM", 30),
-            ("Continuous Flow & Diffusion Generation\n• FlowState, FLAME, DiTS, OATS, Sundial TimeFlow", 15)
+        (13.5, [
+            ("Decoder-Only: Next-Patch / AR\n• TimesFM, Timer, Sundial, Chronos-2, Toto, Tabby", 60),
+            ("Sparse MoE & Training Routers\n• Time-MoE (2.4B), Timer-S1 (8.3B), SOTER, TW3Cast", 45),
+            ("Encoder-Only & Quantile Transport\n• MOMENT, TimesBERT, FlowTSFM, SwitchPFN, TTM", 30),
+            ("Continuous Flow & Diffusion\n• FlowState, FLAME, DiTS, OATS, QUALS", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
-        (38, [
-            ("Model Reprogramming & Adapters\n• Time-LLM, GPT4TS, CoRA, LLM4TS", 60),
+        (37.8, [
+            ("Model Reprogramming & Adapters\n• Time-LLM, GPT4TS, CoRA, LLM4TS, FedChronos", 60),
             ("Text Tokenization & Direct Prompting\n• LLMTime, PromptCast, LLM as Planner", 45),
-            ("Cross-Modal Semantic & Spatial RL\n• S2IP-LLM, CALF, AutoTimes, STReasoner", 30),
-            ("Multi-Scale In-Context Adaptation\n• LLM-Mixer, In-Context Predictor, Align-RAG", 15)
+            ("Cross-Modal Semantic & Spatial RL\n• S2IP-LLM, CALF, AutoTimes, STReasoner, TimeBraid", 30),
+            ("Training-Free In-Context Adaptation\n• Align-RAG, LLM-Mixer, In-Context Predictor", 15)
         ], "#e6fffa", "#2c7a7b"),
 
-        (62, [
-            ("Text-TS Joint Reasoning & Chat\n• ChatTS, ChatTime, OpenTSLM, SciTS, STReasoner", 60),
-            ("Visual Time Series Alignment & Diffusion\n• VisionTS, Time-VLM, TimeOmni-VL, DiTS", 45),
-            ("Interactive Streaming & Self-Evolving Agents\n• Sonar-TS, TimeInteract, TimEvolve, TimeOmni-1", 30),
-            ("Channel-Level Text & Context Condition\n• TAC-Time, TRACE, SpecTF, t_0", 15)
+        (62.2, [
+            ("Unified TS-Text & Reasoning\n• TimeBraid, OpenTSLM, ChatTS, ChatTime, SciTS", 60),
+            ("Anomaly Reasoning & Dialog Agents\n• ChatAD, Sonar-TS, TimeInteract, TimEvolve", 45),
+            ("Visual Time Series Alignment & Diffusion\n• VisionTS, Time-VLM, TimeOmni-VL, DiTS", 30),
+            ("Financial Simulators & Context Channels\n• FINESSE, TAC-Time, TRACE, KG-Chronos-2, t_0", 15)
         ], "#feebc8", "#9c4221"),
 
-        (86, [
-            ("Zero-Shot Forecasting Benchmarks\n• GIFT-Eval, It's TIME, LiveHouse-TS", 60),
-            ("Contamination Audit & Evidence Bounds\n• Contamination-Free Holdout, Tracing Evidence", 45),
-            ("Probabilistic Calibration & Reliability\n• ADBIS 2026, Rethinking Eval, Interweaving", 30),
-            ("Agentic Multi-Turn & Live Benchmarks\n• TimeSage-EV, TimeSage-MT, TimeVista, ForecastBench", 15)
+        (86.5, [
+            ("Zero-Shot Forecasting & Leaderboards\n• GIFT-Eval, It's TIME, LiveHouse-TS, TW3Cast", 60),
+            ("Data Contamination & Revision Audit\n• Contamination Holdout, VINTAGE-TS, Tracing", 45),
+            ("Calibration, Dependence & Causal\n• ADBIS 2026, Causal Analysis, Interweaving", 30),
+            ("Hardware Profiling & Industrial Cost\n• HoliBench, Cost-Aware Study, TimeSage-EV", 15)
         ], "#faf5ff", "#6b46c1")
     ]
 
@@ -287,7 +311,7 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
         ax.plot([bx, bx], [70, items[-1][1]], color="#cbd5e0", linewidth=1.2, linestyle="--", zorder=1)
         for text, y in items:
             ax.plot([bx, bx], [y, y], marker="o", color=border, markersize=4)
-            ax.text(bx, y, text, ha="center", va="center", fontsize=7.8, color="#1a202c",
+            ax.text(bx, y, text, ha="center", va="center", fontsize=7.4, color="#1a202c",
                     bbox=dict(boxstyle="round,pad=0.35", facecolor=bg, edgecolor=border, alpha=0.9, linewidth=0.8),
                     zorder=2)
 
@@ -378,6 +402,7 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
         "2403.07815": ("Chronos (710M)", 0, 8),
         "2410.10469": ("Moirai-MoE (1.1B)", 0, -15),
         "2502.00816": ("Sundial (1.5B)", 35, -5),
+        "2601.13546": ("ChatAD (8B)", -28, 8),
         "2409.16040": ("Time-MoE (2.4B)", -30, 8),
         "2605.20119": ("Toto 2.0 (2.5B)", 0, -15),
         "2510.02410": ("OpenTSLM (3B)", 0, -14),

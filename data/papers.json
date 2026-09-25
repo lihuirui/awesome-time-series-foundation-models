@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "papers": [
     {
       "arxiv_id": "2202.07125",
@@ -1557,6 +1557,43 @@
       "notes": "Time-MQA; multi-task TS question answering with context."
     },
     {
+      "arxiv_id": "2502.21245",
+      "title": "TimesBERT: A BERT-Style Foundation Model for Time Series Understanding",
+      "authors": [
+        "Haoran Zhang",
+        "Yong Liu",
+        "Yunzhong Qiu",
+        "Haixuan Liu",
+        "Zhongyi Pei",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2025,
+      "release_date": "2025-02-28",
+      "venue": null,
+      "group": "THUML",
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "260 billion time points",
+      "tasks": [
+        "understanding",
+        "classification",
+        "imputation",
+        "anomaly_detection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "thuml"
+      ],
+      "notes": "THUML BERT-style encoder foundation model for multi-granularity time series understanding across classification, imputation, and anomaly detection."
+    },
+    {
       "arxiv_id": "2505.14766",
       "title": "This Time is Different: An Observability Perspective on Time Series Foundation Models",
       "authors": [
@@ -1772,6 +1809,39 @@
         "benchmark"
       ],
       "notes": "ICLR 2026; SciTS benchmark + TimeOmni framework."
+    },
+    {
+      "arxiv_id": "2509.23695",
+      "title": "Estimating Time Series Foundation Model Transferability via In-Context Learning",
+      "authors": [
+        "Qingren Yao",
+        "Ming Jin",
+        "Chengqi Zhang",
+        "Chao-Han Huck Yang",
+        "Jun Qi",
+        "Shirui Pan"
+      ],
+      "year": 2025,
+      "release_date": "2025-09-28",
+      "venue": null,
+      "group": "Ming Jin",
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "evaluation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "jin"
+      ],
+      "notes": "Ming Jin group zero-shot in-context transferability estimation framework for downstream TSFM fine-tuning model selection."
     },
     {
       "arxiv_id": "2509.24803",
@@ -2160,6 +2230,45 @@
         "benchmark"
       ],
       "notes": "ACL 2026; introduces ST-Bench and STReasoner with spatial-aware reinforcement learning (S-GRPO) for spatio-temporal reasoning in time series."
+    },
+    {
+      "arxiv_id": "2601.13546",
+      "title": "ChatAD: Reasoning-Enhanced Time-Series Anomaly Detection with Multi-Turn Instruction Evolution",
+      "authors": [
+        "Hui Sun",
+        "Chang Xu",
+        "Haonan Xie",
+        "Hao Li",
+        "Yuhao Huang",
+        "Chuheng Zhang",
+        "Ming Jin",
+        "Xiaoguang Liu",
+        "Gang Wang",
+        "Jiang Bian"
+      ],
+      "year": 2026,
+      "release_date": "2026-01-20",
+      "venue": null,
+      "group": "Ming Jin",
+      "architecture": "agent",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "8B",
+      "pretrain_corpus": "TSEData-20K",
+      "tasks": [
+        "anomaly_detection",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "llm4ts",
+        "jin"
+      ],
+      "notes": "Ming Jin group and Microsoft research on LLM-driven anomaly detection with multi-turn instruction evolution (TSEvol) and Kahneman-Tversky optimization (TKTO)."
     },
     {
       "arxiv_id": "2601.19040",
@@ -2740,6 +2849,72 @@
       "notes": "Training-free text conditioning using LLMs as forecasting planners to decompose numerical and textual context for frozen TSFMs."
     },
     {
+      "arxiv_id": "2608.01290",
+      "title": "FedChronos: Federated Fine-Tuning of Time-Series Foundation Models for Privacy-Preserving Commodity Price Forecasting",
+      "authors": [
+        "Amit Sharma",
+        "Nitin Auluck",
+        "Akramul Azim"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-02",
+      "venue": null,
+      "group": null,
+      "architecture": "adapter",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "chronos",
+        "tsfm"
+      ],
+      "notes": "Federated parameter-efficient LoRA fine-tuning of Chronos-T5 with differential privacy noise as regularization across distributed commodity price nodes."
+    },
+    {
+      "arxiv_id": "2608.05571",
+      "title": "Align-RAG: Alignment Is All You Need for TSFM In-Context Learning",
+      "authors": [
+        "Mohammad Asadi",
+        "Soheil Hor",
+        "Bardiya Akhbari",
+        "Jack W. O'Sullivan",
+        "Tahoura Nedaee",
+        "Layne C. Price",
+        "Raviteja Anantha",
+        "Euan Ashley",
+        "Ehsan Adeli"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-06",
+      "venue": null,
+      "group": "Stanford / Harvard",
+      "architecture": "prompting",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "retrieval",
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/masadi-99/align-rag",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Closed-form amplitude rescaling and phase-shift alignment for retrieval-augmented in-context forecasting with frozen TSFMs without training adapter modules."
+    },
+    {
       "arxiv_id": "2608.14270",
       "title": "TimeSage-EV: A Live Benchmark for Agentic Time Series Analysis in Evolving Environments",
       "authors": [
@@ -2809,6 +2984,93 @@
       "notes": "LiveHouse-TS; open-world living benchmark for TSFMs."
     },
     {
+      "arxiv_id": "2608.22968",
+      "title": "Do Time-Series Foundation Models Pay Off for Industrial Monitoring? A Cost-Aware Empirical Study",
+      "authors": [
+        "Guan-Hua Wen",
+        "Kuan-Yu Chen"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-24",
+      "venue": "CIF 2026",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "evaluation",
+        "observability",
+        "anomaly_detection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark"
+      ],
+      "notes": "Cost-aware empirical study evaluating MOMENT, Chronos-T5, and TimesFM 2.5 against fitted lightweight baselines across C-MAPSS, MIMII, and BDG2."
+    },
+    {
+      "arxiv_id": "2608.24303",
+      "title": "Causal Analysis for Time Series Foundation Models",
+      "authors": [
+        "Mathis Jander",
+        "Wouter van Heeswijk",
+        "Martijn Mes"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-25",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "evaluation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark"
+      ],
+      "notes": "Causal analysis framework evaluating failure modes, concentration risks, and bias towards overestimating persistence on Chronos-2 and TimesFM 2.5."
+    },
+    {
+      "arxiv_id": "2609.09586",
+      "title": "Distillation of Synthetic Data for Time Series Foundation Models",
+      "authors": [
+        "Niloy Biswas",
+        "Noureddine El Karoui"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-09",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "pretraining"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Data distillation framework for time series foundation models pre-trained on synthetic trajectories under fixed dataset budgets."
+    },
+    {
       "arxiv_id": "2609.10357",
       "title": "A Later Test Set Is Not a New Domain: Pretraining Familiarity Survives a Contamination-Free Hold-Out",
       "authors": [
@@ -2835,6 +3097,74 @@
         "benchmark"
       ],
       "notes": "Critical evaluation of pretraining contamination in TSFMs; designs a strict time-delayed holdout postdating model release dates."
+    },
+    {
+      "arxiv_id": "2609.11993",
+      "title": "FINESSE: An Agent-Based Simulator and Benchmark Dataset for Multimodal Financial Event Sequences",
+      "authors": [
+        "Tyler Farnan",
+        "Benjamin Eng",
+        "Adam Abate",
+        "Xirui Hou",
+        "Rizal Fathony",
+        "Nam H. Nguyen",
+        "Senthil Kumar"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-09",
+      "venue": null,
+      "group": null,
+      "architecture": "agent",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "multimodal"
+      ],
+      "notes": "Agent-based simulator and multimodal benchmark dataset for structured financial event sequences combining market microstructure time series and narrative events."
+    },
+    {
+      "arxiv_id": "2609.12412",
+      "title": "HoliBench: A Cross-Platform Benchmarking and Deployment Toolkit for Foundation Models in CPS-IoT Applications",
+      "authors": [
+        "Inesh Chakrabarti",
+        "Zejun Xiong",
+        "Pragya Sharma",
+        "Mani Srivastava"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-11",
+      "venue": null,
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "observability"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark"
+      ],
+      "notes": "Cross-platform hardware benchmarking toolkit measuring latency, energy, and peak memory across 20 foundation models (including TSFMs) on edge to cloud devices."
     },
     {
       "arxiv_id": "2609.13640",
@@ -2976,6 +3306,35 @@
       "notes": "Generative foundation model for physiological signals; PSD-guided MoE and neural CDE decoder pretrained on 226B points."
     },
     {
+      "arxiv_id": "2609.28506",
+      "title": "TW3Cast: A Frozen Router of Lightly Fine-Tuned Foundation Models for Time-Series Forecasting on GIFT-Eval, Selected Entirely on the Training Split",
+      "authors": [
+        "Nathan Thierry",
+        "Andre-Louis Rochet"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-16",
+      "venue": null,
+      "group": null,
+      "architecture": "MoE",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "benchmark"
+      ],
+      "notes": "A frozen routing table selecting lightly fine-tuned TSFM specialists (Chronos-2, TiRex, Toto) on GIFT-Eval achieving rank 3 out of 130 without LLM agents."
+    },
+    {
       "arxiv_id": "2609.20156",
       "title": "QUALS: Corpus Equilibrium for Universal Forecasting via Pattern Quantization and Learnability Synchronization",
       "authors": [
@@ -3009,6 +3368,36 @@
         "tsfm"
       ],
       "notes": "VLDB 2027; resolves multi-domain corpus imbalance and forgetting in TSFMs via pattern quantization and learnability synchronization."
+    },
+    {
+      "arxiv_id": "2609.21381",
+      "title": "Knowledge-Graph-Augmented Chronos-2 for HEC-RAS Surrogate Forecasting",
+      "authors": [
+        "Edward Holmberg",
+        "Elias Ioup",
+        "Mahdi Abdelguerfi"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-18",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "chronos",
+        "tsfm"
+      ],
+      "notes": "KG-Chronos-2 couples frozen Chronos-2 with exact-state residual decoding and knowledge-graph-conditioned historical retrieval for hydraulic surrogate forecasting."
     },
     {
       "arxiv_id": "2609.21425",
@@ -3269,6 +3658,111 @@
         "llm4ts"
       ],
       "notes": "Forecast Workflow Bench; evaluates LLM-based agentic decision making with budgeted time-series forecasting tools."
+    },
+    {
+      "arxiv_id": "2609.28576",
+      "title": "Time-Series Foundation Models That Understand Data Revisions",
+      "authors": [
+        "Taimoor Ahmad"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-23",
+      "venue": null,
+      "group": null,
+      "architecture": "adapter",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "evaluation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "benchmark"
+      ],
+      "notes": "VINTAGE-TS distinguishes observation time from information-availability time to audit and handle historical data revisions in macroeconomic forecasting."
+    },
+    {
+      "arxiv_id": "2609.29792",
+      "title": "TimeBraid: Unifying Time Series and Language for Understanding and Forecasting",
+      "authors": [
+        "Xinyue Wang",
+        "Jiacheng Pang",
+        "Kun Zhou",
+        "Kexin Zhang",
+        "Defu Cao",
+        "Fan Feng",
+        " Faisal",
+        "Songyao Jin",
+        "Yan Liu",
+        "Biwei Huang"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-24",
+      "venue": null,
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": "2.2M series-text pairs, 4.9M instruction samples",
+      "tasks": [
+        "understanding",
+        "forecasting",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "llm4ts"
+      ],
+      "notes": "Unified time series and language foundation model series aligning pretrained LLMs and TSFMs via interleaved global residual attention layers."
+    },
+    {
+      "arxiv_id": "2609.29814",
+      "title": "SwitchPFN: Shared Switching Dynamics for Frozen In-Context Time Series Classification",
+      "authors": [
+        "Zhenyi Zhu",
+        "Jacqueline Pang",
+        "Peilin Shen",
+        "Tianyi Song",
+        "Tingwei Zhang",
+        "Keyi Hu",
+        "Kangjun Yin",
+        "Shiwei Pu",
+        "Yingbo Zhou",
+        "Chen Shao"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-24",
+      "venue": null,
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "SwitchPFN learns shared projection and regime switching dynamics codebooks for frozen in-context time series classification using tabular foundation models."
     }
   ]
 }
