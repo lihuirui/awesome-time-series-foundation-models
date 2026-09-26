@@ -3487,6 +3487,39 @@
       "notes": "Vintage-consistent macroeconomic TSFM strictly avoiding revision leakage via synthetic pretraining."
     },
     {
+      "arxiv_id": "2607.00956",
+      "title": "Aionoscope: Debugging Latent-State Accessibility in Time-Series Representations",
+      "authors": [
+        "Alexander Chemeris",
+        "Ming Jin",
+        "Randall Balestriero"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-01",
+      "venue": "KDD MILETS 2026",
+      "group": "Ming Jin",
+      "architecture": "probing / representation diagnostic",
+      "tokenization": "latent representations",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "representation debugging",
+        "interpretability",
+        "latent probing"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/langotime/aionoscope",
+      "categories": [
+        "jin",
+        "benchmark",
+        "tsfm"
+      ],
+      "notes": "Aionoscope introduces a generator-based diagnostic framework for time series representations, auditing whether latent states preserve process variables like phase, amplitude, and regime."
+    },
+    {
       "arxiv_id": "2607.00958",
       "title": "LeNEPA: No-Augmentation Next-Latent Prediction for Time-Series Representation Learning",
       "authors": [
@@ -3712,6 +3745,39 @@
       "notes": "Scalable generator of multivariate temporal structural causal models (TSCMs) with continuous-time intervention windows, counterfactual sampling, and 100K trajectories."
     },
     {
+      "arxiv_id": "2609.20193",
+      "title": "When Does Retrieval Help Time-Series Forecasting?",
+      "authors": [
+        "Mert Onur Cakiroglu",
+        "Elham Buxton",
+        "Mehmet Dalkilic",
+        "Hasan Kurban"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-29",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "retrieval-augmented empirical audit",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "retrieval audit",
+        "regime mapping",
+        "forecasting evaluation"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/KurbanIntelligenceLab/retrieval-regime",
+      "categories": [
+        "benchmark",
+        "tsfm"
+      ],
+      "notes": "Reveals that retrieval benefits in time-series forecasting are governed by the operating point between window length and dominant seasonal period rather than retrieval machinery."
+    },
+    {
       "arxiv_id": "2608.01290",
       "title": "FedChronos: Federated Fine-Tuning of Time-Series Foundation Models for Privacy-Preserving Commodity Price Forecasting",
       "authors": [
@@ -3885,6 +3951,69 @@
         "tsfm"
       ],
       "notes": "Reinforcement learning post-training for TSFMs with ground-truth neighborhood regularization to prevent reward collapse."
+    },
+    {
+      "arxiv_id": "2608.13262",
+      "title": "Into the ORBIT for Time Series: Training Regimes for Foundation Models",
+      "authors": [
+        "Hongjie Xia",
+        "Yiding Liu",
+        "Yifan Hu",
+        "Peiyuan Liu",
+        "Zewei Dong"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-13",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "training regime benchmark / recipe",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "Multi-domain benchmark suite",
+      "tasks": [
+        "forecasting",
+        "pretraining regime analysis"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "benchmark"
+      ],
+      "notes": "ORBIT explores pretraining regimes and dataset mixing distributions across heterogeneous multi-domain time series corpora for foundation models."
+    },
+    {
+      "arxiv_id": "2608.14067",
+      "title": "When Denoising Hurts: Rethinking the Terminal Step of Diffusion Time Series Forecasters -- Extended Version",
+      "authors": [
+        "Dat Nguyen-Cong",
+        "Luong Tran",
+        "Tung Kieu"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-14",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "diffusion",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "probabilistic forecasting",
+        "diffusion stopping"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Reveals that terminal low-noise diffusion steps introduce statistical drift and propose a label-free global stopping criterion with Bernoulli timestep sampling."
     },
     {
       "arxiv_id": "2608.14106",
@@ -4120,6 +4249,40 @@
       "notes": "Scale-aware pretraining handling diverse temporal frequencies through multi-patch token alignment and hybrid masking."
     },
     {
+      "arxiv_id": "2608.20024",
+      "title": "Systematic Evaluation of TabPFN-TS for Zero-Shot Probabilistic Heat Load Forecasting in District Heating Networks",
+      "authors": [
+        "Ben Spoek",
+        "Karim K. Ben Hicham",
+        "Kai Derzsi",
+        "Philipp Althaus",
+        "Alexander Mitsos",
+        "Dirk Müller"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-20",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "Prior-Data Transformer",
+      "tokenization": "prior-data token",
+      "modalities": [
+        "ts"
+      ],
+      "params": "19M",
+      "pretrain_corpus": "Synthetic Priors",
+      "tasks": [
+        "zero-shot probabilistic forecasting",
+        "district heating"
+      ],
+      "open_weights": true,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "benchmark"
+      ],
+      "notes": "Systematic evaluation of TabPFN-TS in district heating networks, demonstrating competitive zero-shot probabilistic forecasting without retraining."
+    },
+    {
       "arxiv_id": "2608.22321",
       "title": "Semantics or Structure? Auditing Text Sensitivity in Multimodal Time-Series Forecasting",
       "authors": [
@@ -4227,6 +4390,45 @@
       "notes": "Comprehensive survey organizing LLM forecasting agents into 3 architectures (standalone, tool/retrieval-augmented, hybrid) and identifying evaluation bottlenecks."
     },
     {
+      "arxiv_id": "2608.23473",
+      "title": "MetaCaster: Meta-Harness-Optimized Agent for End-to-End Few-Shot Learning of Lightweight Time Series Forecasters",
+      "authors": [
+        "ChengAo Shen",
+        "Wenchao Yu",
+        "Fangyu Wu",
+        "Dongjin Song",
+        "Hanghang Tong",
+        "Dongsheng Luo",
+        "Wei Cheng",
+        "Haifeng Chen",
+        "Jingchao Ni"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-24",
+      "venue": "EMNLP 2026",
+      "group": "Academia",
+      "architecture": "LLM agent / meta-harness",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "few-shot forecasting",
+        "agentic workflow",
+        "model generation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "llm4ts",
+        "multimodal"
+      ],
+      "notes": "MetaCaster proposes an agentic meta-harness framework optimizing lightweight specialized time series forecasters for few-shot settings."
+    },
+    {
       "arxiv_id": "2608.24033",
       "title": "ChorusTIC: Training-Free Multivariate Time Series Classification via Chorus In-Context Learning",
       "authors": [
@@ -4289,6 +4491,249 @@
       "notes": "Causal analysis framework evaluating failure modes, concentration risks, and bias towards overestimating persistence on Chronos-2 and TimesFM 2.5."
     },
     {
+      "arxiv_id": "2608.26226",
+      "title": "LLM Agents for Time-Series: A Survey",
+      "authors": [
+        "Yilong Chen",
+        "Xiao Qin",
+        "Chenghao Liu",
+        "Liang Wu",
+        "Noelle I. Samia",
+        "Kaize Ding"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-26",
+      "venue": "EMNLP 2026 Findings",
+      "group": "Salesforce",
+      "architecture": "survey",
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "survey",
+        "agentic time series",
+        "tool use",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "survey",
+        "llm4ts",
+        "multimodal"
+      ],
+      "notes": "Comprehensive survey on LLM-based agents for time series, categorizing methodologies by time-series problem formulation, tool-use, and reasoning paradigms."
+    },
+    {
+      "arxiv_id": "2608.30976",
+      "title": "A Human-in-the-Loop Autonomous Agent for Industry Time Series Forecasting",
+      "authors": [
+        "Xiaoyu Tao",
+        "Mingyue Cheng",
+        "Ze Guo",
+        "Bokai Pan",
+        "Qi Liu",
+        "Shijin Wang",
+        "Enhong Chen"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-31",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "Human-in-the-loop Agent",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "industrial forecasting",
+        "human-in-the-loop",
+        "agentic decision"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "llm4ts",
+        "multimodal"
+      ],
+      "notes": "Introduces a human-in-the-loop autonomous agent system tailored for industrial forecasting workflows, bridging numerical models with expert oversight."
+    },
+    {
+      "arxiv_id": "2608.31013",
+      "title": "TSPFN: A Temporal Tabular Foundation Model for Physiological Time Series Classification",
+      "authors": [
+        "Jérémie Stym-Popper",
+        "Clément Rambour",
+        "Federica Granese",
+        "Nicolas Thome",
+        "Olivier Bernard"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-31",
+      "venue": "STACOM 2026",
+      "group": "Academia",
+      "architecture": "Prior-Data Fitted Network",
+      "tokenization": "prior-data token",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "140,000 physiological time series",
+      "tasks": [
+        "classification",
+        "in-context learning",
+        "medical physiological time series"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/Jeremstym/TSPFN",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "TSPFN extends TabPFN architecture with spatio-temporal representations and pretrains on 140,000 physiological time series for in-context classification."
+    },
+    {
+      "arxiv_id": "2609.01896",
+      "title": "OutageDiT: A Generative Foundation Model for Power Outage Forecasting and Scenario Simulation",
+      "authors": [
+        "Yunqin Zhu",
+        "Feng Qiu",
+        "Yao Xie"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-01",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "diffusion",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "National outage and weather records",
+      "tasks": [
+        "probabilistic forecasting",
+        "scenario simulation",
+        "power grid"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Generative foundation model using Diffusion Transformers (DiT) for power grid outage forecasting and extreme scenario simulation."
+    },
+    {
+      "arxiv_id": "2609.02068",
+      "title": "DynG-Diff: A State-Aware Dynamic Guidance Diffusion Framework for Probabilistic Time Series Forecasting",
+      "authors": [
+        "Zhente Zhang",
+        "Zhengwei Ni",
+        "Wei Fan"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-02",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "diffusion",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "multivariate probabilistic forecasting",
+        "dynamic guidance diffusion"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/TT-20011031/DynG-Diff",
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "DynG-Diff proposes state-aware dynamic guidance in diffusion models for multivariate probabilistic time series forecasting under information heterogeneity."
+    },
+    {
+      "arxiv_id": "2609.09195",
+      "title": "CompEvo: Competition-Induced Evolution for Multi-Agent in News-Driven Time Series Forecasting",
+      "authors": [
+        "Yuxuan Zhang",
+        "Yangyang Feng",
+        "Yong Guan",
+        "Daifeng Li",
+        "Kexin Zhang",
+        "Junlan Chen",
+        "Bowen Deng",
+        "Jun Liu",
+        "Zehua Zeng"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-03",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "multi-agent",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "news-driven forecasting",
+        "multi-agent evolution",
+        "financial / risk monitoring"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "llm4ts",
+        "multimodal"
+      ],
+      "notes": "CompEvo designs a competition-induced evolutionary multi-agent framework to prevent thought degeneration in news-driven multimodal time series forecasting."
+    },
+    {
+      "arxiv_id": "2609.06006",
+      "title": "Memory in Deep Time-Series Models",
+      "authors": [
+        "Minh Hoang Nguyen",
+        "Huu Hiep Nguyen",
+        "Manh Nguyen",
+        "Van Dai Do",
+        "Dung Nguyen",
+        "Hung Le"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-05",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "theoretical study / benchmark",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "memory capacity analysis",
+        "long-horizon forecasting",
+        "evaluation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "benchmark"
+      ],
+      "notes": "Systematically evaluates memory retention, state-space capacity, and retrieval mechanisms in deep time-series models and foundation models."
+    },
+    {
       "arxiv_id": "2609.06008",
       "title": "Cadence: Error-Bounded Lossy Compression of Demand Time Series with a Time-Series Foundation Model",
       "authors": [
@@ -4345,6 +4790,40 @@
         "tsfm"
       ],
       "notes": "Attention-free state-space / recurrent time series foundation model from LG AI Research specialized for high-frequency financial forecasting."
+    },
+    {
+      "arxiv_id": "2609.08375",
+      "title": "IPM-FM: A Foundation Model with Consensus Feature Selection for Industrial Process Monitoring",
+      "authors": [
+        "Liang Cao",
+        "Weide Liu",
+        "Yan Qin",
+        "Jun Cheng",
+        "Weisi Lin",
+        "Bhushan Gopaluni"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-08",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "encoder-only",
+      "tokenization": "lag",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "7-year industrial hydrotreater process data",
+      "tasks": [
+        "industrial process monitoring",
+        "soft sensing",
+        "anomaly detection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "Self-supervised foundation model integrating Informer backbone, consensus feature selection, and calibrated Monte Carlo dropout for industrial process monitoring."
     },
     {
       "arxiv_id": "2609.09586",
@@ -4737,6 +5216,37 @@
         "tsfm"
       ],
       "notes": "VLDB 2027; resolves multi-domain corpus imbalance and forgetting in TSFMs via pattern quantization and learnability synchronization."
+    },
+    {
+      "arxiv_id": "2609.20535",
+      "title": "FreqCondNorm: Towards Cross-domain Predictive Maintenance through a Frequency-Conditioned Transformer Foundation Model",
+      "authors": [
+        "Zaynab Raounak",
+        "Camille LHermine",
+        "Zhiguo Zeng"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-17",
+      "venue": "arXiv",
+      "group": "Academia",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "Multi-frequency industrial predictive maintenance dataset (1 Hz - 100 kHz)",
+      "tasks": [
+        "predictive maintenance",
+        "cross-domain transfer",
+        "fault diagnosis"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm"
+      ],
+      "notes": "FreqCondNorm introduces a frequency-conditioned normalization Transformer foundation model transferring across 1 Hz to 100 kHz industrial predictive maintenance domains."
     },
     {
       "arxiv_id": "2609.20554",

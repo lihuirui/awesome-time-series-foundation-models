@@ -53,6 +53,11 @@ TOC_ITEMS = [
     ("2.7 决策论预训练与有限样本贝叶斯风险极小化 (Decision-Theoretic Pretraining)", 1),
     ("2.8 反事实时序结构因果模型形式化 (Counterfactual & Interventional TSCMs)", 1),
     ("3 分类体系", 0),
+    ("3.1 四维正交分类空间形式化与设计空间拓扑", 1),
+    ("3.2 计算范式与网络拓扑演化 (Five Core Computing Paradigms)", 1),
+    ("3.3 分词机制与连续-离散表征权衡 (Tokenization Mechanisms & Trade-Offs)", 1),
+    ("3.4 通道拓扑演化：从通道独立到动态任意变量交互 (Channel Topology Evolution)", 1),
+    ("3.5 时序基础模型多维技术分类对比矩阵 (Comprehensive Taxonomy Matrix)", 1),
     ("4 时序基础模型", 0),
     ("4.1 核心模型对比矩阵与关键参数", 1),
     ("4.2 离散量化语言化路线：分箱映射与交叉熵形式化", 1),
@@ -120,7 +125,7 @@ print(f"Generated {len(ref_entries)} references.")
 
 part1 = r"""# 时序基础模型与多模态时序智能演进综述 (A Living Survey on Time Series Foundation Models and Multimodal Temporal Intelligence)
 
-> **版本状态：** 持续演进的活体综述 (Living Survey) · **最后更新：** 2026-09-26 (Iteration 6)
+> **版本状态：** 持续演进的活体综述 (Living Survey) · **最后更新：** 2026-09-26 (Iteration 7)
 > **维护规范：** 仅收录通过 arXiv HTTPS API 严格核验的论文条目；所有事实性陈述均标注 `[arXiv:XXXX.XXXXX]` 真实引用；模型参数与语料规模仅采用论文显式声明数值。
 
 ---
@@ -134,19 +139,25 @@ part1 = r"""# 时序基础模型与多模态时序智能演进综述 (A Living S
 
 时间序列基础模型 (Time Series Foundation Models, TSFMs) 与多模态时序智能正在深刻变革工业生产、能源调度、金融分析、气象环境、医疗健康及具身物理系统的时空数据建模范式。受自然语言处理和计算机视觉领域通用大模型成功的启发，研究界正迅速跨越传统的针对单一数据集定制训练专有模型 (Task-Specific Training) 的局限，转向基于万亿级跨领域时序点预训练具备强零样本泛化能力、上下文自适应、跨模态因果推理与自主交互决策能力的通用大模型。
 
-本综述系统梳理了从 2022 年至 2026 年时序基础模型的核心技术路线与最新演化脉络，并在本轮迭代中重点完成两大核心深化：
-1. **重点课题组与代表机构前沿矩阵全面深化（第 8 章深化重点）**：首次建立多维度全景横向评测体系，全面系统剖析清华大学 THUML 龙明盛团队、金明团队（Ming Jin Group）、亚马逊 AWS Chronos 团队、Salesforce Research Moirai 团队、谷歌研究院 TimesFM 团队、IBM Research 与卡耐基梅隆大学 CMU (TTM & MOMENT) 以及 Datadog Toto 团队等七大核心科研力量的技术演进路线，并从学术哲学、技术主张、分词机制、损失函数、预训练语料规模、开源生态与最大公开模型规模等维度构建了全景对比矩阵。
-2. **时序建模底层理论与数学形式化深化（第 2 章数学深化）**：
-   - 严格推导清华大学龙明盛团队提出的**时序预测精度定律与窗口模式复杂度 (Accuracy Law & Pattern Complexity)** [arXiv:2510.02729]，形式化刻画回看窗口 $L$、预测视野 $H$ 与局部曲率熵对预测误差边界的幂律约束；
-   - 严格推导金明团队揭示的**逐点损失优化偏误与经验优化偏差 (Empirical Optimization Bias, EOB)** [arXiv:2512.18610]，从频域相移与方差衰减定理揭示传统 MSE/MAE 导致时序平滑滤波与峰值塌缩的数学本质，并给出频域谱匹配与方向梯度的结构去偏目标；
-   - 形式化推导 **决策论预训练与有限样本贝叶斯风险极小化 (The Simulacrum)** [arXiv:2606.27711]，证明针对随机过程先验直接极小化有限样本贝叶斯风险能够直接逼近零样本近最优决策；
-   - 建立动态**反事实时序结构因果模型形式化 (Counterfactual & Interventional TSCMs, DoTime)** [arXiv:2607.27263]，基于 Pearl do-演算与反事实潜在结果算子，为干预决策与反事实仿真建立因果评测基石。
-3. **时序原生基础模型 (Native TSFMs)**：推导离散分箱交叉熵 vs 连续 Huber 回归损失；Any-variate 跨通道注意力与变量感知旋转位置编码 (vRoPE)；Sundial 连续流匹配 (CFM)；稀疏混合专家 (MoE) Top-$k$ 门控、辅助负载均衡与小波子带路由 (WaveMoE)；连续 Neural CDE 动态多视野调度 (LeapTS)；误差有界压缩 (Cadence)；并行复数扩散生成 (PaCoDi [arXiv:2602.17706])；涵盖 1420 亿点真实多变量语料库 RMISC [arXiv:2607.06504]。
-4. **大语言模型赋能时序 (LLM-for-TS)**：深入分析模型重编程（Time-LLM、One Fits All）、文本化直接提示与规划协作（LLMTime、CTRL 控制论残差学习 [arXiv:2609.23257]）、时序知识蒸馏（T-LLM [arXiv:2602.01937]）、跨模态认知推理对齐（TS-Reasoner [arXiv:2510.03519]）、闭式检索对齐 (Align-RAG) 以及可验证奖励强化后训练 (PostTime RLVR)。
-5. **多模态时序智能与智能体决策 (Multimodal Temporal Intelligence & Agents)**：梳理多模态因果融合与交互智能体系统；剖析电商事件知识图谱混合需求预测 (EventCast [arXiv:2602.07695])、快慢反思智能体框架 (CastFSR [arXiv:2608.03031])、递归语言模型长上下文异常定位 (TimeRLM [arXiv:2608.03391])、时序预测智能体系统综述 [arXiv:2608.23058]、TimeBraid 统一大模型与 FactoryNet 具身工业基石。
-6. **评测基准与实证审计**：涵盖 GIFT-Eval、It's TIME、RMISC [arXiv:2607.06504]、反事实干预生成器 DoTime [arXiv:2607.27263]、多模态文本敏感度审计 [arXiv:2608.22321]、概率与时空预测系统综述 [arXiv:2609.13345]、版本修订审计 (VINTAGE-TS, MACROCAST) 与前瞻偏误实证审计。
+本综述系统梳理了从 2022 年至 2026 年时序基础模型的核心技术路线与最新演化脉络，并在本轮迭代中重点完成核心深化与前沿扩充：
+1. **分类体系全景重构与五大计算范式数学深化（第 3 章深化重点）**：
+   - 系统建立时序基础模型四维正交理论设计空间形式化 $\mathcal{S} = \langle \mathcal{A}, \mathcal{T}, \mathcal{M}, \mathcal{E} \rangle$；
+   - 深入剖析从因果自回归解码器、双端编码-解码器、纯编码器掩码自编码、稀疏混合专家 (MoE) 到连续动力学/扩散生成/先验拟合的五大计算范式；
+   - 推导连续补丁 vs 离散分箱量化 vs 频域小波在拓扑度量与多峰后验拟合上的数学权衡；
+   - 系统推导通道拓扑从通道独立 (CI) 到变量感知旋转编码 (vRoPE Any-variate) 再到动态引导拓扑的演化路径；
+   - 首次构建涵盖 12 类主流架构、跨 8 个维度的全景分类技术对比矩阵。
+2. **重点课题组与代表机构前沿矩阵全面深化（第 8 章）**：建立多维度全景横向评测体系，全面系统剖析清华大学 THUML 龙明盛团队、金明团队（Ming Jin Group）、亚马逊 AWS Chronos 团队、Salesforce Research Moirai 团队、谷歌研究院 TimesFM 团队、IBM Research 与卡耐基梅隆大学 CMU (TTM & MOMENT) 以及 Datadog Toto 团队等七大核心科研力量的技术演进路线，构建全景对比矩阵。
+3. **时序建模底层理论与数学形式化深化（第 2 章数学深化）**：
+   - 严格推导清华大学龙明盛团队提出的**时序预测精度定律与窗口模式复杂度 (Accuracy Law & Pattern Complexity)** [arXiv:2510.02729]；
+   - 严格推导金明团队揭示的**逐点损失优化偏误与经验优化偏差 (Empirical Optimization Bias, EOB)** [arXiv:2512.18610]；
+   - 形式化推导 **决策论预训练与有限样本贝叶斯风险极小化 (The Simulacrum)** [arXiv:2606.27711]；
+   - 建立动态**反事实时序结构因果模型形式化 (Counterfactual & Interventional TSCMs, DoTime)** [arXiv:2607.27263]。
+4. **时序原生基础模型 (Native TSFMs)**：推导离散分箱交叉熵 vs 连续 Huber 回归损失；Any-variate 跨通道注意力与变量感知旋转位置编码 (vRoPE)；Sundial 连续流匹配 (CFM)；稀疏混合专家 (MoE) Top-$k$ 门控、辅助负载均衡与小波子带路由 (WaveMoE)；连续 Neural CDE 动态多视野调度 (LeapTS)；误差有界压缩 (Cadence)；并行复数扩散生成 (PaCoDi [arXiv:2602.17706])；涵盖 1420 亿点真实多变量语料库 RMISC [arXiv:2607.06504]。
+5. **大语言模型赋能时序 (LLM-for-TS)**：深入分析模型重编程（Time-LLM、One Fits All）、文本化直接提示与规划协作（LLMTime、CTRL 控制论残差学习 [arXiv:2609.23257]）、时序知识蒸馏（T-LLM [arXiv:2602.01937]）、跨模态认知推理对齐（TS-Reasoner [arXiv:2510.03519]）、闭式检索对齐 (Align-RAG) 以及可验证奖励强化后训练 (PostTime RLVR)。
+6. **多模态时序智能与智能体决策 (Multimodal Temporal Intelligence & Agents)**：梳理多模态因果融合与交互智能体系统；剖析电商事件知识图谱混合需求预测 (EventCast [arXiv:2602.07695])、快慢反思智能体框架 (CastFSR [arXiv:2608.03031])、递归语言模型长上下文异常定位 (TimeRLM [arXiv:2608.03391])、时序预测智能体系统综述 [arXiv:2608.23058]、TimeBraid 统一大模型与 FactoryNet 具身工业基石。
+7. **评测基准与实证审计**：涵盖 GIFT-Eval、It's TIME、RMISC [arXiv:2607.06504]、反事实干预生成器 DoTime [arXiv:2607.27263]、多模态文本敏感度审计 [arXiv:2608.22321]、概率与时空预测系统综述 [arXiv:2609.13345]、版本修订审计 (VINTAGE-TS, MACROCAST) 与前瞻偏误实证审计。
 
-本综述所有收录论文条目均经由 arXiv HTTPS API 严格核验（共 153 篇），代码链接均经由 GitHub API 官方核验，为学术界与工业界提供真实、严密、前沿的一手参考。
+本综述所有收录论文条目均经由 arXiv HTTPS API 严格核验（共 168 篇），代码链接均经由 GitHub API 官方核验，为学术界与工业界提供真实、严密、前沿的一手参考。
 
 ---
 
@@ -326,22 +337,138 @@ DoTime [arXiv:2607.27263] 通过数学严格受控的合成动力系统（如具
 
 ## 3 分类体系
 
-时序基础模型与多模态时序智能体系可从四个主要正交维度进行解构，如下图所示：
+时序基础模型与多模态时序智能体系正经历从单一离散切片向高维跨模态时空连续表征的深刻裂变。为了厘清层出不穷的新模型、新架构与新任务界限，本章建立四维正交分类理论空间，剖析五大核心计算范式，形式化推导分词与通道拓扑权衡，并给出全景横向技术矩阵。
+
+### 3.1 四维正交分类空间形式化与设计空间拓扑
+
+时序基础模型的设计空间可严格形式化为一个四维正交理论空间 $\mathcal{S} = \langle \mathcal{A}, \mathcal{T}, \mathcal{M}, \mathcal{E} \rangle$：
+
+$$\mathcal{S} = \mathcal{A} \times \mathcal{T} \times \mathcal{M} \times \mathcal{E}$$
 
 ![Taxonomy Tree](figures/taxonomy_tree.png)
 
-1. **架构范式 (Architectural Paradigm)**：
-   - **Decoder-Only 自回归架构**：TimesFM [arXiv:2310.10688]、Timer [arXiv:2402.02368]、Chronos [arXiv:2403.07815]、Sundial [arXiv:2502.00816]、Toto 2.0 [arXiv:2605.20119]、Tabby [arXiv:2609.13956]、$t_0$ [arXiv:2609.24559]、TimeBraid [arXiv:2609.29792]、Cadence [arXiv:2609.06008]、Chronicle [arXiv:2605.20268]、Falcon-X [arXiv:2605.27286]、MACROCAST [arXiv:2606.28670]、CITRAS-FM [arXiv:2606.10798]；
-   - **Encoder-Decoder 双端架构**：Moirai [arXiv:2402.02592]、Moirai 2.0 [arXiv:2511.11698]、UniTS [arXiv:2403.00131]、TTM [arXiv:2401.03955]、TimeMixer [arXiv:2405.14616]、QUALS [arXiv:2609.20156]、KAIROS [arXiv:2510.02084]、Olivia [arXiv:2605.17340]；
-   - **Encoder-Only 掩码表示、多尺度与形态架构**：MOMENT [arXiv:2402.03885]、TimesBERT [arXiv:2502.21245]、VisionTS [arXiv:2408.17253]、TimeCMA [arXiv:2406.01638]、FlowTSFM [arXiv:2609.13640]、UniShape [arXiv:2601.06429]、Zeus [arXiv:2607.01918]；
-   - **稀疏混合专家与路由架构 (MoE & Routers)**：Time-MoE [arXiv:2409.16040]、Moirai-MoE [arXiv:2410.10469]、Timer-S1 [arXiv:2603.04791]、SOTER [arXiv:2609.16804]、TW3Cast [arXiv:2609.28506]、WaveMoE [arXiv:2604.10544]；
-   - **连续动力学、自适应调度、复数扩散与先验拟合架构 (Neural CDE / PFN / Flow / Diffusion / Attention-Free)**：LeapTS [arXiv:2605.10292]、PaCoDi 并行复数扩散 [arXiv:2602.17706]、The Simulacrum 决策论架构 [arXiv:2606.27711]、TabPFN-v2 (TS) [arXiv:2501.02945]、SwitchPFN [arXiv:2609.29814]、FlowState [arXiv:2508.05287]、FLAME [arXiv:2512.14253]、Sundial [arXiv:2502.00816]、DiTS [arXiv:2602.06597]、SCENARIODIFF [arXiv:2608.17164]、LeNEPA [arXiv:2607.00958]、EXAONE Finance 1.0 [arXiv:2609.04239]。
-2. **分词机制 (Tokenization Scheme)**：
-   - 补丁分词 (Patch)、离散数值量化 (Quantized Bins)、逐点与滞后特征 (Point/Lag)、频域复数小波分解 (Complex Spectral / Wavelet)、形态基元 (Shapelet)、动态调度步 (Adaptive Horizon Jump)、时间感知补丁 (Time-Aware Patch)。
-3. **跨模态融合深度 (Multimodal Depth)**：
-   - 纯时序自监督 (TS-only)、文本-时序特征重编程 (LLM Reprogramming)、认知推理潜空间对齐 (TS-Reasoner [arXiv:2510.03519])、图文跨模态对齐与扩散合成 (VLM / Text-to-TS Diffusion / SCENARIODIFF)、交互式快慢反思多模态智能体决策 (Agentic / CastFSR [arXiv:2608.03031] / TS-Debate / POMDP / Tool-use)、具身工业多通道物理遥测 (Embodied Telemetry / FactoryNet)。
-4. **评测与保障范式 (Evaluation & Quality Assurance)**：
-   - 零样本泛化测试、精度定律幂律标度验证 (Accuracy Law [arXiv:2510.02729])、逐点偏误去偏审计 (EOB [arXiv:2512.18610])、反事实干预审计 (DoTime [arXiv:2607.27263])、文本敏感度结构审计 [arXiv:2608.22321]、数据版本修订审计、前瞻偏误排查、预测崩溃防御、状态依赖失效审计 (Regime-Dependent Failures)、损益平衡分析 (Break-Even Analysis)、因果集中性风险评估、工业经济性度量、大模型充当裁判 (VLM-as-Judge)、自主科研调度 Harness (AION)。
+1. **计算架构范式空间 ($\mathcal{A}$ - Architecture Paradigm)**：
+   决定模型内部的信息流动与因果约束机制，涵盖五大经典与前沿拓扑：
+   - 因果解码器 (Causal Decoder-Only)
+   - 双端编码-解码器 (Encoder-Decoder)
+   - 纯双向编码器掩码自编码 (Encoder-Only Masked Autoencoding)
+   - 稀疏混合专家与频域路由 (Sparse MoE & Spectral Routing)
+   - 连续动力学、扩散流与先验拟合 (Continuous Dynamics, Diffusion, Flow & PFN)
+2. **数值分词与表征空间 ($\mathcal{T}$ - Tokenization & Representation Scheme)**：
+   决定连续时间物理波形如何被离散化或投影至潜空间张量，包含连续补丁 (Continuous Patching)、离散分箱量化 (Discrete Quantized Bins)、逐点与滞后特征 (Point/Lag)、频域复数小波分解 (Complex Spectral / Wavelet)、形态感知基元 (Shapelet Primitives)、自适应动态跨度 (Adaptive Horizon Jump) 以及频率条件归一化补丁 (Frequency-Conditioned Patch [arXiv:2609.20535])。
+3. **跨模态与交互协同空间 ($\mathcal{M}$ - Multimodal & Agentic Interaction Depth)**：
+   刻画模型处理多源异构信息与动态交互的自主性阶梯，由纯时序无外源传感 (TS-only)、跨模态参数重编程 (Reprogramming)、隐式因果推理对齐 (Cognitive Reasoning Alignment)、图文联合扩散生成 (Cross-Modal Diffusion Synthesis)、交互式自进化智能体闭环 (Interactive Self-Evolving Agents) 递进至具身工业多通道物理遥测 (Embodied Telemetry)。
+4. **评测审计与安全保障空间 ($\mathcal{E}$ - Evaluation & Quality Assurance)**：
+   构建全生命周期可信泛化基石，涵盖零样本泛化测试、精度定律与神经标度律验证 [arXiv:2510.02729]、逐点优化偏误 (EOB) 频域结构去偏审计 [arXiv:2512.18610]、反事实干预与 Pearl do-演算审计 [arXiv:2607.27263]、版本修订一致性审计 (MACROCAST [arXiv:2606.28670], VINTAGE-TS [arXiv:2609.28576])、文本敏感度与虚假相关性消融 [arXiv:2608.22321]、预测崩溃相变预警 [arXiv:2608.14106] 以及真实工业 ROI 损益平衡分析 [arXiv:2607.04919]。
+
+### 3.2 计算范式与网络拓扑演化 (Five Core Computing Paradigms)
+
+从 2022 年到 2026 年，时序基础模型的底层骨干网络经历了显著的结构分化与拓扑重组，形成了五大各具优势的计算范式：
+
+#### 3.2.1 因果解码器范式 (Decoder-Only Autoregressive Paradigm)
+- **核心机制**：通过下三角因果注意力掩码 (Causal Mask) 确保序列推断的时序单向不可逆性：
+  $$\mathbf{M}_{i, j} = \begin{cases} 0 & \text{if } j \le i \\ -\infty & \text{otherwise} \end{cases}$$
+  模型在自回归滚动的过程中保持 KV-Cache，具备极高的高吞吐生成效率与理论一致性。
+- **代表模型**：Google TimesFM [arXiv:2310.10688]、清华 Timer [arXiv:2402.02368]、Amazon Chronos [arXiv:2403.07815]、Datadog Toto 2.0 [arXiv:2605.20119]、Tabby [arXiv:2609.13956]、Cadence [arXiv:2609.06008]、$t_0$ [arXiv:2609.24559]。
+- **设计权衡**：单向自回归对时间物理箭头的因果建模最为自然，但在处理双向上下文插补、长程掩码重构或非因果关联挖掘时存在天然的信息吸收盲区。
+
+#### 3.2.2 双端编码-解码器范式 (Encoder-Decoder Paradigm)
+- **核心机制**：编码器利用全双向自注意力 (Full Bidirectional Attention) 深度消化历史上下文 $\mathbf{X}_{1:T}$，解码器通过交叉注意力 (Cross-Attention) 逐步外推未来视野：
+  $$\mathbf{H}_{\text{enc}} = \text{Encoder}(\mathbf{X}_{1:T}), \quad \hat{\mathbf{Y}} = \text{Decoder}(\mathbf{Q}_{\text{target}}, \mathbf{H}_{\text{enc}})$$
+- **代表模型**：Salesforce Moirai [arXiv:2402.02592]、Moirai 2.0 [arXiv:2511.11698]、Harvard UniTS [arXiv:2403.00131]、IBM TTM [arXiv:2401.03955]、TimeMixer [arXiv:2405.14616]、QUALS [arXiv:2609.20156]。
+- **设计权衡**：双向编码使历史特征抽取更为充分，但在自回归长步生成时需要维护编码-解码两套状态，计算开销与显存复杂度显著高于纯解码器。
+
+#### 3.2.3 纯编码器掩码自编码范式 (Encoder-Only Masked Autoencoding)
+- **核心机制**：放弃生成式自回归，采用掩码自编码 (MAE) 目标，在非对称掩码比例（如 50% - 75%）下重构随机丢弃的时序补丁：
+  $$\mathcal{L}_{\text{MAE}}(\theta) = \frac{1}{|\mathcal{M}|} \sum_{i \in \mathcal{M}} \|\mathbf{p}_i - f_\theta(\mathbf{p}_{\setminus \mathcal{M}})\|_2^2$$
+- **代表模型**：CMU MOMENT [arXiv:2402.03885]、清华 TimesBERT [arXiv:2502.21245]、UniShape [arXiv:2601.06429]、Zeus [arXiv:2607.01918]、工业过程监控模型 IPM-FM [arXiv:2609.08375]。
+- **设计权衡**：纯编码器学得的特征具有极高的判别力与语义凝聚度，能以单一骨干同时赋能分类、异常检测、插补与预测；但长视野点预测需外挂回归头，概率外推能力相对受限。
+
+#### 3.2.4 稀疏混合专家与频域路由范式 (Sparse MoE & Spectral Routing)
+- **核心机制**：引入条件计算，将 FFN 模块解耦为 $E$ 个并行子专家网络，门控路由器依据输入时序的功率谱密度 (PSD) 或动态残差自适应激活 Top-$k$ 专家：
+  $$\mathbf{y} = \sum_{e \in \text{TopK}(\mathbf{s}, k)} g_e(\mathbf{h}) F_e(\mathbf{h})$$
+- **代表模型**：Time-MoE (2.4B) [arXiv:2409.16040]、Moirai-MoE (1.1B) [arXiv:2410.10469]、Timer-S1 (8.3B) [arXiv:2603.04791]、WaveMoE [arXiv:2604.10544]、SOTER [arXiv:2609.16804]、TW3Cast [arXiv:2609.28506]。
+- **设计权衡**：在保持推理 FLOPs 几乎恒定的前提下将模型参数容量扩张 5-10 倍，能够针对高频脉冲与低频趋势实现分工专业化；但专家路由极易发生表征塌缩与负载失衡，对辅助损失设计敏感。
+
+#### 3.2.5 连续动力学、扩散生成与先验拟合范式 (Continuous Dynamics, Diffusion, Flow & PFN)
+- **核心机制**：跳出经典离散注意力框架，利用常微分/随机微分方程 (ODE/SDE)、连续流匹配 (CFM)、逆向扩散去噪或先验数据 Transformer (PFN) 拟合生成轨迹：
+  - 连续流匹配 (Sundial [arXiv:2502.00816])：$\frac{d\mathbf{x}_t}{dt} = v_\theta(\mathbf{x}_t, t, \mathbf{c})$；
+  - 复数频域并行扩散 (PaCoDi [arXiv:2602.17706])：在复数谱平面 $\mathbb{C}^{F \times K}$ 单步逆扩散；
+  - 状态感知动态引导扩散 (DynG-Diff [arXiv:2609.02068])：引入隐状态时变引导；
+  - 生成式停机预测与情景仿真 (OutageDiT [arXiv:2609.01896])：基于 Diffusion Transformer 架构进行工业突发断电仿真；
+  - 扩散终端步去噪反思 (When Denoising Hurts [arXiv:2608.14067])：揭示逆扩散终端步累积漂移并给出提前停止准则；
+  - 先验数据拟合 (TabPFN-v2 [arXiv:2501.02945], TabPFN-TS [arXiv:2608.20024], TSPFN [arXiv:2608.31013], SwitchPFN [arXiv:2609.29814])：在海量合成动力学先验上离线拟合有限样本贝叶斯预测分布。
+- **设计权衡**：能够完美生成高阶矩一致的复杂多峰物理轨迹，杜绝均方误差导致的平滑滤波；但部分扩散模型存在采样延迟瓶颈，流匹配与先验拟合对先验分布的多样性有着严苛要求。
+
+### 3.3 分词机制与连续-离散表征权衡 (Tokenization Mechanisms & Trade-Offs)
+
+如何将物理连续的时间序列投影为深度神经网络易于消化的 Token 序列，决定了模型的度量拓扑与损失空间：
+
+#### 3.3.1 连续数值补丁化 (Continuous Patching)
+将长度为 $P$ 的连续时序切片经线性映射变换为高维隐藏向量：
+$$\mathbf{e}_i = \mathbf{W}_p \mathbf{p}_i + \mathbf{b}_p \in \mathbb{R}^D, \quad \mathbf{p}_i \in \mathbb{R}^P$$
+- **优势**：严格保留物理信号的欧氏度量性质与浮点精度，计算复杂度降低 $P$ 倍，计算吞吐极高；
+- **局限**：在标准 MSE 损失优化下，受经验优化偏差 (EOB [arXiv:2512.18610]) 约束，易输出平滑均值，削弱局部突变。
+
+#### 3.3.2 离散分箱量化 (Discrete Quantized Bins)
+利用均值绝对值缩放将数值映射至固定词表大小 $B$（如 $B=4096$）的离散整数集合：
+$$c_t = \text{clip}\left(\left\lfloor \frac{\tilde{x}_t - z_{\min}}{\Delta z} \right\rfloor, 0, B-1\right)$$
+- **优势**：使自回归交叉熵损失能够无缝迁移，天然支持非对称、多峰概率分布的柔性拟合，对极端异常脉冲具有天然的鲁棒截断；
+- **局限**：**损失了数值度量有序性 (Loss of Metric Ordinality)**——在分类损失视角下，$|c - c'|=1$ 与 $|c - c'|=1000$ 遭受无差别的对数似然惩罚；且词表扩大带来 Softmax 计算与显存开销。
+
+#### 3.3.3 频域复数小波分解 (Complex Spectral & Wavelet Decomposition)
+将时序投射至正交频域或小波子空间：
+$$\mathbf{X}(f) = \sum_{t} x_t e^{-j 2\pi f t}, \quad \text{DWT}(\mathbf{x}) = \{\mathbf{A}_J, \mathbf{D}_1, \dots, \mathbf{D}_J\}$$
+- **优势**：从源头上解耦物理信号中的直流平滑趋势与高频突变噪声，彻底规避时域注意力在多周期长序列上的频域混叠；
+- **代表**：PaCoDi [arXiv:2602.17706]、WaveMoE [arXiv:2604.10544]、SOTER [arXiv:2609.16804]。
+
+#### 3.3.4 形态感知基元与自适应调度 (Shapelets & Adaptive Tokens)
+UniShape [arXiv:2601.06429] 提取跨变量的局部形态基元 (Shapelet)；LeapTS [arXiv:2605.10292] 设计时间跨度动态跳步 $(\tau_k, \Delta \tau_k)$；VersaTSA [arXiv:2609.22836] 引入时间感知非均匀补丁 (Time-Aware Patch)；FreqCondNorm [arXiv:2609.20535] 提出跨频段自适应归一化，支持 1Hz 到 100kHz 工业振动信号的零样本跨域迁移。
+
+### 3.4 通道拓扑演化：从通道独立到动态任意变量交互 (Channel Topology Evolution)
+
+多变量时序系统中变量通道 $C$ 的拓扑耦合是基础模型架构演进的核心战场：
+
+```mermaid
+flowchart LR
+    A["通道独立 (CI)<br/>单变量循环 / 零跨通道干扰"] --> B["通道依赖 (CD)<br/>刚性固定通道联合注意力"]
+    B --> C["任意变量统一 (Any-variate)<br/>序列展平 + vRoPE 旋转编码"]
+    C --> D["动态引导与共识拓扑<br/>状态感知引导 / 共识特征选择"]
+```
+
+1. **通道独立范式 (Channel Independence, CI)**：
+   将多变量张量 $\mathbf{X} \in \mathbb{R}^{T \times C}$ 分解为 $C$ 个独立的单变量序列，共享同一套模型参数进行前向推断：
+   $$\hat{\mathbf{X}}_{:, c} = f_\theta(\mathbf{X}_{:, c}), \quad \forall c \in \{1,\dots,C\}$$
+   **理论优势**：对变量通道的排列顺序、增减数量天然等变；彻底杜绝了训练集通道命名与测试集不匹配的虚假相关性过拟合；
+   **物理缺陷**：完全无视多传感器之间的物理守恒定律与因果联动，在紧密耦合物理系统（如电网潮流、化工管网）中表现次优。
+2. **固定通道依赖范式 (Fixed Channel Dependence, CD)**：
+   在注意力层中同时计算时间维度与通道维度的联合交互，复杂度为 $\mathcal{O}(T^2 C^2)$。致命弱点是输入通道数 $C$ 被模型参数硬编码绑定，无法零样本迁移至不同通道数的工业场景。
+3. **任意变量统一范式 (Any-variate Representation)**：
+   Moirai [arXiv:2402.02592] 首创序列展平与变量感知旋转位置编码 (vRoPE)。将 $N$ 个补丁与 $C$ 个通道展平为 $N \cdot C$ 长度序列，正交旋转矩阵解耦相对时间滞后 $\Delta m$ 与通道偏移 $\Delta c$，单套权重无缝支持从 1 到任意 $C$ 个通道的即插即用。
+4. **动态状态引导与共识特征拓扑 (Dynamic Guidance & Consensus Topology)**：
+   进入 2026 年，通道建模突破静态展平：
+   - **DynG-Diff** [arXiv:2609.02068]：提出状态感知动态引导扩散架构，依据各通道当前隐状态的动力学显著性动态调节跨通道交互权重；
+   - **IPM-FM** [arXiv:2609.08375]：构建基于共识特征选择 (Consensus Feature Selection) 的工业多变量表征网络，自适应过滤与目标变量无关的噪声传感器；
+   - **Falcon-X** [arXiv:2605.27286]：基于潜空间连续隐式原型解耦异构变量，杜绝物理量纲不一致引发的跨通道失真。
+
+### 3.5 时序基础模型多维技术分类对比矩阵 (Comprehensive Taxonomy Matrix)
+
+下表对领域内 12 种主流技术路线在核心维度上的设计权衡进行了系统解构：
+
+| 技术路线 / 代表模型 | 架构范式 | 通道拓扑 | 分词表征机制 | 核心损失范式 | 推理采样复杂度 | 核心优势场景 | 主要局限与理论盲区 | 代表文献 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **连续自回归** (TimesFM) | Decoder-Only | 通道独立 (CI) | 连续补丁 (P=32, H=128) | Smooth L1 / Huber | 单次前向 $\mathcal{O}(1)$ | 工业高吞吐多步点预测 | 复杂多峰分布退化为均值 | [arXiv:2310.10688] |
+| **离散自回归** (Chronos) | Decoder-Only | CI / 交叉注意力 | 4096 离散分箱量化 | 类别交叉熵 $\mathcal{L}_{\text{CE}}$ | 自回归多采样 $\mathcal{O}(S \cdot H)$ | 非对称分位数与尾部风险 | 丢失度量有序性，Softmax昂贵 | [arXiv:2403.07815] |
+| **全变量统一** (Moirai) | Encoder-Decoder | Any-variate (vRoPE) | 多尺寸补丁投影池 | 稳健高斯/学生-t NLL | 双端交叉注意力 $\mathcal{O}(L_{\text{total}}^2)$ | 异构通道与跨频段通用预测 | 序列展平带来二次方显存压力 | [arXiv:2402.02592] |
+| **双向掩码自编码** (MOMENT) | Encoder-Only | 通道独立 (CI) | 连续补丁掩码重构 | 掩码重建 MSE 损失 | 单次前向 $\mathcal{O}(1)$ | 分类、异常检测与缺失插补 | 生成式长程外推需外接回归头 | [arXiv:2402.03885] |
+| **连续流匹配** (Sundial) | Decoder-Only | 通道独立 (CI) | TimeFlow 连续补丁流 | 连续流速度场匹配 $\mathcal{L}_{\text{CFM}}$ | ODE 数值积分 ($K \approx 10-20$) | 高阶动力学一致性物理轨迹 | 数值积分步长依赖超参数配置 | [arXiv:2502.00816] |
+| **稀疏混合专家** (Time-MoE) | MoE 架构 | 多分辨率动态路由 | 多尺度连续补丁 | 回归损失 + 负载均衡 $\mathcal{L}_{\text{balance}}$ | Top-$k$ 稀疏门控 $\mathcal{O}(k)$ | 超大参数容量与高效推断 | 门控路由存在表征塌缩风险 | [arXiv:2409.16040] |
+| **复数并行扩散** (PaCoDi) | Complex Diffusion | 频域联合拓扑 | 复数谱平面并行补丁 | 频域正交扩散去噪损失 | 单步并行去噪 $\mathcal{O}(1)$ | 超长程高保真时序轨迹生成 | 频域映射对非平稳脉冲敏感 | [arXiv:2602.17706] |
+| **自适应动力学调度** (LeapTS) | 控制器 + Neural CDE | 连续流形耦合 | 动态多视野跨度补丁 | 连续受控微分方程积分 | 自适应跳步推断 | 变采样率与多尺度连续系统 | 控制器与 CDE 联合训练难度高 | [arXiv:2605.10292] |
+| **先验数据拟合** (TabPFN-TS) | Prior-Data Transformer | 通道独立 / 表格拟合 | 动力学先验特征 Token | 贝叶斯后验拟合交叉熵 | 单次前向贝叶斯更新 $\mathcal{O}(1)$ | 小样本与区域热负荷零样本预测 | 严重依赖合成先验分布多样性 | [arXiv:2608.20024] |
+| **动态引导扩散** (DynG-Diff) | Diffusion + Guidance | 状态感知动态引导 | 连续高斯扩散补丁 | 状态条件逆扩散评分匹配 | 引导逆扩散采样 | 强耦合多变量概率预测 | 采样迭代步长计算开销大 | [arXiv:2609.02068] |
+| **自监督工业监控** (IPM-FM) | Informer 骨干 | 共识特征选择 (CFS) | 连续工业传感时变补丁 | 自监督重建 + MC-Dropout | 编码器前向 + 不确定性估计 | 复杂工业装备实时监控与异常 | 依赖工业历史测点覆盖率 | [arXiv:2609.08375] |
+| **具身物理遥测** (FactoryNet) | Encoder-Decoder | 6类具身物理通道 | 具身多通道物理补丁 | 多任务动力学守恒损失 | 编码-解码前向 | 机床/机械臂/冲压跨本体迁移 | 跨物理装备量纲标定复杂 | [arXiv:2605.09081] |
 
 ---
 """
@@ -406,6 +533,11 @@ part2 = r"""## 4 时序基础模型
 | **SwitchPFN** | 普林斯顿等学术团队 | [arXiv:2609.29814] | 2026 | 未报告 | 切换动力系统合成先验 | Prior-Data Transformer | 动力学状态分段特征 Token | TS | 是 |
 | **TW3Cast** | 学术团队 | [arXiv:2609.28506] | 2026 | 未报告 | GIFT-Eval 训练切分集 | Frozen Router (MoE) | 多骨干特征动态路由 | TS | 是 |
 | **VersaTSA** | 学术团队 | [arXiv:2609.22836] | 2026 | 未报告 | VersaTSA (300亿时序观测值) | Decoder-only (混合掩码)| 时间感知非均匀补丁 (Time-Patch)| TS | 论文声明 |
+| **TSPFN** | 学术团队 (STACOM 2026) | [arXiv:2608.31013] | 2026 | 未报告 | 14万合成多通道生理数据 (140K) | Prior-Data Transformer | 动力学生理表征 Token | TS | 是 |
+| **OutageDiT** | 学术团队 | [arXiv:2609.01896] | 2026 | 未报告 | 区域电网海量停电与天气序列 | Diffusion Transformer (DiT) | 时空条件引导 Patch | TS + Weather | 论文声明 |
+| **DynG-Diff** | 学术团队 | [arXiv:2609.02068] | 2026 | 未报告 | 通用多变量时序基准 | State-Aware Diffusion | 状态感知动态引导补丁 | TS | 是 |
+| **IPM-FM** | 学术团队 | [arXiv:2609.08375] | 2026 | 未报告 | 大规模工业过程连续传感流 | 自监督 Informer + MC-Dropout | 共识特征选择 Patch | TS | 论文声明 |
+| **FreqCondNorm** | 学术团队 | [arXiv:2609.20535] | 2026 | 未报告 | 跨工业预测维护多频段数据集 | Frequency-Conditioned Transformer| 跨频段自适应归一化 Patch | TS | 论文声明 |
 
 ---
 
@@ -611,7 +743,10 @@ $$|x_t - \tilde{x}_t| = |r_t - q_t| = \left| r_t - \text{round}\left( \frac{r_t}
 - **CITRAS-FM** [arXiv:2606.10798]（Hitachi 研究团队，EUSIPCO 2026）：提出面向边缘 CPU 极速推断的微型时序基础模型（参数量仅 **7M**）。CITRAS-FM 专为集成外生协变量 (Covariate-Informed) 设计，通过精简的自回归因果注意力和门控协变量融合机制，在通用工业预测场景中实现了与百兆级模型相当的零样本表现，且完全能够在低功耗边缘工控机上实现实时无卡 (CPU-only) 毫秒级推断；官方代码已开源核验；
 - **UniShape** [arXiv:2601.06429]（AAAI 2026）：颠覆了固定长度补丁的生硬切分，提出基于形态感知基元 (Shapelet Primitives) 的统一分类大模型，在 128 个 UCR/UEA 跨域分类基准上建立全新标杆；
 - **FlowTSFM** [arXiv:2609.13640]：将单层 Transformer 结构深度展开解释为循环分位数传输过程 (Recurrent Quantile Transport)，以仅 38.8M 参数比肩 119.5M 的重型模型；
-- **VersaTSA** [arXiv:2609.22836]：针对非均匀不规则采样的多变量序列，开源构建了包含 **300 亿时序观测值 (30B observations)** 的超大规模跨领域预训练语料库，并提出混合注意力与时间感知补丁 (Time-Aware Patch) 架构，彻底消除了传统插值对不规则序列时变特性的失真。
+- **VersaTSA** [arXiv:2609.22836]：针对非均匀不规则采样的多变量序列，开源构建了包含 **300 亿时序观测值 (30B observations)** 的超大规模跨领域预训练语料库，并提出混合注意力与时间感知补丁 (Time-Aware Patch) 架构，彻底消除了传统插值对不规则序列时变特性的失真；
+- **IPM-FM** [arXiv:2609.08375]：针对复杂工业过程监控 (Industrial Process Monitoring) 中传感器冗余干扰与工况多变的难题，提出融合共识特征选择 (Consensus Feature Selection, CFS) 与 MC-Dropout 不确定性估计的工业基础模型，以自监督方式学习物理测点间的鲁棒拓扑；
+- **FreqCondNorm** [arXiv:2609.20535]：提出面向跨领域预测维护 (Predictive Maintenance) 的频率条件归一化 Transformer 基础模型。针对工业旋转机械从低频 (1Hz) 到超声高频 (100kHz) 巨大的振动采样跨度，通过将采样频率显式参数化为条件归一化调制算子，实现了不同工业工况和物理装备间的零样本迁移；
+- **TSPFN** [arXiv:2608.31013]（STACOM 2026）：将时间序列拟合先验数据网络扩展至生理时序领域，构建了面向生理信号分类的时序表格基础模型，基于 14 万条合成多元生理动力学轨迹预训练，在零样本重症监护多通道分类上取得优异性能，官方代码经由 GitHub API 严格核验。
 
 ---
 
@@ -624,7 +759,11 @@ $$|x_t - \tilde{x}_t| = |r_t - q_t| = \left| r_t - \text{round}\left( \frac{r_t}
 - **FLAME** [arXiv:2512.14253]：通过流增强勒让德正交多项式记忆系统实现自适应长程记忆；
 - **LeNEPA** [arXiv:2607.00958]（金明组，KDD MILETS 2026）：深入反思传统时序自监督学习依赖经验性时间扭曲和抖动等数据增强操作对物理因果规律的破坏，提出“免数据增强下一隐状态预测 (No-Augmentation Next-Latent Prediction)”范式，直接在潜空间中建模连续动力学转移；
 - **SwitchPFN** [arXiv:2609.29814]：将分段切换动力系统 (Switching Dynamical Systems) 先验融入先验拟合 Transformer，在完全冻结参数的条件下实现高精度零样本时序分类；
-- **EXAONE Finance 1.0** [arXiv:2609.04239]（LG AI Research）：针对高频金融市场的长序列订单簿交互，提出首个面向金融市场的无注意力 (Attention-Free) 时序大模型，采用线性复杂度的循环状态空间 (SSM) 机制，彻底规避了自注意力二次方算力惩罚。
+- **EXAONE Finance 1.0** [arXiv:2609.04239]（LG AI Research）：针对高频金融市场的长序列订单簿交互，提出首个面向金融市场的无注意力 (Attention-Free) 时序大模型，采用线性复杂度的循环状态空间 (SSM) 机制，彻底规避了自注意力二次方算力惩罚；
+- **DynG-Diff** [arXiv:2609.02068]：针对扩散模型在非平稳多变量时序预测中条件引导能力不足的缺陷，提出状态感知动态引导扩散框架 (State-Aware Dynamic Guidance Diffusion)。通过引入隐状态自适应门控动态调节反向扩散过程中的引导强度，显著压降了条件生成轨迹的方差漂移，官方开源代码已由 GitHub API 官方核验；
+- **OutageDiT** [arXiv:2609.01896]：将 Diffusion Transformer 架构成功应用于极端天气下的电力网格停电预测与故障场景仿真，能够受控生成符合复杂物理网格约束的极端停电级联演变轨迹；
+- **扩散逆向终端步去噪反思 (When Denoising Hurts)** [arXiv:2608.14067]：深入揭示了扩散模型在时序生成推断中的“终端阶段漂移 (Terminal Step Drift)”现象——传统扩散模型坚持执行到最后一步 $t=0$，然而在低信噪比时序中，终端逆去噪往往因过度拟合高斯白噪声而抹杀关键周期波形。研究给出了最优提前停止准则，在减少推断步数的同时有效提升了生成保真度；
+- **TabPFN-TS 区域集中供热系统系统性评测** [arXiv:2608.20024]：首次对基于先验数据拟合的大模型 TabPFN-TS 在大型区域供热网络 (District Heating Networks) 真实零样本概率热负荷预测进行了全面系统评估，证实了无需微调的贝叶斯后验拟合在公用事业负荷预测中的极高工程实用性。
 
 ---
 
@@ -638,7 +777,8 @@ $$|x_t - \tilde{x}_t| = |r_t - q_t| = \left| r_t - \text{round}\left( \frac{r_t}
 - **Datadog Toto 2.0** [arXiv:2605.20119]：发布五组开源权重模型（最大达 25 亿参数 2.5B），基于超 1 万亿点预训练语料；
 - **Tabby** [arXiv:2609.13956]：发布了首个端到端完全公开透明的 TSFM 预训练配方与 OpenTS-Archive 数据清洗管线；
 - **$t_0$** [arXiv:2609.24559]：将异构环境与文本上下文联合融入 256M 解码器架构中；
-- **QUALS** [arXiv:2609.20156]（VLDB 2027）：提出模式量化 (Pattern Quantization) 与可学习性同步机制，攻克跨域预训练中的样本不均衡与灾难性遗忘。
+- **QUALS** [arXiv:2609.20156]（VLDB 2027）：提出模式量化 (Pattern Quantization) 与可学习性同步机制，攻克跨域预训练中的样本不均衡与灾难性遗忘；
+- **ORBIT 预训练机制与数据分布基准** [arXiv:2608.13262]：深入探究了时序基础模型的预训练机制 (Training Regimes)，构建了 ORBIT 体系。研究揭示了混合预训练中不同行业领域（金融、交通、气象、工业）的数据配比失衡对零样本下游迁移能力的深远影响，提出了动力学多样性平衡采样准则。
 
 ---
 """
@@ -742,7 +882,8 @@ $$\mathcal{S}_{\text{trans}}(M, \mathcal{D}_{\text{demo}}) = \frac{1}{M} \sum_{m
 - **ChorusTIC** [arXiv:2608.24033]：提出基于“合唱上下文学习 (Chorus In-Context Learning)”的免训练多变量时序分类范式。该方法将多变量序列转化为结构化多通道提示合唱，通过大模型内生序列注意力机制进行多视角投票，实现了无需微调的高鲁棒性分类；
 - **Estimating TSFM Transferability** [arXiv:2509.23695]（金明组）：提出首个基于无标注在途上下文探针量化基础模型可迁移性的理论方法，在无需进行昂贵梯度训练的前提下，秒级准确预估不同预训练大模型在特定下游任务的微调收益；
 - **LLM-Mixer** [arXiv:2410.11674]：探索将多尺度分解与混合层深度内嵌至 LLM 的中间隐层，提升长程复杂周期信号的自适应外推能力；
-- **In-context Time Series Predictor** [arXiv:2405.14982]：通过在上下文中优雅堆叠少量输入-输出时序对示范 (Few-shot Demonstrations)，探索了纯粹免梯度的在途时序推理能力。
+- **In-context Time Series Predictor** [arXiv:2405.14982]：通过在上下文中优雅堆叠少量输入-输出时序对示范 (Few-shot Demonstrations)，探索了纯粹免梯度的在途时序推理能力；
+- **时序检索增强有效性临界区间研究 (When Does Retrieval Help?)** [arXiv:2609.20193]（Kurban 等）：针对学术界盲目引入检索增强 (RAG) 的倾向，该研究首次对时序检索增强机制进行了严密实证审计。研究指出了时序 RAG 产生正收益的**临界操作区间 (Critical Operating Regime)**：检索增益由目标序列的平稳性与检索库覆盖率决定；当历史上下文长度充足时，模型自身注意力已能有效捕捉周期，强行检索相似片段反而因“模式相位饥饿 (Phase Starvation)”诱发负向干扰；研究提出了自适应检索触发准则，代码经由 GitHub API 严格核验。
 
 ### 5.6 时序后训练理论与强化学习对齐 (Post-Training & Reinforcement Learning Alignment)
 
@@ -787,6 +928,10 @@ part4 = r"""## 6 多模态时序与智能体演进
 | **TimEvolve** | 学术团队 [arXiv:2609.24862] | 2026 | TS + Agent | 部署即监督 + 延迟真实反馈在线反思 | 在线更新专家信任度与干预策略 | 开放动态环境持续时序决策 | 开源 |
 | **LLM-Agent Survey**| 徐晓刚等 [arXiv:2608.23058] | 2026 | 综述全景 | 感知、规划、工具使用与反思系统化分类 | 系统化梳理训练与评测前沿 | 全场景时序智能体系统 | 综述 |
 | **FactoryNet** | 学术团队 [arXiv:2605.09081] | 2026 | 6类物理机电时序 | 5100万点机床/机械臂/冲压多通道遥测 | 跨具身实体零样本物理迁移 | 具身工业设备控制与预测维护 | 开源 |
+| **LLM Agents Survey**| Salesforce / 徐晓刚等 [arXiv:2608.26226] | 2026 | 综述全景 | 智能体感知、规划、工具调用与反思分类谱系 | 智能体自主工作流与评价基准 | 全场景时序任务 | 综述 |
+| **MetaCaster** | 学术团队 (EMNLP 2026) [arXiv:2608.23473] | 2026 | TS + Text | Meta-Harness 优化智能体框架 | 自适应超参数与提示词元演化 | 少样本轻量级时序预测 | 论文声明 |
+| **CompEvo** | 学术团队 [arXiv:2609.09195] | 2026 | TS + Text (新闻) | 竞争诱导多智能体演化 (Competition-Induced Evolution) | 多智能体博弈竞争与策略自适应演化 | 新闻驱动高波动时序预测 | 开源 |
+| **Human-in-the-Loop Agent** | 工业学术团队 [arXiv:2608.30976] | 2026 | TS + Text | 人机协同闭环交互智能体 | 专家知识反馈与置信度自适应介入 | 工业关键制造与设备预测 | 论文声明 |
 
 ---
 
@@ -863,6 +1008,9 @@ $$\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{R}, \Ome
 - **CastFSR 快慢反思智能体框架** [arXiv:2608.03031]（陶晓宇、程明月等）：提出受认知心理学双系统理论启发的快慢反思智能体框架 (CastFSR)。系统划分出“快思考 (Fast System)”与“慢思考 (Slow System)”：快系统调用轻量级时序模型执行低延迟滚动外推；当系统监测到高不确定性或环境突发相变时，唤醒慢思考智能体调用大语言模型进行因果推理与外部知识检索；核心的“反思模块 (Reflect Module)”持续比对推断轨迹与后续展开的真实值，执行事后残差归因并动态重构后续提示词约束，在复杂多变环境下展现出卓越的自适应能力；官方开源代码已由 GitHub API 严格核验；
 - **TimeRLM 递归语言模型** [arXiv:2608.03391]（Zumarraga 等）：针对工业多变量百万步长历史序列中极难定位的针尖式微弱异常，提出递归语言模型 (Recursive Language Model, TimeRLM)。通过分层递归下采样与多尺度注意力聚焦机制，TimeRLM 突破了传统大模型上下文长度限制，以线性复杂度实现对长程时序高精度异常区间的毫秒级精准定位；
 - **时序预测大模型智能体系统综述** [arXiv:2608.23058]（徐晓刚、唐家奇等）：首次对面向预测与推断任务的 LLM 智能体系统进行了系统性回顾与分类。综述将时序智能体系统解构为“环境感知、任务规划、工具调用执行与反思进化”四层架构，系统梳理了监督对齐、强化学习自适应策略与实际工业落地的关键评价基线；
+- **Salesforce 时序大模型智能体系统综述 (Findings of EMNLP 2026)** [arXiv:2608.26226]（Salesforce Moirai 团队与学术界联合发布）：全面系统地回顾了 LLM 赋能时序智能体的最新进展。综述确立了时序智能体的统一认知框架，系统解构了多轮推理、外部工具链编排、动态反思与环境闭环反馈机制；
+- **MetaCaster 元演化智能体 (EMNLP 2026)** [arXiv:2608.23473]：提出 Meta-Harness-Optimized 智能体框架，利用元学习机制动态搜索并优化轻量级时序模型的提示词与微调参数，在极端少样本工业预测场景下实现了极高的精度与收敛速度；
+- **CompEvo 竞争诱导演化多智能体系统** [arXiv:2609.09195]：针对突发新闻驱动下的高波动时序（如大宗商品与金融衍生品），构建了基于博弈论的竞争演化机制。不同智能体分别扮演多头、空头与风险精算师，通过市场竞争博弈推动预测假设的自主迭代与优胜劣汰；
 - **TS-Debate 多智能体协作辩论** [arXiv:2601.19151]（Trirat 等，EMNLP 2026）：提出在推理期引入数值专家、视觉图表专家与文本因果专家进行多轮结构化协作辩论协议 (TS-Debate)。单一模态智能体容易受到局部噪声误导，而通过跨模态智能体之间的交叉质疑、证据质询与置信度校准，系统在无需参数微调的前提下极大提升了复杂现实时序案例的零样本推理准确度；
 - **ReasonCast 波动感知选择性推理** [arXiv:2608.15291]：设计了轻量级的波动与突变检测门控 $g_t \in \{0, 1\}$，平稳期仅由轻量 TSFM 执行惯性外推，突变时唤醒重型 LLM 智能体介入因果推导，**节约超 70% 的计算算力开销**。
 
@@ -870,6 +1018,7 @@ $$\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{R}, \Ome
 
 - **ChatAD** [arXiv:2601.13546]（金明团队）：构建了具备 80 亿参数 (8B) 的时序异常推理智能体。通过多轮指令演化 (Multi-Turn Instruction Evolution) 技术，在数十个关联传感器通道间多轮深挖设备跳闸的物理诱因；
 - **TimEvolve** [arXiv:2609.24862]：提出“部署即监督 (Deployment-is-Supervision)”的自进化智能体，利用系统随时间推进自然显现的真实观测在线计算累积遗憾 (Temporal Regret)，动态更新不同预测专家与 LLM 之间的信任权重；
+- **人机协同自主工业预测智能体 (Human-in-the-Loop Agent)** [arXiv:2608.30976]：在重工业与能源调度中，纯自主智能体可能引发失控风险。该系统建立了人机协同 (Human-in-the-Loop) 双层治理架构，智能体在低置信度或相变突变期主动向领域专家呈现因果图并请求关键决策确认，实现了高自治度与工业安全生产的完美平衡；
 - **AION** [arXiv:2605.25045]（金明团队）：开创了“自主科研智能体 (Autonomous AI Scientist for Time Series)”先河，支持端到端自主提出时空动力学假设、自动编写模型代码、调度 GPU 集群进行实验回测与自我纠错。
 
 ---
@@ -946,6 +1095,11 @@ part5 = r"""## 7 基准与评测
 | **TimeVista** | 清华 THUML [arXiv:2606.16173] | 多模态裁判评估 (TS+Vision) | 多领域海量折线图像对比对 | 视觉对齐与图表渲染流水线 | 视觉语言模型裁判 (VLM-as-a-Judge) | 是 |
 | **AION 科研评测** | 金明组 [arXiv:2605.25045] | 自主科学研究调度评估 (TS+Agent)| 端到端时序发现任务集 | 自动化探索环境闭环 | 科学猜想提出、自动代码实现与假设验证能力 | 是 |
 | **Forecast Workflow Bench**| 学术团队 [arXiv:2609.27385] | 预算约束智能体工作流 (TS+Agent) | 运筹规划工业时序仿真 | 步数与 API 预算动态受限 | 工具选择策略、调度收益与边际成本权衡 | 是 |
+| **Aionoscope 潜状态审计** | 金明组 [arXiv:2607.00956] | 表征可访问性与隐状态调试 (TS) | 多个主流 TSFM 潜空间 | 隐空间探测探针与流形投影 | 审计时序表征内部状态是否可被下游线性可访问 | 是 |
+| **Memory in Deep TS** | 学术团队 [arXiv:2609.06006] | 记忆容量与长程依赖理论评测 (TS)| 理论动力学合成序列基准 | 受控记忆衰减与时滞测试 | 严格度量不同架构对历史长期信息的保持与遗忘边界 | 论文声明 |
+| **ORBIT 基准** | 学术团队 [arXiv:2608.13262] | 预训练机制与分布评测 (TS) | 跨域多源合成与真实语料 | 考察领域配比对跨域零样本迁移影响 | 预训练语料多样性与类别平衡理论准则 | 是 |
+| **Retrieval Regime 审计**| Kurban 组 [arXiv:2609.20193] | 检索增强临界工作区间审计 (TS) | 多个主流开箱基准集 | 目标域平稳性与历史窗口阶跃测试 | 划定时序 RAG 产生正向收益的物理临界边界 | 是 |
+| **TabPFN-TS 供热评测** | 工业学术团队 [arXiv:2608.20024] | 区域集中供热零样本概率评测 (TS)| 城市供热网真实热负荷序列 | 严格时序先后回测 | 评估先验数据模型在真实大型公共公用事业中的泛化表现 | 论文声明 |
 
 ---
 
@@ -956,7 +1110,9 @@ part5 = r"""## 7 基准与评测
 2. **“时间延迟不等于新领域”** [arXiv:2609.10357]：Moghadasi 与 Ghaderi 的开创性研究指出，时序领域的“零样本”声称长期依赖于领域外测试，但模型在熟悉物理系统上的表现与其真实跨域泛化存在本质区别。在真正无污染的时间截断测试集上，许多庞大模型的绝对误差大幅攀升；
 3. **前瞻偏误的实证审判 (Look-Ahead Bias in Pretraining)** [arXiv:2609.20554]：系统探究了“用未来数据预训练是否真正有益”的重大命题。研究严谨证实：在预训练中违背严格时序先后因果关系（例如混合未来月份甚至未来年份数据进行掩码预训练）不仅会导致测试时产生严重虚高欺骗性性能，更在真实下游迁移时诱发显著的**负迁移 (Negative Transfer)**——模型学会了依赖未来信息的捷径特征，丧失了在纯历史自回归推断时的敏锐因果捕捉力；
 4. **宏观数据版本修订穿越漏洞** [arXiv:2609.28576] 与 **MACROCAST** [arXiv:2606.28670]：揭示了一个极其隐蔽却普遍存在的系统性漏洞：国家统计局或央行发布的 GDP、就业率和工业产值，在首次公布后往往会在后续数月乃至数年进行多轮重大修正。如果研究者直接从当下的数据库下载历史时间序列来评估模型过去的表现，模型实际上接触到了“发布日期时尚未发生的数据修正”，造成严重的信息未来泄露。MACROCAST 证明唯有基于实时历史切片 (Vintage Data) 进行预训练才能构建真正可信的实时宏观预测模型；
-5. **未知信息泄露预警** [arXiv:2510.13654]：Rethinking Evaluation 进一步形式化了未来信息泄漏的三种途径：全局归一化参数泄漏、跨序列重叠采样泄漏以及自注意力双向重叠泄漏，强调未来的评测必须强制要求只使用因果单向窗口归一化与时间戳严格后延的测试语料。
+5. **未知信息泄露预警** [arXiv:2510.13654]：Rethinking Evaluation 进一步形式化了未来信息泄漏的三种途径：全局归一化参数泄漏、跨序列重叠采样泄漏以及自注意力双向重叠泄漏，强调未来的评测必须强制要求只使用因果单向窗口归一化与时间戳严格后延的测试语料；
+6. **深度时序模型记忆容量理论审计 (Memory in Deep Time-Series Models)** [arXiv:2609.06006]：该研究针对当前大模型关于“能够吸收无限长历史上下文”的宣称进行了理论与实证审查。通过设计具有精确因果时滞的受控动力学测试序列，评测揭示了当前 Transformer 架构在超过特定窗口阈值后，因注意力弥散与 Softmax 温度退化导致的**指数级记忆衰减**现象，为合理设定预训练上下文长度提供了理论下界；
+7. **检索增强时序预测有效区间审计** [arXiv:2609.20193]：严谨证实了当时序信噪比较低或回看窗口已经覆盖主周期时，外源检索会导致模型发生注意力偏离与虚假频率锁定。
 
 ### 7.3 证据边界与零样本审计框架
 
@@ -971,6 +1127,7 @@ $$\text{Audit Dimension} \in \{\text{Task Interface}, \text{Forecast Object \& S
 通过强制在排行榜上同步公开上下文长度限制、推断 FLOPs 预算以及外部先验调用边界，确保前沿评测真正反映跨领域泛化能力，而非隐蔽的算力扩张或上下文泄露。
 
 与此同时，多模态与因果安全性审计正在向纵深拓展：
+- **Aionoscope 表征可访问性与潜状态可解释性审计** [arXiv:2607.00956]（金明团队，KDD MILETS 2026）：针对当前基础模型内部表征如同“黑盒”的问题，提出针对时序隐状态可访问性的调试探针工具 **Aionoscope**。Aionoscope 能够量化评估不同网络层输出的表征对下游物理属性（如瞬时频率、非线性阻尼比、突发相位跳变）的线性解耦程度，从表征几何学角度揭示了模型产生预测误差的内部动力学根源，官方开源代码经由 GitHub API 严格核验；
 - **多模态时序文本敏感度实证审计** [arXiv:2608.22321]（Sridhar & Gupta 等）：揭露了当前多模态时序研究中一个普遍存在的严峻隐患——许多声称通过结合非结构化文本大幅提升预测精度的复合大模型，在经过严格控制的**语义破坏消融实验 (Semantic Perturbation Audit)** 下暴露出虚假繁荣。当把具有真实因果内涵的领域描述替换为随机乱码或颠倒语法时，模型的指标几乎没有发生统计显著下降。这表明诸多模型仅仅学到了对文本 Token 长度或结构性标点位置的虚假相关性捷径，并未真正建立时序动态与自然语言因果语义的深层对齐；
 - **反事实干预与结构因果基准审计** [arXiv:2607.27263]（DoTime）：证明在传统关联性测试集上表现优异的基础模型，在面对外生政策干预与反事实推演时均出现严重失效，呼吁将 Pearl do-演算干预响应作为未来评估 TSFM 物理真实性的核心准则；
 - **因果集中性风险审计** [arXiv:2608.24303]：警告当全行业从针对单一任务定制专有模型转向共同依赖少数几个头部 TSFM 时，模型与应用的关系从“一对一”转变为“一对多”，带来了严重的**集中性风险 (Concentration Risk)**。
@@ -1064,9 +1221,10 @@ part6 = r"""## 8 重点课题组进展
    - **Time-MQA** [arXiv:2503.01875]、**TimeOmni-1** [arXiv:2509.24803] 与 **TimeOmni-VL** [arXiv:2602.17149]（ICML 2026）：建立时序-语言-视觉三模态全息融合推理体系；
    - **Sonar-TS** [arXiv:2602.17001] 与 **TimeInteract** [arXiv:2609.26389]：实现流式高频传感器时序的实时交互与多智能体意图解析；
    - **EventCast** [arXiv:2602.07695]：构建电商平台大促事件知识图谱与混合需求预测大模型；
-   - **AION** [arXiv:2605.25045]：开创面向时间序列的全自主科学研究 AI 智能体体系；
-   - **权威动态演化基准**：建立首个长时交互多轮基准 TimeSage-MT [arXiv:2606.01498] 与严格时间戳截断评测基准 TimeSage-EV [arXiv:2608.14270]；
-   - **持续维护领域权威综述**：[arXiv:2310.10196]。
+    - **AION** [arXiv:2605.25045]：开创面向时间序列的全自主科学研究 AI 智能体体系；
+    - **Aionoscope** [arXiv:2607.00956]（KDD MILETS 2026）：提出针对时序表示潜状态可访问性 (Latent-State Accessibility) 的调试与探测框架，官方代码全面开源；
+    - **权威动态演化基准**：建立首个长时交互多轮基准 TimeSage-MT [arXiv:2606.01498] 与严格时间戳截断评测基准 TimeSage-EV [arXiv:2608.14270]；
+    - **持续维护领域权威综述**：[arXiv:2310.10196]。
 
 ---
 
@@ -1095,6 +1253,8 @@ Salesforce 团队主打“全变量全频段大一统架构 (Any-variate, Any-fr
 2. **基石数据集与权威评测标杆**：
    - **LOTSA 语料库**：开源构建了涵盖 9 个主要工业与科学领域、270 亿时序观测值的庞大预训练基准；
    - **GIFT-Eval** [arXiv:2410.10393]：构建了涵盖 7 个领域、1.77 亿观测值 / 230 亿点的权威零样本预测评测基准，全面考察跨频段 MASE、CRPS 与尾部鲁棒性，成为全球学术界公认的主流竞技场。
+3. **时序智能体系统前沿**：
+   - **时序大模型智能体系统综述 (Findings of EMNLP 2026)** [arXiv:2608.26226]：Salesforce Moirai 团队与学术界联合发布，全面系统地回顾了 LLM 赋能时序智能体的最新进展，确立了时序智能体的统一认知框架。
 
 ---
 
@@ -1154,15 +1314,15 @@ IBM 研究院与卡耐基梅隆大学 (CMU) 分别从“极致轻量边缘 Mixer
 尽管时序基础模型与多模态智能在过去四年取得了飞跃式进展，但距离通用物理世界时空智能仍面临若干核心理论与工程挑战：
 
 1. **时序标度律、精度定律与合成数据真实性边界**：
-   与语言和视觉不同，公开时间序列数据呈现严重的域碎片化。尽管 Toto 2.0 [arXiv:2605.20119]、RMISC [arXiv:2607.06504]、VersaTSA [arXiv:2609.22836] 和 Timer-S1 [arXiv:2603.04791] 验证了数据扩展的收益，且 Accuracy Law [arXiv:2510.02729] 首次揭示了回看长度、视野与模式复杂度的解析幂律关系，但海量真实工业数据的清洗与对齐成本依然极其高昂。以 **Distillation of Synthetic Data for TSFM** [arXiv:2609.09586] 为代表的数据蒸馏技术表明，反向优化动力学代表性轨迹可在压缩 90% 数据的同时保留泛化能力。如何在保持高保真物理泛化多样性的同时探索更严格的极限缩放边界，是未来基础理论的核心焦点。
+   与语言和视觉不同，公开时间序列数据呈现严重的域碎片化。尽管 Toto 2.0 [arXiv:2605.20119]、RMISC [arXiv:2607.06504]、VersaTSA [arXiv:2609.22836] 和 Timer-S1 [arXiv:2603.04791] 验证了数据扩展的收益，且 Accuracy Law [arXiv:2510.02729] 首次揭示了回看长度、视野与模式复杂度的解析幂律关系，但海量真实工业数据的清洗与对齐成本依然极其高昂。ORBIT [arXiv:2608.13262] 严谨实证了预训练阶段领域配比不均引发的负迁移，而 **Distillation of Synthetic Data for TSFM** [arXiv:2609.09586] 表明反向优化动力学代表性轨迹可在压缩 90% 数据的同时保留泛化能力。如何在保持高保真物理泛化多样性的同时探索更严格的极限缩放边界，是未来基础理论的核心焦点。
 2. **高风险部署中的逐点偏误消除、反事实因果推演与前瞻隔离**：
-   从传统单一专有模型向“一对多”基础模型过渡，带来了前所未有的集中性脆弱风险 (Concentration Risk) [arXiv:2608.24303]。如 EOB 研究所揭露 [arXiv:2512.18610]，逐点损失函数内在的优化偏差会导致高频振幅指数衰减与相位滞后；如 Look-Ahead Bias 研究所证实 [arXiv:2609.20554]，预训练阶段若缺乏严格的因果时序单向截断，不仅诱发欺骗性虚假高分，更在下游部署中带来严重的负迁移；如 DoTime 所指明 [arXiv:2607.27263]，纯关联模型在面对外部策略干预时极易产生虚假因果外推；面对高噪声低信噪比环境模型还极易发生预测崩溃 (Forecast Collapse) [arXiv:2608.14106] 退化为平庸直线。将结构因果模型 (SCM)、反事实 do-演算、频域结构去偏与动态相变分层审计深度融入基础模型全生命周期势在必行。
+   从传统单一专有模型向“一对多”基础模型过渡，带来了前所未有的集中性脆弱风险 (Concentration Risk) [arXiv:2608.24303]。如 EOB 研究所揭露 [arXiv:2512.18610]，逐点损失函数内在的优化偏差会导致高频振幅指数衰减与相位滞后；如 Look-Ahead Bias 研究所证实 [arXiv:2609.20554]，预训练阶段若缺乏严格的因果时序单向截断，不仅诱发欺骗性虚假高分，更在下游部署中带来严重的负迁移；如 DoTime 所指明 [arXiv:2607.27263]，纯关联模型在面对外部策略干预时极易产生虚假因果外推；面对高噪声低信噪比环境模型还极易发生预测崩溃 (Forecast Collapse) [arXiv:2608.14106] 退化为平庸直线，逆向扩散终端步漂移 (When Denoising Hurts [arXiv:2608.14067]) 亦要求更精细的推断截断。将结构因果模型 (SCM)、反事实 do-演算、频域结构去偏与动态相变分层审计深度融入基础模型全生命周期势在必行。
 3. **连续时序强化学习后训练的稳定性与决策论贝叶斯最优**：
-   将强化学习微调 (RLHF/RLAIF/RLVR) 引入连续时序领域是实现任务对齐与运筹控制的核心钥匙。PostTime [arXiv:2605.29401] 展现了可验证奖励 (RLVR) 修正数值先验的潜力；时序后训练统一框架 [arXiv:2607.20002] 与真实局部邻域正则化 [arXiv:2608.08010] 为稳定策略梯度提供了流形约束解法；而 The Simulacrum [arXiv:2606.27711] 证明直接在先验动力学族上进行决策论贝叶斯风险极小化能够省去脆弱的在线推断。如何在非平稳高频扩散流上建立具备严格李雅普诺夫稳定性的连续策略优化理论，是数学运筹界亟待攻克的高峰。
+   将强化学习微调 (RLHF/RLAIF/RLVR) 引入连续时序领域是实现任务对齐与运筹控制的核心钥匙。PostTime [arXiv:2605.29401] 展现了可验证奖励 (RLVR) 修正数值先验的潜力；时序后训练统一框架 [arXiv:2607.20002] 与真实局部邻域正则化 [arXiv:2608.08010] 为稳定策略梯度提供了流形约束解法；而 The Simulacrum [arXiv:2606.27711] 证明直接在先验动力学族上进行决策论贝叶斯风险极小化能够省去脆弱的在线推断；时序检索增强有效性临界区间研究 [arXiv:2609.20193] 进一步划定了外源范例增强与模型内生自注意力的最优分界。如何在非平稳高频扩散流上建立具备严格李雅普诺夫稳定性的连续策略优化理论，是数学运筹界亟待攻克的高峰。
 4. **具身物理时序与硬核机电通用大模型**：
-   随着工业 4.0 与通用具身智能爆发，如 FactoryNet [arXiv:2605.09081] 所示，基础模型正从消费互联网指标下沉至数控机床、六轴机械臂、重型冲压机与注塑机等硬核物理机电实体。具身时序具有极高的采样频率、严苛的动力学守恒定律与强机械非线性交叉耦合。如何将经典物理先验（能量守恒、运动学拉格朗日约束）与数据驱动的通用大模型深度融合，构建能够跨不同机械本体零样本迁移的“工业物理通用大模型”，是未来最大的工业蓝海。
+   随着工业 4.0 与通用具身智能爆发，如 FactoryNet [arXiv:2605.09081] 所示，基础模型正从消费互联网指标下沉至数控机床、六轴机械臂、重型冲压机与注塑机等硬核物理机电实体。具身时序具有极高的采样频率、严苛的动力学守恒定律与强机械非线性交叉耦合。FreqCondNorm [arXiv:2609.20535] 展现了 1Hz 到 100kHz 跨频段自适应归一化在工业预测维护中的潜力，而 IPM-FM [arXiv:2609.08375] 则证明了共识特征选择在复杂工业监控中的抗噪韧性。如何将经典物理先验（能量守恒、运动学拉格朗日约束）与数据驱动的通用大模型深度融合，构建能够跨不同机械本体零样本迁移的“工业物理通用大模型”，是未来最大的工业蓝海。
 5. **多模态快慢反思与自进化智能体闭环**：
-   在动态演化环境中，智能体必须具备截止日期感知、反思校准与控制论稳定性保证。CastFSR [arXiv:2608.03031]、CTRL [arXiv:2609.23257]、TS-Reasoner [arXiv:2510.03519]、TimeSage-EV [arXiv:2608.14270]、TimEvolve [arXiv:2609.24862]、TS-Debate [arXiv:2601.19151]、ReasonCast [arXiv:2608.15291] 与 AION [arXiv:2605.25045] 指明了将未来展开作为弱监督、融合快慢思考与自我进化的新方向。同时结合 Break-Even 经济学损益平衡分析 [arXiv:2607.04919] 与文本敏感度严密审计 [arXiv:2608.22321]，探索兼具算力 ROI、因果真实性与商业可行性的闭环智能体系统是通向通用时空智能的必由之路。
+   在动态演化环境中，智能体必须具备截止日期感知、反思校准与控制论稳定性保证。CastFSR [arXiv:2608.03031]、CTRL [arXiv:2609.23257]、TS-Reasoner [arXiv:2510.03519]、TimeSage-EV [arXiv:2608.14270]、TimEvolve [arXiv:2609.24862]、TS-Debate [arXiv:2601.19151]、ReasonCast [arXiv:2608.15291]、CompEvo [arXiv:2609.09195]、MetaCaster [arXiv:2608.23473] 与 AION [arXiv:2605.25045] 指明了将未来展开作为弱监督、融合快慢思考、博弈竞争与自我进化的新方向；而人机协同闭环架构 [arXiv:2608.30976] 则为工业关键场景提供了不可或缺的安全兜底。同时结合 Break-Even 经济学损益平衡分析 [arXiv:2607.04919] 与文本敏感度严密审计 [arXiv:2608.22321]，探索兼具算力 ROI、因果真实性与商业可行性的闭环智能体系统是通向通用时空智能的必由之路。
 
 ---
 
@@ -1176,6 +1336,23 @@ IBM 研究院与卡耐基梅隆大学 (CMU) 分别从“极致轻量边缘 Mixer
 
 ## 版本变更日志 (Changelog)
 
+- **2026-09-26 (第 7 轮迭代：分类体系全景重构与五大计算范式数学深化、15 篇前沿收录与图表质检 / Iteration 7)**:
+  - 严格通过 arXiv HTTPS API 核验收录 15 篇最新前沿与重点团队论文，总文献库扩展至 **168 篇**；代码链接全部经由 GitHub API 官方核验（如 Aionoscope [arXiv:2607.00956]、DynG-Diff [arXiv:2609.02068]、Retrieval Regime [arXiv:2609.20193]、TSPFN [arXiv:2608.31013] 等）；
+  - **核心深化：全面重构并深化第 3 章（分类体系）**：
+    - 3.1 形式化定义四维正交分类理论设计空间 $\mathcal{S} = \langle \mathcal{A}, \mathcal{T}, \mathcal{M}, \mathcal{E} \rangle$；
+    - 3.2 深度解构五大核心计算范式（因果自回归解码器、双端编码-解码器、纯双向编码器掩码自编码、稀疏 MoE 与频域路由、连续动力学/扩散生成/先验拟合）的因果掩码、损失目标与设计权衡；
+    - 3.3 严格推导连续补丁化、离散分箱量化、频域复数小波、形态基元与跨频段自适应归一化 (FreqCondNorm) 的度量与计算权衡；
+    - 3.4 形式化通道拓扑演化路径：从通道独立 (CI) 到通道依赖 (CD)、任意变量统一 (vRoPE Any-variate) 到动态状态引导 (DynG-Diff) 与共识特征拓扑 (IPM-FM)；
+    - 3.5 首创 **3.5 时序基础模型多维技术分类对比矩阵**，涵盖 12 种主流技术路线、跨 8 个核心维度的全景横向技术解构。
+  - **全景融合 15 篇新增文献至各大章节**：
+    - 第 3/4 章：DynG-Diff 动态引导扩散 [arXiv:2609.02068]、OutageDiT 停电仿真大模型 [arXiv:2609.01896]、When Denoising Hurts 终端步去噪反思 [arXiv:2608.14067]、TabPFN-TS 区域供热评测 [arXiv:2608.20024]、TSPFN 生理分类基础模型 [arXiv:2608.31013]、IPM-FM 工业监控基础模型 [arXiv:2609.08375]、FreqCondNorm 跨频段预测维护 [arXiv:2609.20535]、ORBIT 预训练机制基准 [arXiv:2608.13262]；
+    - 第 5 章：时序检索增强有效性临界区间研究 [arXiv:2609.20193]；
+    - 第 6 章：Salesforce 时序智能体全景综述 [arXiv:2608.26226]、MetaCaster 元演化智能体 [arXiv:2608.23473]、CompEvo 竞争诱导演化系统 [arXiv:2609.09195]、人机协同工业智能体 [arXiv:2608.30976]；
+    - 第 7 章：Aionoscope 隐状态可访问性审计 [arXiv:2607.00956]、深度时序模型记忆容量理论审计 [arXiv:2609.06006]；
+    - 第 8 章：金明团队纳入 Aionoscope [arXiv:2607.00956]、Salesforce 团队纳入智能体全景综述 [arXiv:2608.26226]；
+  - **全套图表与质量门禁**：
+    - 重新核验并生成全套 5 组 300 DPI 图表 (PNG & SVG)，包括时序大模型里程碑时间线、多模型参数规模演进、四维分类树状图、开源/闭源份额与年度领域分布；
+    - 通过全部质量门禁：`validate.py` (168 papers)、`survey_check.py` (全章节、全图表与所有 168 个 arXiv 引用 100% 存在且吻合)、自动生成 `README.md` 与 `references.bib`。
 - **2026-09-26 (第 6 轮迭代：重点课题组全景矩阵深化、底层数学理论四维推导、15 篇前沿收录与图表重构 / Iteration 6)**:
   - 严格通过 arXiv HTTPS API 核验收录 15 篇最新前沿与重点团队论文，总文献库扩展至 **153 篇**；代码链接全部经由 GitHub API 官方核验（如 PaCoDi [arXiv:2602.17706]、CastFSR [arXiv:2608.03031] 等）；
   - **核心深化一：全面重构并深化第 8 章（重点课题组与代表机构进展）**：

@@ -1,5 +1,68 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-26 (第 7 轮运行：分类体系全景重构与五大计算范式数学深化、15 篇前沿收录与图表质检 / Iteration 7)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 7 轮迭代（上一轮 15 篇论文二次复核、近 45-60 天高影响力文献与重点团队前沿检索、第 3 章分类体系全景重构与五大计算范式数学深化、全套图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：168 篇经 arXiv HTTPS API 严格核验的论文（原 153 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv Atom HTTPS API 全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2510.02729` (Accuracy Law), `2510.03519` (TS-Reasoner), `2512.18610` (EOB), `2602.01937` (T-LLM), `2602.07695` (EventCast), `2602.17706` (PaCoDi), `2606.27711` (The Simulacrum), `2607.06504` (RMISC), `2607.27263` (DoTime), `2608.03031` (CastFSR), `2608.03391` (TimeRLM), `2608.22321` (Text Sensitivity), `2608.23058` (LLM-Agent Survey), `2609.13345` (Probabilistic Survey), `2609.23257` (CTRL).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2607.00956]** *Aionoscope: Debugging Latent-State Accessibility in Time-Series Representations* — 金明团队（KDD MILETS 2026），提出首个面向时序基础模型潜空间可访问性 (Latent-State Accessibility) 的调试与探测框架，官方代码经由 GitHub API 核验通过 (`https://github.com/langotime/aionoscope`)。
+2. **[arXiv:2608.13262]** *Into the ORBIT for Time Series: Training Regimes for Foundation Models* — 深入探究混合预训练中不同行业领域（金融、交通、气象、工业）的数据配比失衡对零样本下游迁移能力的深远影响，提出动力学多样性平衡采样准则与 ORBIT 评测基准。
+3. **[arXiv:2608.14067]** *When Denoising Hurts: Rethinking the Terminal Step of Diffusion Time Series Forecasters* — 揭示扩散时序生成中的“终端阶段漂移 (Terminal Step Drift)”机理，证明在低信噪比下终端去噪会破坏关键波形，提出自适应提前停止准则。
+4. **[arXiv:2608.20024]** *Systematic Evaluation of TabPFN-TS for Zero-Shot Probabilistic Heat Load Forecasting in District Heating Networks* — 首次对先验数据基础模型 TabPFN-TS 在大型城市区域集中供热网中真实零样本概率热负荷预测进行系统性评估，验证了无微调贝叶斯后验拟合的高工程实用性。
+5. **[arXiv:2608.23473]** *MetaCaster: Meta-Harness-Optimized Agent for End-to-End Few-Shot Learning of Lightweight Time Series Forecasters* — EMNLP 2026，提出 Meta-Harness 优化智能体框架，利用元学习机制动态搜索并优化轻量级时序模型的提示词与微调参数，在极端少样本工业预测场景下实现高精度收敛。
+6. **[arXiv:2608.26226]** *LLM Agents for Time-Series: A Survey* — Salesforce Research Moirai 团队与学术界联合发布（Findings of EMNLP 2026），全面系统地回顾了 LLM 赋能时序智能体的最新进展，确立了统一认知框架与决策评价基准。
+7. **[arXiv:2608.30976]** *A Human-in-the-Loop Autonomous Agent for Industry Time Series Forecasting* — 针对关键重工业预测场景建立人机协同 (Human-in-the-Loop) 双层治理架构，智能体在低置信度或动力学突变时主动请求专家确认，兼顾高自治与工业安全生产。
+8. **[arXiv:2608.31013]** *TSPFN: A Temporal Tabular Foundation Model for Physiological Time Series Classification* — STACOM 2026，将先验数据网络扩展至多变量生理信号领域，基于 14 万条合成多元生理动力学轨迹预训练，在零样本重症监护多通道分类上取得优异性能；官方代码经由 GitHub API 核验通过 (`https://github.com/Jeremstym/TSPFN`)。
+9. **[arXiv:2609.01896]** *OutageDiT: A Generative Foundation Model for Power Outage Forecasting and Scenario Simulation* — 将 Diffusion Transformer (DiT) 架构成功迁移至电力网格突发大面积停电预测与级联故障情景仿真，支持极端天气条件引导的高保真生成。
+10. **[arXiv:2609.02068]** *DynG-Diff: A State-Aware Dynamic Guidance Diffusion Framework for Probabilistic Time Series Forecasting* — 提出状态感知动态引导扩散架构 (DynG-Diff)，依据各通道当前隐状态的动力学显著性动态调节反向扩散过程中的条件引导强度；官方代码经由 GitHub API 核验通过 (`https://github.com/TT-20011031/DynG-Diff`)。
+11. **[arXiv:2609.06006]** *Memory in Deep Time-Series Models* — 理论与实证严格审查深度时序模型的记忆容量边界，通过受控时滞测试揭示 Transformer 注意力弥散与 Softmax 温度退化导致的指数级记忆衰减。
+12. **[arXiv:2609.08375]** *IPM-FM: A Foundation Model with Consensus Feature Selection for Industrial Process Monitoring* — 针对工业过程监控中的多传感器干扰，提出融合共识特征选择 (Consensus Feature Selection, CFS) 与 MC-Dropout 不确定性估计的自监督工业基础模型。
+13. **[arXiv:2609.09195]** *CompEvo: Competition-Induced Evolution for Multi-Agent in News-Driven Time Series Forecasting* — 针对突发新闻驱动的高波动时序，构建基于博弈论的竞争演化多智能体系统，通过角色博弈推动预测假说的自主迭代淘汰。
+14. **[arXiv:2609.20193]** *When Does Retrieval Help Time-Series Forecasting?* — 首次对时序检索增强 (RAG) 机制展开严格实证审计，揭示时序 RAG 产生正向收益的“临界操作区间 (Critical Operating Regime)”，指出上下文充足时强行检索会诱发模式相位饥饿；官方代码经由 GitHub API 核验通过 (`https://github.com/KurbanIntelligenceLab/retrieval-regime`)。
+15. **[arXiv:2609.20535]** *FreqCondNorm: Towards Cross-domain Predictive Maintenance through a Frequency-Conditioned Transformer Foundation Model* — 提出面向工业跨领域预测维护的频率条件归一化 Transformer 基础模型，通过条件归一化调制算子统一 1Hz 到 100kHz 振动信号，实现跨物理装备零样本迁移。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：全面重构并深化第 3 章（分类体系）**：
+  - 3.1 形式化定义四维正交分类理论设计空间 $\mathcal{S} = \langle \mathcal{A}, \mathcal{T}, \mathcal{M}, \mathcal{E} \rangle$；
+  - 3.2 深度解构五大核心计算范式（因果自回归解码器、双端编码-解码器、纯双向编码器掩码自编码、稀疏 MoE 与频域路由、连续动力学/扩散生成/先验拟合）的因果掩码、损失目标与设计权衡；
+  - 3.3 严格推导连续补丁化、离散分箱量化、频域复数小波、形态基元与跨频段自适应归一化 (FreqCondNorm) 的度量与计算权衡；
+  - 3.4 形式化通道拓扑演化路径：从通道独立 (CI) 到通道依赖 (CD)、任意变量统一 (vRoPE Any-variate) 到动态状态引导 (DynG-Diff) 与共识特征拓扑 (IPM-FM)；
+  - 3.5 首创 **3.5 时序基础模型多维技术分类对比矩阵**，涵盖 12 种主流技术路线、跨 8 个核心维度的全景横向技术解构。
+- **全景融合 15 篇文献至各大章节**：
+  - 4.1 核心对比矩阵扩充 TSPFN、OutageDiT、DynG-Diff、IPM-FM、FreqCondNorm；4.8 扩充工业监控与预测维护；4.9 扩充动态引导扩散与终端去噪漂移；4.10 扩充 ORBIT 预训练机制基准；
+  - 5.5 扩充时序检索增强有效性临界区间研究 (When Does Retrieval Help?)；
+  - 6.1 对比矩阵扩充 Salesforce 智能体综述、MetaCaster、CompEvo、人机协同工业智能体；6.4 详细展开这四大智能体架构与治理范式；
+  - 7.1 对比矩阵扩充至 38 个基准框架；7.2 展开深度时序模型记忆容量理论审计；7.3 展开 Aionoscope 隐状态可访问性调试探针；
+  - 8.2 金明团队纳入 Aionoscope [arXiv:2607.00956]；8.4 Salesforce 团队纳入时序智能体系统综述 [arXiv:2608.26226]；
+  - 9 开放问题深入融合 ORBIT 数据配比平衡、扩散终端步漂移、时序 RAG 临界区间、跨频段预测维护与人机协同安全生产。
+- **全量同步参考文献**：Section 10 收录全部 168 篇核验文献，同步生成 168 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：微调时间线引线分层，增加 TSPFN, OutageDiT, IPM-FM 等 2026 最新里程碑标注，交错纵轴坐标，完全消解密集重叠；
+  2. `open_weight_share.png`：精确反映 168 篇论文中 48.8% 开源权重模型、50.6% 基准/提示/综述、0.6% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：更新四维设计空间拓扑树状图，更新叶子节点；
+  4. `model_size_vs_date.png`：全面展示从微型 TTM (8M)、CITRAS-FM (7M) 到百兆级 TimesFM、Chronos，再到十亿级 Moirai-MoE (1.1B)、Sundial (1.5B)、Time-MoE (2.4B)、Toto 2.0 (2.5B) 及旗舰 Timer-S1 (8.3B) 的标度分布曲线；
+  5. `papers_by_category_year.png`：更新至 168 篇文献的历年发表堆叠分布柱状图，展示 2026 年突破 100 篇大关的态势。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（168 篇唯一 ID 校验、5 组图表生成与校验、675 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 下一轮规划与重点
+1. **多模态图表看图预测跨分辨率超轻量化**：探索在边缘视觉芯片上实现微秒级视觉时间序列掩码推断与形态保真；
+2. **时序因果结构发现与反事实推演统一架构**：结合 DoTime 等因果生成基准，攻克 TSFMs 在外生干预下的泛化理论下界；
+3. **具身多本体触觉-力觉物理遥测跨模态大模型**：持续追踪通用人形机器人动力学与重工业机电融合的超高频时序动力学表征；
+4. **时序多尺度自适应微调理论**：跟进参数高效迁移中的频域秩约束与自适应奇异值截断前沿；
+5. **TimeMixer++ 永久公开开源状态跟进**：持续监测官方仓库公司合规审查与权重发布进展。
+
 ## 2026-09-26 (第 6 轮运行：重点课题组全景矩阵深化、底层数学理论四维推导、15 篇前沿收录与图表重构 / Iteration 6)
 
 ### 1. 今日运行概览

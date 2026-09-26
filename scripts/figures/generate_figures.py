@@ -88,14 +88,17 @@ def plot_timeline(papers: list[dict]) -> None:
         ("LeNEPA", "2026-07-01", "Ming Jin", 2.0, 0),
         ("RMISC", "2026-07-07", "Academia", -1.6, -10),
         ("Align-RAG", "2026-08-06", "Harvard", 4.4, 5),
-        ("ReasonCast", "2026-08-15", "Academia", -4.4, 0),
+        ("ReasonCast", "2026-08-15", "Academia", -4.2, -8),
+        ("TSPFN", "2026-08-31", "Academia", 2.2, -8),
+        ("OutageDiT", "2026-09-01", "Academia", -5.8, -2),
         ("Cadence", "2026-09-05", "Academia", -2.0, -22),
         ("EXAONE Fin", "2026-09-07", "LG AI", 5.8, -6),
+        ("IPM-FM", "2026-09-08", "Academia", -1.4, -8),
         ("FlowTSFM", "2026-09-12", "Academia", 2.4, -10),
-        ("Tabby", "2026-09-12", "Academia", -3.8, -5),
+        ("Tabby", "2026-09-12", "Academia", -3.6, -5),
         ("TW3Cast", "2026-09-16", "Academia", 3.6, 0),
         ("QUALS", "2026-09-17", "Academia", 5.0, 22),
-        ("t_0", "2026-09-21", "Academia", -5.4, 0),
+        ("t_0", "2026-09-21", "Academia", -5.2, 10),
         ("TimeBraid", "2026-09-24", "Academia", 1.4, 16),
         ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22)
     ]
@@ -299,30 +302,30 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     subnodes = [
         (13.5, [
             ("Decoder-Only, Decision-Theoretic & Compression\n• TimesFM, Timer, Sundial, LeapTS, Simulacrum, Cadence", 60),
-            ("Spectral Diffusion, Real Corpora & Unified\n• PaCoDi, RMISC (142B), Zeus, Falcon-X, MACROCAST", 45),
+            ("Spectral Diffusion, Real Corpora & Unified\n• PaCoDi, DynG-Diff, OutageDiT, RMISC (142B), Zeus", 45),
             ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
-            ("Tiny Edge, Shapelets & Scaling Laws\n• CITRAS-FM (7M), TTM, UniShape, Accuracy Law, VersaTSA", 15)
+            ("Tiny Edge, Prior-Data PFN & Industrial\n• CITRAS-FM (7M), TTM, TSPFN, FreqCondNorm, IPM-FM", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.8, [
             ("Model Reprogramming & Adaptation\n• Time-LLM, GPT4TS, CoRA, FedChronos, PostTime", 60),
             ("Text Tokenization & Distillation\n• LLMTime, PromptCast, T-LLM, LLM as Planner, MILM", 45),
             ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
-            ("In-Context Adaptation & Chorus\n• Align-RAG, ChorusTIC, LLM-Mixer, In-Context Probe", 15)
+            ("In-Context Adaptation & Retrieval Audits\n• Align-RAG, Retrieval Regimes, ChorusTIC, Probe", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.2, [
             ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 60),
-            ("Fast-Slow-Reflect & Recursive Agents\n• CastFSR, TimeRLM (AnomalyXL), TS-Debate, ReasonCast", 45),
-            ("Visual Time Series & Embodied Sensing\n• VisionTS, Time-VLM, TimeOmni-VL, FactoryNet", 30),
-            ("Event Knowledge & Dynamic Harness\n• EventCast, FINESSE, AION, TAC-Time, TRACE", 15)
+            ("Fast-Slow-Reflect & Multi-Agent Evolution\n• CastFSR, CompEvo, Human-in-the-Loop, TS-Debate", 45),
+            ("Meta-Harness Forecasters & Surveys\n• MetaCaster, LLM Agents Survey, ReasonCast", 30),
+            ("Visual Time Series & Embodied Sensing\n• VisionTS, Time-VLM, TimeOmni-VL, FactoryNet", 15)
         ], "#feebc8", "#9c4221"),
 
         (86.5, [
             ("Zero-Shot Forecasting & Causal Generator\n• GIFT-Eval, It's TIME, DoTime (100K), VersaTSA", 60),
-            ("Contamination, Text Audit & Break-Even\n• Text Sensitivity Audit, Look-Ahead Bias, Break-Even", 45),
-            ("Probabilistic Surveys & Regime Failures\n• Probabilistic Survey, Regime-Dependent, SGA Uncertainty", 30),
-            ("Hardware Profiling & Industrial Cost\n• HoliBench, Cost-Aware Study, TimeSage-EV", 15)
+            ("Contamination, Text Audit & Memory Bounds\n• Memory in Deep TS, Text Sensitivity, Break-Even", 45),
+            ("Latent-State Probing & Terminal Denoising\n• Aionoscope Probing, Terminal Denoising Drift", 30),
+            ("Hardware Profiling & Training Regimes\n• ORBIT Regimes, HoliBench, Cost-Aware Study", 15)
         ], "#faf5ff", "#6b46c1")
     ]
 
