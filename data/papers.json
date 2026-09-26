@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "papers": [
     {
       "arxiv_id": "2202.07125",
@@ -6293,6 +6293,518 @@
         "reasoning"
       ],
       "notes": "Dedicated multi-agent framework performing granular time series quality rating across noise, drift, fidelity, and missingness dimensions."
+    },
+    {
+      "arxiv_id": "2609.00089",
+      "title": "Foundation models for electricity price forecasting and battery arbitrage: Can they replace market-specific forecasting models?",
+      "authors": [
+        "Arkadiusz Lipiecki",
+        "Rafał Weron"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-31",
+      "venue": "arXiv preprint",
+      "group": "Wrocław University of Science and Technology",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "evaluation",
+        "energy",
+        "finance",
+        "tsfm",
+        "q-fin.ST",
+        "cs.LG"
+      ],
+      "notes": "Systematic evaluation of zero-shot and fine-tuned TSFMs against market-specific models on electricity price forecasting and battery energy storage arbitrage across German EPEX SPOT and Nordic markets."
+    },
+    {
+      "arxiv_id": "2606.27438",
+      "title": "Unified Zero-Shot Time Series Forecasting: A Darts Foundation",
+      "authors": [
+        "Zhihao Dai",
+        "Dennis Bader",
+        "Alain Gysi"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-25",
+      "venue": "arXiv preprint",
+      "group": "Unit8",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/unit8co/darts",
+      "categories": [
+        "tsfm",
+        "foundation_model",
+        "zero_shot",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "notes": "Unified open-source foundation framework within the Darts ecosystem standardizing interface, pre-processing, and zero-shot inference pipelines across diverse TSFMs."
+    },
+    {
+      "arxiv_id": "2609.24441",
+      "title": "MUSE: Dependency-Aware Adaptation of a Frozen Vision Backbone for Multivariate Time Series Forecasting",
+      "authors": [
+        "Xinying Cai",
+        "Junkai Lu",
+        "Yuhan Zhu",
+        "Xiaoyun Yu"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-21",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "86M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "vision_language",
+        "cs.LG",
+        "cs.CV"
+      ],
+      "notes": "Transfers cross-domain visual priors to multivariate time series using a frozen vision backbone combined with inter-variable dependency routing and dual-domain temporal adapters."
+    },
+    {
+      "arxiv_id": "2606.05332",
+      "title": "GITCO: Gated Inference-Time Context Optimization in TSFMs",
+      "authors": [
+        "Manya Pandey",
+        "Dhruv Kumar",
+        "Murari Mandal",
+        "Saurabh Deshpande"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-03",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "zero_shot",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "notes": "Gated test-time context optimization mechanism that detects and filters out structurally anomalous and corrupt patches to prevent context poisoning in frozen patch-based TSFMs."
+    },
+    {
+      "arxiv_id": "2606.19363",
+      "title": "When to Trust, How to Distill: Multi-Foundation Model Guidance for Lightweight, Robust Scientific Time Series Forecasting",
+      "authors": [
+        "Rupasree Dey",
+        "Abdul Matin",
+        "Nathan Orwick",
+        "Yao Zhang"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-10",
+      "venue": "KDD 2026",
+      "group": "GUARD",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/RupasreeDey/GUARD-KDD2026",
+      "categories": [
+        "tsfm",
+        "theory",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "notes": "Multi-foundation model guidance and distillation framework (GUARD) that dynamically arbitrates model trustworthiness and transfers universal temporal priors to ultra-lightweight student networks for scientific time series."
+    },
+    {
+      "arxiv_id": "2606.01289",
+      "title": "Feature to Dynamics: Feature-space to Autoregression strategy for Zero-shot Time Series Forecasting",
+      "authors": [
+        "Yifan Wu",
+        "Junjie Wu",
+        "Kai Wu",
+        "Xiaoyu Zhang"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-31",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm",
+        "zero_shot",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "notes": "F2D framework bridging static temporal feature representation spaces with dynamic autoregressive trajectory rollout, mitigating error accumulation and distribution shifts in zero-shot forecasting."
+    },
+    {
+      "arxiv_id": "2608.11359",
+      "title": "Market-Information-Aware Gated-LoRA of Foundation Models for Transferable Day-Ahead Electricity Price Forecasting",
+      "authors": [
+        "Hang Fan",
+        "Wei Wei",
+        "Shengwei Mei"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-11",
+      "venue": "arXiv preprint",
+      "group": "Tsinghua University",
+      "architecture": "decoder-only",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "llm4ts",
+        "energy",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "notes": "Market-information-conditioned Gated-LoRA parameter-efficient transfer framework for adapting frozen time series foundation models across heterogeneous electricity market architectures."
+    },
+    {
+      "arxiv_id": "2609.21801",
+      "title": "LLM-Generated Feature Pools for Time Series Anomaly Detection",
+      "authors": [
+        "Youssef Attia El Hili",
+        "Malik Tiomoko",
+        "Corinne Ancourt"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-18",
+      "venue": "arXiv preprint",
+      "group": "MINES ParisTech",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly detection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "llm4ts",
+        "agent",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "notes": "Leverages LLM code generation to automatically synthesize and prune diverse statistical feature extractors tailored to domain contexts for zero-shot time series anomaly detection."
+    },
+    {
+      "arxiv_id": "2608.27182",
+      "title": "TraceBench: Controlled Evaluation of LLM Agents for Time-Series Root-Cause Attribution",
+      "authors": [
+        "Tommaso Bendinelli",
+        "Artur Dox",
+        "Christian Holz"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-27",
+      "venue": "arXiv preprint",
+      "group": "ETH Zurich",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly detection",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "agent",
+        "reasoning",
+        "multimodal",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "notes": "Controlled benchmark and diagnostic suite evaluating LLM agents on multivariate temporal root cause analysis across complex distributed microservice traces with variable delays and cascade failures."
+    },
+    {
+      "arxiv_id": "2608.17933",
+      "title": "EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection",
+      "authors": [
+        "Lei Jiang",
+        "Ye Wei",
+        "Xinyu Xi",
+        "Jordan Langham-Lopez"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-18",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "change point detection",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "agent",
+        "reasoning",
+        "finance",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "notes": "Self-evolving agent architecture for non-stationary financial time series change point detection, incorporating dynamic algorithm memory banks, reflective error analysis, and adaptive tool selection."
+    },
+    {
+      "arxiv_id": "2606.15107",
+      "title": "Towards Verifiable Agentic Data Science: Solving Irregular TSQA Via Tool-Grounded Reasoning",
+      "authors": [
+        "Sanhorn Chen",
+        "Xiaoyang Chen",
+        "Boyu Liu",
+        "Roy Zhao"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-13",
+      "venue": "arXiv preprint",
+      "group": "IRTS-ToolBench Team",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "question answering",
+        "reasoning"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/SanhornC/IRTS-ToolBench",
+      "categories": [
+        "multimodal",
+        "agent",
+        "reasoning",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "notes": "Tool-grounded verifiable agent framework (IRTS-ToolBench) addressing irregular, asynchronous, and missing-value time series question answering via verifiable program generation and semantic validation."
+    },
+    {
+      "arxiv_id": "2606.02497",
+      "title": "Bridging the Last Mile of Time Series Forecasting with LLM Agents",
+      "authors": [
+        "Yuhua Liao",
+        "Zetian Wang",
+        "Qiangqiang Nie",
+        "Zhenhua Zhang"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-01",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "agent",
+        "reasoning",
+        "llm4ts",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "notes": "Autonomous LLM agent framework bridging the operational last mile between raw foundation model numerical forecasts, physical domain constraints, anomaly adjustments, and business decision actions."
+    },
+    {
+      "arxiv_id": "2609.11872",
+      "title": "Evaluating Time-Series Foundation Models and Multimodal Dietary Context for CGM Forecasting",
+      "authors": [
+        "Bowen Zhang",
+        "Hsiu-Wen Cheng",
+        "Hongyu Yang",
+        "Evie L. Shen"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-10",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "benchmark",
+        "clinical",
+        "cs.LG",
+        "eess.SP"
+      ],
+      "notes": "Systematic benchmark evaluating zero-shot TSFMs (Chronos, TimesFM, Moirai, MOMENT) alongside multimodal dietary context for continuous glucose monitoring forecasting."
+    },
+    {
+      "arxiv_id": "2607.12454",
+      "title": "Exploring Zero-Shot Foundation Models for Multivariate Time Series Anomaly Detection",
+      "authors": [
+        "Martin Uray",
+        "Saverio Messineo",
+        "Roland Kwitt",
+        "Stefan Huber"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-14",
+      "venue": "arXiv preprint",
+      "group": "Salzburg University of Applied Sciences",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly detection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "evaluation",
+        "industrial",
+        "cs.LG"
+      ],
+      "notes": "First comprehensive zero-shot benchmark evaluating pre-trained foundation models across multivariate industrial and cyber-physical anomaly detection benchmarks."
+    },
+    {
+      "arxiv_id": "2510.00809",
+      "title": "Foundation vs. Specialized Models: Evaluating Catastrophic Forgetting in Continual Time Series Forecasting",
+      "authors": [
+        "Nouha Karaouli",
+        "Denis Coquenet",
+        "Elisa Fromont",
+        "Martial Mermillod"
+      ],
+      "year": 2025,
+      "release_date": "2025-10-01",
+      "venue": "arXiv preprint",
+      "group": "Université de Rennes",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "evaluation",
+        "theory",
+        "cs.LG"
+      ],
+      "notes": "Systematic evaluation of catastrophic forgetting, plasticity-stability trade-offs, and parameter isolation strategies during continual fine-tuning of time series foundation models across shifting domains."
     }
   ]
 }

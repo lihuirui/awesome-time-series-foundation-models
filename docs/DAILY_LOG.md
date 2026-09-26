@@ -1,5 +1,68 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-27 (第 9 轮运行：引言与全景范式深度重构、15 篇前沿收录、全景矩阵扩充与图表高清质检 / Iteration 9)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 9 轮迭代（上一轮 15 篇论文二次复核、近 45-60 天高影响力文献与重点团队前沿检索、第 1 章引言与全景范式深度重构与十维对比矩阵构建、全套图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：198 篇经 arXiv HTTPS API 严格核验的论文（原 183 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv Atom HTTPS API 全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2602.17634` (Reverso), `2604.12659` (Candlestick VLMs), `2606.03629` (TSQAgent), `2606.05404` (TimeClaw), `2606.16545` (Coding Agent TS Reasoning), `2607.01204` (TiRex-2), `2607.12248` (Base-Rate Honest TimesFM), `2607.14510` (VLT), `2608.14054` (R-AF), `2608.26829` (SAGE), `2609.11135` (Solar-Sky-TS), `2609.11282` (When Does Text Inform?), `2609.13454` (Clinical Hindsight Bias), `2609.14142` (T-SMART), `2609.16415` (Crowd Count Benchmark).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2609.00089]** *Foundation models for electricity price forecasting and battery arbitrage: Can they replace market-specific forecasting models?* — Lipiecki & Rafał Weron 等（能源与金融计量顶级团队），深入探究时序基础模型在真实日前电力市场能否取代特定市场专有模型，首次引入下游端到端储能电池充放电套利真实经济收益 (EUR/MWh) 作为终极评测标准。
+2. **[arXiv:2606.27438]** *Unified Zero-Shot Time Series Forecasting: A Darts Foundation* — Unit8 工业时序团队，基于主流开源工业时序库 Darts 推出统一零样本预测生态抽象层 Darts Foundation，提供多模型标准化补丁抽象与零样本模型聚合；官方代码经由 GitHub API 官方核验通过 (`https://github.com/unit8co/darts`)。
+3. **[arXiv:2609.24441]** *MUSE: Dependency-Aware Adaptation of a Frozen Vision Backbone for Multivariate Time Series Forecasting* — 提出变量依赖感知适配架构 (MUSE)，在完全冻结 Vision Transformer (ViT) 主干的前提下将通道拓扑重构为结构化 Patch 网格，实现高效跨通道动力学表征。
+4. **[arXiv:2606.05332]** *GITCO: Gated Inference-Time Context Optimization in TSFMs* — 提出门控推断时上下文自适应优化范式 (GITCO)，在完全无需梯度回传与参数更新的前提下，推断期自适应精炼有效历史上下文表示，显著压降未见目标域的跨域分布偏移误差。
+5. **[arXiv:2606.19363]** *When to Trust, How to Distill: Multi-Foundation Model Guidance for Lightweight, Robust Scientific Time Series Forecasting* — Dey 等（KDD 2026），提出面向非平稳科学时序的多大模型指导与轻量动力学蒸馏框架 GUARD，建立置信度门控将多教师共识先验转移至紧凑学生网络；官方代码经由 GitHub API 官方核验通过 (`https://github.com/RupasreeDey/GUARD-KDD2026`)。
+6. **[arXiv:2606.01289]** *Feature to Dynamics: Feature-space to Autoregression strategy for Zero-shot Time Series Forecasting* — 提出特征空间到动力学 (F2D) 预测范式，将时序投影至紧凑动力学隐流形消除局部扰动累积，再驱动细粒度自回归展开，提升全局时间一致性。
+7. **[arXiv:2608.11359]** *Market-Information-Aware Gated-LoRA of Foundation Models for Transferable Day-Ahead Electricity Price Forecasting* — 针对不同电力日前市场竞价中心剧烈的结构异构性，提出市场基本面感知的门控低秩微调机制，动态调节 LoRA 秩空间权值实现日前电价稳健跨市场迁移。
+8. **[arXiv:2609.21801]** *LLM-Generated Feature Pools for Time Series Anomaly Detection* — 创新提出基于大语言模型自主生成特征候选池的时序异常检测新范式，利用 LLM 代码编写与领域常识生成复合数学变换特征，以极低算力超越重型黑盒模型。
+9. **[arXiv:2608.27182]** *TraceBench: Controlled Evaluation of LLM Agents for Time-Series Root-Cause Attribution* — 针对大模型在云原生微服务 AIOps 运维中的幻觉与脆弱性，构建首个受控注入因果异常的评测基准 TraceBench，严格审计微服务根因定位能力。
+10. **[arXiv:2608.17933]** *EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection* — 针对金融时间序列中非平稳体制突变难以通过固定阈值捕捉的痛点，提出具备自主演化记忆机制的智能体系统 EvoTS-Agent，在动态反馈中自主反思纠偏。
+11. **[arXiv:2606.15107]** *Towards Verifiable Agentic Data Science: Solving Irregular TSQA Via Tool-Grounded Reasoning* — 针对医疗与工业物联网中普遍存在的不规则、非均匀采样多变量时间序列，提出工具增强可验证问答基准与系统 IRTS-ToolBench；官方代码经由 GitHub API 官方核验通过 (`https://github.com/SanhornC/IRTS-ToolBench`)。
+12. **[arXiv:2606.02497]** *Bridging the Last Mile of Time Series Forecasting with LLM Agents* — 深刻反思预测误差与落地决策可用性之间的鸿沟，设计端到端智能体协作工作流，自动化打通清洗、选型、仿真到业务执行的落地全流程。
+13. **[arXiv:2609.11872]** *Evaluating Time-Series Foundation Models and Multimodal Dietary Context for CGM Forecasting* — 构建首个融合 TSFMs 与多模态膳食图像/文本上下文的连续动态血糖监测 (CGM) 临床预测系统，提前 60 分钟准确捕获餐后血糖激增峰值。
+14. **[arXiv:2607.12454]** *Exploring Zero-Shot Foundation Models for Multivariate Time Series Anomaly Detection* — 对主流开源 TSFMs 在未见工业多变量异常检测任务上的零样本能力进行全面实证审计，揭示重构平滑漏报与噪声敏感虚警的机理。
+15. **[arXiv:2510.00809]** *Foundation vs. Specialized Models: Evaluating Catastrophic Forgetting in Continual Time Series Forecasting* — 针对非平稳连续流式任务首次系统对比基础模型与专有模型的灾难性遗忘 (Catastrophic Forgetting) 动力学，揭示预训练平坦极小值与过参数化特征漂移规律。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：全面重构并深度强化第 1 章（引言与全景范式）**：
+  - 1.1 形式化梳理三大范式演进与科学驱动力：经典统计计量时代（强平稳性假设，$10^0 \sim 10^2$ 参数）、深度专有模型时代（封闭经验风险极小化 ERM、分布偏移与冷启动瓶颈）到时序基础模型与多模态通用智能时代（通用动力学先验、零样本跨域迁移与在途自适应）；
+  - 1.2 深度解构时序模态的连续实数无离散词表、多尺度极端异构采样率、无语义动态通道拓扑与置换对称性、非平稳体制突变、极低信噪比诱发预测崩溃以及物理动力学刚性守恒与决策闭环等六大本质技术复杂性；
+  - 1.3 梳理时序原生基础模型 (Native TSFMs)、大语言/视觉模型赋能 (LLM/VLM Adaptation) 与多模态时序智能体 (Multimodal Temporal Agents) 三条核心演化技术主线；
+  - 1.4 聚焦电力日前市场电池充放电套利 (Weron [arXiv:2609.00089])、微服务分布式根因定位 (TraceBench [arXiv:2608.27182])、连续动态血糖 CGM 监护 [arXiv:2609.11872] 与金融变点检测自主演化 (EvoTS-Agent [arXiv:2608.17933]) 等工业级高价值闭环决策套利场景；
+  - 1.5 首创构建涵盖 10 个核心维度的 **1.5 全景范式系统性对比矩阵 (Table 1.1)**，系统横向解构经典统计、深度专有、原生 TSFM、大模型重编程与多模态智能体五大流派；
+  - 1.6 建立综述全文组织架构与面向理论研究者、算法工程师及落地决策者的全景导读路线图。
+- **全景融合 15 篇文献至各大章节**：
+  - 4.1 核心对比矩阵扩充 Darts Foundation、GUARD、F2D、GITCO；4.10 展开统一零样本套件、多大模型指导蒸馏、特征空间动力学生成与门控推断时上下文优化；
+  - 5.1 对比矩阵扩充 Market Gated-LoRA、LLM Feature Pools；5.2 展开市场基本面感知门控低秩微调；5.3 展开大模型自主生成特征候选池；
+  - 6.1 对比矩阵扩充 MUSE、TraceBench、EvoTS-Agent、IRTS-ToolBench、Bridging Last Mile、CGM-Multimodal；6.3 展开依赖感知视觉主干时序适配；6.4 展开微服务根因定位受控基准、金融变点演化智能体、不规则时序工具问答、落地最后一公里智能体与 CGM 多模态膳食时序系统；
+  - 7.1 对比矩阵扩充至 49 个基准体系；7.2 展开 Weron 电池套利实证基准、持续学习灾难性遗忘理论审计与零样本多变量异常检测全景审计；
+  - 全量同步参考文献：Section 10 收录全部 198 篇核验文献，同步生成 198 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：新增 GUARD, Darts FM, MUSE 等 2026 前沿里程碑，交错纵轴坐标与水平 dx 微调，彻底消除 label 重叠；
+  2. `open_weight_share.png`：精准反映 198 篇论文中 46.5% 开源权重模型、53.0% 基准/提示/综述、0.5% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：更新四维设计空间拓扑树状图，更新叶子节点；
+  4. `model_size_vs_date.png`：新增 MUSE (86M)，调整 Tabby (145M) 标注偏移，消解重叠；
+  5. `papers_by_category_year.png`：更新至 198 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（198 篇唯一 ID 校验、5 组图表生成与校验、870 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 下一轮规划与重点
+1. **日前电力与多能源市场非线性储能双向充放电调度一体化模型**：探索端到端收益最大化强化学习微调 (Weron 套利)；
+2. **分布式微服务异构链路因果图与时序遥测联合自监督预训练**：攻克大规模集群微秒级根因自动化定位 (TraceBench)；
+3. **可穿戴生理多模态上下文连续动态感知与非平稳代谢预测**：融合连续血糖 (CGM)、心率与膳食多模态的个性化先验拟合；
+4. **时序持续学习中的参数正交化与平坦极小值泛化边界**：针对非平稳任务流设计具备理论遗忘抗性的参数隔离机制；
+5. **零样本多变量时序异常检测中的动态通道剪枝与噪声抵御**：解决工业传感器高维异构噪声下的重构虚警；
+6. **TimeMixer++ 永久公开开源状态跟进**：持续监测官方仓库公司合规审查与权重发布进展。
+
 ## 2026-09-26 (第 8 轮运行：开放问题与未来前沿理论深化、15 篇前沿收录与全景矩阵扩充 / Iteration 8)
 
 ### 1. 今日运行概览

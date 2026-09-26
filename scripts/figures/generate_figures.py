@@ -100,11 +100,14 @@ def plot_timeline(papers: list[dict]) -> None:
         ("IPM-FM", "2026-09-08", "Academia", -1.4, -8),
         ("FlowTSFM", "2026-09-12", "Academia", 2.4, -10),
         ("Tabby", "2026-09-12", "Academia", -3.6, -5),
-        ("TW3Cast", "2026-09-16", "Academia", 3.6, 0),
-        ("QUALS", "2026-09-17", "Academia", 5.0, 22),
-        ("t_0", "2026-09-21", "Academia", -5.2, 10),
+        ("TW3Cast", "2026-09-16", "Academia", 3.2, -12),
+        ("QUALS", "2026-09-17", "Academia", 5.2, 22),
+        ("t_0", "2026-09-21", "Academia", -4.8, 10),
+        ("MUSE", "2026-09-21", "Academia", 4.4, 12),
         ("TimeBraid", "2026-09-24", "Academia", 1.4, 16),
-        ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22)
+        ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22),
+        ("GUARD", "2026-06-10", "Academia", -4.2, -16),
+        ("Darts FM", "2026-06-25", "Unit8", 2.0, 14)
     ]
 
     dates = [datetime.datetime.strptime(m[1], "%Y-%m-%d") for m in milestones]
@@ -129,6 +132,7 @@ def plot_timeline(papers: list[dict]) -> None:
         "NXAI": "#843c39",
         "LG AI": "#a55194",
         "Hitachi": "#b35806",
+        "Unit8": "#2b5c8f",
         "Academia": "#5254a3"
     }
 
@@ -305,29 +309,29 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.5, [
-            ("Streaming xLSTM, Decoders & Efficient TSFMs\n• TiRex-2 (Streaming), Reverso, TimesFM, Timer, Sundial", 60),
-            ("Spectral Diffusion, Real Corpora & Unified\n• PaCoDi, DynG-Diff, OutageDiT, RMISC (142B), Zeus", 45),
+            ("Streaming xLSTM, Decoders & Unified Darts\n• TiRex-2, Reverso, Darts FM, TimesFM, Sundial", 60),
+            ("Trust Distillation, F2D & Context Gating\n• GUARD Distillation, F2D, GITCO, PaCoDi, OutageDiT", 45),
             ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
             ("Tiny Edge, Tri-Modal & Industrial PHM\n• CITRAS-FM (7M), TTM, TSPFN, VLT, FreqCondNorm, IPM-FM", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.8, [
-            ("Model Reprogramming & Adaptation\n• Time-LLM, GPT4TS, CoRA, FedChronos, PostTime", 60),
-            ("Text Tokenization & Distillation\n• LLMTime, PromptCast, T-LLM, LLM as Planner, MILM", 45),
+            ("Model Reprogramming & Market Gated-LoRA\n• Gated-LoRA, Time-LLM, GPT4TS, CoRA, FedChronos", 60),
+            ("Text Tokenization & LLM Feature Pools\n• LLM Feature Pools, LLMTime, PromptCast, T-LLM, MILM", 45),
             ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
             ("In-Context Retrieval & Model-Agnostic R-AF\n• Align-RAG, Model-Agnostic R-AF, Retrieval Regimes", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.2, [
-            ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 60),
-            ("Generalist Multi-Agent & Quality Reasoning\n• TimeClaw, TSQAgent, T-SMART, CastFSR, CompEvo", 45),
-            ("Meta-Harness Forecasters & Agent Audits\n• MetaCaster, Coding Agent TS Audit, Human-in-Loop", 30),
-            ("Visual Candlestick & Variate Augmentation\n• SAGE, Solar-Sky, VisionTS, Candlestick Audit, FactoryNet", 15)
+            ("Frozen Vision Backbones & Candlesticks\n• MUSE (Frozen ViT), SAGE, Solar-Sky, Candlestick Audit", 60),
+            ("Generalist Multi-Agent & Root-Cause Systems\n• TraceBench, EvoTS-Agent, IRTS-ToolBench, TimeClaw", 45),
+            ("Operational Last-Mile & Agent Audits\n• Bridging Last Mile, Coding Agent TS Audit, TSQAgent", 30),
+            ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 15)
         ], "#feebc8", "#9c4221"),
 
         (86.5, [
-            ("Zero-Shot Forecasting & Causal Generator\n• GIFT-Eval, It's TIME, DoTime (100K), VersaTSA", 60),
-            ("Information-Theoretic Text & Memory Bounds\n• When Text Informs, Memory in Deep TS, Text Sensitivity", 45),
+            ("Battery Arbitrage & Real Decision Benchmarks\n• Weron Battery Arbitrage, GIFT-Eval, It's TIME, DoTime", 60),
+            ("Continual Forgetting & Zero-Shot MTSAD\n• Catastrophic Forgetting, MTSAD Anomaly, CGM Multimodal", 45),
             ("Base-Rate Honest Metrics & Clinical Hindsight\n• Base-Rate Honest TimesFM, Clinical Hindsight Bias", 30),
             ("Hardware Profiling & Crowd Dynamics Regimes\n• Crowd Count Benchmark, ORBIT Regimes, HoliBench", 15)
         ], "#faf5ff", "#6b46c1")
@@ -420,7 +424,7 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
         "2505.23719": ("TiRex (35M)", 0, 8),
         "2609.13640": ("FlowTSFM (38.8M)", -20, -14),
         "2402.02368": ("Timer (84M)", 0, 8),
-        "2609.13956": ("Tabby (145M)", -15, -14),
+        "2609.13956": ("Tabby (145M)", -30, -14),
         "2310.10688": ("TimesFM (200M)", 0, 8),
         "2605.20268": ("Chronicle (324M)", -28, 10),
         "2609.06008": ("Cadence (330M)", 12, 10),
@@ -431,6 +435,7 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
         "2601.13546": ("ChatAD (8B)", -28, 8),
         "2409.16040": ("Time-MoE (2.4B)", -30, 8),
         "2605.20119": ("Toto 2.0 (2.5B)", 0, -15),
+        "2609.24441": ("MUSE (86M)", 28, 8),
         "2510.02410": ("OpenTSLM (3B)", 0, -14),
         "2509.24803": ("TimeOmni-1 (8B)", -35, -14),
         "2603.04791": ("Timer-S1 (8.3B MoE)", 35, 8)
