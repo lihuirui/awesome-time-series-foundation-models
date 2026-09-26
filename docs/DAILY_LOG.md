@@ -1,5 +1,74 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-26 (第 6 轮运行：重点课题组全景矩阵深化、底层数学理论四维推导、15 篇前沿收录与图表重构 / Iteration 6)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 6 轮迭代（上一轮 15 篇论文二次复核、近 45 天高影响力文献与重点团队前沿检索、第 8 章重点课题组全景矩阵全面深化、第 2 章底层数学理论深度推导、图表排版质检与全自动化质量门禁）
+- **文献总数**：153 篇经 arXiv HTTPS API 严格核验的论文（原 138 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv OAI-PMH / Atom HTTPS API 全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2601.19151` (TS-Debate), `2604.10544` (WaveMoE), `2605.10292` (LeapTS), `2605.13711` (MILM), `2605.17340` (Olivia), `2605.20268` (Chronicle), `2605.27286` (Falcon-X), `2605.29401` (PostTime), `2606.10798` (CITRAS-FM), `2606.18367` (Regime-Dependent), `2606.28670` (MACROCAST), `2607.01918` (Zeus), `2607.04919` (Break-Even), `2608.17164` (SCENARIODIFF), `2609.22836` (VersaTSA).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2510.02729]** *Exploring Accuracy Law for Deep Time Series Forecasters: An Empirical Study* — 清华大学 THUML 龙明盛团队，系统研究回看窗口 $L$ 与预测视野 $H$ 及模式复杂度 $\mathcal{C}_P$ 对误差的解析幂律约束，确立时序精度定律 (Accuracy Law)。
+2. **[arXiv:2602.17706]** *Parallel Complex Diffusion for Scalable Time Series Generation* — 金明团队与温青山团队等，PaCoDi: 首创将时序映射至复数谱平面的并行复数扩散生成架构，实现全频段一步单次去噪生成，长序列生成吞吐提升数十倍；官方代码经 GitHub API 核验通过 (`https://github.com/RongyaoCai/PaCoDi`)。
+3. **[arXiv:2512.18610]** *The Procrustean Bed of Time Series: The Optimization Bias in Point-wise Loss Functions* — 金明团队与温青山团队等，从数学上揭示传统逐点 MSE/MAE 优化对微观相位抖动信号造成的高频振幅指数衰减效应（普洛克路斯忒斯之床），提出频域谱匹配与梯度对齐的结构去偏目标。
+4. **[arXiv:2602.07695]** *EventCast: Hybrid Demand Forecasting in E-Commerce with LLM-Based Event Knowledge* — 金明团队等，针对电商大促与营销事件导致的突发需求尖峰，利用 LLM 构建事件知识图谱并与时序骨干进行混合图注意力预测。
+5. **[arXiv:2607.06504]** *RMISC: A Large-scale Real-world Multivariate Corpus for Time Series Foundation Models* — 开源目前规模领先的真实多变量工业与科研预训练语料库，包含 1420 亿真实观测点 (142B)，涵盖电网、重工制造、气象与交通等 10 余个关键工业垂直领域。
+6. **[arXiv:2606.27711]** *The Simulacrum: Decision-Theoretic Pretraining for Near-Optimal Time-Series Forecasting and Inference* — Monash / Sydney 等，提出决策论预训练架构 (The Simulacrum)，直接在随机过程先验分布族上极小化有限样本贝叶斯风险，使模型在零样本下输出契合下游任意非对称业务效用的贝叶斯近最优决策。
+7. **[arXiv:2510.03519]** *TS-Reasoner: Aligning Time Series Foundation Models with LLM Reasoning* — 构建时序数值隐式表征与大语言模型思维链 (CoT) 的双向认知投影通道，兼顾高精度数值预测与因果自然语言解释归因。
+8. **[arXiv:2602.01937]** *T-LLM: Teaching Large Language Models to Forecast Time Series via Temporal Distillation* — 提出时序知识蒸馏框架，将预训练高精度 TSFM 教师网络的状态转移矩阵与频域特征蒸馏注入大语言模型学生网络。
+9. **[arXiv:2609.23257]** *CTRL: Control-Based Time Series Forecasting with LLM-Guided Residual Learning* — 将预测过程重塑为现代状态空间闭环反馈控制系统，由 LLM 作为监督控制器预测残差，结合李雅普诺夫稳定性界限彻底规避大模型幻觉导致的失稳。
+10. **[arXiv:2608.23058]** *LLM-based Agents for Forecasting and Prediction: Methods, Training, Evaluation, and Applications* — 首次对面向预测与推断任务的 LLM 智能体系统进行系统性全景回顾，提出感知、规划、工具使用与反思进化的四层系统化分类法。
+11. **[arXiv:2608.03031]** *CastFSR: A Fast--Slow--Reflect Agentic Reasoning Framework for Context-Aware Time Series Forecasting* — 提出快慢反思双系统智能体框架，轻量快系统负责惯性外推，慢系统进行因果反思，反思模块持续比对展开误差更新提示词约束；官方代码经 GitHub API 核验通过 (`https://github.com/Xiaoyu-Tao/CastFSR`)。
+12. **[arXiv:2608.03391]** *TimeRLM: Recursive Language Models Enable Precise Anomaly Localization in Long-Context Time-Series* — 提出递归语言模型 (Recursive Language Model)，通过多尺度分层下采样与递归聚焦，以线性复杂度实现对超长工业时序中微弱针尖异常的毫秒级定位。
+13. **[arXiv:2608.22321]** *Semantics or Structure? Auditing Text Sensitivity in Multimodal Time-Series Forecasting* — 构建多模态文本敏感度控制实验审计体系，揭露诸多声称多模态大幅提升的模型实则对语义不敏感，并未真正利用因果文本内涵。
+14. **[arXiv:2609.13345]** *Beyond Point Forecasts: A Survey on Probabilistic Forecasting for Time Series and Spatiotemporal Data* — 现代概率时序预测系统性综述，系统梳理参数分布、分位数回归、连续归一化流、扩散模型与基础模型概率校准技术谱系。
+15. **[arXiv:2607.27263]** *DoTime: A Synthetic Benchmark Generator for Interventional and Counterfactual Time Series* — 首个面向动态时序的反事实基准生成器，基于 Pearl do-演算与结构因果模型 (TSCM)，为干预响应与反事实评估建立可控基石。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化一：全面重构与深化第 8 章（重点课题组与代表机构进展）**：
+  - 8.1 清华大学 THUML 龙明盛团队：系统梳理从经典深度时序时代（TSlib 开源库、Autoformer, Informer, TimesNet, iTransformer）到大时序模型 LTM（Timer, Timer-XL, Timer-S1 8.3B MoE）、连续流匹配生成（Sundial 1.5B TimeFlow CFM）、多模态与基础理论（AutoTimes, TimeXer, TimesBERT, TimeVista, Accuracy Law 精度定律）的完整学术版图；
+  - 8.2 金明团队 (Ming Jin Group, Griffith / Monash)：全面梳理重编程先驱 Time-LLM、3000亿点 2.4B 大模型 Time-MoE、Neural CDE 动态调度 LeapTS、并行复数扩散 PaCoDi、逐点损失偏误理论 EOB、8B 工业异常诊断大模型 ChatAD、自主科学研究智能体 AION、电商事件需求预测 EventCast 及动态演化基准 TimeSage 系列；
+  - 8.3 亚马逊 AWS Chronos 团队：深入剖析 4096 离散分箱量化、多项式蒙特卡洛概率采样、Chronos-2 多变量联合注意力、FedChronos 联邦 PEFT 协议与 AutoGluon 工业自动化集成；
+  - 8.4 Salesforce Research Moirai 团队：深入剖析 Any-variate 跨通道扁平化注意力、变量感知旋转位置编码 (vRoPE)、多尺寸补丁池 $\mathcal{P}$、Moirai-MoE 1.1B、LOTSA 270 亿语料库与 GIFT-Eval 权威基准；
+  - 8.5 谷歌研究院 TimesFM 团队：深入剖析连续浮点数值与两阶段非对称投影（$P_{\text{in}}=32, P_{\text{out}}=128$）、1000 亿真实合成点预训练与 Cadence 误差有界预测残差工业压缩 ($\epsilon$-bounded)；
+  - 8.6 IBM Research 与 CMU 团队：系统对比 IBM TTM (1M-8M) 极简多尺度轻量化 Mixer 微秒级端侧边缘部署与 CMU MOMENT (385M) 纯编码器掩码自编码 (MAE) 统一多任务表征；
+  - 8.7 Datadog Toto 团队：深入剖析超过 1 万亿真实生产监控时序点 (1T) 预训练、开源 2.5B 模型族以及时序标度律 (Scaling Laws) 的严格工业实证；
+  - 8.8 重点课题组与代表机构综合对比矩阵：构建横跨 8 大顶尖团队、8 维核心指标（学术哲学、模型矩阵、分词与损失、标志性语料、最大规模、理论创新、开源状态）的纵深横向矩阵。
+- **核心深化二：全面深化第 2 章底层数学理论与公式形式化推导**：
+  - 2.5 预测精度定律与窗口模式复杂度 (Accuracy Law & Pattern Complexity) [arXiv:2510.02729]：推导谱熵与局部曲率加权模式复杂度 $\mathcal{C}_P$，推导精度定律幂律函数 $\mathcal{E}(L, H) = \alpha (H/L)^\beta \exp(\gamma \mathcal{C}_P) + \mathcal{E}_\infty$ 及三阶段区间；
+  - 2.6 逐点损失优化偏误与经验优化偏差 (Optimization Bias EOB & Debiasing) [arXiv:2512.18610]：推导在相位随机性扰动下条件期望解导致的高频振幅指数衰减定理（普洛克路斯忒斯之床），推导频域能量谱匹配与梯度对齐的结构去偏目标 $\mathcal{L}_{\text{Debiased}}$；
+  - 2.7 决策论预训练与有限样本贝叶斯风险极小化 (The Simulacrum) [arXiv:2606.27711]：形式化后验期望风险与先验随机动力学族上的贝叶斯风险，证明 $\mathcal{O}(1/\sqrt{M})$ 有限样本收敛界与零样本近最优决策；
+  - 2.8 反事实时序结构因果模型形式化 (Counterfactual & Interventional TSCMs, DoTime) [arXiv:2607.27263]：形式化动态 TSCM 四元组、Pearl do-演算时序硬干预算子与外生噪声溯源反事实潜在结果推导。
+- **全景融合 15 篇文献至第 4、5、6、7、8、9 章**：
+  - 4.1 对比矩阵加入 PaCoDi、RMISC、The Simulacrum；4.9 补充并行复数扩散与决策论 Transformer；4.10 扩充 1420 亿点真实语料库 RMISC；
+  - 5.1 对比矩阵加入 T-LLM、CTRL、TS-Reasoner；5.2-5.4 详细展开时序知识蒸馏、控制论反馈残差预测与认知推理思维链对齐；
+  - 6.1 对比矩阵加入 EventCast、CastFSR、TimeRLM、时序智能体综述；6.2 详细展开电商事件需求预测；6.4 展开快慢反思智能体双系统与递归语言模型精准定位；
+  - 7.1 对比矩阵扩充至 33 个基准框架，涵盖 RMISC、DoTime、多模态文本敏感度审计、概率预测综述、Accuracy Law 审计与 EOB 优化偏差审计；7.3 展开文本敏感度与反事实审计；7.4 深入探讨概率分布评测体系；
+  - 9 开放问题深入结合精度定律缩放边界、反事实因果推演、决策论贝叶斯最优、硬核工业机电通用大模型与快慢反思闭环智能体。
+- **全量同步参考文献**：Section 10 收录全部 153 篇核验文献，同步生成 153 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：微调时间线引线分层（y 轴交错跨度 0.25 到 0.95），精准标注 2026 最新前沿（Timer-S1, WaveMoE, LeapTS, Olivia, Chronicle, Toto 2.0, Falcon-X, FactoryNet, CITRAS-FM, The Simulacrum, MACROCAST, Zeus, RMISC, LeNEPA, Scale-Aware, EXAONE Fin, Cadence, Tabby, FlowTSFM, SOTER, QUALS, t0, SwitchPFN, TW3Cast, VersaTSA, PaCoDi, CastFSR），完全消解密集重叠；
+  2. `open_weight_share.png`：精确反映 153 篇论文中 52.3% 开源权重模型、47.1% 基准/提示/综述、0.7% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：融入决策论预训练、并行复数扩散、快慢反思智能体、反事实干预生成器与控制论残差学习等前沿技术子节点；
+  4. `model_size_vs_date.png`：精准展示从轻量级 TTM (8M)、CITRAS-FM (7M) 到百兆级 TimesFM、Chronos，再到十亿级 Moirai-MoE (1.1B)、Sundial (1.5B)、Time-MoE (2.4B)、Toto 2.0 (2.5B) 及旗舰 Timer-S1 (8.3B) 的标度分布曲线；
+  5. `papers_by_category_year.png`：更新至 153 篇文献的历年发表堆叠分布柱状图，展示 2026 年爆发式增长态势。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（153 篇唯一 ID 校验、5 组图表生成与校验、585 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 下一轮规划与重点
+1. **多模态时序图表“看图预测”轻量化追踪**：评估端侧视觉大模型直接从时序波形折线图执行形态外推的能耗与精度界限；
+2. **时序因果结构发现与反事实推演统一架构**：结合 DoTime 等因果生成基准，攻克 TSFMs 在外生干预下的泛化理论下界；
+3. **具身多通道物理遥测与工业机电大模型落地追踪**：持续追踪通用工业装备与人形机器人运动学融合的时变动力学表征；
+4. **TimeMixer++ 永久公开开源状态跟进**：持续监测官方仓库公司合规审查与权重发布进展。
+
 ## 2026-09-26 (第 5 轮运行：时序原生基础模型全面数学深化、15 篇前沿收录与全景矩阵扩充 / Iteration 5)
 
 ### 1. 今日运行概览

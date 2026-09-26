@@ -73,7 +73,8 @@ def plot_timeline(papers: list[dict]) -> None:
         ("Chronos-2", "2025-10-21", "Amazon", -2.0, 12),
         ("Moirai 2.0", "2025-11-17", "Salesforce", 4.8),
         ("UniShape", "2026-01-10", "Academia", 2.0),
-        ("Timer-S1", "2026-03-05", "THUML", -4.6, 0),
+        ("PaCoDi", "2026-02-10", "Ming Jin", -2.8, -12),
+        ("Timer-S1", "2026-03-05", "THUML", -4.8, 0),
         ("WaveMoE", "2026-04-12", "Academia", 2.4, -18),
         ("LeapTS", "2026-05-11", "Ming Jin", -3.8, -15),
         ("Olivia", "2026-05-17", "Academia", -1.8, -8),
@@ -85,6 +86,7 @@ def plot_timeline(papers: list[dict]) -> None:
         ("MACROCAST", "2026-06-27", "Academia", 5.2, 0),
         ("Zeus", "2026-07-02", "Academia", 3.4, 0),
         ("LeNEPA", "2026-07-01", "Ming Jin", 2.0, 0),
+        ("RMISC", "2026-07-07", "Academia", -1.6, -10),
         ("Align-RAG", "2026-08-06", "Harvard", 4.4, 5),
         ("ReasonCast", "2026-08-15", "Academia", -4.4, 0),
         ("Cadence", "2026-09-05", "Academia", -2.0, -22),
@@ -296,30 +298,30 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.5, [
-            ("Decoder-Only, Dynamic Scheduling & Compression\n• TimesFM, Timer, Sundial, LeapTS, Chronos-2, Cadence", 60),
-            ("Non-AR, Attention-Free & Unified\n• KAIROS-NAR, EXAONE Fin, Zeus, Falcon-X, MACROCAST", 45),
-            ("Sparse MoE, Wavelet & Spectral\n• Time-MoE, Timer-S1, WaveMoE, Olivia, TW3Cast", 30),
-            ("Tiny Edge, Shapelets & Quantiles\n• CITRAS-FM (7M), TTM, UniShape, FlowTSFM, VersaTSA", 15)
+            ("Decoder-Only, Decision-Theoretic & Compression\n• TimesFM, Timer, Sundial, LeapTS, Simulacrum, Cadence", 60),
+            ("Spectral Diffusion, Real Corpora & Unified\n• PaCoDi, RMISC (142B), Zeus, Falcon-X, MACROCAST", 45),
+            ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
+            ("Tiny Edge, Shapelets & Scaling Laws\n• CITRAS-FM (7M), TTM, UniShape, Accuracy Law, VersaTSA", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.8, [
             ("Model Reprogramming & Adaptation\n• Time-LLM, GPT4TS, CoRA, FedChronos, PostTime", 60),
-            ("Text Tokenization & Direct Prompting\n• LLMTime, PromptCast, LLM as Planner, MILM", 45),
-            ("Semantic Alignment & Spatial/RL\n• S2IP-LLM, CALF, STReasoner, RL Post-Training", 30),
+            ("Text Tokenization & Distillation\n• LLMTime, PromptCast, T-LLM, LLM as Planner, MILM", 45),
+            ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
             ("In-Context Adaptation & Chorus\n• Align-RAG, ChorusTIC, LLM-Mixer, In-Context Probe", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.2, [
             ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 60),
-            ("Agentic Reasoning & Debate\n• TimeAgent, TS-Debate, ReasonCast, ChatAD, TimEvolve", 45),
+            ("Fast-Slow-Reflect & Recursive Agents\n• CastFSR, TimeRLM (AnomalyXL), TS-Debate, ReasonCast", 45),
             ("Visual Time Series & Embodied Sensing\n• VisionTS, Time-VLM, TimeOmni-VL, FactoryNet", 30),
-            ("Financial Simulators & Dynamic Harness\n• FINESSE, AION, TAC-Time, TRACE, KG-Chronos-2", 15)
+            ("Event Knowledge & Dynamic Harness\n• EventCast, FINESSE, AION, TAC-Time, TRACE", 15)
         ], "#feebc8", "#9c4221"),
 
         (86.5, [
-            ("Zero-Shot Forecasting & Leaderboards\n• GIFT-Eval, It's TIME, LiveHouse-TS, VersaTSA", 60),
-            ("Contamination, Revision & Break-Even\n• Look-Ahead Bias, Break-Even Analysis, VINTAGE-TS", 45),
-            ("Forecast Collapse & Regime Failures\n• Forecast Collapse, Regime-Dependent, SGA Uncertainty", 30),
+            ("Zero-Shot Forecasting & Causal Generator\n• GIFT-Eval, It's TIME, DoTime (100K), VersaTSA", 60),
+            ("Contamination, Text Audit & Break-Even\n• Text Sensitivity Audit, Look-Ahead Bias, Break-Even", 45),
+            ("Probabilistic Surveys & Regime Failures\n• Probabilistic Survey, Regime-Dependent, SGA Uncertainty", 30),
             ("Hardware Profiling & Industrial Cost\n• HoliBench, Cost-Aware Study, TimeSage-EV", 15)
         ], "#faf5ff", "#6b46c1")
     ]
