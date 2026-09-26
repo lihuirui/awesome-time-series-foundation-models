@@ -1,5 +1,67 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-26 (第 8 轮运行：开放问题与未来前沿理论深化、15 篇前沿收录与全景矩阵扩充 / Iteration 8)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 8 轮迭代（上一轮 15 篇论文二次复核、近 45-60 天高影响力文献与重点团队前沿检索、第 9 章开放问题与未来方向理论全景深化、全套图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：183 篇经 arXiv HTTPS API 严格核验的论文（原 168 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv Atom HTTPS API 全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2607.00956` (Aionoscope), `2608.13262` (ORBIT), `2608.14067` (When Denoising Hurts), `2608.20024` (TabPFN-TS District Heating), `2608.23473` (MetaCaster), `2608.26226` (LLM Agents Survey), `2608.30976` (Human-in-the-Loop Agent), `2608.31013` (TSPFN), `2609.01896` (OutageDiT), `2609.02068` (DynG-Diff), `2609.06006` (Memory in Deep TS), `2609.08375` (IPM-FM), `2609.09195` (CompEvo), `2609.20193` (Retrieval Regime), `2609.20535` (FreqCondNorm).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2607.01204]** *TiRex-2: Generalizing TiRex to Multivariate Data and Streaming* — JKU Linz / NX-AI，将 xLSTM 架构扩展至通用多变量流式时序基础模型，构建基于块对角指数门控与矩阵记忆单元的循环状态机，打破二次方注意力开销，实现 $\mathcal{O}(1)$ 流式单步推断时间与 $\mathcal{O}(d^2)$ 恒定内存。
+2. **[arXiv:2607.14510]** *VLT: A Vision-Language-Time Series Multimodal Foundation Model for Industrial Intelligence* — 工业智能前沿团队，提出视觉-语言-时序三模态统一基础模型，协同对齐设备热像图、运维文本工单与毫秒级机电传感波形。
+3. **[arXiv:2602.17634]** *Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting* — 提出倒置 Transformer (Inverted Transformer) 架构下的参数高效零样本计算缩放新范式，大幅削减激活参数量并在跨域预测中保持顶尖泛化能力。
+4. **[arXiv:2606.16545]** *Can LLM Coding Agents Reason About Time Series?* — 首次将 LLM 代码智能体置于真实端到端时序分析工程流水线中进行严苛审计，揭示智能体在不规则采样、滑动窗口边界效应与时序因果反转中的推理隐患。
+5. **[arXiv:2606.05404]** *Harnessing Generalist Agents for Contextualized Time Series* (TimeClaw) — iDEA-iSAIL Lab (UIUC)，构建面向富上下文复杂时序问答与预测的通用智能体系统，支持动态时序专业工具调用与执行编排；官方代码经由 GitHub API 核验通过 (`https://github.com/iDEA-iSAIL-Lab-UIUC/TimeClaw`)。
+6. **[arXiv:2609.11282]** *When Does Text Inform? Benchmarking Information-Theoretic Metrics for Multimodal Time-Series Forecasting* — 从信息论（互信息、条件熵、传递熵）底层系统建立评测基准，严格划定多模态文本产生正向收益的因果信息流动边界。
+7. **[arXiv:2609.14142]** *T-SMART: Mechanism-Level Attribution for Tool-Augmented Time-Series Question Answering* — ICTAI 2026，提出面向工具增强时序问答系统的机制级归因框架，精准追溯工具调用链中的参数抽取与工具本身的逻辑失效节点。
+8. **[arXiv:2609.13454]** *Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language Model Judgment* — ML4H 2026，揭示重症监护 (ICU) 与临床多模态病历中普遍存在的后瞻偏误 (Hindsight Bias)，严谨实证未来病程微泄漏导致大模型虚假繁荣与因果扭曲。
+9. **[arXiv:2608.26829]** *SAGE: Variate-Wise Semantic Augmentation for Vision-Language Time Series Forecasting* — 提出变量级语义增强框架，为多变量时序中的每个物理通道建立细粒度语义绑定与独立视觉通道投影，消除跨通道语义混淆。
+10. **[arXiv:2608.14054]** *Model-agnostic Retrieval-Augmented Extended Forecasting for time series* (R-AF) — 提出模型无关的时序检索增强长视野预测框架，无需重新训练或微调即可将任意标准短视野 TSFM 的预测范围扩展数倍。
+11. **[arXiv:2607.12248]** *When Directional Accuracy Lies: A Base-Rate-Honest Benchmark for LoRA-Adapted TimesFM on Equity Forecasting* — 深入揭露金融量化中方向准确率 (DA) 受资产长期趋势自然基准率偏置欺骗的漏洞，提出无偏评估基准并审计 LoRA 适配 TimesFM 的真实外推表现。
+12. **[arXiv:2609.16415]** *How Good Are Time-Series Foundation Models for Pedestrian Crowd Count Forecasting? A Cross-Dataset Comparative Study* — IEEE ITSC 2026，首次跨多个真实城市与空间尺度系统评估现代 TSFMs 在行人群体密集度时序上的零样本泛化能力与时空拓扑约束应对策略。
+13. **[arXiv:2609.11135]** *Bidirectional Multimodal Fusion of Sky Images and Time-Series for Solar Forecasting with Large Language Models* — 构建将全天空成像仪 (TSI) 鱼眼云图与微秒级地面辐照度时序双向跨模态融合的 LLM 预测架构，联合流体力学演化与数值外推提升太阳能光伏预测精度。
+14. **[arXiv:2604.12659]** *Do VLMs Truly "Read" Candlesticks? A Multi-Scale Benchmark for Visual Stock Price Forecasting* — 对声称能够看懂金融 K 线图的视觉语言大模型展开多尺度扰动与几何结构伪造审计，揭示多数模型仅依赖表面颜色与条形长短等视觉捷径。
+15. **[arXiv:2606.03629]** *TSQAgent: Rating Time Series Data Quality via Dedicated Agentic Reasoning* — 提出首个面向时序数据专业质量评级的智能体系统，通过链式推理自主探测时序传感器漂移、异常脉冲与逻辑违背，实现专业级数据清洗与评级。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：全面重构并深度强化第 9 章（开放问题与未来方向）**：
+  - 9.1 建立物理守恒公理与时空神经动力学融合的解析形式化，严格推导质量/动量/能量连续性方程与哈密顿保辛几何约束，剖析自由自注意力统计相关性与经典物理公理的本质冲突，提出可微流形投影、跨频段参数归一化与多模态物理大模型破局路线（FactoryNet [arXiv:2605.09081], FreqCondNorm [arXiv:2609.20535], VLT [arXiv:2607.14510]）；
+  - 9.2 从信息论视角推导时序可预测性上界与互信息指数衰减律 $I \propto e^{-\lambda H}$，形式化揭示均方误差下极低信噪比诱发“预测崩溃 (Forecast Collapse)”退化为常数均值的临界相变机理，结合逆向去噪终端步漂移、金融方向率欺骗与文本信息论有效性（Forecast Collapse [arXiv:2608.14106], When Denoising Hurts [arXiv:2608.14067], When Does Text Inform? [arXiv:2609.11282], Base-Rate Honest TimesFM [arXiv:2607.12248]）；
+  - 9.3 形式化动态时序结构因果模型 (Dynamic TSCM) 与 Pearl 反事实硬干预算子 $do(\mathbf{a}^*)$，揭示纯被动观测数据预训练诱发的混淆偏差与行业集中性脆弱风险（DoTime [arXiv:2607.27263], Causal Analysis [arXiv:2608.24303], Clinical Hindsight Bias [arXiv:2609.13454]）；
+  - 9.4 剖析具身机器人与机电高频遥测的二次方算力与显存崩塌，推导具备 $\mathcal{O}(1)$ 单步时间复杂度与 $\mathcal{O}(d^2)$ 恒定内存的 xLSTM 矩阵状态流式递推架构与参数高效零样本计算缩放（TiRex-2 [arXiv:2607.01204], Reverso [arXiv:2602.17634], HoliBench [arXiv:2609.12412]）；
+  - 9.5 建立时序决策智能体离散时间动态闭环反馈控制系统与误差动力学方程，严格推导李雅普诺夫渐近稳定性准则与认知摄动界 $\epsilon_{\text{robust}}$，防范误差级联发散（TimeClaw [arXiv:2606.05404], TSQAgent [arXiv:2606.03629], T-SMART [arXiv:2609.14142], CastFSR [arXiv:2608.03031], CTRL [arXiv:2609.23257], Coding Agent TS Reasoning [arXiv:2606.16545]）；
+  - 9.6 首创构建 **9.6 全景开放挑战与未来破局路线矩阵 (Table 9.1)**，跨 6 大核心科学维度全面解构科学瓶颈、数学根源、失效范式、破局路线与关键评测里程碑。
+- **全景融合 15 篇文献至各大章节**：
+  - 4.1 核心对比矩阵扩充 TiRex-2、Reverso、VLT；4.10 展开多变量流式架构、参数高效缩放与工业三模态大模型；
+  - 5.1 对比矩阵扩充 R-AF；5.5 详细展开模型无关检索增强长视野预测；
+  - 6.1 对比矩阵扩充 TimeClaw、TSQAgent、T-SMART、VLT、SAGE、Solar-Sky-TS；6.3 展开变量级语义增强与地空双向融合；6.4 展开通用上下文智能体、数据质量诊断与机制级归因；
+  - 7.1 对比矩阵扩充至 44 个基准体系；7.2 展开临床后瞻偏误与金融方向基准率审判；7.3 展开文本信息论基准、蜡烛图 VLM 真伪评测、时序代码智能体评测与客流密集度评测；
+  - 全量同步参考文献：Section 10 收录全部 183 篇核验文献，同步生成 183 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：新增 Reverso, TimeClaw, TiRex-2, VLT 等 2026 前沿里程碑，交错纵轴坐标与水平微调，彻底消除 label 重叠；
+  2. `open_weight_share.png`：精准反映 183 篇论文中 48.1% 开源权重模型、51.4% 基准/提示/综述、0.5% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：更新四维设计空间拓扑树状图，更新叶子节点；
+  4. `model_size_vs_date.png`：更新模型参数量与发布日期分布；
+  5. `papers_by_category_year.png`：更新至 183 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（183 篇唯一 ID 校验、5 组图表生成与校验、765 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 下一轮规划与重点
+1. **多模态图表看图预测跨分辨率超轻量化**：探索在边缘视觉芯片上实现微秒级视觉时间序列掩码推断与形态保真；
+2. **时序因果结构发现与反事实推演统一架构**：结合 DoTime 与动态 TSCM，攻克 TSFMs 在外生干预下的泛化理论下界；
+3. **具身多本体触觉-力觉物理遥测跨模态大模型**：持续追踪通用人形机器人动力学与重工业机电融合的超高频时序动力学表征；
+4. **时序多尺度自适应微调理论**：跟进参数高效迁移中的频域秩约束与自适应奇异值截断前沿；
+5. **TimeMixer++ 永久公开开源状态跟进**：持续监测官方仓库公司合规审查与权重发布进展。
+
 ## 2026-09-26 (第 7 轮运行：分类体系全景重构与五大计算范式数学深化、15 篇前沿收录与图表质检 / Iteration 7)
 
 ### 1. 今日运行概览

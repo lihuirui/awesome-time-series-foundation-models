@@ -1,5 +1,5 @@
 {
-  "verified_count": 168,
+  "verified_count": 183,
   "verified_ids": [
     "2202.07125",
     "2210.08964",
@@ -168,24 +168,39 @@
     "2609.28576",
     "2609.28582",
     "2609.29792",
-    "2609.29814"
+    "2609.29814",
+    "2607.01204",
+    "2607.14510",
+    "2602.17634",
+    "2606.16545",
+    "2606.05404",
+    "2609.11282",
+    "2609.14142",
+    "2609.13454",
+    "2608.26829",
+    "2608.14054",
+    "2607.12248",
+    "2609.16415",
+    "2609.11135",
+    "2604.12659",
+    "2606.03629"
   ],
   "added_this_cycle": [
-    "2607.00956",
-    "2608.13262",
-    "2608.14067",
-    "2608.20024",
-    "2608.23473",
-    "2608.26226",
-    "2608.30976",
-    "2608.31013",
-    "2609.01896",
-    "2609.02068",
-    "2609.06006",
-    "2609.08375",
-    "2609.09195",
-    "2609.20193",
-    "2609.20535"
+    "2607.01204",
+    "2607.14510",
+    "2602.17634",
+    "2606.16545",
+    "2606.05404",
+    "2609.11282",
+    "2609.14142",
+    "2609.13454",
+    "2608.26829",
+    "2608.14054",
+    "2607.12248",
+    "2609.16415",
+    "2609.11135",
+    "2604.12659",
+    "2606.03629"
   ],
   "verification_events": [
     {
@@ -292,6 +307,16 @@
       "timestamp": "2026-09-26T17:16:41.231470",
       "query": "GitHub API verification on declared code repos",
       "result": "Verified https://github.com/langotime/aionoscope (HTTP 200 OK via gh api), https://github.com/TT-20011031/DynG-Diff (HTTP 200 OK via gh api), https://github.com/KurbanIntelligenceLab/retrieval-regime (HTTP 200 OK via gh api), and https://github.com/Jeremstym/TSPFN (HTTP 200 OK via gh api)."
+    },
+    {
+      "timestamp": "2026-09-26T22:28:06.753814",
+      "query": "export.arxiv.org/api/query?id_list=2607.01204,2607.14510,2602.17634,2606.16545,2606.05404,2609.11282,2609.14142,2609.13454,2608.26829,2608.14054,2607.12248,2609.16415,2609.11135,2604.12659,2606.03629",
+      "result": "Successfully retrieved and verified 15 preprints via official arXiv HTTPS API: 15 new papers added for Iteration 8."
+    },
+    {
+      "timestamp": "2026-09-26T22:28:06.753814",
+      "query": "GitHub API verification on declared code repos",
+      "result": "Verified https://github.com/iDEA-iSAIL-Lab-UIUC/TimeClaw (HTTP 200 OK via gh api)."
     }
   ],
   "failed_or_mismatched": [

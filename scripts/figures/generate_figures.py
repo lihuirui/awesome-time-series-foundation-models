@@ -74,24 +74,28 @@ def plot_timeline(papers: list[dict]) -> None:
         ("Moirai 2.0", "2025-11-17", "Salesforce", 4.8),
         ("UniShape", "2026-01-10", "Academia", 2.0),
         ("PaCoDi", "2026-02-10", "Ming Jin", -2.8, -12),
+        ("Reverso", "2026-02-19", "Academia", 1.6, -14),
         ("Timer-S1", "2026-03-05", "THUML", -4.8, 0),
         ("WaveMoE", "2026-04-12", "Academia", 2.4, -18),
         ("LeapTS", "2026-05-11", "Ming Jin", -3.8, -15),
         ("Olivia", "2026-05-17", "Academia", -1.8, -8),
         ("Chronicle", "2026-05-18", "Academia", 5.6, -14),
         ("Toto 2.0", "2026-05-19", "Datadog", 4.0, -10),
-        ("Falcon-X", "2026-05-26", "Academia", 1.4, -10),
+        ("Falcon-X", "2026-05-26", "Academia", 1.2, -14),
+        ("TimeClaw", "2026-06-03", "Academia", 2.6, -10),
         ("FactoryNet", "2026-06-03", "Academia", -5.0, 0),
         ("CITRAS-FM", "2026-06-09", "Hitachi", -3.2, 12),
-        ("MACROCAST", "2026-06-27", "Academia", 5.2, 0),
-        ("Zeus", "2026-07-02", "Academia", 3.4, 0),
-        ("LeNEPA", "2026-07-01", "Ming Jin", 2.0, 0),
-        ("RMISC", "2026-07-07", "Academia", -1.6, -10),
-        ("Align-RAG", "2026-08-06", "Harvard", 4.4, 5),
+        ("MACROCAST", "2026-06-27", "Academia", 5.2, -10),
+        ("TiRex-2", "2026-07-01", "NXAI", 6.3, 8),
+        ("LeNEPA", "2026-07-01", "Ming Jin", 1.5, -6),
+        ("Zeus", "2026-07-02", "Academia", 3.6, 0),
+        ("RMISC", "2026-07-07", "Academia", -1.6, -12),
+        ("VLT", "2026-07-16", "Academia", -6.4, 10),
+        ("Align-RAG", "2026-08-06", "Harvard", 4.8, 8),
         ("ReasonCast", "2026-08-15", "Academia", -4.2, -8),
-        ("TSPFN", "2026-08-31", "Academia", 2.2, -8),
+        ("TSPFN", "2026-08-31", "Academia", 1.6, -4),
         ("OutageDiT", "2026-09-01", "Academia", -5.8, -2),
-        ("Cadence", "2026-09-05", "Academia", -2.0, -22),
+        ("Cadence", "2026-09-05", "Academia", -2.0, -12),
         ("EXAONE Fin", "2026-09-07", "LG AI", 5.8, -6),
         ("IPM-FM", "2026-09-08", "Academia", -1.4, -8),
         ("FlowTSFM", "2026-09-12", "Academia", 2.4, -10),
@@ -301,31 +305,31 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.5, [
-            ("Decoder-Only, Decision-Theoretic & Compression\n• TimesFM, Timer, Sundial, LeapTS, Simulacrum, Cadence", 60),
+            ("Streaming xLSTM, Decoders & Efficient TSFMs\n• TiRex-2 (Streaming), Reverso, TimesFM, Timer, Sundial", 60),
             ("Spectral Diffusion, Real Corpora & Unified\n• PaCoDi, DynG-Diff, OutageDiT, RMISC (142B), Zeus", 45),
             ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
-            ("Tiny Edge, Prior-Data PFN & Industrial\n• CITRAS-FM (7M), TTM, TSPFN, FreqCondNorm, IPM-FM", 15)
+            ("Tiny Edge, Tri-Modal & Industrial PHM\n• CITRAS-FM (7M), TTM, TSPFN, VLT, FreqCondNorm, IPM-FM", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.8, [
             ("Model Reprogramming & Adaptation\n• Time-LLM, GPT4TS, CoRA, FedChronos, PostTime", 60),
             ("Text Tokenization & Distillation\n• LLMTime, PromptCast, T-LLM, LLM as Planner, MILM", 45),
             ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
-            ("In-Context Adaptation & Retrieval Audits\n• Align-RAG, Retrieval Regimes, ChorusTIC, Probe", 15)
+            ("In-Context Retrieval & Model-Agnostic R-AF\n• Align-RAG, Model-Agnostic R-AF, Retrieval Regimes", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.2, [
             ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 60),
-            ("Fast-Slow-Reflect & Multi-Agent Evolution\n• CastFSR, CompEvo, Human-in-the-Loop, TS-Debate", 45),
-            ("Meta-Harness Forecasters & Surveys\n• MetaCaster, LLM Agents Survey, ReasonCast", 30),
-            ("Visual Time Series & Embodied Sensing\n• VisionTS, Time-VLM, TimeOmni-VL, FactoryNet", 15)
+            ("Generalist Multi-Agent & Quality Reasoning\n• TimeClaw, TSQAgent, T-SMART, CastFSR, CompEvo", 45),
+            ("Meta-Harness Forecasters & Agent Audits\n• MetaCaster, Coding Agent TS Audit, Human-in-Loop", 30),
+            ("Visual Candlestick & Variate Augmentation\n• SAGE, Solar-Sky, VisionTS, Candlestick Audit, FactoryNet", 15)
         ], "#feebc8", "#9c4221"),
 
         (86.5, [
             ("Zero-Shot Forecasting & Causal Generator\n• GIFT-Eval, It's TIME, DoTime (100K), VersaTSA", 60),
-            ("Contamination, Text Audit & Memory Bounds\n• Memory in Deep TS, Text Sensitivity, Break-Even", 45),
-            ("Latent-State Probing & Terminal Denoising\n• Aionoscope Probing, Terminal Denoising Drift", 30),
-            ("Hardware Profiling & Training Regimes\n• ORBIT Regimes, HoliBench, Cost-Aware Study", 15)
+            ("Information-Theoretic Text & Memory Bounds\n• When Text Informs, Memory in Deep TS, Text Sensitivity", 45),
+            ("Base-Rate Honest Metrics & Clinical Hindsight\n• Base-Rate Honest TimesFM, Clinical Hindsight Bias", 30),
+            ("Hardware Profiling & Crowd Dynamics Regimes\n• Crowd Count Benchmark, ORBIT Regimes, HoliBench", 15)
         ], "#faf5ff", "#6b46c1")
     ]
 

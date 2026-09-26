@@ -5771,6 +5771,528 @@
         "tsfm"
       ],
       "notes": "SwitchPFN learns shared projection and regime switching dynamics codebooks for frozen in-context time series classification using tabular foundation models."
+    },
+    {
+      "arxiv_id": "2607.01204",
+      "title": "TiRex-2: Generalizing TiRex to Multivariate Data and Streaming",
+      "authors": [
+        "Patrick Podest",
+        "Marco Pichler",
+        "Elias Bürger",
+        "Levente Zólyomi",
+        "Bernhard Voggenberger",
+        "Wilhelm Berghammer",
+        "Daniel Klotz",
+        "Sebastian Böck",
+        "Günter Klambauer",
+        "Sepp Hochreiter"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-01",
+      "venue": "arXiv",
+      "group": "ELLIS Unit Linz",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "未报告",
+      "pretrain_corpus": "LOTSA + synthetic",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
+      "categories": [
+        "foundation_model",
+        "zero_shot",
+        "multivariate"
+      ],
+      "notes": "xLSTM-based foundation model generalizing TiRex to multivariate forecasting with past/future covariates and streaming state updates."
+    },
+    {
+      "arxiv_id": "2607.14510",
+      "title": "VLT: A Vision-Language-Time Series Multimodal Foundation Model for Industrial Intelligence",
+      "authors": [
+        "Haiteng Wang",
+        "Jingheng Yan",
+        "Xiaokang Wang",
+        "Lei Ren"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-16",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": "未报告",
+      "pretrain_corpus": "Industrial aero-engine and PHM telemetry datasets",
+      "tasks": [
+        "forecasting",
+        "anomaly_detection",
+        "classification"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "industrial",
+        "foundation_model"
+      ],
+      "notes": "Tri-modal (vision, language, time series) foundation model tailored for industrial prognostics and health management (PHM)."
+    },
+    {
+      "arxiv_id": "2602.17634",
+      "title": "Reverso: Efficient Time Series Foundation Models for Zero-shot Forecasting",
+      "authors": [
+        "Xinghong Fu",
+        "Yanhong Li",
+        "Georgios Papaioannou",
+        "Yoon Kim"
+      ],
+      "year": 2026,
+      "release_date": "2026-02-19",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": "未报告",
+      "pretrain_corpus": "Multi-domain public forecasting datasets",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": null,
+      "categories": [
+        "foundation_model",
+        "zero_shot"
+      ],
+      "notes": "Parameter-efficient time series foundation model optimizing compute-parameter scaling for zero-shot forecasting."
+    },
+    {
+      "arxiv_id": "2606.16545",
+      "title": "Can LLM Coding Agents Reason About Time Series?",
+      "authors": [
+        "Filip Rechtorík",
+        "Ondřej Dušek",
+        "Zdeněk Kasner"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-15",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "reasoning",
+        "agent"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "agent",
+        "benchmark",
+        "reasoning"
+      ],
+      "notes": "Audits whether LLM coding agents truly possess temporal reasoning capabilities or rely on superficial code heuristic patterns."
+    },
+    {
+      "arxiv_id": "2606.05404",
+      "title": "Harnessing Generalist Agents for Contextualized Time Series",
+      "authors": [
+        "Zihao Li",
+        "Kaifeng Jin",
+        "Yuanchen Bei",
+        "Jiaru Zou",
+        "Avaneesh Kumar",
+        "Xuying Ning",
+        "Yanjun Zhao",
+        "Mengting Ai",
+        "Baoyu Jing",
+        "Hanghang Tong",
+        "Jingrui He"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-03",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "agent",
+        "forecasting",
+        "reasoning"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/iDEA-iSAIL-Lab-UIUC/TimeClaw",
+      "categories": [
+        "agent",
+        "multimodal",
+        "reasoning"
+      ],
+      "notes": "TimeClaw generalist multi-agent framework orchestrating end-to-end workflows for contextualized time series analysis."
+    },
+    {
+      "arxiv_id": "2609.11282",
+      "title": "When Does Text Inform? Benchmarking Information-Theoretic Metrics for Multimodal Time-Series Forecasting",
+      "authors": [
+        "Emma Andrews",
+        "Gianmarco Mengaldo"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-10",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "benchmark",
+        "theory"
+      ],
+      "notes": "Information-theoretic benchmarking framework (mutual information, transfer entropy) auditing when textual annotations genuinely improve forecasting."
+    },
+    {
+      "arxiv_id": "2609.14142",
+      "title": "T-SMART: Mechanism-Level Attribution for Tool-Augmented Time-Series Question Answering",
+      "authors": [
+        "Ivan Delgado",
+        "Himansi Gupta",
+        "Bishal Khatri",
+        "Niharika Sapre",
+        "Lameta Shamoon",
+        "Onat Gungor",
+        "Tajana Rosing"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-12",
+      "venue": "ICTAI 2026",
+      "group": null,
+      "architecture": "other",
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "question_answering",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "agent",
+        "reasoning",
+        "multimodal"
+      ],
+      "notes": "Mechanism-level attribution framework for tool-augmented TS-QA, disentangling language reasoning, symbolic computation, and temporal signal retrieval."
+    },
+    {
+      "arxiv_id": "2609.13454",
+      "title": "Hindsight Bias in Clinical Temporal Reasoning: How Future Data Exposure Affects Large Language Model Judgment",
+      "authors": [
+        "Misaki Matsuura",
+        "Sayantan Kumar",
+        "Ojas Kadam",
+        "Jeremy C. Weiss"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-11",
+      "venue": "ML4H 2026",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "evaluation",
+        "clinical"
+      ],
+      "notes": "Audits hindsight bias and look-ahead contamination in temporal clinical reasoning, revealing substantial degradation when future records are strictly blinded."
+    },
+    {
+      "arxiv_id": "2608.26829",
+      "title": "SAGE: Variate-Wise Semantic Augmentation for Vision-Language Time Series Forecasting",
+      "authors": [
+        "Haizhao Fan",
+        "Xinyi Le"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-27",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": "未报告",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "vision_language",
+        "forecasting"
+      ],
+      "notes": "Variate-wise semantic augmentation framework bridging raw time series with vision-language models for cross-domain forecasting."
+    },
+    {
+      "arxiv_id": "2608.14054",
+      "title": "Model-agnostic Retrieval-Augmented Extended Forecasting for time series",
+      "authors": [
+        "Juan Pablo Villa Serna",
+        "Rohan Asthana",
+        "Vasileios Belagiannis"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-14",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "retrieval",
+        "forecasting",
+        "foundation_model"
+      ],
+      "notes": "Model-agnostic retrieval-augmented forecasting (R-AF) addressing zero-shot and few-shot degradation for long horizons with negligible history."
+    },
+    {
+      "arxiv_id": "2607.12248",
+      "title": "When Directional Accuracy Lies: A Base-Rate-Honest Benchmark for LoRA-Adapted TimesFM on Equity Forecasting",
+      "authors": [
+        "Taizhen Cheung"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-14",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "TimesFM pretrained + equity LoRA",
+      "tasks": [
+        "benchmark",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "finance",
+        "evaluation"
+      ],
+      "notes": "Exposes severe base-rate misalignment in financial directional accuracy benchmarks for LoRA-adapted TimesFM, establishing base-rate-honest scoring."
+    },
+    {
+      "arxiv_id": "2609.16415",
+      "title": "How Good Are Time-Series Foundation Models for Pedestrian Crowd Count Forecasting? A Cross-Dataset Comparative Study",
+      "authors": [
+        "Theivaprakasham Hari",
+        "Ziteng Li",
+        "Yanan Xin",
+        "Winnie Daamen",
+        "Serge Hoogendoorn"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-14",
+      "venue": "ITSC 2026",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "evaluation",
+        "transportation"
+      ],
+      "notes": "Comprehensive cross-dataset evaluation of Chronos, TimesFM, and Moirai on pedestrian crowd dynamics and surge forecasting."
+    },
+    {
+      "arxiv_id": "2609.11135",
+      "title": "Bidirectional Multimodal Fusion of Sky Images and Time-Series for Solar Forecasting with Large Language Models",
+      "authors": [
+        "Ken Chen",
+        "Maneesha Perera",
+        "Wei Wang",
+        "Sachith Seneviratne",
+        "Hansani Weeratunge",
+        "Saman Halgamuge"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-10",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": "未报告",
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "energy",
+        "forecasting"
+      ],
+      "notes": "Bidirectional multimodal fusion architecture aligning ground-facing solar irradiance time-series with sky camera imagery via LLM representations."
+    },
+    {
+      "arxiv_id": "2604.12659",
+      "title": "Do VLMs Truly \"Read\" Candlesticks? A Multi-Scale Benchmark for Visual Stock Price Forecasting",
+      "authors": [
+        "Kaiqi Hu",
+        "Linda Xiao",
+        "Shiyue Xu",
+        "Ziyi Tang",
+        "Mingwen Liu"
+      ],
+      "year": 2026,
+      "release_date": "2026-04-14",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": null,
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "vision_language",
+        "finance"
+      ],
+      "notes": "Rigorous visual benchmark auditing whether VLMs genuinely comprehend multi-scale candlestick chart morphology or rely on spurious trend biases."
+    },
+    {
+      "arxiv_id": "2606.03629",
+      "title": "TSQAgent: Rating Time Series Data Quality via Dedicated Agentic Reasoning",
+      "authors": [
+        "Shunyu Wu",
+        "Dan Li",
+        "Haozheng Ye",
+        "Weibin Feng",
+        "Jian Lou",
+        "Bo Zhang",
+        "Wenjie Feng",
+        "Chenjuan Guo",
+        "See-Kiong Ng"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-02",
+      "venue": "arXiv",
+      "group": null,
+      "architecture": "other",
+      "tokenization": null,
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "agent",
+        "reasoning",
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "agent",
+        "data_quality",
+        "reasoning"
+      ],
+      "notes": "Dedicated multi-agent framework performing granular time series quality rating across noise, drift, fidelity, and missingness dimensions."
     }
   ]
 }
