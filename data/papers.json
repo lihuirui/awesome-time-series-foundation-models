@@ -7895,6 +7895,564 @@
         "cs.LG"
       ],
       "notes": "ChronosAD: Adapts the Chronos TSFM family for zero-shot time series anomaly detection via probabilistic rolling forecast error residuals, verified and open-sourced on GitHub with official acceptance at IEEE INDIN 2026."
+    },
+    {
+      "arxiv_id": "2510.20084",
+      "title": "ShapeX: Shapelet-Driven Post Hoc Explanations for Time Series Classification Models",
+      "authors": [
+        "Bosong Huang",
+        "Ming Jin",
+        "Yuxuan Liang",
+        "Johan Barthelemy",
+        "Debo Cheng",
+        "Qingsong Wen",
+        "Chenghao Liu",
+        "Shirui Pan"
+      ],
+      "year": 2025,
+      "release_date": "2025-10-23",
+      "venue": "arXiv preprint",
+      "group": "Ming Jin Group",
+      "architecture": "other",
+      "tokenization": "shapelet",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "interpretability"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "interpretability",
+        "shapelet",
+        "classification",
+        "cs.LG"
+      ],
+      "notes": "ShapeX (Ming Jin & Qingsong Wen group): Proposes a shapelet-driven post-hoc explanation framework with the Shapelet Describe-and-Detect (SDD) mechanism and Shapley value attribution, proving causal rather than correlational explanations for time series."
+    },
+    {
+      "arxiv_id": "2609.29317",
+      "title": "Neuralized Multi-Wavelet Decomposition for Time Series Classification and Forecasting",
+      "authors": [
+        "Xiaohan Jiang",
+        "Jingyuan Wang",
+        "Jiahao Ji",
+        "Yongyao Wang",
+        "Chen Yang",
+        "Junjie Wu"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-24",
+      "venue": "arXiv preprint",
+      "group": "Beihang University",
+      "architecture": "encoder-decoder",
+      "tokenization": "wavelet",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "wavelet",
+        "multiscale",
+        "forecasting",
+        "classification",
+        "cs.LG"
+      ],
+      "notes": "m-WCN: Neuralizes classical GHM multi-wavelet transforms into trainable convolutional operators with strict orthogonality constraints, achieving multi-resolution time-frequency co-modeling for classification (TFBC) and forecasting (FTB)."
+    },
+    {
+      "arxiv_id": "2608.04368",
+      "title": "EvtGraph: Event-Adaptive Compression for Sparse Temporal Graph Learning in Multimodal Time Series",
+      "authors": [
+        "Ziqian Wang",
+        "Tingxiong Xiao",
+        "Yuxiao Cheng",
+        "Jinli Suo"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-05",
+      "venue": "arXiv preprint",
+      "group": "Tsinghua University",
+      "architecture": "other",
+      "tokenization": "event",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "event-compression",
+        "temporal-graph",
+        "cs.LG"
+      ],
+      "notes": "EvtGraph (Tsinghua): Introduces event-adaptive compression (EAMC) and node budget selection (NBC) with temporal sparse graph reasoning (T2SG) to compress multimodal temporal sequences into salient event tokens under strict compute budgets."
+    },
+    {
+      "arxiv_id": "2607.22264",
+      "title": "Autoregressive EHR Foundation Models with Multimodal Inputs",
+      "authors": [
+        "Yuxuan Liu",
+        "Joshua Placidi",
+        "Jinpei Han",
+        "Alfred John Balston",
+        "Marek Rei",
+        "A. Aldo Faisal"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-24",
+      "venue": "arXiv preprint",
+      "group": "Imperial College London",
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": "MIMIC-IV (EHR codes, ECG waveforms, chest X-rays, clinical notes)",
+      "tasks": [
+        "zero-shot",
+        "clinical-prediction",
+        "classification"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "healthcare",
+        "foundation-model",
+        "cs.LG"
+      ],
+      "notes": "Imperial College London autoregressive EHR foundation model: Integrates tokenized EHR codes, high-frequency ECG time series waveforms, chest X-rays, and clinical notes via latent sequence compression and gated cross-attention."
+    },
+    {
+      "arxiv_id": "2607.22153",
+      "title": "Industrial Tokenization for LLM-Based Health Intelligence: A Federated Architecture for Industrial Evidence Integration",
+      "authors": [
+        "Deshui Li",
+        "Xiao-Ming Yuan",
+        "Zishun Wang"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-24",
+      "venue": "arXiv preprint",
+      "group": "Academia",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly-detection",
+        "reasoning",
+        "prognostics"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "industrial",
+        "tokenization",
+        "llm-for-ts",
+        "federated",
+        "cs.AI"
+      ],
+      "notes": "Industrial Tokenization: Conceptual semantic interface transforming heterogeneous industrial sensor analytics and vibration diagnostics into standardized machine-interpretable Industrial Tokens (e.g. DiagnosisToken) for LLM reasoning in a federated architecture."
+    },
+    {
+      "arxiv_id": "2510.07513",
+      "title": "MLLM4TS: Leveraging Vision and Multimodal Language Models for General Time-Series Analysis",
+      "authors": [
+        "Qinghua Liu",
+        "Sam Heshmati",
+        "Zheda Mai",
+        "Zubin Abraham",
+        "John Paparrizos",
+        "Liu Ren"
+      ],
+      "year": 2025,
+      "release_date": "2025-10-08",
+      "venue": "arXiv preprint",
+      "group": "Bosch Research & Ohio State University",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "forecasting",
+        "anomaly-detection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "vision-language",
+        "classification",
+        "forecasting",
+        "cs.LG"
+      ],
+      "notes": "MLLM4TS: Bridges the numerical-visual modality gap by rendering multivariate time series as horizontally stacked color-coded line plots and employing temporal-aware visual patch alignment to unify vision and language models for general TS analysis."
+    },
+    {
+      "arxiv_id": "2603.05997",
+      "title": "MM-ISTS: Cooperating Irregularly Sampled Time Series Forecasting with Multimodal Vision-Text LLMs",
+      "authors": [
+        "Zhi Lei",
+        "Chenxi Liu",
+        "Hao Miao",
+        "Wanghui Qiu",
+        "Bin Yang",
+        "Chenjuan Guo"
+      ],
+      "year": 2026,
+      "release_date": "2026-03-06",
+      "venue": "arXiv preprint",
+      "group": "Aalborg University",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "irregular-sampling",
+        "vision-text",
+        "forecasting",
+        "cs.CV"
+      ],
+      "notes": "MM-ISTS: Multimodal framework for irregularly sampled time series forecasting combining cross-modal vision-text rendering, adaptive query-based token compression, and modality-aware gating to bridge irregular temporal dynamics with MLLMs."
+    },
+    {
+      "arxiv_id": "2609.23598",
+      "title": "OrderFusion+: Probabilistic Buy--Sell Price Trajectory Forecasting in Intraday Electricity Markets",
+      "authors": [
+        "Runyao Yu",
+        "Derek W. Bunn"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-20",
+      "venue": "arXiv preprint",
+      "group": "London Business School",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "probabilistic-forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "energy",
+        "electricity-market",
+        "orderbook",
+        "probabilistic",
+        "q-fin.CP"
+      ],
+      "notes": "OrderFusion+: Models micro-level continuous orderbook dynamics and neighboring delivery products to forecast probabilistic buy-sell price trajectories in German intraday electricity markets, systematically benchmarked against pretrained TSFMs."
+    },
+    {
+      "arxiv_id": "2608.19218",
+      "title": "Time-Series Retrieval for Grounding Multimodal Language Models in Remaining Useful Life Prediction",
+      "authors": [
+        "Valeriu Dimidov",
+        "Raphaël Frank"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-12",
+      "venue": "arXiv preprint",
+      "group": "University of Luxembourg",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "prognostics",
+        "reasoning",
+        "retrieval-augmented"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "rag",
+        "multimodal",
+        "phm",
+        "prognostics",
+        "cs.CL"
+      ],
+      "notes": "TS-RAG for RUL: Grounds multimodal LLMs in remaining useful life (RUL) estimation via time-series retrieval, constructing visual comparison artifacts from historical degradation segments on the C-MAPSS benchmark."
+    },
+    {
+      "arxiv_id": "2608.08859",
+      "title": "Agentic Anomaly Detection with ORCA-Style Dynamic Inductive Bias Adaptation in Multimodal Wearable Time Series Data",
+      "authors": [
+        "Anushka Roy",
+        "Jyotirmoy Singh",
+        "Shreea Bose",
+        "Chittaranjan Hota"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-09",
+      "venue": "arXiv preprint",
+      "group": "BITS Pilani",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly-detection",
+        "agent"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "agent",
+        "anomaly-detection",
+        "wearable",
+        "wban",
+        "cs.LG"
+      ],
+      "notes": "ORCA: Agentically controlled anomaly detection framework for wearable wireless body area networks (WBANs) that dynamically adapts the temporal receptive field at inference time via a supervisory controller without retraining."
+    },
+    {
+      "arxiv_id": "2606.19821",
+      "title": "TelcoAgent: A Scalable 5G Multi-KPM Forecasting With 3GPP-Grounded Explainability",
+      "authors": [
+        "Geon Kim",
+        "Dara Ron",
+        "Sukhdeep Singh",
+        "Suyog Moogi",
+        "Pranshav Gajjar",
+        "V V N K Someswara Rao Koduri",
+        "Een Kee Hong",
+        "Vijay K. Shah"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-18",
+      "venue": "arXiv preprint",
+      "group": "George Mason University & Korea University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "agent",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "agent",
+        "telecom-5g",
+        "zero-shot",
+        "reasoning",
+        "cs.AI"
+      ],
+      "notes": "TelcoAgent: Multi-agent telecom foundation model framework combining an automated 3GPP knowledge graph extraction pipeline, zero-shot TSFM forecasting across 200 cellular stations, and domain-grounded diagnostic reasoning."
+    },
+    {
+      "arxiv_id": "2607.25947",
+      "title": "A Cost-Effective Multimodal LLM Reasoning Framework for Question Answering over Irregular Clinical Time Series",
+      "authors": [
+        "Frank Nie",
+        "Ethan B Liu",
+        "Yuan Zhu",
+        "Wei Fan",
+        "Jindong Han"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-28",
+      "venue": "arXiv preprint",
+      "group": "University of Illinois Urbana-Champaign",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": "4B",
+      "pretrain_corpus": "30k clinical TS paired descriptions, 41k instruction-tuning pairs",
+      "tasks": [
+        "qa",
+        "reasoning",
+        "clinical-prediction"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "clinical-qa",
+        "irregular-sampling",
+        "cs.AI"
+      ],
+      "notes": "ClinPRISM: Cost-effective 4B multimodal LLM reasoning framework for irregular clinical time series QA, distilling multi-scale evidence into 16 tokens with 0.15s inference latency per query across 11 clinical tasks."
+    },
+    {
+      "arxiv_id": "2607.07951",
+      "title": "Evaluating the Generalizability of Foundation Models for Extreme Environmental Events: Case Study of California Wildfire PM2.5",
+      "authors": [
+        "Yongcan Huang",
+        "Li Jiang",
+        "Ze Yu Liu"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-08",
+      "venue": "arXiv preprint",
+      "group": "UC Berkeley & HKUST",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "extreme-events",
+        "environmental",
+        "wildfire",
+        "cs.LG"
+      ],
+      "notes": "Wildfire PM2.5 Benchmark: First systematic leave-one-incident-out audit of 6 TSFM setups (TimesFM, Chronos-2, Moirai-2, Time-MoE) on 12-year hourly records across 1,375 wildfire incidents, revealing tail instability of zero-shot models under extreme OOD regimes."
+    },
+    {
+      "arxiv_id": "2607.11653",
+      "title": "Bet on Features: Anytime-Valid and Feature-Aware Auditing of Conditional Quantile Forecasters",
+      "authors": [
+        "Ivane Antonov",
+        "Sohom Mukherjee",
+        "Richard Pibernik",
+        "Yo Joong Choe"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-13",
+      "venue": "arXiv preprint",
+      "group": "University of Würzburg",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "auditing",
+        "uncertainty-quantification"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "auditing",
+        "game-theoretic",
+        "quantile-forecasting",
+        "calibration",
+        "cs.LG"
+      ],
+      "notes": "Bet on Features: Game-theoretic, distribution-free auditing framework using betting martingales for anytime-valid and feature-aware auditing of black-box conditional quantile forecasters, empirically demonstrating severe feature-level miscalibration in Chronos-2."
+    },
+    {
+      "arxiv_id": "2604.11529",
+      "title": "TempusBench: An Evaluation Framework for Time-Series Forecasting",
+      "authors": [
+        "Denizalp Goktas",
+        "Gerardo Riaño-Briceño",
+        "Alif Abdullah",
+        "Aryan Nair",
+        "Chenkai Shen",
+        "Beatriz de Lucio",
+        "Alexandra Magnusson",
+        "Farhan Mashrur",
+        "Ahmed Abdulla",
+        "Shawrna Sen",
+        "Mahitha Thippireddy",
+        "Gregory Schwartz",
+        "Amy Greenwald"
+      ],
+      "year": 2026,
+      "release_date": "2026-04-13",
+      "venue": "arXiv preprint",
+      "group": "Brown University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/Smlcrm/TempusBench",
+      "categories": [
+        "benchmark",
+        "evaluation-framework",
+        "hyperparameter-tuning",
+        "cs.LG"
+      ],
+      "notes": "TempusBench: Open-source evaluation framework for TSFMs addressing pretraining data contamination, non-stationarity, and unfair baseline tuning via standardized hyperparameter protocols and a live leaderboard; verified open-source on GitHub."
     }
   ]
 }

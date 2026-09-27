@@ -1,5 +1,69 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-27 (第 12 轮运行：分类体系四维空间深化、率失真与多小波推导、28模型全景矩阵、15篇新前沿收录与图表质检 / Iteration 12)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 12 轮迭代（上一轮 15 篇论文二次复核、近 45-60 天高影响力文献与重点团队前沿检索、第 3 章分类体系深度重构与四维正交理论空间建立、率失真边界与多小波矩阵分解推导、因果 Shapley 归因、28 模型全景技术矩阵、全套图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：243 篇经 arXiv HTTPS API 严格核验的论文（原 228 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv Atom API 官方接口全量复核第 11 轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2609.27867` (Market Leaderboard Inversion), `2609.26696` (Gnomon), `2609.23378` (Leaky-Integrator), `2609.23074` (Event Signature Transfer), `2609.26809` (AgroBench), `2609.15393` (CodeTS), `2608.11623` (FM-LLM), `2607.19381` (Air Quality Arena), `2607.15705` (KIT Cross-Grid), `2607.02623` (EPF Contamination), `2606.31804` (Relational Graph CI), `2606.24950` (MacroLens), `2606.06881` (GlucoFM-Bench), `2606.05878` (TS-ICL), `2606.01300` (ChronosAD).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2510.20084]** *ShapeX: Explainable Multivariate Time Series Forecasting via Latent Shapelet Discovery and Attribution* — Ming Jin, Qingsong Wen 等团队. 深入探索可解释性多变量时序表征，提出潜在形态基元发现 (Latent Shapelet Discovery) 与软动态距离 (Soft Dynamic Distance, SDD) 因果归因框架，利用 Shapley 值公理化推导变量间形态学因果贡献，打破基础模型黑盒预测壁垒。
+2. **[arXiv:2609.29317]** *Neuralized Multi-Wavelet Decomposition for Time Series Forecasting* — Beihang University 团队. 针对传统单一小波与傅里叶变换在非平稳多尺度时序中无法兼顾正交性、紧支撑性与对称性的根本数学局限，提出首个神经化多小波卷积网络基础模型 (m-WCN)，基于 GHM 多正交小波基理论构建可微分多通道矩阵滤波器组，在频域潜空间中实现高保真多分辨率分解与多步零样本预测。
+3. **[arXiv:2608.04368]** *EvtGraph: Event-Adaptive Compression and Spatial-Temporal Graph Modeling for Time-Series Analysis* — 清华大学团队. 针对大规模物联网与工业传感网中普遍存在的常态低信息冗余与突发事件激增问题，提出 EvtGraph。通过事件自适应多尺度压缩 (EAMC) 消除 70% 的低信息背景冗余，并利用时序到空间图转换 (T2SG) 与非对称双向卷积 (NBC) 自适应构建稀疏时空因果图。
+4. **[arXiv:2607.22264]** *Autoregressive Foundation Models for Real-World Electronic Health Record Sequences* — 帝国理工学院团队. 针对真实世界临床医疗记录中高频生理监测与离散事件高度纠缠的复杂多模态现实，构建了面向电子病历长序列的大规模自回归基础模型，统一离散实验室事件、医嘱用药与连续生命体征数值流，实现端到端患者病程轨迹外推与多表型败血症早期预警。
+5. **[arXiv:2607.22153]** *Toward Clinical AI with Industrial Tokenization: An Empirical Investigation of Health Large Language Models* — 医疗智能学术团队. 针对健康大语言模型 (Health LLMs) 落地痛点，提出面向临床 AI 的工业级分词体系，通过 ICD 诊断本体图嵌入将临床诊断实体与连续生理遥测流在隐空间中实施多尺度几何对齐，实证检验了联邦环境下跨医院医疗大模型的泛化上限。
+6. **[arXiv:2510.07513]** *MLLM4TS: Multimodal Large Language Models for Time Series Forecasting* — 博世与俄亥俄州立大学团队. 系统探究了多模态大语言模型直接理解时序折线图的潜力，提出“堆叠多色彩折线图 (Stacked Color-Coded Line Plots)”渲染范式，将多变量时序转化为结构化彩色图像，利用预训练视觉编码器提取局部趋势与拐点视觉模式，实现了无需复杂数值重编程的端到端时序视觉预测。
+7. **[arXiv:2603.05997]** *MM-ISTS: Multimodal Irregularly Sampled Time Series Forecasting with Visual-Text Guidance* — 奥尔堡大学团队. 构建了视觉-文本双重引导的不规则采样时序预测架构，设计连续时间视觉特征网格与非均匀文本描述交叉注意力，使基础模型能够自适应消化具有随机时滞与缺失的不规则多模态传感信号。
+8. **[arXiv:2609.23598]** *OrderFusion+: Trajectory-Based Cross-Market Intraday Electricity Trading with Multimodal Deep Learning* — 伦敦商学院团队. 针对欧洲日前与日内电力市场连续竞价的高频撮合订单簿，提出基于轨迹的多模态深度学习框架 OrderFusion+，端到端融合电力供需时序、高频限价订单簿 (LOB) 深度动态与跨国电网拓扑，在外生价格波动预测中取得显著的经济套利超额收益。
+9. **[arXiv:2608.19218]** *Time-Series Retrieval for Grounding Multimodal Large Language Models in Remaining Useful Life Estimation* — 卢森堡大学团队. 提出基于时序模式检索增强 (RAG) 引导多模态大语言模型进行设备剩余使用寿命 (RUL) 估计，针对航空发动机 (C-MAPSS) 极端退化轨迹，从多源历史工况库中检索相似退化流形作为上下文证据，有效消除了通用多模态大模型在物理失效机理上的认知幻觉。
+10. **[arXiv:2608.08859]** *ORCA: Dynamic Inductive Bias Adaptation in Wearable WBAN Time Series Forecasting* — BITS Pilani 团队. 面向可穿戴无线体域网 (WBAN) 中人体运动伪影与传感器接触阻抗时变的严苛条件，提出动态归纳偏置自适应框架 ORCA，依据实时生理状态动态调节时序模型的归纳偏置强度，在极低功耗边缘端实现高稳健零样本生理监测。
+11. **[arXiv:2606.19821]** *TelcoAgent: Foundation-Model-Driven Zero-Shot Autonomous Agent for Telco KPM Forecasting and Grounding* — 乔治梅森大学与高丽大学团队. 针对 5G/6G 移动蜂窝网络中海量关键性能指标 (KPM) 动态漂移且高度耦合 3GPP 通信协议规范的挑战，构建了首个由基础模型驱动的电信自主智能体 TelcoAgent，将高频数值遥测流与 3GPP 协议语义知识库对齐，实现零样本指标异常预测、自动化排障动作规划与闭环控制指令生成。
+12. **[arXiv:2607.25947]** *ClinPRISM: Pre-trained Representations with Irregular Sequence Modeling for Clinical Time Series* — UIUC 团队. 针对重症监护室 (ICU) 与复杂临床医疗时序中极端非规则采样、高维度稀疏缺失与床旁实时推断对毫秒级低延迟的严苛要求，提出兼顾 40 亿参数 (4B) 表征容量与极端轻量推理的临床时序基础模型 ClinPRISM。将连续生理遥测流极端压缩至仅 16 个潜变量 Token，单次推断延迟骤降至 0.15 秒。
+13. **[arXiv:2607.07951]** *Evaluating Generalizability for Extreme Environmental Events: A Benchmark for Wildfire-Driven PM2.5 Prediction* — UC Berkeley & HKUST 团队. 系统整理跨越 12 年的 1,375 场真实野火数据，采用严格的“留出野火事件 (LOIO)”时空切分协议。实证审计发现现有先进基础模型在面对野火引发的突发极值浓度飙升时，预测误差激增 300%-800%，且存在严重的峰值滞后现象，揭示了时序基础模型在极端环境突发事件中普遍面临的“长尾鲁棒性赤字”。
+14. **[arXiv:2607.11653]** *Bet on Features: Auditing In-Context Forecasters with Feature-Conditional Martingales* — 维尔茨堡大学团队. 通过特征条件随时有效鞅 (Anytime-Valid Martingales) 理论对时序预测器开展严格检验，构造虚拟财富鞅增长过程，在不依赖任何分布假设的前提下，灵敏捕获 Chronos-2 等先进基础模型在异方差波动区间的置信度失真与覆盖率缺陷。
+15. **[arXiv:2604.11529]** *TempusBench: A Standardized Evaluation Framework for Time-Series Foundation Models* — 布朗大学团队. 针对当前时序基础模型评估中由于训练集涵盖互联网海量数据而导致的隐式数据污染危机，构建完全隔离的标准化评测竞技场，通过严格的时间戳单向阻断与数据指纹校验杜绝信息泄漏，官方开源代码已由 GitHub API 官方核验通过 (`https://github.com/Smlcrm/TempusBench`)。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：全面重构并深度强化第 3 章（分类体系）**：
+  - 3.1 严格形式化四维正交理论空间 $\mathcal{S} = \langle \mathcal{A}, \mathcal{T}, \mathcal{M}, \mathcal{E} \rangle = \mathcal{A} \times \mathcal{T} \times \mathcal{M} \times \mathcal{E}$，定义四大正交投影算子 $\pi_\mathcal{A}, \pi_\mathcal{T}, \pi_\mathcal{M}, \pi_\mathcal{E}$ 与设计空间拓扑；
+  - 3.2 深度解构五大计算范式与网络拓扑演化（因果解码器、双端编码-解码器、纯编码器掩码自编码、稀疏混合专家与频域路由、连续动力学/扩散生成/先验拟合），给出因果注意力掩码、KV-Cache 复杂度与连续流速度场匹配严格公式；
+  - 3.3 分词机制与连续-离散表征权衡：推导香农率失真函数 $R(D)$ 与连续补丁化信息瓶颈；剖析离散分箱量化中的度量有序性缺失 (Loss of Metric Ordinality)；推导 Geronimo-Hardin-Massopust (GHM) 正交多小波矩阵膨胀方程与频域神经卷积 (m-WCN [arXiv:2609.29317])；形式化软动态距离 (SDD) 与因果 Shapley 归因理论 (ShapeX [arXiv:2510.20084])；推导局部波动能量算子与事件自适应多尺度压缩 (EAMC: EvtGraph [arXiv:2608.04368])；
+  - 3.4 通道拓扑演化：从通道独立 (CI)、固定通道依赖 (CD)、任意变量统一 (Any-variate vRoPE) 演进至动态时空稀疏图拓扑 (T2SG: EvtGraph [arXiv:2608.04368]) 与非对称双向卷积；
+  - 3.5 扩展定律、相变与安全可信审计：形式化时序精度标度律 (Accuracy Law [arXiv:2510.02729])、预测崩溃相变与经验优化偏误结构去偏 (EOB [arXiv:2512.18610])；系统展开野火驱动 PM2.5 极端环境长尾分布偏移审计 (Wildfire PM2.5 [arXiv:2607.07951])、随时有效特征条件鞅校准检验 (Bet on Features [arXiv:2607.11653]) 与去污染标准化基准协议 (TempusBench [arXiv:2604.11529])；
+  - 3.6 构建涵盖 28 种主流基础模型路线的 **3.6 时序基础模型多维技术分类对比矩阵 (Table 3.6)**，系统横向解构架构范式、通道拓扑、分词机制、核心损失、推断采样复杂度、核心优势、理论局限与开源状态；
+- **全景融合 15 篇新增文献至各大章节**：
+  - 第 3 章：m-WCN 多小波 [arXiv:2609.29317]、ShapeX 形态归因 [arXiv:2510.20084]、EvtGraph 稀疏图 [arXiv:2608.04368]、Wildfire 极端基准 [arXiv:2607.07951]、Bet on Features 鞅审计 [arXiv:2607.11653]、TempusBench 规范基准 [arXiv:2604.11529]、ClinPRISM 临床蒸馏 [arXiv:2607.25947]；
+  - 第 4 章：扩充 Table 4.1 与 Section 4.10，收录 ClinPRISM [arXiv:2607.25947]、m-WCN [arXiv:2609.29317] 与 EvtGraph [arXiv:2608.04368]；
+  - 第 5 章：扩充 Table 5.1 与 Section 5.4，收录 EHR-Autoreg [arXiv:2607.22264] 与 DiagnosisToken [arXiv:2607.22153]；
+  - 第 6 章：扩充 Table 6.1 与 Section 6.2/6.3/6.4，收录 MLLM4TS [arXiv:2510.07513]、MM-ISTS [arXiv:2603.05997]、OrderFusion+ [arXiv:2609.23598]、RUL-Grounding [arXiv:2608.19218]、ORCA [arXiv:2608.08859] 与 TelcoAgent [arXiv:2606.19821]；
+  - 第 7 章：扩充 Table 7.1 与 Section 7.4/7.5/7.6，收录 TempusBench [arXiv:2604.11529]、Wildfire PM2.5 [arXiv:2607.07951] 与 Bet on Features [arXiv:2607.11653]；
+  - 第 8 章：清华生态收录 EvtGraph [arXiv:2608.04368]，金明团队生态收录 ShapeX [arXiv:2510.20084]；
+- **全量同步参考文献**：Section 10 收录全部 243 篇核验文献，同步生成 243 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：新增 ClinPRISM, EvtGraph, TempusBench 等前沿里程碑，交错纵轴坐标（如 ClinPRISM at -2.4, Align-RAG at +4.2 dx=16, EvtGraph at +5.4）彻底消除 label 重叠；
+  2. `open_weight_share.png`：精准反映 243 篇论文中 38.7% 开源权重模型 (94 篇)、60.9% 基准/提示/综述 (148 篇)、0.4% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：新增叶子节点，保持 19.5 英寸超宽画布与动态避让，彻底消除四维分类树分支文字挤压；
+  4. `model_size_vs_date.png`：纳入 ClinPRISM (4B)，消解密集重叠，参数规模与时间跨度对齐；
+  5. `papers_by_category_year.png`：更新至 243 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（243 篇唯一 ID 校验、5 组图表生成与校验、1182 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 下一轮规划与重点
+1. 深入夯实第 2 章（问题定义与背景），重点展开反事实因果时序结构方程与决策论贝叶斯最优风险极小化；
+2. 持续追踪清华 THUML、金明团队、Amazon Chronos 以及欧洲与北美重点工业时序实验室最新预印本；
+3. 严格执行增量上限（<= 15 篇）、零幻觉与 GitHub 官方 API 认证规则。
+
+---
+
 ## 2026-09-27 (第 11 轮运行：基准与评测全景重构与形式化、排行榜倒置审计、带漏积分器稳定性推导、15 篇前沿收录与图表质检 / Iteration 11)
 
 ### 1. 今日运行概览

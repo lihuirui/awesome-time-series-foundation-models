@@ -91,7 +91,7 @@ def plot_timeline(papers: list[dict]) -> None:
         ("Zeus", "2026-07-02", "Academia", 3.6, 0),
         ("RMISC", "2026-07-07", "Academia", -1.6, -12),
         ("VLT", "2026-07-16", "Academia", -6.4, 10),
-        ("Align-RAG", "2026-08-06", "Harvard", 4.8, 8),
+        ("Align-RAG", "2026-08-06", "Harvard", 4.2, 16),
         ("ReasonCast", "2026-08-15", "Academia", -4.2, -8),
         ("TSPFN", "2026-08-31", "Academia", 1.6, -4),
         ("OutageDiT", "2026-09-01", "Academia", -5.8, -2),
@@ -108,12 +108,15 @@ def plot_timeline(papers: list[dict]) -> None:
         ("GUARD", "2026-06-10", "Academia", -4.2, -16),
         ("Darts FM", "2026-06-25", "Unit8", 2.0, 14),
         ("FutureBoosting", "2026-03-06", "THUML", 4.4, -14),
-        ("Solar-VLM", "2026-04-05", "Academia", -1.5, 16),
+        ("TempusBench", "2026-04-13", "Academia", -2.2, 10),
+        ("Solar-VLM", "2026-04-05", "Academia", -1.2, 22),
+        ("ChronosAD", "2026-05-31", "Academia", -2.6, 8),
         ("DGOTTA", "2026-08-28", "Ming Jin", -3.2, 16),
         ("TabPFN-3.5", "2026-09-15", "Prior Labs", -6.4, 10),
-        ("ChronosAD", "2026-05-31", "Academia", -2.6, 8),
         ("Gnomon", "2026-09-22", "Academia", 6.4, 12),
-        ("CodeTS", "2026-09-14", "ZJU", -4.4, -18)
+        ("CodeTS", "2026-09-14", "ZJU", -4.4, -18),
+        ("ClinPRISM", "2026-07-28", "Academia", -2.4, -12),
+        ("EvtGraph", "2026-08-05", "THUML", 5.4, -12)
     ]
 
     dates = [datetime.datetime.strptime(m[1], "%Y-%m-%d") for m in milestones]
@@ -315,31 +318,31 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.0, [
-            ("Streaming, TabPFN-3.5 & Error Taming\n• TabPFN-3.5, Leaky-Integrator, TiRex-2, Reverso, Darts FM", 60),
+            ("Multi-Wavelet, Shapelet & TabPFN\n• m-WCN, ShapeX, TabPFN-3.5, TiRex-2, Reverso, Darts FM", 60),
             ("Physics LEO, Trust Distill & Hybrid Boost\n• Gnomon (LEO TSFM), FutureBoosting, GUARD, F2D, PaCoDi", 45),
             ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
             ("Federated Heterogeneity & Anomaly Models\n• ChronosAD, Federated TSFM, CITRAS-FM, TTM, TSPFN, VLT", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.5, [
-            ("Frequency MoE & Dynamic TTA\n• FM-LLM (MoE), DGOTTA (Dynamic Graph), PARA-PV, CoRA", 60),
+            ("Industrial Tokens & Dynamic TTA\n• Industrial Tokenization, TS-RAG RUL, FM-LLM, DGOTTA, PARA-PV", 60),
             ("Multimodal JEPA & Semantic Embeddings\n• CHARM (JEPA TS), LLM Feature Pools, T-LLM, MILM", 45),
             ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
             ("In-Context Retrieval & Model-Agnostic R-AF\n• Align-RAG, Model-Agnostic R-AF, Retrieval Regimes", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.5, [
-            ("Executable Code & Satellite Fusion\n• CodeTS (Python TS), Solar-VLM, MUSE, SAGE, Solar-Sky", 60),
-            ("Macro Scenarios, Clinical QA & Reasoning\n• MacroLens, CLIR-Bench, MMTClinic, EvoTS-Agent", 45),
-            ("Operational Last-Mile & Agent Audits\n• Bridging Last Mile, TimeClaw, Coding Agent TS Audit, TSQAgent", 30),
+            ("Clinical 16-Token & Event Graphs\n• ClinPRISM (4B), EvtGraph, EHR-FM, TelcoAgent, ORCA, MLLM4TS", 60),
+            ("Executable Code & Satellite Fusion\n• CodeTS (Python TS), Solar-VLM, MUSE, SAGE, MM-ISTS", 45),
+            ("Macro Scenarios, Clinical QA & Reasoning\n• MacroLens, CLIR-Bench, MMTClinic, EvoTS-Agent", 30),
             ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 15)
         ], "#feebc8", "#9c4221"),
 
         (87.0, [
-            ("Production Market, Feeder & Volatility\n• Marketplace Audit (Islam), VOLARE (Brini), KIT Feeder", 60),
-            ("Environmental, Agriculture & Sensor Audits\n• Air Quality Arena, AgroBench, E-Nose Sensor Audit, Wearable HRV", 45),
-            ("EPF Contamination & Grid Covariates\n• EPF Contamination Audit (Pan), GE Chronos-2, Clinical Hindsight", 30),
-            ("Graph Conformal & Hardware Benchmarks\n• Graph Conformal (Niresi), Catastrophic Forgetting, ORBIT Regimes", 15)
+            ("Anytime Martingale & Wildfire Audits\n• Bet on Features (Antonov), Wildfire PM2.5, TempusBench, OrderFusion+", 60),
+            ("Production Market, Feeder & Volatility\n• Marketplace Audit (Islam), VOLARE (Brini), KIT Feeder", 45),
+            ("Environmental, Agriculture & Sensor Audits\n• Air Quality Arena, AgroBench, E-Nose Sensor Audit, Wearable HRV", 30),
+            ("EPF Contamination & Graph Conformal\n• EPF Contamination (Pan), Graph Conformal (Niresi), GE Chronos-2", 15)
         ], "#faf5ff", "#6b46c1")
     ]
 
@@ -443,6 +446,7 @@ def plot_model_size_vs_date(papers: list[dict]) -> None:
         "2605.20119": ("Toto 2.0 (2.5B)", 0, -15),
         "2609.24441": ("MUSE (86M)", 28, 8),
         "2510.02410": ("OpenTSLM (3B)", 0, -14),
+        "2607.25947": ("ClinPRISM (4B)", 30, 8),
         "2509.24803": ("TimeOmni-1 (8B)", -35, -14),
         "2603.04791": ("Timer-S1 (8.3B MoE)", 35, 8)
     }
