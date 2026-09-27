@@ -107,7 +107,11 @@ def plot_timeline(papers: list[dict]) -> None:
         ("TimeBraid", "2026-09-24", "Academia", 1.4, 16),
         ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22),
         ("GUARD", "2026-06-10", "Academia", -4.2, -16),
-        ("Darts FM", "2026-06-25", "Unit8", 2.0, 14)
+        ("Darts FM", "2026-06-25", "Unit8", 2.0, 14),
+        ("FutureBoosting", "2026-03-06", "THUML", 4.4, -14),
+        ("Solar-VLM", "2026-04-05", "Academia", -1.5, 16),
+        ("DGOTTA", "2026-08-28", "Ming Jin", -3.2, 16),
+        ("TabPFN-3.5", "2026-09-15", "Prior Labs", -6.4, 10)
     ]
 
     dates = [datetime.datetime.strptime(m[1], "%Y-%m-%d") for m in milestones]
@@ -280,7 +284,7 @@ def plot_papers_by_category_year(papers: list[dict]) -> None:
 # (c) Taxonomy Tree of Approaches
 # ==========================================
 def plot_taxonomy_tree(papers: list[dict]) -> None:
-    fig, ax = plt.subplots(figsize=(16.5, 8.5))
+    fig, ax = plt.subplots(figsize=(19.5, 8.8))
     fig.patch.set_facecolor("#ffffff")
     ax.set_facecolor("#ffffff")
 
@@ -295,10 +299,10 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
 
     # 4 Main Branches
     branches = [
-        ("Native TSFMs\n(Pretrained Models)", 13.5, 75, "#2b6cb0"),
-        ("LLM-for-TS\n(Cross-Modal & Adapters)", 37.8, 75, "#2c7a7b"),
-        ("Multimodal TS\n(Text, Vision & Agents)", 62.2, 75, "#9c4221"),
-        ("Evaluation & Harness\n(Zero-Shot & Calibration)", 86.5, 75, "#6b46c1")
+        ("Native TSFMs\n(Pretrained Models)", 13.0, 75, "#2b6cb0"),
+        ("LLM-for-TS\n(Cross-Modal & Adapters)", 37.5, 75, "#2c7a7b"),
+        ("Multimodal TS\n(Text, Vision & Agents)", 62.5, 75, "#9c4221"),
+        ("Evaluation & Harness\n(Zero-Shot & Calibration)", 87.0, 75, "#6b46c1")
     ]
 
     for label, x, y, col in branches:
@@ -308,32 +312,32 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
 
     # Sub-nodes
     subnodes = [
-        (13.5, [
-            ("Streaming xLSTM, Decoders & Unified Darts\n• TiRex-2, Reverso, Darts FM, TimesFM, Sundial", 60),
-            ("Trust Distillation, F2D & Context Gating\n• GUARD Distillation, F2D, GITCO, PaCoDi, OutageDiT", 45),
+        (13.0, [
+            ("Streaming xLSTM, Decoders & TabPFN-3.5\n• TabPFN-3.5, TiRex-2, Reverso, Darts FM, TimesFM", 60),
+            ("Trust Distillation, F2D & Hybrid Boosting\n• FutureBoosting, GUARD, F2D, GITCO, PaCoDi", 45),
             ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
-            ("Tiny Edge, Tri-Modal & Industrial PHM\n• CITRAS-FM (7M), TTM, TSPFN, VLT, FreqCondNorm, IPM-FM", 15)
+            ("Federated Heterogeneity & Tiny Edge\n• Federated TSFM, CITRAS-FM, TTM, TSPFN, VLT, IPM-FM", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
-        (37.8, [
-            ("Model Reprogramming & Market Gated-LoRA\n• Gated-LoRA, Time-LLM, GPT4TS, CoRA, FedChronos", 60),
-            ("Text Tokenization & LLM Feature Pools\n• LLM Feature Pools, LLMTime, PromptCast, T-LLM, MILM", 45),
+        (37.5, [
+            ("Dynamic TTA & Physics RAG Adaptation\n• DGOTTA (Dynamic Graph), PARA-PV (Physics RAG), CoRA", 60),
+            ("Multimodal JEPA & Semantic Embeddings\n• CHARM (JEPA TS), LLM Feature Pools, T-LLM, MILM", 45),
             ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
             ("In-Context Retrieval & Model-Agnostic R-AF\n• Align-RAG, Model-Agnostic R-AF, Retrieval Regimes", 15)
         ], "#e6fffa", "#2c7a7b"),
 
-        (62.2, [
-            ("Frozen Vision Backbones & Candlesticks\n• MUSE (Frozen ViT), SAGE, Solar-Sky, Candlestick Audit", 60),
-            ("Generalist Multi-Agent & Root-Cause Systems\n• TraceBench, EvoTS-Agent, IRTS-ToolBench, TimeClaw", 45),
-            ("Operational Last-Mile & Agent Audits\n• Bridging Last Mile, Coding Agent TS Audit, TSQAgent", 30),
+        (62.5, [
+            ("Multimodal VLMs & Satellite Ground Fusion\n• Solar-VLM, MUSE (ViT), SAGE, Solar-Sky, Candlesticks", 60),
+            ("Irregular Clinical QA & Reasoning\n• CLIR-Bench, MMTClinic, EvoTS-Agent, IRTS-ToolBench", 45),
+            ("Operational Last-Mile & Agent Audits\n• Bridging Last Mile, TimeClaw, Coding Agent TS Audit, TSQAgent", 30),
             ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 15)
         ], "#feebc8", "#9c4221"),
 
-        (86.5, [
-            ("Battery Arbitrage & Real Decision Benchmarks\n• Weron Battery Arbitrage, GIFT-Eval, It's TIME, DoTime", 60),
-            ("Continual Forgetting & Zero-Shot MTSAD\n• Catastrophic Forgetting, MTSAD Anomaly, CGM Multimodal", 45),
-            ("Base-Rate Honest Metrics & Clinical Hindsight\n• Base-Rate Honest TimesFM, Clinical Hindsight Bias", 30),
-            ("Hardware Profiling & Crowd Dynamics Regimes\n• Crowd Count Benchmark, ORBIT Regimes, HoliBench", 15)
+        (87.0, [
+            ("Financial Volatility & Grid Load Feeder\n• VOLARE Volatility (Brini), KIT Low-Voltage Feeder, Weron Arbitrage", 60),
+            ("Sensor E-Nose, Wearable HRV & Crowd Regimes\n• E-Nose Sensor Audit, Wearable HRV, SAIL2025 Crowd", 45),
+            ("Grid Covariates & Base-Rate Honest Audits\n• GE Grid Chronos-2, Base-Rate Honest TimesFM, Clinical Hindsight", 30),
+            ("Continual Forgetting & Hardware Benchmarks\n• Catastrophic Forgetting, HoliBench, ORBIT Regimes", 15)
         ], "#faf5ff", "#6b46c1")
     ]
 
@@ -341,8 +345,8 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
         ax.plot([bx, bx], [70, items[-1][1]], color="#cbd5e0", linewidth=1.2, linestyle="--", zorder=1)
         for text, y in items:
             ax.plot([bx, bx], [y, y], marker="o", color=border, markersize=4)
-            ax.text(bx, y, text, ha="center", va="center", fontsize=7.4, color="#1a202c",
-                    bbox=dict(boxstyle="round,pad=0.35", facecolor=bg, edgecolor=border, alpha=0.9, linewidth=0.8),
+            ax.text(bx, y, text, ha="center", va="center", fontsize=7.0, color="#1a202c",
+                    bbox=dict(boxstyle="round,pad=0.3", facecolor=bg, edgecolor=border, alpha=0.9, linewidth=0.8),
                     zorder=2)
 
     ax.set_title("Taxonomy of Time Series Foundation Models and Multimodal Temporal Intelligence",

@@ -6805,6 +6805,579 @@
         "cs.LG"
       ],
       "notes": "Systematic evaluation of catastrophic forgetting, plasticity-stability trade-offs, and parameter isolation strategies during continual fine-tuning of time series foundation models across shifting domains."
+    },
+    {
+      "arxiv_id": "2603.06726",
+      "title": "Regression Models Meet Foundation Models: A Hybrid-AI Approach to Practical Electricity Price Forecasting",
+      "authors": [
+        "Yunzhong Qiu",
+        "Binzhu Li",
+        "Hao Wei",
+        "Shenglin Weng",
+        "Chen Wang",
+        "Zhongyi Pei",
+        "Mingsheng Long",
+        "Jianmin Wang"
+      ],
+      "year": 2026,
+      "release_date": "2026-03-06",
+      "venue": "arXiv preprint",
+      "group": "THUML",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "foundation-model",
+        "hybrid",
+        "energy",
+        "cs.LG"
+      ],
+      "notes": "THUML Mingsheng Long et al. introduce FutureBoosting, a plug-and-play paradigm combining temporal features from a frozen TSFM with downstream regression models to capture complex cross-variate and non-periodic drivers in electricity price forecasting."
+    },
+    {
+      "arxiv_id": "2608.27948",
+      "title": "Temporal Memory-Aware Online Test-Time Adaptation on Dynamic Graphs",
+      "authors": [
+        "Bo Li",
+        "Xin Zheng",
+        "Ming Jin",
+        "Can Wang",
+        "Shirui Pan"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-28",
+      "venue": "arXiv preprint",
+      "group": "Ming Jin",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "graph"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "test-time adaptation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "adaptation",
+        "graph",
+        "spatiotemporal",
+        "cs.LG"
+      ],
+      "notes": "Ming Jin team proposes DGOTTA, an online test-time adaptation framework on dynamic graphs featuring temporal-aware augmentation, memory-aware prediction to mitigate catastrophic forgetting, and consistency-guided online adaptation."
+    },
+    {
+      "arxiv_id": "2609.17895",
+      "title": "TabPFN-3.5: Technical Report",
+      "authors": [
+        "Benjamin Jäger",
+        "Nick Erickson",
+        "Léo Grinsztajn",
+        "Felix Birkel",
+        "Klemens Flöge",
+        "Oscar Key",
+        "Kürşat Kaya",
+        "Jonas Kübler",
+        "Adèle Frankel",
+        "Tobias Schröder",
+        "Anurag Garg",
+        "Jan Hendrik Metzen",
+        "David Salinas",
+        "Simon Bing",
+        "Kristina Collins",
+        "Tuana Çelik",
+        "Vahid Balazadeh",
+        "Lydia Sidhoum",
+        "Tomás Pereda",
+        "Brendan Roof",
+        "Andrej Tschalzev",
+        "Siyuan Guo",
+        "Philipp Singer",
+        "Lennart Purucker",
+        "Jake Robertson",
+        "Marie Salmon",
+        "Philipp Jund",
+        "Jerry Chen",
+        "Diana Kriuchkova",
+        "Arthur Cahu",
+        "Eliott Kalfon",
+        "Adrian Hayler",
+        "Georg Grab",
+        "Vitor Monteiro",
+        "Lilly Wehrhahn",
+        "Dominik Safaric",
+        "Clara Cornu",
+        "Alan Arazi",
+        "Rylee Grace",
+        "Simone Alessi",
+        "Mihir Manium",
+        "Bernhard Schölkopf",
+        "Yann LeCun",
+        "Madelon Hulsebos",
+        "Sauraj Gambhir",
+        "Noah Hollmann",
+        "Frank Hutter"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-15",
+      "venue": "arXiv preprint",
+      "group": "Prior Labs",
+      "architecture": "encoder-only",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "tabular",
+        "text",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": "Prior-Data Synthetic & TabArena",
+      "tasks": [
+        "forecasting",
+        "classification",
+        "regression"
+      ],
+      "open_weights": true,
+      "code_url": null,
+      "categories": [
+        "foundation-model",
+        "prior-data",
+        "tabular",
+        "cs.LG"
+      ],
+      "notes": "Technical report for TabPFN-3.5 introducing TabPFN-3.5-Fast (3x speedup) and TabPFN-3.5-Thinking (test-time compute scaling up to 12x faster), handling non-i.i.d. temporal splits, complex multimodal tabular features, and time series forecasting."
+    },
+    {
+      "arxiv_id": "2609.06656",
+      "title": "Assessing Covariate-Informed Grid Load Forecasting with a Time-Series Foundation Model",
+      "authors": [
+        "Varsha Pendyala",
+        "Yiwei Fu",
+        "Weizhong Yan",
+        "Nurali Virani"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-06",
+      "venue": "arXiv preprint",
+      "group": "GE Aerospace & Vernova Research",
+      "architecture": "encoder-decoder",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "evaluation",
+        "energy",
+        "cs.LG"
+      ],
+      "notes": "GE Research conducts a systematic audit of Chronos-2 on real-world utility grid datasets (ISO New England and ENTSO-E), investigating zero-shot vs fine-tuning behavior under univariate, multivariate, and covariate-informed electrical load forecasting."
+    },
+    {
+      "arxiv_id": "2609.04842",
+      "title": "MMTClinic: Multimodal, Multilingual Time Series Question Answering and Reasoning Benchmark for Clinical Domain",
+      "authors": [
+        "Sourav Malakar",
+        "Harshit Nigam",
+        "Akash Ghosh",
+        "Sriparna Saha",
+        "Amlan Chakrabarti",
+        "Saptarsi Goswami",
+        "Priti Singh"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-04",
+      "venue": "arXiv preprint",
+      "group": "IIT Patna",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "question-answering",
+        "reasoning",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "clinical",
+        "multimodal",
+        "cs.CL"
+      ],
+      "notes": "Multimodal and multilingual clinical time-series QA and reasoning benchmark featuring 30,000 QA pairs across text, medical images, and physiological signals in 5 languages (English, Hindi, Bengali, Marathi, Tamil) for mortality, heart rate, and SOFA score."
+    },
+    {
+      "arxiv_id": "2607.08079",
+      "title": "PARA-PV: Physics-Aware Retrieval-Augmented PV Prediction Based on Frozen Foundation Model and Distribution Shift Correction",
+      "authors": [
+        "Hang Fan",
+        "Weican Liu",
+        "Ying Lu",
+        "Dunnan Liu",
+        "Long Cheng",
+        "Wei Wei"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-09",
+      "venue": "arXiv preprint",
+      "group": "North China Electric Power University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/weican1103/PARA-PV",
+      "categories": [
+        "rag",
+        "physics-informed",
+        "energy",
+        "cs.LG"
+      ],
+      "notes": "Proposes PARA-PV, integrating a physics-aware analog retrieval module with a frozen Chronos foundation-model prior, lightweight residual adapter, and physics-constrained multi-regime loss for photovoltaic power forecasting."
+    },
+    {
+      "arxiv_id": "2607.05291",
+      "title": "Forecasting Realized Volatility with Time Series Foundation Models: A Comparison with Econometric Benchmarks",
+      "authors": [
+        "Alessio Brini"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-06",
+      "venue": "arXiv preprint",
+      "group": "University of Bologna",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "finance",
+        "evaluation",
+        "econ.EM"
+      ],
+      "notes": "Systematic empirical audit comparing 9 zero-shot TSFMs (Chronos, TimesFM, Moirai, TTM) against 8 econometric benchmarks (HAR, Log-HAR, GARCH) across 50 financial assets on VOLARE; finds TTM competitive and equal-weight hybrid entering MCS for 98-100% of assets."
+    },
+    {
+      "arxiv_id": "2607.01966",
+      "title": "Probabilistic Low-Voltage Peak Load Forecasting with Time Series Foundation Models Evaluated on Application-Oriented Metrics",
+      "authors": [
+        "Benedikt Kaas",
+        "Manuel Treutlein",
+        "Hannes Benedikt Gerber",
+        "Oliver Neumann",
+        "Cheewan Phatthanakhuha",
+        "Oliver Resch",
+        "Ralf Mikut",
+        "Veit Hagenmeyer"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-02",
+      "venue": "arXiv preprint",
+      "group": "Karlsruhe Institute of Technology (KIT)",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "energy",
+        "evaluation",
+        "cs.LG"
+      ],
+      "notes": "Extensive empirical evaluation of Chronos-Bolt, Chronos-2, and TabPFN-TS across 200 real-world low-voltage feeders, introducing application-oriented asymmetric metrics to balance asset planning cost reduction and failure risk."
+    },
+    {
+      "arxiv_id": "2607.20027",
+      "title": "Zero-Shot Heart Rate Variability Forecasting from Consumer Wearables Using Time Series Foundation Models",
+      "authors": [
+        "Luukas Peräkylä",
+        "Fahad Sohrab",
+        "Ville Hautamäki",
+        "Merja Heinäniemi",
+        "Sui Huang",
+        "Pekka Abrahamsson"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-22",
+      "venue": "arXiv preprint",
+      "group": "University of Eastern Finland & Tampere University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "clinical",
+        "wearables",
+        "evaluation",
+        "cs.LG"
+      ],
+      "notes": "Evaluates zero-shot forecasting of TimesFM, Chronos, and MOIRAI on fragmented consumer wearable heart rate variability (HRV) signals across 49 individuals, introducing variability-preserving stochastic imputation."
+    },
+    {
+      "arxiv_id": "2607.17758",
+      "title": "Towards Reliable Zero-Shot Crowd Forecasting: Evaluating Time Series Foundation Models for Special Event Pedestrian Forecasting",
+      "authors": [
+        "Ziteng Li",
+        "Yanan Xin",
+        "Tina Comes",
+        "Serge Hoogendoorn"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-20",
+      "venue": "arXiv preprint",
+      "group": "TU Delft",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "urban",
+        "evaluation",
+        "cs.LG"
+      ],
+      "notes": "Comprehensive zero-shot probabilistic evaluation of TSFMs for real-time pedestrian-flow forecasting during major infrequent crowd events (SAIL2025 use case), specifying operational reliability regimes."
+    },
+    {
+      "arxiv_id": "2607.09880",
+      "title": "CLIR-Bench: Benchmarking Multimodal Question Answering over Irregular Clinical Time Series",
+      "authors": [
+        "Frank Nie",
+        "Ethan B. Liu",
+        "Yuan Zhu",
+        "Loe Yan",
+        "Wei Fan",
+        "Jindong Han"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-10",
+      "venue": "arXiv preprint",
+      "group": "Dartmouth College",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "question-answering",
+        "reasoning"
+      ],
+      "open_weights": true,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "clinical",
+        "multimodal",
+        "cs.AI"
+      ],
+      "notes": "Constructs CLIR-Bench with 6,600 QA instances spanning 11 clinical variables and 4 capability dimensions over irregular ICU records, providing explicit temporal evidence groundings and derivation rules."
+    },
+    {
+      "arxiv_id": "2604.04145",
+      "title": "Solar-VLM: Multimodal Vision-Language Models for Augmented Solar Power Forecasting",
+      "authors": [
+        "Hang Fan",
+        "Haoran Pei",
+        "Runze Liang",
+        "Weican Liu",
+        "Long Cheng",
+        "Wei Wei"
+      ],
+      "year": 2026,
+      "release_date": "2026-04-05",
+      "venue": "arXiv preprint",
+      "group": "North China Electric Power University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/rhp413/Solar-VLM",
+      "categories": [
+        "multimodal",
+        "vision-language",
+        "energy",
+        "cs.CV"
+      ],
+      "notes": "Proposes Solar-VLM, unifying patch-based time-series encoders, Qwen-based vision backbones for satellite cloud imagery, text weather encoders, and KNN cross-site graph attention for solar power forecasting."
+    },
+    {
+      "arxiv_id": "2604.06727",
+      "title": "Bi-level Heterogeneous Learning for Time Series Foundation Models: A Federated Learning Approach",
+      "authors": [
+        "Shengchao Chen",
+        "Guodong Long",
+        "Dikai Liu",
+        "Jing Jiang"
+      ],
+      "year": 2026,
+      "release_date": "2026-04-08",
+      "venue": "arXiv preprint",
+      "group": "University of Technology Sydney",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "federated",
+        "foundation-model",
+        "heterogeneity",
+        "cs.LG"
+      ],
+      "notes": "Proposes a bi-level heterogeneous federated pretraining method for TSFMs to resolve inter-domain and intra-domain gradient conflicts through local semantic regularization and domain-aware aggregation."
+    },
+    {
+      "arxiv_id": "2605.31580",
+      "title": "Giving Sensors a Voice: Multimodal JEPA for Semantic Time-Series Embeddings",
+      "authors": [
+        "Utsav Dutta",
+        "Gerardo Pastrana",
+        "Sina Khoshfetrat Pakazad",
+        "Henrik Ohlsson"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-29",
+      "venue": "arXiv preprint",
+      "group": "UC Berkeley & ABB",
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "representation",
+        "forecasting",
+        "anomaly-detection",
+        "classification"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal",
+        "jepa",
+        "representation",
+        "cs.LG"
+      ],
+      "notes": "Introduces CHARM, a Channel-Aware Representation Model trained via Joint-Embedding Predictive Architecture (JEPA) incorporating channel textual descriptions to achieve cross-sensor and cross-dataset generalization."
+    },
+    {
+      "arxiv_id": "2606.27672",
+      "title": "Are Time-Series Foundation Models Ready for E-Nose Data? An Empirical Assessment of Their Embeddings",
+      "authors": [
+        "Taeyeong Choi",
+        "Mohammed Kamruzzaman"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-26",
+      "venue": "arXiv preprint",
+      "group": "Towson University & Kennesaw State University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "regression"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "sensors",
+        "evaluation",
+        "cs.LG"
+      ],
+      "notes": "Systematic empirical assessment of Chronos-2 and MOMENT embeddings on electronic nose (E-Nose) gas identification and concentration estimation, showing fine-tuning and hybrid feature fusion are critical for gas-sensing dynamics."
     }
   ]
 }

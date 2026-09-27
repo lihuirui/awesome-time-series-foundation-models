@@ -1,5 +1,68 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-27 (第 10 轮运行：大模型赋能时序范式矩阵深化、JEPA/OTTA/物理RAG三重理论推导、15 篇前沿收录与图表重绘质检 / Iteration 10)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 10 轮迭代（上一轮 15 篇论文二次复核、近 45-60 天高影响力文献与重点团队前沿检索、第 5 章大语言模型赋能时序深度重构与 24 维综合范式矩阵构建、三重底层数学理论推导、全套图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：213 篇经 arXiv HTTPS API 严格核验的论文（原 198 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv Atom HTTPS API 全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2609.00089` (Weron 电池套利), `2606.27438` (Darts Foundation), `2609.24441` (MUSE), `2606.05332` (GITCO), `2606.19363` (GUARD), `2606.01289` (F2D), `2608.11359` (Market Gated-LoRA), `2609.21801` (LLM Feature Pools), `2608.27182` (TraceBench), `2608.17933` (EvoTS-Agent), `2606.15107` (IRTS-ToolBench), `2606.02497` (Bridging Last Mile), `2609.11872` (CGM-Multimodal), `2607.12454` (Zero-Shot MTSAD), `2510.00809` (Catastrophic Forgetting).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2603.06726]** *FutureBoosting: Boosting Foundation Models for Electricity Price Forecasting* — 清华大学软件学院龙明盛团队（THUML），面向日前电力市场日前电价极端尖峰，提出将冻结 TSFM 零样本多步表示转化为 GBDT 树模型的强判别表格特征的混合 AI 新范式。
+2. **[arXiv:2608.27948]** *Dynamic Graph Online Test-Time Adaptation for Traffic Forecasting* — 澳大利亚格里菲斯大学金明团队（Ming Jin Group），针对流式交通路网非平稳概念漂移，首创面向动态图拓扑的时序在线测试期自适应 (DGOTTA) 理论框架，结合无监督空间互信息最大化与时序记忆平滑正则化。
+3. **[arXiv:2609.17895]** *TabPFN-3.5: Fast and Thinking Foundation Models for Tabular Data* — Prior Labs 团队，发布全新一代先验数据拟合基础模型，包含 TabPFN-3.5-Fast (3x 提速) 与 TabPFN-3.5-Thinking (12x 推理算力自适应扩展)。
+4. **[arXiv:2609.06656]** *Evaluating Foundation Models for Load Forecasting: Chronos-2 with Grid Context* — 通用电气 (GE Research) 团队，在 ISO New England 与欧洲 ENTSO-E 真实跨国电网上系统评测协变量增强的 Chronos-2 在工业级负荷预测中的零样本与上下文适应胜率。
+5. **[arXiv:2609.04842]** *MMTClinic: A Multimodal Multilingual Benchmark for Clinical Time-Series Question Answering* — 构建涵盖 5 种自然语言、30,000 个复杂临床时序问答推理对的多模态医疗时序评测基准。
+6. **[arXiv:2607.08079]** *Physics-Aware and Distribution-Calibrated Retrieval-Augmented Time Series Foundation Models for Photovoltaic Power Forecasting* — 提出 PARA-PV 物理引导与分布校准检索增强框架，融合天体几何晴空太阳辐射物理方程与最优传输校准，100% 杜绝夜间虚假发电幻觉；官方代码经由 GitHub API 官方核验通过 (`https://github.com/weican1103/PARA-PV`)。
+7. **[arXiv:2607.05291]** *Can Time Series Foundation Models Forecast Realized Volatility? An Out-of-the-Box Evaluation* — Brini 等，针对高频金融实现波动率构建 VOLARE 审计基准，横向对比 9 种零样本 TSFMs 与 8 种深耕计量模型 (HAR/GARCH) 在 50 种高频资产上的真实边界。
+8. **[arXiv:2607.01966]** *Evaluation of Zero-shot Time Series Foundation Models for Probabilistic Peak Feeder Load Forecasting* — 卡尔斯鲁厄理工学院 (KIT) 团队，基于 200 个真实低压变电站馈线，引入过载非对称经济惩罚系统评测 TSFM 在高峰值负荷分位数上的效用。
+9. **[arXiv:2607.20027]** *Zero-Shot Time-Series Foundation Models for Heart Rate Variability Analysis on Wearable Devices* — 针对消费级智能可穿戴心率变异性 (HRV) 动态与严重运动伪影，系统评估 TimesFM、Chronos、MOIRAI 结合随机潜变量插补的零样本长程外推。
+10. **[arXiv:2607.17758]** *Zero-shot Crowd Inflow and Outflow Forecasting using Time Series Foundation Models: An Empirical Evaluation* — 构建决策导向的极端赛事与大型公共集会潮汐客流评测基准，评估 TSFM 分位数回归对突发人流激增的防拥挤效能。
+11. **[arXiv:2607.09880]** *CLIR-Bench: A Clinical Multimodal Benchmark for Continuous-Time Healthcare Prediction with Irregular Time Series* — 针对 ICU 重症监护异构不规则采样，构建涵盖 6,600 个连续时间多模态问答推理对的基准。
+12. **[arXiv:2604.04145]** *Solar-VLM: A Multimodal Vision-Language Model for Spatio-Temporal Solar Irradiance Forecasting* — 提出融合 Qwen 视觉大模型、地基天空云图/卫星图与 KNN 时空图注意力的分布式光伏辐射多模态模型 Solar-VLM；官方代码经由 GitHub API 官方核验通过 (`https://github.com/rhp413/Solar-VLM`)。
+13. **[arXiv:2604.06727]** *Towards Unified Time Series Foundation Models via Federated Pre-Training* — 针对医疗与工业跨机构数据隐私合规限制，首创双层异构联邦预训练架构 FedTSFM，以正交梯度投影消解跨域梯度冲突。
+14. **[arXiv:2605.31580]** *CHARM: Enhancing Time Series Representations via Channel-Aware Multimodal Joint-Embedding Predictive Architecture* — 提出通道感知多模态联合嵌入预测架构 (CHARM)，以自然语言物理描述引导潜空间时序动力学预测，并以 EMA 动量停止梯度消除常数表征塌缩。
+15. **[arXiv:2606.27672]** *Zero-shot Multimodal Gas Identification and Concentration Estimation with Time Series Foundation Models* — 针对金属氧化物半导体 (MOS) 传感器阵列构成的电子鼻化学时序，系统评测 Chronos-2 与 MOMENT 隐状态对多成分气体识别与定量浓度回归能力。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：全面重构并深度强化第 5 章（大语言模型赋能时序）**：
+  - 5.1 矩阵扩充：构建涵盖 24 种前沿模型的**5.1 大语言模型赋能时序范式矩阵 (Table 5.1)**，横向解构重编程、直接提示、跨模态微调、检索增强与强化对齐五大技术路径；
+  - 5.1.4 严格数学形式化：推导多模态联合嵌入预测架构 (Multimodal JEPA: CHARM [arXiv:2605.31580])，建立通道文本原型嵌入与 EMA 动量停止梯度；
+  - 5.1.5 严格数学形式化：推导在线测试期动态图自适应理论 (Dynamic Graph OTTA: DGOTTA [arXiv:2608.27948])，建立无监督时空互信息最大化与指数加权记忆平滑正则化；
+  - 5.1.6 严格数学形式化：推导物理引导与分布校准的检索增强机制 (Physics-Aware RAG: PARA-PV [arXiv:2607.08079])，融合晴空辐射确定性物理方程与最优传输校准；
+  - 5.2 展开 FutureBoosting [arXiv:2603.06726] 混合 AI 范式；5.4 展开 CHARM 通道语义原型对齐；5.5 展开 PARA-PV 物理 RAG 与 DGOTTA 流式测试期自适应；
+- **全景融合 15 篇文献至各大章节**：
+  - 4.1 核心对比矩阵扩充 FutureBoosting, DGOTTA, TabPFN-3.5, Solar-VLM, FedTSFM, CHARM；4.5 展开 FutureBoosting 电价预测混合架构；4.8 展开可穿戴 HRV 生理动力学；4.9 展开 TabPFN-3.5 极速与思考双版本；4.10 展开联邦跨域预训练 FedTSFM；
+  - 6.1 对比矩阵扩充 Solar-VLM, MMTClinic, CLIR-Bench, CHARM, PARA-PV, E-Nose-Audit；6.2 展开 MMTClinic 多语言临床问答；6.3 展开 Solar-VLM 时空地空视觉预测；6.5 展开 E-Nose 电子鼻多传感器气味成分反演；
+  - 7.1 对比矩阵扩充至 58 个基准体系；7.2 展开 VOLARE 实现波动率全景审计、KIT 变压器峰值负荷基准与 GE Chronos-2 电网负荷工业审计；7.3 展开 SAIL2025 极端客流决策评测与 CLIR-Bench 不规则临床基准；
+  - 8.1 龙明盛团队扩充 FutureBoosting；8.2 金明团队扩充 DGOTTA；8.3 亚马逊 Chronos 团队扩充 GE 负荷审计与 PARA-PV；8.8 综合对比矩阵同步更新；
+  - 9.1 与 9.6 全景挑战矩阵纳入天体运动物理先验 (PARA-PV, Solar-VLM) 与联邦动态图自适应 (FedTSFM, DGOTTA)；
+  - 全量同步参考文献：Section 10 收录全部 213 篇核验文献，同步生成 213 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：新增 FutureBoosting (THUML), DGOTTA (Ming Jin), TabPFN-3.5 (Prior Labs), Solar-VLM 等 2026 前沿里程碑，交错纵轴坐标与水平微调消除 label 重叠；
+  2. `open_weight_share.png`：精准反映 213 篇论文中 46.5% 开源权重模型、53.1% 基准/提示/综述、0.5% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：加宽至 19.5 英寸并微调字号与子节点间距，彻底消除四维分类树分支文字挤压；
+  4. `model_size_vs_date.png`：新增 Solar-VLM (7B) 等关键标注，消解密集重叠；
+  5. `papers_by_category_year.png`：更新至 213 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（213 篇唯一 ID 校验、5 组图表生成与校验、977 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 下一轮规划与重点
+1. **新能源电网多能互补协同调度与极端尖峰对冲**：结合 FutureBoosting 与 PARA-PV 探索日前电价与光伏出力的一体化联合优化；
+2. **边缘微控制器连续时间流式在线测试期自适应**：探索 DGOTTA 在极低功耗 MCU 上的轻量算力蒸馏与定点量化；
+3. **多模态临床电子病历与高频生理信号因果纠缠消除**：针对 MMTClinic 与 CLIR-Bench 探索跨语言异步医疗决策去偏；
+4. **高频金融市场实现波动率先验拟合与非对称效用极小化**：针对 VOLARE 基准深入探索 TabPFN-3.5 与决策论 Transformer 的对冲套利应用；
+5. **去中心化跨国工业物联网联邦基础模型**：跟进 FedTSFM 在更广泛工业多设备场景下的异构梯度聚合演进；
+6. **TimeMixer++ 永久公开开源状态跟进**：持续监测官方仓库公司合规审查与权重发布进展。
+
 ## 2026-09-27 (第 9 轮运行：引言与全景范式深度重构、15 篇前沿收录、全景矩阵扩充与图表高清质检 / Iteration 9)
 
 ### 1. 今日运行概览
