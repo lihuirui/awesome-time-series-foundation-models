@@ -1,5 +1,70 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-27 (第 11 轮运行：基准与评测全景重构与形式化、排行榜倒置审计、带漏积分器稳定性推导、15 篇前沿收录与图表质检 / Iteration 11)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 11 轮迭代（上一轮 15 篇论文二次复核、近 45-60 天高影响力文献与重点团队前沿检索、第 7 章基准与评测深度重构与 72 维综合基准矩阵构建、底层数学理论与稳定性形式化推导、全套图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：228 篇经 arXiv HTTPS API 严格核验的论文（原 213 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 上一轮新增论文复核 (15 篇)
+通过 arXiv OAI-PMH HTTPS 官方接口全量复核上一轮收录的 15 篇文献，标题、作者与发布时间均 100% 完全匹配：
+`2603.06726` (FutureBoosting), `2608.27948` (DGOTTA), `2609.17895` (TabPFN-3.5), `2609.06656` (GE Chronos-2 Load), `2609.04842` (MMTClinic), `2607.08079` (PARA-PV), `2607.05291` (VOLARE), `2607.01966` (KIT Peak Feeder), `2607.20027` (Wearable HRV), `2607.17758` (SAIL2025 Crowd), `2607.09880` (CLIR-Bench), `2604.04145` (Solar-VLM), `2604.06727` (FedTSFM), `2605.31580` (CHARM), `2606.27672` (E-Nose Sensor Audit).
+
+### 3. 本轮新增与核验论文 (15 篇)
+1. **[arXiv:2609.27867]** *Evaluation Choices Decide the Forecasting Leaderboard: Evidence from a Production Marketplace Panel* — Md Rezwanul Islam, Wael Mohammed. 基于真实生产级在线市场海量面板数据，首次系统审计评测设计中聚合尺度 (SKU vs. 门店)、样本池化策略与区间评分选择诱发的模型排名完全倒置 (Rank Inversions)，提出帕累托鲁棒评测边界。
+2. **[arXiv:2609.26696]** *Reading the Sky to Forecast the Ground: Physics-Informed Link-State Forecasting for LEO Networks at Any Location* — Yunxiang Chi, Zhenlin An, Longfei Shangguan, Kyle Jamieson（普林斯顿大学团队）. 构建面向低轨卫星星座 (LEO) 星地/星间毫米波信道状态的物理引导基础模型 Gnomon，融合开普勒星历与三维空间拓扑，实现全球任意地面测站的零样本容量与信噪比预测。
+3. **[arXiv:2609.23378]** *Leaky-integrator reconstruction: taming error accumulation in recursive differenced time-series forecasting* — Zijiang Yang. 从系统控制论角度严格证明带漏积分器 (Leaky-Integrator) 闭环传递函数 $H(z)=1/(1-\gamma z^{-1})$ 将临界稳定极点移入单位圆内，证明多步递归差分自回归重构累积方差存在解析紧致上界 $\sigma_e^2/(1-\gamma^2)$。
+4. **[arXiv:2609.23074]** *Event Signature Transfer: Model-Agnostic Forecast Scenario Construction from Historical Events* — Karthik Sridhar, Aaditya Jain, Murari Mandal, Saurabh Deshpande（Walmart & IIT 团队）. 提出模型无关的事件签名迁移 (EST) 范式，从海量历史事件库中解耦低秩时空事件签名流形，在零微调条件下向目标域注入跨品类事件响应，解决稀疏大促与极端供应链尖峰预测冷启动痛点。
+5. **[arXiv:2609.26809]** *AgroBench: A Reproducible Multimodal Benchmark for Weakly Supervised Crop Yield Learning from County Statistics and Pixel Observations* — Udaiveer Singh, Rajiv Ranjan, Shashank Tamaskar, Dharmendra Saraswat（普渡大学团队）. 构建融合全美多年 Sentinel-2 高频多光谱反射率时序、网格气象与农情物候文本的可复现多模态遥感农作物产量弱监督降尺度基准。
+6. **[arXiv:2609.15393]** *CodeTS: Verifiable Text-to-Time Series Generation via Executable Code* — Xudong Yuan, Shunyu Liu, Xinyi Wang et al.（浙江大学团队）. 提出文本到可执行 Python 代码的时序生成新范式 CodeTS，让大语言模型充当时序编程智能体，端到端编写沙箱可执行代码，彻底规避端到端浮点预测中的算术幻觉。
+7. **[arXiv:2608.11623]** *FM-LLM: A frequency-enhanced mixture-of-experts framework for adapting LLMs to time series forecasting* — Rentao Gu, Yihang Ding, Yuehua Wang et al.（北京邮电大学团队）. 提出频域增强混合专家大语言模型时序预测架构 FM-LLM，通过正交频带滤波将时序解耦为趋势、主谐波与高频残差，并以 MoE 门控路由至专精适配器。
+8. **[arXiv:2607.19381]** *Air Quality Arena: A Large-Scale Multi-Region Ground Monitoring Dataset and Benchmark for Air Quality Forecasting with Time-Series Foundation Models* — Rishi Bharadwaj, Manik Gupta, Divya Sharma, Aditya Sinha（IIT & BITS 团队）. 构建跨多个特大城市与异质微地形（内陆盆地、沿海平原、工业重污染带）的多污染物地面空气质量时序基准。
+9. **[arXiv:2607.15705]** *A Benchmark for Electrical Load Forecasting Across Grid Levels: Time-Series Transformers Outperform Established Methods* — Matthias Hertel, Sebastian Pütz, Jonathan Kolar, Veit Hagenmeyer（卡尔斯鲁厄理工学院 KIT 团队）. 跨越输电网、高压站到低压馈线全层级的多尺度电力负荷基准，系统验证时序 Transformer 相比经典方法在不同聚合度下的优越性。
+10. **[arXiv:2607.02623]** *Evaluating Time Series Foundation Models for Electricity Price Forecasting: Contamination Risk, Distributional Shifts, and Covariate Dependence* — Zhenghua Pan, Ahmed Aziz Ezzat（Rutgers 团队）. 审计时序大模型在跨越 2022 年欧洲能源危机等重大体制突变前后的泛化表现，揭示预训练前瞻污染带来的虚假繁荣及缺乏物理协变量接口的脆弱性。
+11. **[arXiv:2606.31804]** *Relational and Sequential Conformal Inference for Energy Time Series over Graphs via Foundation Models* — Keivan Faghih Niresi, Alice Cicirello（剑桥大学团队）. 针对智能电网多节点时空图序列中的空间拓扑关联与时间自相关，提出结合基础模型的图共形推断 (Graph CI)，在非可交换性条件下给出严格有限样本置信区间覆盖保证。
+12. **[arXiv:2606.24950]** *MacroLens: A Multi-Task Benchmark for Contextual Financial Reasoning under Macroeconomic Scenarios* — Patara Trirat, Jin Myung Kwak, Younggyu Oh et al.（KAIST 团队）. 构建多任务宏观情景金融推理基准 MacroLens，将宏观高频时序与央行政策纪要对齐为动态因果图，支持利率冲击下的跨资产反事实推演。
+13. **[arXiv:2606.06881]** *GlucoFM-Bench: Benchmarking Time-Series Foundation Models for Blood Glucose Forecasting* — Baiying Lu, Zhaohui Liang, Yuan Gao et al.（匹兹堡大学与国防科技大学联合研制）. 涵盖跨临床队列数百万点连续动态血糖 (CGM) 波形基准，系统评估 TSFMs 在极端低信噪比代谢阻尼与餐后高血糖尖峰预警中的零样本表现。
+14. **[arXiv:2606.05878]** *TS-ICL: A Flexible Time-Indexed Foundation Model for Time Series via In-Context Learning* — Etienne Le Naour, Tahar Nabil, Nicolas Courty（IRISA 团队）. 针对现实中广泛存在的非等间距采样与连续时间不规则序列，构建纯粹依靠自注意力元范例在途上下文学习的柔性时间索引基础模型 TS-ICL。
+15. **[arXiv:2606.01300]** *ChronosAD: Leveraging Time Series Foundation Models for Accurate Anomaly Detection* — Uzair Khan, Luigi Capogrosso, Federico Girella, Franco Fummi（IEEE INDIN 2026）. 基于 Amazon Chronos 离散概率模型构建专用工业异常检测套件 ChronosAD，直接利用 4096 离散分箱多项后验负对数似然与非对称分位数残差作为异常得分，官方开源代码已由 GitHub API 严格核验通过 (`https://github.com/intelligolabs/ChronosAD`)。
+
+### 4. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：全面重构并深度强化第 7 章（基准与评测）**：
+  - 7.1 构建涵盖 72 项核心基准与评估框架的 **7.1 通用时序评测矩阵与基准对比 (Table 7.1)**，系统横向解构任务模态、涵盖规模、时序因果隔离机制、核心评估重点与开源状态，并梳理三代评测基准演进路径；
+  - 7.2 现代时序评测度量与数学理论形式化：形式化点预测度量与 EOB 优化偏误/预测崩溃机理；推导连续概率排位分数 (CRPS)、Pinball 损失、覆盖率 (PICP)、平均宽度 (MPIW) 与温克勒区间得分 (IS)；推导 Weron 储能电池充放电套利收益 $\mathcal{U}_{\text{econ}}$ (EUR/MWh) 与 KIT 配电网非对称馈线过载惩罚损失 $\mathcal{L}_{\text{asym}}$；推导传递熵 (Transfer Entropy) 与反事实平均处理效应 ($\tau_{\text{ATT}}$)；
+  - 7.3 评测设计脆弱性与排行榜倒置危机 (Islam & Mohammed [arXiv:2609.27867])：深入剖析聚合尺度敏感性（底层 SKU vs 顶层门店大盘）、样本池化偏误（未加权 vs 总量加权）以及区间得分与点预测指标的正交脱节，提出帕累托鲁棒评测边界准则；
+  - 7.4 预训练数据污染、前瞻偏误与版本修订穿越审计：深入剖析日前电力市场体制突变污染 (Pan & Ezzat [arXiv:2607.02623])、宏观数据版本多轮修订穿越漏洞 (VINTAGE-TS [arXiv:2609.28576], MACROCAST [arXiv:2606.28670])、前瞻偏误负迁移实证 (Look-Ahead Bias [arXiv:2609.20554])、临床后瞻偏误 (Clinical Hindsight Bias [arXiv:2609.13454])、金融基准率欺骗与证据访问边界 (Tracing Evidence [arXiv:2609.21425])；
+  - 7.5 垂直领域高价值工业与科研实证基准：全面展开 KIT Cross-Grid 负荷基准 [arXiv:2607.15705]、Gnomon 卫星星座信道基准 [arXiv:2609.26696]、AgroBench 遥感作物产量基准 [arXiv:2609.26809]、GlucoFM-Bench 连续动态血糖基准 [arXiv:2606.06881]、Air Quality Arena 空气质量基准 [arXiv:2607.19381]、MacroLens 宏观金融基准 [arXiv:2606.24950] 与 ChronosAD 工业异常检测基准 [arXiv:2606.01300]；
+  - 7.6 不确定性量化、图共形推断与多步发散稳定性控制：严格推导带漏积分器递归差分稳定性理论 (Leaky-Integrator [arXiv:2609.23378])，推导传递函数 $H(z)=1/(1-\gamma z^{-1})$ 并证明有限累积方差界 $\sigma_e^2/(1-\gamma^2)$；系统剖析关系与序列图共形推断 (Relational Graph CI [arXiv:2606.31804])、步阶梯度对齐 (SGA [arXiv:2609.28582])、事件签名迁移反事实流形 (EST [arXiv:2609.23074]) 与多变量样本路径最优传输重排 (Interweaving Marginals [arXiv:2609.25980])；
+  - 7.7 预算约束智能体决策、工作流编排与经济损益平衡：系统解构预算约束工具调度 (Forecast Workflow Bench [arXiv:2609.27385])、动态演化环境自进化决策 (TimEvolve [arXiv:2609.24862], TimeSage-EV [arXiv:2608.14270])、实时流式交互 (TimeInteract [arXiv:2609.26389]) 与生产部署投资回报率损益平衡分析 (Break-Even [arXiv:2607.04919], HoliBench [arXiv:2609.12412])。
+- **全景融合 15 篇新增文献至各大章节**：
+  - 第 4 章：Gnomon 卫星链路模型 [arXiv:2609.26696]、Leaky-Integrator 稳定性控制 [arXiv:2609.23378]、EST 事件签名迁移 [arXiv:2609.23074]、TS-ICL 柔性时间索引 [arXiv:2606.05878]、ChronosAD 异常检测 [arXiv:2606.01300]；
+  - 第 5 章：FM-LLM 频域混合专家 [arXiv:2608.11623]、CodeTS 代码化生成推断 [arXiv:2609.15393]；
+  - 第 6 章：AgroBench 遥感作物产量基准 [arXiv:2609.26809]、MacroLens 宏观情景金融推理 [arXiv:2606.24950]、CodeTS 可验证代码推断 [arXiv:2609.15393]；
+  - 第 7 章：全章节深度重构，系统性覆盖全部 15 篇新增论文；
+  - 第 8 章：亚马逊 Chronos 生态扩充 ChronosAD [arXiv:2606.01300] 与 EST [arXiv:2609.23074]；
+- **全量同步参考文献**：Section 10 收录全部 228 篇核验文献，同步生成 228 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 5. 可复现学术图表质检与排版优化 (`survey/figures/`)
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- **视觉排版质检**：
+  1. `tsfm_timeline.png`：新增 ChronosAD (INDIN 2026), Gnomon (Princeton), CodeTS 等前沿里程碑，交错纵轴坐标与水平微调消除 label 重叠；
+  2. `open_weight_share.png`：精准反映 228 篇论文中 46.5% 开源权重模型、53.1% 基准/提示/综述、0.4% 闭源权重的健康生态；
+  3. `taxonomy_tree.png`：新增叶子节点，保持 19.5 英寸超宽画布与动态避让，彻底消除四维分类树分支文字挤压；
+  4. `model_size_vs_date.png`：消解密集重叠，参数规模与时间跨度对齐；
+  5. `papers_by_category_year.png`：更新至 228 篇文献的历年发表堆叠分布柱状图。
+
+### 6. 工具链与自动化质量门禁
+- 自动化运行 `make all`，5 大门禁（228 篇唯一 ID 校验、5 组图表生成与校验、1076 处文献与图片锚点引用校验、BibTeX 生成、README.md 自动化生成）全部 100% 一次性通过。
+
+### 7. 下一轮规划与重点
+1. **多模态低轨卫星星网与地面网格通信联合协同**：结合 Gnomon 探索全球移动通信与天地一体化时变信道预测；
+2. **边缘微控制器连续时间流式在线测试期自适应**：探索 DGOTTA 与 CITRAS-FM 在极低功耗 MCU 上的轻量算力蒸馏与定点量化；
+3. **多模态临床电子病历与高频生理信号因果纠缠消除**：针对 GlucoFM-Bench、MMTClinic 与 CLIR-Bench 探索跨语言异步医疗决策去偏；
+4. **高频金融市场实现波动率先验拟合与非对称效用极小化**：针对 VOLARE 与 MacroLens 基准深入探索 TabPFN-3.5 与决策论 Transformer 的对冲套利应用；
+5. **去中心化跨国工业物联网联邦基础模型**：跟进 FedChronos 与 FedTSFM 在更广泛工业多设备场景下的异构梯度聚合演进；
+6. **TimeMixer++ 永久公开开源状态跟进**：持续监测官方仓库公司合规审查与权重发布进展。
+
 ## 2026-09-27 (第 10 轮运行：大模型赋能时序范式矩阵深化、JEPA/OTTA/物理RAG三重理论推导、15 篇前沿收录与图表重绘质检 / Iteration 10)
 
 ### 1. 今日运行概览

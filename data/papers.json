@@ -7378,6 +7378,523 @@
         "cs.LG"
       ],
       "notes": "Systematic empirical assessment of Chronos-2 and MOMENT embeddings on electronic nose (E-Nose) gas identification and concentration estimation, showing fine-tuning and hybrid feature fusion are critical for gas-sensing dynamics."
+    },
+    {
+      "arxiv_id": "2609.27867",
+      "title": "Evaluation Choices Decide the Forecasting Leaderboard: Evidence from a Production Marketplace Panel",
+      "authors": [
+        "Md Rezwanul Islam",
+        "Wael Mohammed"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-20",
+      "venue": "arXiv preprint",
+      "group": "Booking.com / Marketplace Analytics",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "evaluation",
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "audit",
+        "evaluation-bias",
+        "cs.LG"
+      ],
+      "notes": "Comprehensive empirical audit of 24 forecasting methods (including 6 2025-era TSFMs) across 1,887 production marketplace accounts over 67 months; proves that evaluation protocol choices (aggregation level, error pooling, prediction intervals) completely reorder leaderboards."
+    },
+    {
+      "arxiv_id": "2609.26696",
+      "title": "Reading the Sky to Forecast the Ground: Physics-Informed Link-State Forecasting for LEO Networks at Any Location",
+      "authors": [
+        "Yunxiang Chi",
+        "Zhenlin An",
+        "Longfei Shangguan",
+        "Kyle Jamieson"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-22",
+      "venue": "arXiv preprint",
+      "group": "Princeton University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "8,260 minutes of 1 Hz Starlink measurements across 5 US states",
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "physics-informed",
+        "networking",
+        "leo-satellite",
+        "cs.NI",
+        "cs.LG"
+      ],
+      "notes": "Gnomon: Physics-informed link-state forecasting system for low-Earth-orbit (LEO) satellite networks that reconstructs 4-leg bent-pipe atmospheric attenuation and orbital geometry, coupling fine-tuned TSFMs to cut downlink throughput and RTT prediction error by 17-78% on unseen ground stations."
+    },
+    {
+      "arxiv_id": "2609.23378",
+      "title": "Leaky-integrator reconstruction: taming error accumulation in recursive differenced time-series forecasting",
+      "authors": [
+        "Zijiang Yang"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-23",
+      "venue": "arXiv preprint",
+      "group": "Independent",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "recursive-forecasting",
+        "error-accumulation",
+        "stability",
+        "cs.LG"
+      ],
+      "notes": "Proves that standard recursive differenced integration is a discrete integrator with a pole on the unit circle that causes error explosion; introduces training-free leaky integrator H(z) = 1/(1 - gamma z^-1) with fixed gamma=0.9, cutting long-horizon errors by 23-51% across 7 architectures and 20 datasets."
+    },
+    {
+      "arxiv_id": "2609.23074",
+      "title": "Event Signature Transfer: Model-Agnostic Forecast Scenario Construction from Historical Events",
+      "authors": [
+        "Karthik Sridhar",
+        "Aaditya Jain",
+        "Murari Mandal",
+        "Saurabh Deshpande"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-19",
+      "venue": "arXiv preprint",
+      "group": "Walmart Global Tech & IIT",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "scenario-generation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "scenario-generation",
+        "event-transfer",
+        "quantile-forecasting",
+        "cs.LG"
+      ],
+      "notes": "Event Signature Transfer (EST): A training-free, model-agnostic operator isolating detrended and deseasonalized shock signatures from past events and scaling them onto native TSFM quantile forecasts (Chronos-2, TimesFM-2.5, Toto-2.0), reducing real-episode WQL by 21.7-90%."
+    },
+    {
+      "arxiv_id": "2609.26809",
+      "title": "AgroBench: A Reproducible Multimodal Benchmark for Weakly Supervised Crop Yield Learning from County Statistics and Pixel Observations",
+      "authors": [
+        "Udaiveer Singh",
+        "Rajiv Ranjan",
+        "Shashank Tamaskar",
+        "Dharmendra Saraswat"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-16",
+      "venue": "arXiv preprint",
+      "group": "Purdue University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": "AgroBench (13M observations, 788k unique pixels across 5,107 county-years)",
+      "tasks": [
+        "forecasting",
+        "regression"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "multimodal",
+        "agriculture",
+        "remote-sensing",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "notes": "AgroBench: Reproducible multimodal spatiotemporal benchmark pairing weekly Sentinel-1 SAR and Sentinel-2 multispectral pixel time series with county-level crop yield statistics under a Leave-One-Year-Out protocol across 8 growing seasons (2017-2024)."
+    },
+    {
+      "arxiv_id": "2609.15393",
+      "title": "CodeTS: Verifiable Text-to-Time Series Generation via Executable Code",
+      "authors": [
+        "Xudong Yuan",
+        "Shunyu Liu",
+        "Xinyi Wang",
+        "Tongya Zheng",
+        "Mengxuan Hu",
+        "Yunhe Wang",
+        "Mingli Song"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-14",
+      "venue": "arXiv preprint",
+      "group": "Zhejiang University",
+      "architecture": "agent",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "generation",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "generation",
+        "executable-code",
+        "text-to-ts",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "notes": "CodeTS: Verifiable text-to-time-series generation framework that synthesizes temporal dynamics via executable Python code routines with symbolic solvers, guaranteeing physical consistency and mathematical verifiability."
+    },
+    {
+      "arxiv_id": "2608.11623",
+      "title": "FM-LLM: A frequency-enhanced mixture-of-experts framework for adapting LLMs to time series forecasting",
+      "authors": [
+        "Rentao Gu",
+        "Yihang Ding",
+        "Yuehua Wang",
+        "Zhiqiang Shen",
+        "Yuefeng Ji"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-12",
+      "venue": "arXiv preprint",
+      "group": "Beijing University of Posts and Telecommunications",
+      "architecture": "MoE",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "moe",
+        "frequency-domain",
+        "llm-for-ts",
+        "cs.LG"
+      ],
+      "notes": "FM-LLM: Adapts large language models to time-series forecasting via frequency-domain decomposition and a frequency-enhanced Mixture-of-Experts routing router, preserving multi-frequency periodic structures."
+    },
+    {
+      "arxiv_id": "2607.19381",
+      "title": "Air Quality Arena: A Large-Scale Multi-Region Ground Monitoring Dataset and Benchmark for Air Quality Forecasting with Time-Series Foundation Models",
+      "authors": [
+        "Rishi Bharadwaj",
+        "Manik Gupta",
+        "Divya Sharma",
+        "Aditya Sinha"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-01",
+      "venue": "arXiv preprint",
+      "group": "BITS Pilani & IIT",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": "Air Quality Arena (Multi-region ground monitoring sensors across 12 countries)",
+      "tasks": [
+        "forecasting",
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "environmental",
+        "air-quality",
+        "cs.LG"
+      ],
+      "notes": "Air Quality Arena: Large-scale multi-region environmental ground monitoring dataset and benchmark specifically designed to audit time-series foundation models under severe sensor drift, missingness, and meteorological shifts."
+    },
+    {
+      "arxiv_id": "2607.15705",
+      "title": "A Benchmark for Electrical Load Forecasting Across Grid Levels: Time-Series Transformers Outperform Established Methods",
+      "authors": [
+        "Matthias Hertel",
+        "Sebastian Pütz",
+        "Jonathan Kolar",
+        "Veit Hagenmeyer"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-17",
+      "venue": "arXiv preprint",
+      "group": "Karlsruhe Institute of Technology (KIT)",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "energy",
+        "load-forecasting",
+        "cs.LG"
+      ],
+      "notes": "A systematic cross-grid-level electrical load forecasting benchmark comparing modern time-series transformers and foundation models against classical operational forecasting pipelines across transmission, distribution, and feeder networks."
+    },
+    {
+      "arxiv_id": "2607.02623",
+      "title": "Evaluating Time Series Foundation Models for Electricity Price Forecasting: Contamination Risk, Distributional Shifts, and Covariate Dependence",
+      "authors": [
+        "Zhenghua Pan",
+        "Ahmed Aziz Ezzat"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-02",
+      "venue": "arXiv preprint",
+      "group": "Rutgers University",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "evaluation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "energy",
+        "contamination-audit",
+        "cs.LG"
+      ],
+      "notes": "Rigorous empirical evaluation of TSFMs on day-ahead electricity price forecasting (EPF); investigates pretraining data contamination risks, performance degradation under post-2022 energy regime shifts, and covariate sensitivity."
+    },
+    {
+      "arxiv_id": "2606.31804",
+      "title": "Relational and Sequential Conformal Inference for Energy Time Series over Graphs via Foundation Models",
+      "authors": [
+        "Keivan Faghih Niresi",
+        "Alice Cicirello"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-30",
+      "venue": "arXiv preprint",
+      "group": "University of Cambridge",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "uncertainty-quantification",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "conformal-prediction",
+        "graphs",
+        "uncertainty",
+        "cs.LG"
+      ],
+      "notes": "Proposes relational and sequential conformal inference for graph-structured energy time series driven by pretrained foundation models, delivering distribution-free finite-sample coverage guarantees with spatially adaptive nonconformity scores."
+    },
+    {
+      "arxiv_id": "2606.24950",
+      "title": "MacroLens: A Multi-Task Benchmark for Contextual Financial Reasoning under Macroeconomic Scenarios",
+      "authors": [
+        "Patara Trirat",
+        "Jin Myung Kwak",
+        "Younggyu Oh",
+        "Min-Seok Lee",
+        "Kwanwoo Park",
+        "Junghyun Lee",
+        "Sung-Hyuk Park"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-23",
+      "venue": "arXiv preprint",
+      "group": "KAIST",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": "MacroLens (Multi-task macroeconomic scenarios with contextual news and indicators)",
+      "tasks": [
+        "reasoning",
+        "forecasting",
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "financial",
+        "reasoning",
+        "multimodal",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "notes": "MacroLens: Multi-task benchmark evaluating LLMs and TSFMs on contextual financial reasoning under macroeconomic shock scenarios, testing whether models capture regime transitions, inflation shocks, and interest rate guidance."
+    },
+    {
+      "arxiv_id": "2606.06881",
+      "title": "GlucoFM-Bench: Benchmarking Time-Series Foundation Models for Blood Glucose Forecasting",
+      "authors": [
+        "Baiying Lu",
+        "Zhaohui Liang",
+        "Yuan Gao",
+        "Hengtong Zhang",
+        "Xiaowei Jia",
+        "Yongquan Fu"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-05",
+      "venue": "arXiv preprint",
+      "group": "University of Pittsburgh & National University of Defense Technology",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "benchmark"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "healthcare",
+        "clinical",
+        "glucose",
+        "cs.LG"
+      ],
+      "notes": "GlucoFM-Bench: First systematic clinical benchmark evaluating 8 time-series foundation models for continuous glucose monitoring (CGM) forecasting across type-1 and type-2 diabetes cohorts, highlighting risk of hypoglycemic delay."
+    },
+    {
+      "arxiv_id": "2606.05878",
+      "title": "TS-ICL: A Flexible Time-Indexed Foundation Model for Time Series via In-Context Learning",
+      "authors": [
+        "Etienne Le Naour",
+        "Tahar Nabil",
+        "Nicolas Courty"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-13",
+      "venue": "arXiv preprint",
+      "group": "Université Bretagne Sud & IRISA",
+      "architecture": "decoder-only",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "interpolation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "in-context-learning",
+        "irregular-sampling",
+        "interpolation",
+        "cs.LG"
+      ],
+      "notes": "TS-ICL: A time-indexed foundation model utilizing in-context learning to natively handle non-uniform, irregularly sampled, and asynchronous time series without imputation or uniform resampling."
+    },
+    {
+      "arxiv_id": "2606.01300",
+      "title": "ChronosAD: Leveraging Time Series Foundation Models for Accurate Anomaly Detection",
+      "authors": [
+        "Uzair Khan",
+        "Luigi Capogrosso",
+        "Federico Girella",
+        "Franco Fummi"
+      ],
+      "year": 2026,
+      "release_date": "2026-05-31",
+      "venue": "IEEE INDIN 2026",
+      "group": "University of Verona",
+      "architecture": "decoder-only",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly-detection"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/intelligolabs/ChronosAD",
+      "categories": [
+        "anomaly-detection",
+        "chronos",
+        "zero-shot",
+        "cs.LG"
+      ],
+      "notes": "ChronosAD: Adapts the Chronos TSFM family for zero-shot time series anomaly detection via probabilistic rolling forecast error residuals, verified and open-sourced on GitHub with official acceptance at IEEE INDIN 2026."
     }
   ]
 }

@@ -101,8 +101,7 @@ def plot_timeline(papers: list[dict]) -> None:
         ("FlowTSFM", "2026-09-12", "Academia", 2.4, -10),
         ("Tabby", "2026-09-12", "Academia", -3.6, -5),
         ("TW3Cast", "2026-09-16", "Academia", 3.2, -12),
-        ("QUALS", "2026-09-17", "Academia", 5.2, 22),
-        ("t_0", "2026-09-21", "Academia", -4.8, 10),
+        ("t_0", "2026-09-21", "Academia", -5.2, 14),
         ("MUSE", "2026-09-21", "Academia", 4.4, 12),
         ("TimeBraid", "2026-09-24", "Academia", 1.4, 16),
         ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22),
@@ -111,7 +110,10 @@ def plot_timeline(papers: list[dict]) -> None:
         ("FutureBoosting", "2026-03-06", "THUML", 4.4, -14),
         ("Solar-VLM", "2026-04-05", "Academia", -1.5, 16),
         ("DGOTTA", "2026-08-28", "Ming Jin", -3.2, 16),
-        ("TabPFN-3.5", "2026-09-15", "Prior Labs", -6.4, 10)
+        ("TabPFN-3.5", "2026-09-15", "Prior Labs", -6.4, 10),
+        ("ChronosAD", "2026-05-31", "Academia", -2.6, 8),
+        ("Gnomon", "2026-09-22", "Academia", 6.4, 12),
+        ("CodeTS", "2026-09-14", "ZJU", -4.4, -18)
     ]
 
     dates = [datetime.datetime.strptime(m[1], "%Y-%m-%d") for m in milestones]
@@ -313,31 +315,31 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.0, [
-            ("Streaming xLSTM, Decoders & TabPFN-3.5\n• TabPFN-3.5, TiRex-2, Reverso, Darts FM, TimesFM", 60),
-            ("Trust Distillation, F2D & Hybrid Boosting\n• FutureBoosting, GUARD, F2D, GITCO, PaCoDi", 45),
+            ("Streaming, TabPFN-3.5 & Error Taming\n• TabPFN-3.5, Leaky-Integrator, TiRex-2, Reverso, Darts FM", 60),
+            ("Physics LEO, Trust Distill & Hybrid Boost\n• Gnomon (LEO TSFM), FutureBoosting, GUARD, F2D, PaCoDi", 45),
             ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
-            ("Federated Heterogeneity & Tiny Edge\n• Federated TSFM, CITRAS-FM, TTM, TSPFN, VLT, IPM-FM", 15)
+            ("Federated Heterogeneity & Anomaly Models\n• ChronosAD, Federated TSFM, CITRAS-FM, TTM, TSPFN, VLT", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.5, [
-            ("Dynamic TTA & Physics RAG Adaptation\n• DGOTTA (Dynamic Graph), PARA-PV (Physics RAG), CoRA", 60),
+            ("Frequency MoE & Dynamic TTA\n• FM-LLM (MoE), DGOTTA (Dynamic Graph), PARA-PV, CoRA", 60),
             ("Multimodal JEPA & Semantic Embeddings\n• CHARM (JEPA TS), LLM Feature Pools, T-LLM, MILM", 45),
             ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
             ("In-Context Retrieval & Model-Agnostic R-AF\n• Align-RAG, Model-Agnostic R-AF, Retrieval Regimes", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.5, [
-            ("Multimodal VLMs & Satellite Ground Fusion\n• Solar-VLM, MUSE (ViT), SAGE, Solar-Sky, Candlesticks", 60),
-            ("Irregular Clinical QA & Reasoning\n• CLIR-Bench, MMTClinic, EvoTS-Agent, IRTS-ToolBench", 45),
+            ("Executable Code & Satellite Fusion\n• CodeTS (Python TS), Solar-VLM, MUSE, SAGE, Solar-Sky", 60),
+            ("Macro Scenarios, Clinical QA & Reasoning\n• MacroLens, CLIR-Bench, MMTClinic, EvoTS-Agent", 45),
             ("Operational Last-Mile & Agent Audits\n• Bridging Last Mile, TimeClaw, Coding Agent TS Audit, TSQAgent", 30),
             ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 15)
         ], "#feebc8", "#9c4221"),
 
         (87.0, [
-            ("Financial Volatility & Grid Load Feeder\n• VOLARE Volatility (Brini), KIT Low-Voltage Feeder, Weron Arbitrage", 60),
-            ("Sensor E-Nose, Wearable HRV & Crowd Regimes\n• E-Nose Sensor Audit, Wearable HRV, SAIL2025 Crowd", 45),
-            ("Grid Covariates & Base-Rate Honest Audits\n• GE Grid Chronos-2, Base-Rate Honest TimesFM, Clinical Hindsight", 30),
-            ("Continual Forgetting & Hardware Benchmarks\n• Catastrophic Forgetting, HoliBench, ORBIT Regimes", 15)
+            ("Production Market, Feeder & Volatility\n• Marketplace Audit (Islam), VOLARE (Brini), KIT Feeder", 60),
+            ("Environmental, Agriculture & Sensor Audits\n• Air Quality Arena, AgroBench, E-Nose Sensor Audit, Wearable HRV", 45),
+            ("EPF Contamination & Grid Covariates\n• EPF Contamination Audit (Pan), GE Chronos-2, Clinical Hindsight", 30),
+            ("Graph Conformal & Hardware Benchmarks\n• Graph Conformal (Niresi), Catastrophic Forgetting, ORBIT Regimes", 15)
         ], "#faf5ff", "#6b46c1")
     ]
 
