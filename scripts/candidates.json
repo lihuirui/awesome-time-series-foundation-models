@@ -1,0 +1,1238 @@
+[
+  {
+    "arxiv_id": "2609.27467",
+    "title": "Kairos: Grounded Forecasting of Presence and Directional Flow in 4D Scene Graphs",
+    "published": "2026-09-23",
+    "year": 2026,
+    "authors": [
+      "Iacopo Catalano",
+      "Julio A. Placed",
+      "Javier Civera",
+      "Jorge Peña Queralta"
+    ],
+    "summary": "Long-term autonomy in human-populated environments requires anticipating whether and how people will move at times a robot has not yet observed. Existing representations of pedestrian motion face a tradeoff: they either forecast future activity, reducing each location to a scalar rate, or model the full directional distribution, holding it fixed in time. We present Kairos, a predictive directional-flow memory that extends a hierarchical 3D scene graph (3DSG) to a 4D scene graph (4DSG). Every observed voxel of the reconstructed geometry stores a directional mixture and a presence rate, and spectral predictors forecast, for any future query time, both the probability that people are present and the full directional distribution of their motion. Pairwise flow dependence between adjacent voxels supports conditional queries, and per-voxel predictive variances yield calibrated credible intervals that tighten as observations accumulate. We evaluate Kairos on three real pedestrian environments: a robot-collected campus dataset, a shopping mall, and a station concourse recorded continuously for eleven months. Its learned state remains consistent under loop-closure corrections, and its forecasts are competitive with dedicated occupancy and flow models trained on the full detection stream, although Kairos learns from only the small fraction available to a patrolling robot. Finally, we validate the representation on a downstream encounter-probability planning task, where plans computed over the Kairos forecasts encounter more people than plans computed over any time-invariant map at an equal success rate. We provide the code at https://github.com/IacopomC/kairos."
+  },
+  {
+    "arxiv_id": "2609.23385",
+    "title": "Leveraging Industrial Foundation Models at the Edge of Particle Physics Detectors via Distillation Learning and Hardware Co-design",
+    "published": "2026-09-20",
+    "year": 2026,
+    "authors": [
+      "Gia Ancone",
+      "Qibin Liu",
+      "Liangyu Wu",
+      "Julia Gonski"
+    ],
+    "summary": "Data acquisition (DAQ) systems at future particle physics experiments stand to benefit from the extremes of AI/ML development: large-scale foundation models can enhance the performance of feature extraction algorithms, and small-scale on-detector deployments can enable real-time intelligent data handling. This work provides the first fine-tuning of an industrial foundation model for particle physics DAQ. Starting from the backbone of Google Research's TimesFM (Time Series Foundation Model), we demonstrate fine-tuning on real-time regression tasks for drift chamber trackers and dual-readout calorimeters. Furthermore, the fine-tuned TimesFM model is distilled into a student and co-designed with FPGA implementation to enable these models to run in real-time at future colliders. The fine-tuned distillations meet or exceed the performance of previously published AI/ML solutions for each task. Further, the pipeline of distillation and model compression from TimesFM is generic and can be easily adapted to a variety of 1D waveform tasks across domains."
+  },
+  {
+    "arxiv_id": "2609.23703",
+    "title": "Financial Language Models as Applied Artificial Intelligence Systems for News-Based Trading under Market Frictions",
+    "published": "2026-09-20",
+    "year": 2026,
+    "authors": [
+      "Kemal Kirtac"
+    ],
+    "summary": "Financial language models can transform unstructured firm-specific news into structured decision signals, but financial AI research lacks an integrated deployment framework for evaluating whether those signals remain useful in financial decision systems. Computer science research has developed strong methods for time-series forecasting, text classification, multimodal stock prediction, graph-based market modeling, and machine-learning operations, yet these streams do not provide a domain-specific protocol that jointly tests financial language-model outputs under event-time observability, probability calibration, execution timing, transaction costs, liquidity constraints, capacity limits, operational diagnostics, and statistical inference. We introduce MFAST, a Market-Friction-Aware Sentiment-to-Trading framework that converts timestamped financial text into auditable, reproducible, and market-feasible trading decisions. The application is news-based trading, where firm-specific text must be linked to securities before portfolio decisions can be evaluated. The framework links Refinitiv News Analytics to Center for Research in Security Prices (CRSP) equity data, restricts the primary out-of-sample evaluation to post-release news outside disclosed foundation-model data-freshness periods, and adds a public replication arm using open financial text and public price data. Results show that decoder-only language models outperform encoder baselines and dictionary sentiment in classification, calibration, return prediction, and net portfolio performance, while operational diagnostics reveal trade-offs among accuracy, latency, memory, throughput, and inference cost. The paper shows that credible evaluation of financial language models requires an end-to-end engineering approach combining language understanding, temporal discipline, market-friction-aware deployment, and reproducible validation."
+  },
+  {
+    "arxiv_id": "2609.21646",
+    "title": "Systematic Study of Proton, Two-Proton, Alpha, and Cluster Radioactivity Half-Lives based on the Deformed Gamow-like Model and Tabular Prior-data Fitted Network ($\\mathrm{TabPFN}$)",
+    "published": "2026-09-18",
+    "year": 2026,
+    "authors": [
+      "Anqi Yang",
+      "Panpan Qi",
+      "Qingning Yuan",
+      "Gongming Yu",
+      "Haitao Yang",
+      "Zhangyan Li",
+      "Yanbing Cai"
+    ],
+    "summary": "A hybrid framework combining the deformed Gamow-like model ($\\mathrm{DGLM}$) with the Tabular Prior-data Fitted Network ($\\mathrm{TabPFN}$) is developed to improve half-life predictions for two-proton emission, proton emission, $α$ decay, and cluster radioactivity. A total of 583 radioactive nuclei are investigated, including 17 two-proton emitters, 42 proton emitters, 498 $α$ emitters, and 26 cluster emitters. Among the four considered models, $\\mathrm{DGLM}^{b}+\\mathrm{TabPFN}$ achieves the best overall performance, with $σ_{\\mathrm{RMS}}=0.423$, corresponding to an improvement of approximately $82.2\\%$ over $\\mathrm{DGLM}^{b}$. The model parameters are optimized for each decay mode using the least-squares method. After introducing $\\mathrm{TabPFN}$, the prediction errors for proton emission and $α$ decay are reduced by approximately $80.6\\%$ and $87.6\\%$, respectively. For $α$ decay, the training, test, and overall RMSEs are 0.208, 0.305, and 0.240, indicating good generalization capability without evident overfitting. The model also reproduces the systematic evolution of $α$-decay half-lives and the shell-closure effect around $N=126$. These results demonstrate that combining $\\mathrm{DGLM}$ with $\\mathrm{TabPFN}$ significantly improves the accuracy and robustness of radioactive-decay half-life predictions while retaining the physical interpretability of the original model."
+  },
+  {
+    "arxiv_id": "2609.18588",
+    "title": "Peak-Aware Short-Term Load Forecasting Across Distribution Grid Aggregation Levels",
+    "published": "2026-09-16",
+    "year": 2026,
+    "authors": [
+      "Souhardya Chattopadhyay",
+      "Julian Oelhaf",
+      "Antonia Schoening",
+      "Jessica Deuschel",
+      "Bitan Bhattacharyya",
+      "Christian Bergler",
+      "Andreas Maier",
+      "Siming Bayer"
+    ],
+    "summary": "For distribution system operators, short-term load forecasting (STLF) supports congestion management, voltage control, and asset protection. Most existing approaches focus on overall accuracy across all time steps and neglect performance during high-demand (HD) periods, where larger forecast errors can increase the risk of congestion and voltage violations. In this paper, we study peak-aware STLF across three operator-relevant distribution grid aggregation levels, area codes (AC), secondary substations (SUB), and low-voltage (LV) feeders, using open datasets from the United Kingdom and Switzerland. We compare statistical baselines, machine learning models (LightGBM and XGBoost), and recent time-series foundation models (Chronos Bolt and Chronos-2) under a peak-aware evaluation framework that reports both overall and HD forecasting performance using NMAE and MAPE. The results show that Chronos-2 achieves the best HD performance across all aggregation levels, with HD-NMAE and HD-MAPE of 0.039 and 4.53% at AC, 0.080 and 9.45% at SUB, and 0.138 and 16.14% at LV, while Chronos-Bolt consistently ranks second best. Compared with the gradient boosted ML models, Chronos-2 reduces mean HD-NMAE by about 20-51% across levels while remaining best or near-best on the overall metrics. A quantile analysis of the probabilistic Chronos outputs further identifies aggregation-specific operating points, and runtime measurements indicate that foundation model inference is fast enough for practical deployment. Overall, the findings highlight peak-aware evaluation and aggregation specific quantile selection as a practical pathway toward more operationally relevant STLF in distribution networks."
+  },
+  {
+    "arxiv_id": "2609.18585",
+    "title": "TTM-Bench: A Framework for Text-to-Music System Performance Benchmarking",
+    "published": "2026-09-16",
+    "year": 2026,
+    "authors": [
+      "Giorgia Adorni",
+      "Michela Papandrea",
+      "Battista Rimoldi",
+      "Tiziano Leidi"
+    ],
+    "summary": "Text-to-music (TTM) systems are increasingly used to generate musical audio from natural-language descriptions. Robust evaluation is therefore essential, yet reliable performance comparison remains challenging. This difficulty stems from differences in system architecture, supported conditioning information, and access mode, as well as heterogeneous and fragmented metrics that cannot be applied uniformly across systems. To address these challenges, we introduce TTM-Bench, a framework that defines a common protocol for systematic, reproducible performance benchmarking of contemporary TTM systems. It evaluates performance along two dimensions: musical-content alignment, quantified by interpretable semantic, genre, and musical-descriptor agreement scores against a common musical specification and summarized by an aggregate score; and computational efficiency, characterized by generation latency and real-time factor, alongside resource use for local models and cost for hosted services. We demonstrate the framework through a preliminary comparative case study, illustrating the complementary evidence captured by these dimensions. The results show that higher musical-content alignment does not systematically coincide with lower computational demands, highlighting the importance of assessing TTM performance through distinct, interpretable measures rather than a reductive overall indicator."
+  },
+  {
+    "arxiv_id": "2609.09140",
+    "title": "NOAH: Learning the Full Patient Journey. A Longitudinal Multimodal Time-Aware Model for Representation and Forecasting",
+    "published": "2026-09-08",
+    "year": 2026,
+    "authors": [
+      "Tobias Susetzky",
+      "Raphael Rehms",
+      "Dmitrii Seletkov",
+      "Özgün Turgut",
+      "Michelle Espranita Liman",
+      "Lisa Steinhelfer",
+      "Rickmer Braren",
+      "Daniel Rueckert"
+    ],
+    "summary": "The digitization of healthcare has generated vast, longitudinal, and multimodal patient records over a lifetime, yet fully exploiting these data to represent and predict patient state trajectories remains a critical challenge. Current AI models often struggle to capture the complex, irregular temporal dynamics and inherent stochasticity of real-world multimodal patient data. Existing AI approaches for modeling longitudinal patient records are predominantly discriminative, limited to a few modalities, constrained by closed categorical vocabularies, treating time as a monotonic inductive bias, or they are limited in forecasting future patient states. We introduce NOAH, a time-aware, task-agnostic, generative transformer model representing and forecasting the full multimodal patient journey. NOAH features a novel bidirectional time integration and a variational latent space to capture the continuous evolution of patient states and the stochasticity of clinical trajectories. Built from over 559 million clinical events from 431,000 hospital visits of 299,000 patients across the MIMIC dataset family, NOAH natively processes medical images, time-series and numeric signals, categorical events, as well as structured and unstructured clinical records. NOAH is the first truly holistic generative model in its field, enabling autoregressive forecasting with optional time control, zero-shot classification, and counterfactual intervention simulation. It generates highly informative and predictive patient state representations that demonstrate strong performance in probing for clinical outcomes, 15 ICD chapters, and 29 comorbidities, as well as in time-to-event prediction. Seamlessly handling diverse modalities and complex temporal dynamics, NOAH provides a versatile, task-agnostic, scalable foundation for intelligent predictive systems in personalized clinical care and digital medicine."
+  },
+  {
+    "arxiv_id": "2609.08755",
+    "title": "Kairos: A Dataset for Fine-Grained Video-Language Modeling over Space, Time, and Dynamics",
+    "published": "2026-09-08",
+    "year": 2026,
+    "authors": [
+      "Ruibo Ming",
+      "Lei Sun",
+      "Deheng Zhang",
+      "He Zhang",
+      "Jialu Li",
+      "Jian Wang",
+      "Zhendong Li",
+      "Mengshun Hu",
+      "Danda Pani Paudel",
+      "Luc Van Gool",
+      "Jinjin Gu"
+    ],
+    "summary": "Many emerging video language modeling tasks require systems to move beyond clip-level abstraction and model visual content as it unfolds over extended time horizons. However, most existing video datasets rely on coarse or sparsely aligned supervision, which compresses temporal variation and limits the ability of models to learn reusable representations of continuous visual dynamics. We introduce Kairos, a video dataset for video-language modeling with time-resolved annotations. Kairos consists of long-duration videos, ranging from ten minutes to half an hour, annotated with fine-grained temporal alignment. The annotations capture ongoing actions, entity appearances and attributes, interactions, and evolving contextual cues along the video timeline. This time-resolved structure supports fine-grained evaluation, long-range modeling and reasoning, instruction data construction, representation learning, and video generation. Kairos provides a general-purpose foundation for modeling visual experiences over time."
+  },
+  {
+    "arxiv_id": "2609.06117",
+    "title": "STQA: A Benchmark for Stock-Focused Tabular Question Answering over Historical and Forecasted Data",
+    "published": "2026-09-05",
+    "year": 2026,
+    "authors": [
+      "Baoxu An",
+      "Wenmian Yang",
+      "Zhensheng Wang",
+      "Weijia Jia"
+    ],
+    "summary": "Stock market analysis inherently requires composite reasoning over historical records and future projections, yet existing benchmarks remain fragmented across isolated tasks. We introduce STQA (Stock-focused Tabular Question Answering), an end-to-end benchmark designed to systematically evaluate natural-language question answering over historical data, numerical forecasts, and forecast-based reasoning. Built on a large-scale financial dataset, STQA covers 4,417 stocks and contains 31,400 question-answer pairs derived from expert-crafted templates, accompanied by fine-grained intent and slot annotations. To operationalize this benchmark, we present SQFRS (Stock Query-Forecast-Reasoning System), an agent-based unified framework that orchestrates SQL retrieval and time-series forecasting tools. Experiments demonstrate that while current large language models perform well on historical queries, forecast-based reasoning poses a substantial challenge, revealing critical bottlenecks in tool coordination and reasoning under uncertainty. The dataset and code are available at https://github.com/xuxubaobaoan/STQA_Project. STQA thus serves as a rigorous testbed for future research on trustworthy, tool-augmented financial agents."
+  },
+  {
+    "arxiv_id": "2609.05408",
+    "title": "Towards Scaling Quantum Fine-Tuning of Foundational Time Series Models for Classification",
+    "published": "2026-09-04",
+    "year": 2026,
+    "authors": [
+      "Sang Hyub Kim",
+      "Julien Baglio",
+      "Rajiv Krishnakumar",
+      "Chi Chen",
+      "Oliver Knitter",
+      "Jonathan Mei",
+      "Claudio Girotto",
+      "Masako Yamada",
+      "Frederik F. Flöther",
+      "Martin Roetteler"
+    ],
+    "summary": "Time-series foundation models produce rich embeddings, but whether quantum models can exploit them, and how far hybrid classical-quantum architectures scale, remains unclear. We address this by fine-tuning Chronos for power-grid event classification (PSML-5) with a quantum head on the model's embeddings. Grouping embeddings by physical sensor type before summarization already surpasses the best published baseline built for this benchmark, and with finer-grained features the quantum head outperforms a larger classical multilayer perceptron on identical inputs by 1.7-2.0 percentage points of balanced accuracy. Yet the gains saturate: past a point, feeding more information to the same fixed-width register yields no improvement. We show the bottleneck is neither the supply of information nor circuit expressiveness, but the bandwidth of the data intake. To overcome this limitation, we introduce the wing module, a self-contained few-qubit circuit that feeds additional information into the core circuit through a sparse, one-way coupling. Under a preregistered four-seed protocol, we attach wings to a fixed 12-qubit core with fixed features. Balanced accuracy increases with each added wing, from 83.6% with no wings (13 qubits, including a post-selection qubit) to 85.2% with two (19 qubits). Ablations establish that a circuit enlarged without new information gains nothing, while a wing fed information from the wrong sample harms accuracy. These results reframe scaling for quantum fine-tuning: added qubits help when they carry added inputs, not merely more parameters. Wings offer a modular and stable route to widening that bandwidth."
+  },
+  {
+    "arxiv_id": "2608.27549",
+    "title": "Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning",
+    "published": "2026-08-27",
+    "year": 2026,
+    "authors": [
+      "Hanyang Wang",
+      "Yimo Cai",
+      "Weiliang Chen",
+      "Jiawei Chi",
+      "Haowen Sun",
+      "Qiyu Dai",
+      "Yi-Hsin Hung",
+      "Xingzhuo Guo",
+      "Jinshan Ren",
+      "Runmao Yao",
+      "Ziwei Liu",
+      "Mingsheng Long",
+      "Yueqi Duan",
+      "Jun Gao",
+      "Jiangran Lyu",
+      "Fangfu Liu",
+      "Jialong Wu"
+    ],
+    "summary": "Physical understanding and reasoning depend on forming compact and generalizable representations of the world. While modern vision-language models can recognize and explain diverse physical events, they often lack explicit representations of the underlying mechanisms-such as object states, physical parameters, and governing dynamics-needed for reliably reasoning how the world evolves and responds to interventions. In this work, we introduce Code-as-World, a paradigm that represents physical worlds through executable world representations. By expressing physical composition, dynamic evolution, and visual appearance as executable code, Code-as-World provides a compact, quantitatively grounded, and controllable abstraction of the physical world. To construct such representations from multimodal observations, such as natural-language descriptions or real-world videos, we develop an agentic discovery loop inspired by abductive reasoning, where an agent proposes, executes, renders, verifies, and iteratively refines executable world hypotheses. As a concrete application, we use verified executable worlds to provide scalable physical supervision for training vision-language models on quantitative physical reasoning. Experiments show that Code-as-World-VL achieves state-of-the-art performance on QuantiPhy and surpasses leading proprietary models, highlighting the potential of executable world representations as a scalable foundation for physical intelligence."
+  },
+  {
+    "arxiv_id": "2609.29523",
+    "title": "Towards Trustworthy Biological Alignment in TabPFN-Probed Pathology Foundation Models",
+    "published": "2026-08-25",
+    "year": 2026,
+    "authors": [
+      "Ushashi Bhattacharjee",
+      "Alloy Das",
+      "Saria Hannan",
+      "Tirtho Roy",
+      "Koushik Howlader",
+      "Soumik Sarkar"
+    ],
+    "summary": "Histology and transcriptomics provide complementary views of tissue biology, capturing spatial morphology and molecular activity, respectively. Pathology foundation models (PFMs) learn rich morphological representations from H&E images, yet strong downstream performance alone does not establish whether these representations encode biologically meaningful and robust molecular information. We present a **training-free framework for auditing biological alignment in frozen PFMs** using spatially paired histology and transcriptomics from HEST-1k, evaluated on **240 samples spanning three organs**. Multiple frozen PFMs are used to extract H&E representations, while gene expression is aggregated into biologically interpretable pathway-level programs. We use TabPFN as a pretrained probe to quantify the extent to which these molecular programs can be decoded from frozen image representations without task-specific gradient updates. Beyond predictive performance, our audit examines whether pathway decodability generalizes across tissue sections, patient groups, and tissue types; whether representations exhibit section-level or other shortcut dependencies; and whether predictions remain stable under small image perturbations and context resampling. This multi-tissue evaluation distinguishes molecular programs that are consistently encoded from those that are tissue-specific, unstable, or shortcut-sensitive. Our framework therefore provides a systematic approach for assessing not only **what biological information pathology foundation models encode, but also how reliably that information persists under clinically relevant sources of variation**."
+  },
+  {
+    "arxiv_id": "2608.22300",
+    "title": "Self-Calibrating Dense Displacement Fields for Reliable Co-Registration of Large Optical Satellite Imagery",
+    "published": "2026-08-23",
+    "year": 2026,
+    "authors": [
+      "Shoukun Sun",
+      "Zhe Wang",
+      "Sanaz Salati",
+      "Jiyin Zhang",
+      "Hui Wang",
+      "Xiaogang Ma"
+    ],
+    "summary": "Co-registration underlies nearly every multi-temporal and multi-sensor use of optical satellite imagery, and operational products still carry documented offsets well above the fraction-of-a-pixel scale at which change detection, time series, and data fusion degrade. Real image pairs differ along several axes at once (sensor response, scene content, viewing geometry, resolution, mosaic seams), and the last of these is not a single global motion. Existing tools embed a motion model and constants tuned to their development data; a pair that fits is registered precisely, while one that does not either fails to match or returns a result wrong by tens of pixels with no failure reported. Learned matchers add a GPU requirement and carry no accuracy guarantee outside their training distribution. We present SCDF (self-calibrating displacement fields), a training-free, GPU-free estimator whose motion model is the dense per-pixel displacement field itself, so no scene motion falls outside the model. A single predict--measure--filter loop runs over a resolution pyramid: the accumulated field predicts where each patch of the moving image falls in the reference, RootSIFT matching and a correlation pass measure the displacement there to sub-pixel precision, and filters whose thresholds are all calibrated on the image pair itself decide what survives. One configuration, with no per-dataset tuning, processes full $8192^2$ scenes on a single CPU core. On 584 constructed-ground-truth pairs built from real Sentinel-2, Landsat-8/9, and NAIP imagery, against seven classical baselines and two zero-shot pretrained matchers, SCDF registers every pair with zero failures, reduces the best baseline's real-pair median end-point error from 6.83 to 4.17m, and cuts its 90th percentile from 17.8 to 7.77m."
+  },
+  {
+    "arxiv_id": "2608.19521",
+    "title": "Time Series Forecasting based on Solana Digital Asset Dataset",
+    "published": "2026-08-20",
+    "year": 2026,
+    "authors": [
+      "Yufeng Xiao",
+      "Minxing Wang",
+      "Pavel Braslavski",
+      "Dmitry I. Ignatov"
+    ],
+    "summary": "Accurate analysis and forecasting of Solana digital assets require data that captures both token-level behavior and ecosystem-level DEX activity. This paper introduces, to the best of our knowledge, the first Solana digital asset time series dataset designed for forecasting and market-structure analysis. The dataset contains 1,584 tokens observed at daily resolution from March 24, 2024 to March 16, 2025, with 27 variables combining token transactions, prices, liquidity-pool balances, trader activity, Solana DEX volume, DEX trader counts, newly created pairs, and SOL price indicators. Rather than treating the dataset only as input for model comparison, we use it to characterize the DEX-driven token market during a period of rapid ecosystem growth. The analysis identifies synchronized market-wide activity peaks in mid-November 2024 and mid-January 2025 across DEX volume, token trading volume, active wallets, buyers, sellers, new traders, liquidity-pool balances, and SOL price. The January 2025 peak coincides with the 'Trump' token event and is accompanied by a visible transition from liquidity accumulation to withdrawals, suggesting that individual token dynamics are strongly coupled to broader Solana market sentiment and DEX activity. Forecasting experiments are then used as an empirical validation of the dataset's signal content. In three-day-ahead market-capitalization prediction, PatchTST achieves the best overall rank, fine-tuned Chronos follows closely, and statistical baselines remain competitive for trend-dominated tokens. Feature-importance analysis further shows that SOL price, SOL moving averages, total DEX volume, DEX trader counts, and newly created pairs are among the most informative covariates. The main contribution is therefore a curated Solana forecasting dataset and a data-driven analysis of the ecosystem-level factors that shape token volatility."
+  },
+  {
+    "arxiv_id": "2608.16319",
+    "title": "Advancing Open and Reproducible Relational Learning: RelArena-$α$, TabPFN-Rel and RPI",
+    "published": "2026-08-17",
+    "year": 2026,
+    "authors": [
+      "Adrian Hayler",
+      "Klemens Flöge",
+      "Alan Arazi",
+      "Rishabh Ranjan",
+      "Jure Leskovec",
+      "Felix Birkel",
+      "Brendan Roof",
+      "Anurag Garg",
+      "Kristina Collins",
+      "Lydia Sidhoum",
+      "Jonas Kübler",
+      "Siyuan Guo",
+      "Oscar Key",
+      "Jan Hendrik Metzen",
+      "Rylee Grace",
+      "David Salinas",
+      "Arthur Cahu",
+      "Simon Bing",
+      "Benjamin Jäger",
+      "Tuana Çelik",
+      "Mihir Manium",
+      "Vitor Monteiro",
+      "Jake Robertson",
+      "Jerry Chen",
+      "Eliott Kalfon",
+      "Tomás Pereda",
+      "Lilly Wehrhahn",
+      "Dominik Safaric",
+      "Tobias Schroeder",
+      "Georg Grab",
+      "Diana Kriuchkova",
+      "Clara Cornu",
+      "Philipp Singer",
+      "Nick Erickson",
+      "Vahid Balazadeh",
+      "Marie Salmon",
+      "Simone Alessi",
+      "Kürşat Kaya",
+      "Philipp Jund",
+      "Léo Grinsztajn",
+      "Yann LeCun",
+      "Bernhard Schölkopf",
+      "Madelon Hulsebos",
+      "Lennart Purucker",
+      "Sauraj Gambhir",
+      "Frank Hutter",
+      "Noah Hollmann"
+    ],
+    "summary": "This first release of Prior Labs in relational learning shows our continued commitment to open science. We open-source three pieces of software that we expect to accelerate research in the field towards meaningful real-world impact. We aim to steer further development based on feedback from, and in collaboration with, the community. Given the early stage of development, our $α$-release targets researchers and early-adopting practitioners. Over the past years, a variety of datasets and tasks for relational learning have emerged, but the community has not converged on a reliable, reproducible way to compare different methods on these tasks. Our $α$-release, RelArena-$α$, provides a unified framework for running and comparing baselines on RelBench v1 by standardizing data loading, evaluation protocols, tuning regimes, and support for systems with custom tuning, inspired by established tabular benchmarks such as TabArena. We plan to work with the research community to further develop RelArena-$α$ into a catalyst for progress in the relational learning community. We release the initial version of TabPFN-Rel, a purpose-built relational harness for TabPFN-3. Currently ranked first among models on RelArena-$α$, TabPFN-Rel makes key improvements upon RDBLearn. Beyond its ranking, TabPFN-Rel serves as a strong baseline, adding to the growing evidence that flattening a relational database into a single table remains competitive with specialized relational architectures on real-world tasks. To facilitate adoption of relational learning methods in research and industry, we release an initial $α$-version of our Relational Predictive Interface, RPI, an open-source, model-agnostic interface that enables early adopters to easily define problems on new databases and apply any model implemented in RelArena-$α$, including TabPFN-Rel, to these problems."
+  },
+  {
+    "arxiv_id": "2608.13505",
+    "title": "Intern-S2-Preview: Scientific Agentic Foundation Model",
+    "published": "2026-08-13",
+    "year": 2026,
+    "authors": [
+      "Lei Bai",
+      "Jiaqi Cao",
+      "Chiyu Chen",
+      "Guanzhou Chen",
+      "Kai Chen",
+      "Guangran Cheng",
+      "Erfei Cui",
+      "Xuanlang Dai",
+      "Shengyuan Ding",
+      "Shangheng Du",
+      "Yanhui Duan",
+      "Yue Fan",
+      "Youqing Fang",
+      "Quan Gan",
+      "Yuanyuan Gao",
+      "Jiaye Ge",
+      "Lixin Gu",
+      "Yuzhe Gu",
+      "Qipeng Guo",
+      "Junjun He",
+      "Xin Hong",
+      "Ming Hu",
+      "Zhouqi Hua",
+      "Haian Huang",
+      "Junhao Huang",
+      "Zixian Huang",
+      "Minxi Jin",
+      "Lingkai Kong",
+      "Alexander Lam",
+      "Zehao Li",
+      "Zonglin Li",
+      "Tianhao Liang",
+      "Dahua Lin",
+      "Junyao Lin",
+      "Tianyang Lin",
+      "Zhouhan Lin",
+      "Jiangning Liu",
+      "Jin Liu",
+      "Kuikun Liu",
+      "Wenran Liu",
+      "Yifei Liu",
+      "Yuhong Liu",
+      "Yuhong Liu",
+      "Zhoumianze Liu",
+      "Ziyan Liu",
+      "Ziyu Liu",
+      "Haijun Lv",
+      "Han Lv",
+      "Chengqi Lyu",
+      "Le Ma",
+      "Ningsheng Ma",
+      "Zerun Ma",
+      "Haoyang Peng",
+      "Runyu Peng",
+      "Jifei Shan",
+      "Zixin Shang",
+      "Kou Shi",
+      "Xiang Shi",
+      "Qisheng Su",
+      "Xuerui Su",
+      "Hao Sun",
+      "Xiao Sun",
+      "Yanan Sun",
+      "Yu Sun",
+      "Huanze Tang",
+      "Yinghao Tang",
+      "Wenhui Tian",
+      "Zhongbo Tian",
+      "Bingli Wang",
+      "Haomin Wang",
+      "Jiarui Wang",
+      "Jingzhi Wang",
+      "Rui Wang",
+      "Xiquan Wang",
+      "Yi Wang",
+      "Zhecan Wang",
+      "Ziyi Wang",
+      "Zun Wang",
+      "Rubin Wei",
+      "Lianyi Wu",
+      "Wen Wu",
+      "Yue Wu",
+      "Yuhan Wu",
+      "Zhenyu Wu",
+      "Zijian Wu",
+      "Shuhao Xing",
+      "Jun Xu",
+      "Xingle Xu",
+      "Xuenan Xu",
+      "Xiangchao Yan",
+      "Ziang Yan",
+      "Bowen Yang",
+      "Danni Yang",
+      "Lin Yang",
+      "Zhiqi Yang",
+      "Qian Yao",
+      "Haochen Ye",
+      "Peng Ye",
+      "Jinhui Yin",
+      "Jiashuo Yu",
+      "Dingbo Yuan",
+      "Fei Yuan",
+      "Yuhang Zang",
+      "Bo Zhang",
+      "Chao Zhang",
+      "Chen Zhang",
+      "Hongjie Zhang",
+      "Junming Zhang",
+      "Wenlong Zhang",
+      "Wenwei Zhang",
+      "Yiming Zhang",
+      "Zhuo Zhang",
+      "Ziyang Zhang",
+      "Haiteng Zhao",
+      "Penghao Zhao",
+      "Yibo Zhao",
+      "Zhonghan Zhao",
+      "Zhihang Zhong",
+      "Bowen Zhou",
+      "Peiheng Zhou",
+      "Xin Zhou",
+      "Xinyu Zhou",
+      "Yunhua Zhou",
+      "Dongsheng Zhu",
+      "Yicheng Zou"
+    ],
+    "summary": "Scientific discovery increasingly requires AI systems that can reason over scientific evidence of heterogeneous modalities, interact with scientific tools and environments, and sustain progress across long task horizons. We present Intern-S2-Preview, a series of scientific agentic foundation models designed to support multimodal scientific understanding, reasoning, generation, and long-horizon tasks. The training pipeline begins with scientific multimodal pre-training over rendered scientific documents, interleaved image-text data, and diverse scientific corpora. Starting from the pretrained checkpoint, we apply a unified post-training pipeline consisting of supervised fine-tuning, scalable multi-task reinforcement learning (RL), black- and white-box agentic RL, and on-policy distillation. This pipeline is supported by practical techniques that improve rollout and training stability and efficiency, including partial rollout with off-policy correction, adaptive length regularization, online speculative decoding, robust multi-task optimization, and trace-aware experience assembly for agentic tasks. At the architecture level, Intern-S2-Preview-397B extends time series modelling from efficient long-sequence understanding to numerical forecasting, while Memory Decoder is studied as a separate memory-augmented path for rapid scientific specialization without modifying the frozen 397B backbone. Evaluations across scientific, multimodal, agentic, and general-purpose benchmarks show that Intern-S2-Preview-397B achieves competitive or leading results in multiple settings. The time series modules improve scientific signal understanding and forecasting on SciTS, while the separate Intern-MemDec-4B extension improves the Biology-Instructions average score from 56.92 to 60.32 without modifying the frozen 397B backbone."
+  },
+  {
+    "arxiv_id": "2608.12989",
+    "title": "Balanced Adaptive Prototype Selection for Scalable TabPFN Inference on Large-Scale Tabular Data",
+    "published": "2026-08-13",
+    "year": 2026,
+    "authors": [
+      "Mahboobe Jadid",
+      "Melika Rezaye Garkani",
+      "Ali Mousavi"
+    ],
+    "summary": "Pretrained tabular foundation models have demonstrated strong predictive capability; however, their application to large-scale datasets remains constrained by the limited inference context. This paper introduces Balanced Adaptive Prototype Selection (BAPS), a framework for constructing compact, information-preserving contexts for scalable TabPFN inference. Without modifying or retraining the pretrained model, BAPS jointly preserves representative structure, informative decision boundaries, local density, class balance, and feature-space diversity. Experiments on the million-row HIGGS and SUSY datasets show that 512 prototypes retain strong predictive performance and reliable calibration, corresponding to an approximately 1,953-fold context compression. All experiments were conducted on an Intel Core i7 CPU with 16 GB RAM and no GPU acceleration. These findings establish effective context construction as a practical mechanism for extending pretrained tabular foundation models to million-scale datasets."
+  },
+  {
+    "arxiv_id": "2609.25013",
+    "title": "Do Existing Preconditioners Improve Biomedical Tabular Foundation Learning? An Empirical Study on TabPFN Optimization",
+    "published": "2026-08-01",
+    "year": 2026,
+    "authors": [
+      "M. Sajid",
+      "Pinki Khatun",
+      "M. Tanveer"
+    ],
+    "summary": "Tabular foundation models have recently shown strong potential for structured biomedical data analysis. Among them, TabPFN has emerged as an effective approach for low-data tabular classification tasks. However, the impact of optimization and preconditioning strategies on biomedical fine-tuning remains largely unexplored. In this work, we present a comprehensive empirical investigation of five AdamW-based preconditioning strategies for fine-tuning TabPFN v2.5 on 59 biomedical datasets spanning Alzheimer's disease, breast cancer, schizophrenia, significant memory concern (SMC), KEEL biomedical datasets, and UCI biomedical benchmarks. The evaluation considers predictive performance, computational efficiency, and statistical significance analysis. Experimental results demonstrate that the original AdamW optimizer consistently achieves the best overall performance and statistical ranking, while existing curvature-aware preconditioners fail to provide reliable improvements across diverse biomedical learning scenarios. The findings suggest that generic preconditioning approaches may not adequately capture the optimization characteristics of biomedical tabular learning, motivating the development of biomedical-aware preconditioners specifically tailored for healthcare-oriented tabular foundation models."
+  },
+  {
+    "arxiv_id": "2607.26854",
+    "title": "TREA-Net: A Transferable Residual Epidemiological Adaptation Network for Dengue Incidence Forecasting",
+    "published": "2026-07-29",
+    "year": 2026,
+    "authors": [
+      "Inesh Shukla",
+      "Madhurima Panja",
+      "Tanujit Chakraborty",
+      "Chittaranjan Hens"
+    ],
+    "summary": "Accurate multi-week dengue forecasting supports timely vector-control interventions, outbreak preparedness, and healthcare resource allocation. However, newly established surveillance systems often lack the historical data needed to train reliable neural forecasting models. Although pretrained time-series models offer promising zero-shot forecasts, their cross-domain training may not capture local epidemiological dynamics. We propose TREA-Net, a Transferable Residual Epidemiological Adaptation Network for dengue forecasting under limited data. TREA-Net augments neural forecasting backbones with projections from an Environmental Time-Series Susceptible-Infected-Recovered model and learns a lightweight gated residual correction transferable from data-rich to data-scarce regions. Its node-invariant design accommodates surveillance systems with different numbers of locations, while target adaptation requires learning only two global parameters. We transfer knowledge from long-running dengue surveillance in Colombia and Nicaragua to 8-week-ahead forecasting in Mexico and Malaysia using only 78 or 104 weeks of target data. Across five neural backbones and ten transfer settings, TREA-Net improves the corresponding backbone in 9 out of 10 settings, with statistically significant gains. When integrated with TiRex, a foundation model for forecasting, it achieves the lowest mean absolute error across all target datasets. Conformal prediction further maintains empirical coverage while reducing 8-week prediction-interval width by 29.6% in Mexico. These results demonstrate TREA-Net's potential as a lightweight and portable early-warning framework for health agencies with limited surveillance data."
+  },
+  {
+    "arxiv_id": "2607.27458",
+    "title": "Testing of machine learning wavefront sensing algorithms on the Tiny Observatory for Telescope Optimization (TOTO) testbed",
+    "published": "2026-07-29",
+    "year": 2026,
+    "authors": [
+      "Sanchit Sabhlok",
+      "Solvay A. Blomquist",
+      "Maggie Y",
+      " Kautz",
+      "Debstuti Biswas",
+      "Kevin Derby",
+      "Jaren N. Ashcraft",
+      "Hyukmo Kang",
+      "Simran Agarwal",
+      "Alexandra Kupersmith",
+      "Adam Schilperoort",
+      "Stephanie F. Rinaldi",
+      "Kelsey L. Miller",
+      "Kyle J. Van Gorkom",
+      "Corey Fucetola",
+      "Patrick Ingraham",
+      "Ewan S. Douglas",
+      "Heejoo Choi",
+      "Daewook Kim"
+    ],
+    "summary": "Phase retrieval techniques are utilized to correct low order wavefront aberrations originating from misalignments of the optical system in space based telescope concepts. Traditional phase retrieval involves observation of the Point Spread Function (PSF) and a diversity measurement, usually focus diversity although other measures are possible, to reconstruct the incident wavefront at the science detector. We consider a Machine Learning model trained originally on simulated data, and then augmented with real focus diversity data from the Tiny Observatory for Telescope Optimization (TOTO) testbed at the University of Arizona. We then compare the wavefront sensing performance of the Machine Learning model with known truth values of the generated dataset. The model predictions for low order Zernikes on TOTO data after training and validation show a reasonable agreement with the true Zernike coefficients."
+  },
+  {
+    "arxiv_id": "2607.27457",
+    "title": "Tiny Observatory for Telescope Optimization (TOTO): testing algorithms for autonomous on-orbit alignment for space-based telescope systems",
+    "published": "2026-07-29",
+    "year": 2026,
+    "authors": [
+      "Solvay A. Blomquist",
+      "Sanchit Sabhlok",
+      "Hyukmo Kang",
+      "Maggie Y. Kautz",
+      "Simran Agarwal",
+      "Heejoo Choi",
+      "Alexandra Kupersmith",
+      "Adam Schilperoort",
+      "Kelsey L. Miller",
+      "Kyle J. Van Gorkom",
+      "Corey Fucetola",
+      "Patrick Ingraham",
+      "Ewan S. Douglas",
+      "Daewook Kim"
+    ],
+    "summary": "The Tiny Observatory for Telescope Optimization (TOTO) is an optical testbed designed to evaluate the efficacy of autonomously driven alignment algorithms for space-based telescope systems. For space-based missions, active control of the telescope alignment on-orbit offers potential to relax passive alignment requirements and reduce on-ground verification activities. TOTO is used to evaluate and verify simulation work of two primary alignment algorithms, Stochastic Parallel Gradient Descent (SPGD) and focus-diverse phase retrieval (FDPR). Previous simulation work has confirmed that by using SPGD for coarse alignment followed by focus-diverse phase retrieval for fine alignment, we can reach diffraction-limited performance on-orbit. This paper presents the results of the autonomous alignment algorithm of a Cassegrain telescope using TOTO. We report the current status of TOTO as well as preliminary results from SPGD and phase retrieval on the testbed using monochromatic light source to simulate an on-axis point source."
+  },
+  {
+    "arxiv_id": "2607.26832",
+    "title": "Kairos: Numerically Robust News Recommendation under Item Cold-Start via Cholesky-based LinUCB",
+    "published": "2026-07-29",
+    "year": 2026,
+    "authors": [
+      "Finn Hertsch"
+    ],
+    "summary": "Algorithmic news personalization in regional markets often fails because modern deep learning models require massive interaction data while real-world news has a short Time-to-Live (TTL < 48 h) and shallow article pools. This structural item cold-start deprives collaborative filtering of the data needed for robust modeling. This paper presents Project Kairos, a framework that bridges this data scarcity through a contextual online learning approach (LinUCB). To ensure numerical integrity for continuous operation, Kairos replaces error-prone Sherman-Morrison inversions with direct rank-1 updates of Cholesky factors. This preserves the positive definiteness of the covariance matrix even under ill-conditioned data scenarios. Simultaneously, Matryoshka Representation Learning (MRL) integration addresses inference latency. Empirical evaluations based on the Tagesschau API demonstrate that exploiting semantic redundancy in the feature space achieves a 4.85-fold efficiency gain without significantly compromising ranking precision. Kairos thus provides a blueprint for high-performance recommendation systems in resource- and data-constrained environments."
+  },
+  {
+    "arxiv_id": "2607.26628",
+    "title": "Understanding Context Sampling in TabPFN on Small Tabular Datasets",
+    "published": "2026-07-29",
+    "year": 2026,
+    "authors": [
+      "Mohammed Abdullah"
+    ],
+    "summary": "TabPFN performs classification through in-context learning: it conditions on a set of labeled training rows (the context, or prototypes) and predicts test labels without gradient updates. On small tabular datasets, practitioners must still choose the context size and which rows constitute the context. We study how these choices affect prediction stability, accuracy, and selection cost using repeated context sampling on 15 OpenML datasets. Specifically, we investigate (i) whether larger contexts reduce prediction variability across random draws, (ii) whether accuracy depends on preserving the training distribution or on feature-space coverage, and (iii) whether expensive selection methods such as K-Means and farthest-point sampling provide benefits over uniform random sampling. We find that larger contexts are both more accurate and substantially more stable, with AUC coefficient of variation decreasing from roughly 6 to 18% at k=16 to 1 to 4% at larger context sizes on datasets with room for improvement. Although accuracy correlates with distribution representativeness in random contexts, controlled experiments show that matching feature means alone can reduce accuracy by up to 0.5 AUC because it reduces context diversity. Mixed-effects analysis identifies diversity and coverage, rather than feature-mean matching, as the stronger predictor of accuracy (diversity beta=+0.23, p=3x10^-12; feature-mean shift beta=-0.01, p=0.71). K-Means and farthest-point sampling achieve similar accuracy to random selection while requiring two to three orders of magnitude more selection cost. These results show that random sampling succeeds because it provides feature-space coverage in expectation, not because it reproduces the underlying data distribution."
+  },
+  {
+    "arxiv_id": "2607.23822",
+    "title": "DriveDNA: A Large-Scale Multimodal Naturalistic Driving Dataset and Benchmark for Driving Style Identification",
+    "published": "2026-07-26",
+    "year": 2026,
+    "authors": [
+      "Yuhang Wang",
+      "Lingyao Li",
+      "Hao Zhou"
+    ],
+    "summary": "Driving style captures stable, driver-specific patterns in how a vehicle is driven. In naturalistic data, however, this signal is hard to isolate because drivers are observed in different vehicles, on different roads, and under different conditions, so models may mistake vehicle- or situation-specific regularities for driver-specific style. We introduce DriveDNA, a large-scale naturalistic dataset and benchmark for personalized driving-style modeling, comprising 4,121 drives from 465 drivers across 115 vehicle models and totaling 975 hours of human-controlled driving at 10 Hz with forward video, collected from community drivers in everyday use. DriveDNA defines driving style as a consistent, driver-specific behavioral pattern in how a vehicle moves under similar conditions. The benchmark evaluates this signal through three core tasks: few-shot driver re-identification, personalized behavior prediction, and condition-matched comparison, and provides behavioral annotations plus 276,248 rule-generated maneuver events across six classes with large-scale human auditing. We evaluate baselines spanning classical descriptors, supervised and self-supervised time-series encoders, multimodal fusion, probabilistic prediction, and zero-shot foundation models under a fixed multi-seed protocol. Learned representations substantially outperform classical descriptors on unseen drivers (AUROC .935 vs. .707) and retain driver-specific information under matched driving conditions, while descriptor performance approaches chance. Video-only models achieve comparable re-identification accuracy but exhibit severe route leakage, showing that strong recognition may arise from contextual shortcuts rather than driving behavior. These findings show that reliable driving-style evaluation must assess both the behavioral value of learned representations and their robustness to vehicle, drive, and condition confounds."
+  },
+  {
+    "arxiv_id": "2607.23178",
+    "title": "Kairos: Generating Tick-Indexed Proof Obligations for Synchronous Temporal Contracts",
+    "published": "2026-07-25",
+    "year": 2026,
+    "authors": [
+      "Frédéric Dabrowski"
+    ],
+    "summary": "Requirements for synchronous programs relate observations across ticks, while general-purpose deductive backends use first-order conditions on local steps. Kairos is a prototype toolchain generating such obligations from synchronous programs and source-level temporal safety contracts in assume-guarantee form. Using the standard automata-theoretic reduction, it translates their linear temporal logic (LTL) formulas into bad-state automata, forms their product with the program, and derives tick-indexed Why3 obligations. We formalize the underlying principles and prove reactive contract correctness: under the stated program and automaton hypotheses, every input trace satisfying the environment assumptions induces a unique execution satisfying the temporal guarantees. The definitions, obligation construction, and proof are mechanized in Rocq. A medical infusion controller illustrates the workflow."
+  },
+  {
+    "arxiv_id": "2608.24910",
+    "title": "From Plots to Words: Model-Aware Multimodal Explanations as a Foundation for Accessible, Non-Visual Interaction",
+    "published": "2026-07-22",
+    "year": 2026,
+    "authors": [
+      "Nur Keleşoğlu",
+      "Łukasz Sobczak",
+      "Joanna Domańska"
+    ],
+    "summary": "Multimodal large language models are increasingly used in interactive systems, yet ensuring consistent, trustworthy reasoning across heterogeneous modalities remains challenging. We present a context-aware, multi-agent framework that integrates textual queries, numerical data, visual representations, and model-derived signals for explainable time-series forecasting. A distinctive feature is that it turns predominantly visual forecasting outputs (e.g., trend plots) into structured, model-aware textual explanations. We argue that this makes the approach a natural foundation for non-visual, accessible interaction of particular relevance to blind and visually impaired users, for whom plot-centric interfaces are largely inaccessible. The framework supports three progressively richer pipelines (baseline, interpretable, explainable), enabling systematic comparison of unimodal, perception-driven, and model-aware responses. In an exploratory evaluation using an LLM-based judge as an early-stage proxy for human assessment, the explainable configuration improves overall explanation quality by up to 32% over a numerical baseline, with notable gains in trustworthiness and model awareness. We position user-centered validation with target users, including screen-reader and speech-interface users, as the essential next step rather than a claim established here."
+  },
+  {
+    "arxiv_id": "2607.19528",
+    "title": "D3VL: Understanding Driving Scenes from 3D Time Series Data and Video with Language Models",
+    "published": "2026-07-21",
+    "year": 2026,
+    "authors": [
+      "Heesang Han",
+      "A. Lynn Abbott",
+      "Abhijit Sarkar"
+    ],
+    "summary": "Recent advances in Multimodal Large Language Models (MLLMs) have triggered the development of end-to-end MLLMs for autonomous driving. However, the main emphasis to date has been for MLLMs using 2D images and videos. In contrast, this paper considers MLLM effectiveness using 3D sensors, particularly LiDAR and stereo cameras. LiDAR presents unique challenges to integration within an MLLM, largely because of data sparsity and lack of a grid structure for the data. For similar reasons, fusion of camera and LiDAR data within an MLLM pipeline is also uncommon. However, most autonomous systems rely on LiDAR-based sensing, and incorporating 3D data has been proven to improve performance in traditional 3D scene perception tasks. This paper presents D3VL, a novel MLLM framework that integrates 2D and 3D time-series data in a single but simple architecture. The model aims to answer questions involving traffic scene understanding and safety. D3VL shows an 11% improvement in the KITTI Question-Answering (QA) dataset compared to baseline methods in processing 2D and 3D time-series data. This paper further introduces the Waymo QA dataset extension, which assesses models' capabilities in processing 3D and time-series data under diverse driving conditions. D3VL implementation code and WaymoQA extension can be found on our supplemental website: https://automotivesafety-lvlm.github.io"
+  },
+  {
+    "arxiv_id": "2607.17962",
+    "title": "Topological Signatures of Context-Level Reliability in TabPFN",
+    "published": "2026-07-20",
+    "year": 2026,
+    "authors": [
+      "James Hu",
+      "Mahdi Ghelichi"
+    ],
+    "summary": "TabPFN is a transformer-based foundation model for tabular prediction that performs inference without task-specific training by conditioning on a support set and query inputs. Despite its strong empirical performance, its internal behavior on structurally difficult tabular geometries remains poorly understood. We study this behavior using zigzag persistent homology, treating TabPFN layer representations as evolving point clouds. We construct a controlled benchmark of synthetic tabular tasks with known true probabilities and varied intrinsic topology, including warped circles, tori, spheres, Hopf links, trefoil knots, and Swiss rolls. Across these tasks, we find that the topology of TabPFN's internal representation geometry is strongly associated with dataset-level reliability; for example, the zeroth homology group $H_0$ fragmentation count correlates positively with mean absolute residual across controlled tasks, and this association strengthens in a high-resolution warped circle case study at large sample size. Harder geometries induce a dual topological signature: increased $H_1$ loop activity and increased $H_0$ fragmentation, while the $H_1$ persistence becomes shorter-lived. These descriptors correlate with Bayes error, mean absolute residuals, and overconfidence. Our results suggest that zigzag persistence diagnoses the reliability of the inferred in-context task geometry and provides a context-level view of when TabPFN operates in topologically stressed regimes."
+  },
+  {
+    "arxiv_id": "2607.14279",
+    "title": "From Vector Autoregressions to AI-based Time Series Forecasting: A Review",
+    "published": "2026-07-15",
+    "year": 2026,
+    "authors": [
+      "Likai Chen",
+      "Weining Wang"
+    ],
+    "summary": "Forecasting is a central goal of time-series analysis. This review centers on three major developments in recent AI-based time-series forecasting: transformers, large pretrained models for zero-shot forecasting, and diffusion-based generative forecasters. We connect these methods to the econometric tradition built around the vector autoregression (VAR) through a common object: the conditional distribution of the future given the past. The review is organized around three long-standing challenges: \\emph{high dimensionality}, \\emph{nonstationarity}, and \\emph{nonlinearity}. We argue that modern methods make progress by expanding the classical forecasting template: they allow more flexible dynamics, use larger information sets and training corpora, and represent richer predictive distributions. Yet they often lack the inferential and structural tools that make classical models useful for testing, explanation, and policy analysis. We close by outlining open problems where econometric tools remain important."
+  },
+  {
+    "arxiv_id": "2607.11459",
+    "title": "A Multimodal Dataset for Large Language Model Applications in the Energy Domain",
+    "published": "2026-07-13",
+    "year": 2026,
+    "authors": [
+      "Costas Mylonas",
+      "Magda Foti"
+    ],
+    "summary": "This paper presents the mAIEnergy dataset, an open-access, multimodal corpus developed to support Large Language Model (LLM) applications in the energy sector. The dataset integrates approximately 50,000 textual documents, 20,000 images, 25 million numerical time series records, and 2 million geospatial and relational data entries. It includes policy and regulatory texts, scientific articles and news articles, satellite and contextual imagery, electricity system measurements, weather observations, statistical indicators, and geospatial representations of energy infrastructure and related entities. All data have been harmonized into structured, ready-to-use formats, accompanied by consistent metadata and reproducible data retrieval and preparation workflows. The dataset can serve as a foundational energy knowledge base, allowing energy stakeholders to integrate additional open-source or proprietary data. The mAIEnergy dataset adheres to Findable, Accessible, Interoperable, and Reusable (FAIR) principles, enhancing its applicability for AI-driven energy research, modeling, and decision-making."
+  },
+  {
+    "arxiv_id": "2607.11007",
+    "title": "TabPFN beyond Tabular Data: Calibration and Accuracy on Multimodal Embeddings",
+    "published": "2026-07-13",
+    "year": 2026,
+    "authors": [
+      "Jingxiang Zhang",
+      "Lujia Zhong",
+      "Zijie Zhu",
+      "Shuo Huang",
+      "Yuang Xu"
+    ],
+    "summary": "Few-shot multimodal classification commonly attaches a lightweight head, such as $k$-nearest neighbors, logistic regression, or a linear SVM, to a frozen pretrained encoder. Although computationally efficient, these heads can produce poorly calibrated confidence scores. We ask whether TabPFN can provide reliable confidence estimates on multimodal embeddings without sacrificing predictive accuracy, and under what conditions. We systematically evaluate TabPFN as a zero-gradient head for frozen image, text, and audio encoders. Across 22{,}820 evaluation episodes spanning 14 datasets, 11 encoders, and three modalities, TabPFN achieves the best mean rank among nine classification heads on both negative log-likelihood (NLL) and expected calibration error (ECE). At a representative setting, it reduces NLL by 48--62\\% and ECE by 2.1--5.3$\\times$ relative to the average of eight baselines while matching or exceeding their average accuracy. This calibration benefit transfers broadly, whereas the accuracy advantage is conditional: it concentrates at moderate-to-high shot counts and low-to-moderate feature dimensions ($k \\ge 50$, $d \\le 32$), and diminishes when labeled data are scarce, feature dimensions are high, or competing methods approach ceiling accuracy. After backbone adaptation, replacing the trained linear head with TabPFN improves calibration while preserving competitive accuracy, showing that representation adaptation and reliable head choice are complementary. Together, these results identify when TabPFN can serve as a training-free head for calibration-sensitive multimodal classification. To support transparency and reproducibility, we publicly release the source code, experiment configurations, and evaluation scripts in our GitHub repository: https://github.com/Jingxiang-Zhang/tabpfn-multimodal-embeddings."
+  },
+  {
+    "arxiv_id": "2607.09322",
+    "title": "LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making",
+    "published": "2026-07-10",
+    "year": 2026,
+    "authors": [
+      "Zihan Xu",
+      "Yanzhen Chen",
+      "Xiaocheng Zhang",
+      "Zhiting Fan",
+      "Weiqi Zhai",
+      "Hongxia Xu",
+      "Zuozhu Liu"
+    ],
+    "summary": "In this work, we introduce LongMedBench, a real-world EHR-based benchmark for long-horizon clinical decision-making. Prior evaluations of LLM-based medical agents have largely emphasized short-context knowledge QA and tool use. However, real-world medical care is inherently longitudinal, and clinicians must aggregate evidence across repeated visits, tests, and evolving treatments. Therefore, long-horizon interaction is essential for realistic assessment. LongMedBench is constructed via a reproducible pipeline that integrates MIMIC-IV admission records and clinical notes into time-series event streams and long-context memory datasets, enabling long-horizon, multi-session interactions between agents and a clinical environment. It comprises 335 patients, with 19.72 inpatient visits per patient on average and 44.91 medical events per visit. Guided by the long-horizon decision process, we propose an evaluation taxonomy with three suites: fact-based QA, temporal reasoning, and long-horizon decision-making. This taxonomy measures how agents understand and leverage historical patient information over extended horizons. Our experiments show that while recent LLMs can make good use of explicit timestamps, they have challenges in implicit time inference; The RAG and agent memory system can improve the performance of information retrieval tasks, but the performance of decision-making tasks is highly dependent on the model's immediate context."
+  },
+  {
+    "arxiv_id": "2607.09076",
+    "title": "Neuro-Agentic Control: A Deep Learning-based LLM-Powered Agentic AI Framework for Controlling Security Controls",
+    "published": "2026-07-10",
+    "year": 2026,
+    "authors": [
+      "Saroj Gopali",
+      "Bipin Chhetri",
+      "Deepika Giri",
+      "Sima Siami-Namini",
+      "Akbar Siami Namin"
+    ],
+    "summary": "Cyberattacks on operational technology are increasingly causing costly downtime and physical damage, exposing the limitations of traditional rule-based monitoring in industrial IoT environments. While Large Language Models (LLMs) have strong semantic reasoning abilities to assist in decision support, their hallucinatory nature presents unacceptable safety liabilities for closed-loop control. This paper introduces a neuro-agentic control framework, a novel architecture that couples an LLM-based planner (i.e., such as Gemini 2.5 Flash-Lite) with a pre-trained Time-Series Foundation Model (TimesFM), to achieve physics-grounded autonomous defense. The paper introduces a ``Counterfactual Physics Injection'' mechanism that simulates the impact of LLM-proposed interventions within the numerical latent space of the foundation model before actuation, while allowing the system to reject hallucinatory or unsafe actions. Evaluated on an industrial dataset (e.g., the Secure Water Treatment (SWaT)) in the context of stochastic attack scenarios, the framework exhibited better performance compared to LSTM and TCN baselines. The Neuro-Agentic Loop prevented five breaches (33.3%) below the threshold versus LSTM (26.7%) and TCN (13.3%), with zero physically invalid (hallucinated) actions executed. These results demonstrate the efficacy of using foundation models as deterministic ``Sentinels'' to safeguard agentic AI in critical infrastructure."
+  },
+  {
+    "arxiv_id": "2606.28467",
+    "title": "An Agentic AI Pipeline for Appliance-Level Energy Anomaly Detection and LLM-Driven Recommendations",
+    "published": "2026-06-26",
+    "year": 2026,
+    "authors": [
+      "Dihia Falouz",
+      "Aida Douaibia",
+      "Amine Bechar",
+      "Youssef Elmir",
+      "Abbes Amira",
+      "Adel Oulefki"
+    ],
+    "summary": "Appliance-level energy monitoring in office buildings produces noisy alerts that non-expert facility managers struggle to use. This paper proposes an end-to-end agentic pipeline that combines deep time-series forecasting, variational anomaly detection, and LLM-based reasoning to generate prioritized, actionable maintenance recommendations. The system tracks seven office appliances using a hybrid Singular Spectrum Analysis (SSA) and Long Short-Term Memory (LSTM) forecasting model, and applies a per-appliance LSTM Variational Autoencoder (VAE) with attention to flag abnormal daily consumption episodes. A three-stage LangChain pipeline begins with a Context Agent that always retrieves three core RAG sources (model reliability, hourly baseline, and expert knowledge) and conditionally adds up to three more (forecast context, anomaly history, global baseline) based on event characteristics, capped at eight reasoning steps. A Diagnosis Agent converts the evidence into a structured JSON diagnosis, and a Report Agent renders a human-readable narrative. A reflective memory layer incorporates operator feedback. The dashboard shows real-time 30-minute forecasts, intraday consumption, the previous day anomaly report, and a feedback form. We evaluate the forecasting model, anomaly detector with appliance-specific thresholds, and LLM reasoning on a 16-scenario benchmark including sustained and transient spikes, unexpected shutdowns, and systemic events, comparing five LLM backends under static vs. dynamic retrieval. Dynamic retrieval matches full static retrieval across all backends while cutting average context from six to three-six sources per event. The best backend scores 90.4/100 with a 100% pass rate at a 70-point threshold, and a fully local 7B-parameter model passes all 16 scenarios."
+  },
+  {
+    "arxiv_id": "2606.22171",
+    "title": "Beyond Time Series: Spatial Reasoning for Epidemic Forecasting via Multimodal Learning",
+    "published": "2026-06-20",
+    "year": 2026,
+    "authors": [
+      "Diana Guadalupe Gomez",
+      "Chenwei Wu",
+      "Zhiyi Wang",
+      "Liyue Shen",
+      "Alexander Rodríguez"
+    ],
+    "summary": "Epidemic forecasting models typically rely on surveillance data reported over administrative regions, treating them as atomic units, thereby obscuring sub-regional spatial structure that shapes disease dynamics. We introduce a spatially structured multimodal epidemic forecasting setting that integrates region-level temporal surveillance data with spatially localized auxiliary signals that are misaligned in resolution and structure, reflecting realistic public health reporting constraints. Building on this formulation, we propose M-SPICE (Multimodal SPatIal Context for Epidemic Forecasting), a structure-aware spatiotemporal forecasting framework that performs joint reasoning over temporal disease dynamics and spatial context via attention-based multimodal fusion, allowing spatial signals to selectively condition temporal representations across forecast horizons. We evaluate our approach on real-world COVID-19, influenza, and influenza-like illness (ILI) forecasting tasks under realistic real-time evaluation protocols. Across all forecasting settings, our method consistently outperforms state-of-the-art multivariate time-series, multimodal, and epidemiological forecasting baselines while maintaining strong probabilistic forecasting performance. Finally, interpretability analyses reveal when, where, and how spatial signals are leveraged, highlighting settings in which purely temporal, region-aggregated models are most likely to fail."
+  },
+  {
+    "arxiv_id": "2606.20164",
+    "title": "MedRLM: Recursive Multimodal Health Intelligence for Long-Context Clinical Reasoning, Sensor-Guided Screening, Evidence-Grounded Decision Support, and Community-to-Tertiary Referral Optimization",
+    "published": "2026-06-18",
+    "year": 2026,
+    "authors": [
+      "Aueaphum Aueawatthanaphisut"
+    ],
+    "summary": "Real-world clinical decision support requires reasoning over heterogeneous and longitudinal patient information rather than answering isolated medical questions. However, current medical large language models and retrieval-augmented generation systems often rely on single-step prompting or retrieval, which can be fragile when clinical evidence is distributed across long electronic health records, medical images, sensor streams, guidelines, and referral constraints. This paper proposes MedRLM, a Recursive Multimodal Health Intelligence framework for long-context clinical reasoning, sensor-guided screening, and community-to-tertiary referral support. Instead of compressing all patient information into one prompt, MedRLM treats the patient case as an external clinical environment that can be recursively inspected, decomposed, retrieved, verified, and synthesized. The framework coordinates specialized agents for clinical text, longitudinal EHR, medical imaging, physiological sensor signals, guideline retrieval, uncertainty auditing, and referral planning. It further introduces a Clinical Evidence Graph Memory to connect patient-specific observations with retrieved evidence, standardized definitions, sensor-derived biomarkers, and referral criteria. A sensor-guided recursive triggering mechanism activates deeper reasoning when abnormal physiological or behavioral patterns are detected, while uncertainty-gated refinement supports clinician review for high-risk or low-confidence cases. We also outline a real-data evaluation design using public and credentialed clinical datasets spanning EHR, radiology, ECG, ICU time series, and referral-proxy outcomes. MedRLM aims to move medical AI from static question answering toward auditable, multimodal, and workflow-aware clinical decision support."
+  },
+  {
+    "arxiv_id": "2606.16533",
+    "title": "Kairos: A Regret-Aware Native World-Action Model Stack for Physical AI",
+    "published": "2026-06-15",
+    "year": 2026,
+    "authors": [
+      " Kairos Team",
+      "Fei Wang",
+      "Shan You",
+      "Qiming Zhang",
+      "Tao Huang",
+      "Zuoyi Fu",
+      "Zhisheng Zheng",
+      "Yunlong Xi",
+      "Feng Lv",
+      "Xiaoming Wu",
+      "Zeyu Liu",
+      "Cong Wan",
+      "Pu Li",
+      "Ruiqing Yang",
+      "Xiaoou Li",
+      "Wei Wang",
+      "Kangkang Zhu",
+      "Yuwei Zhang",
+      "Shi Fu",
+      "Zheng Zhang",
+      "Xiaoning Wu",
+      "Xuzeng Fan",
+      "Dacheng Tao",
+      "Xiaogang Wang"
+    ],
+    "summary": "We introduce \\textbf{Kairos}, a regret-aware native world-action model stack for Physical AI. Kairos is motivated by the view that a physical world model should not aim to fully simulate all future pixels, but should learn and maintain the information most relevant to embodiment control: object state, spatial relations, contact conditions, task progress, action consequences, failure boundaries, and deployment uncertainty. Kairos establishes three model-side prerequisites toward this goal. First, it \\textbf{learns} control-relevant information through a \\textbf{Cross-Embodiment Data Curriculum}, which organizes open-world videos, human behavioral data, and robot interactions into an intervention-strength progression from passive physical observation to intentional behavior and embodied action grounding. Second, it \\textbf{maintains} control-sufficient states through a unified \\textbf{understanding, generation, and prediction architecture} equipped with \\textbf{Hybrid Linear Temporal Attention}, where local, mid-range, and global temporal pathways support multi-timescale state maintenance under efficient inference. Third, it \\textbf{deploys} these states through a \\textbf{Deployment-Aware System Co-Design}, treating latency, memory footprint, and hardware compatibility as first-order constraints for future observation, action, and feedback loops. Experiments on embodied world-model benchmarks, world-action benchmarks, long-horizon generation, and inference-efficiency evaluation show that Kairos achieves superior performance while offering a favorable efficiency to capability trade-off."
+  },
+  {
+    "arxiv_id": "2606.12917",
+    "title": "Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function",
+    "published": "2026-06-11",
+    "year": 2026,
+    "authors": [
+      "Atharva Gupta",
+      "Dhruv Kumar",
+      "Murari Mandal",
+      "Saurabh Deshpande"
+    ],
+    "summary": "We present the first causal mechanistic analysis of a tabular foundation model, investigating how TabPFN 2.5's feature wise attention heads distribute computation across layers. Using activation patching, ablation, and attention entropy across two synthetic regression datasets, we find clear temporal specialisation: one head's causal necessity dominates that of the others by 2 to 5 times at peak layer, with its dominant layer shifting across tasks of different complexity, while the remaining heads exhibit symmetric late layer profiles. Attention entropy and patching provide convergent evidence for the computationally active layers of the dominant head. We additionally investigate inference time steerability via contrastive activation steering, which fails to transfer across samples. We attribute this result to TabPFN's in context learning mechanism, which encodes task structure through context dependent attention rather than the stable parametric directions that make steering tractable in language models."
+  },
+  {
+    "arxiv_id": "2606.06823",
+    "title": "PandaAI: A Practical Agent CQ2 for Neuro-symbolic Data Analysis And Integrated Decision-Making in Quantitative Finance",
+    "published": "2026-06-05",
+    "year": 2026,
+    "authors": [
+      "Yuqi Li",
+      "Siyuan Liu",
+      "Bingjun Liu"
+    ],
+    "summary": "While deep learning has excelled in various domains, its application to sequential decision-making in finance remains challenging due to the low Signal-to-Noise Ratio (SNR) and non-stationarity of financial data. Leveraging the reasoning capabilities of Large Language Models (LLMs), we propose \\textbf{PandaAI}, a closed-loop neuro-symbolic LLM agent with market regime modeling and constrained alpha generation, which bridges general LLM reasoning with financial rigor and suppresses the financial toxicity of LLM-generated outputs. To bridge the gap between general linguistic capability and financial rigor, we fine-tune a domain-specific LLM. Furthermore, we integrate this LLM into a modular architecture and form a closed-loop system. Unlike traditional models that optimize isolated prediction metrics, \\textbf{PandaAI} is designed as a neuro-symbolic agent that navigates the complex, real-world financial environment with explicit risk awareness. Extensive experiments on CSI 300 stock data show that \\textbf{PandaAI} achieves a $18.2\\%$ higher Rank IC and $25.7\\%$ lower maximum drawdown than state-of-the-art time-series models. Our constrained LLM generation and dual-channel adaptation method provide a general paradigm for LLM deployment in high-stakes sequential decision-making scenarios."
+  },
+  {
+    "arxiv_id": "2606.05692",
+    "title": "Benchmarking Counterfactual Prediction in Epidemic Time Series with Time-Varying Interventions",
+    "published": "2026-06-04",
+    "year": 2026,
+    "authors": [
+      "Wenhao Mu",
+      "Facundo Yan",
+      "Anik Mumssen",
+      "Marisa Eisenberg",
+      "Alexander Rodríguez"
+    ],
+    "summary": "Deep learning has enabled significant advances in time-series causal inference, yet progress remains constrained by the lack of realistic benchmarks with observable counterfactual outcomes. Existing datasets either rely on real-world observations without ground-truth counterfactuals or on simplified simulations that fail to capture complex causal dynamics. To address this gap, we develop a large-scale benchmark for counterfactual prediction in epidemic time series under dynamic interventions. Unlike existing benchmarks, it supports static and time-varying treatments, as well as both single-policy and multi-policy intervention settings, enabling evaluation of causal inference methods across a broad range of causal inference scenarios. Leveraging a calibrated agent-based model grounded in real-world demographic, mobility, epidemiological, and policy data, we generate realistic counterfactual trajectories across more than 150 U.S. counties. Using this benchmark, we evaluate widely used and state-of-the-art causal inference methods, revealing substantial performance differences and highlighting the challenges of realistic time-series causal reasoning."
+  },
+  {
+    "arxiv_id": "2606.04665",
+    "title": "Towards Accurate Model Selection in Deep Unsupervised Domain Adaptation",
+    "published": "2026-06-03",
+    "year": 2026,
+    "authors": [
+      "Kaichao You",
+      "Ximei Wang",
+      "Mingsheng Long",
+      "Michael I. Jordan"
+    ],
+    "summary": "Deep unsupervised domain adaptation (Deep UDA) methods successfully leverage rich labeled data in a source domain to boost the performance on related but unlabeled data in a target domain. However, algorithm comparison is cumbersome in Deep UDA due to the absence of accurate and standardized model selection method, posing an obstacle to further advances in the field. Existing model selection methods for Deep UDA are either highly biased, restricted, unstable, or even controversial (requiring labeled target data). To this end, we propose \\textit{Deep Embedded Validation} (\\textbf{DEV}), which embeds adapted feature representation into the validation procedure to obtain unbiased estimation of the target risk with bounded variance. The variance is further reduced by the technique of control variate. The efficacy of the method has been justified both theoretically and empirically."
+  },
+  {
+    "arxiv_id": "2606.04876",
+    "title": "Towards Pretraining Text Encoders for TabPFN",
+    "published": "2026-06-03",
+    "year": 2026,
+    "authors": [
+      "Mustafa Tajjar",
+      "Alexander Pfefferle",
+      "Lennart Purucker",
+      "Frank Hutter"
+    ],
+    "summary": "Tabular foundation models, such as TabPFN, achieve strong performance on tabular datasets with numerical and categorical data, but do not natively handle high-cardinality text features. Standard pipelines, therefore, embed text with a language model and compress the resulting vectors with PCA into a small number of scalar features before inputting them into TabPFN. This creates an information bottleneck: most embedding dimensions are discarded, and the compressed representation must then be expanded again by TabPFN's feature encoder. End-to-end alternatives can avoid PCA, but they require large amounts of pretraining data containing text cells and usually perform subpar compared to tabular foundation models that were pretrained on large amounts of synthetic data. Inspired by modality-alignment approaches like LLaVA (vision-to-LLM token projection) and TableGPT-style systems (table-to-LLM token projection), we introduce the TabPFN Text Adapter (text-to-TFM token projection). We freeze both the sentence encoder and TabPFN, and train only a lightweight adapter that maps text embeddings into a short sequence of tokens in TabPFN's embedding space. This design removes the PCA bottleneck, preserves TabPFN's numerical strengths, and is more efficient to train than end-to-end text-tabular pipelines."
+  },
+  {
+    "arxiv_id": "2606.01339",
+    "title": "FreqLite: A Lightweight Frequency-Decomposed Linear Model with Adaptive Reversible Normalization for Robust Long-Term Time-Series Forecasting",
+    "published": "2026-05-31",
+    "year": 2026,
+    "authors": [
+      "Mirza Samad Ahmed Baig",
+      "Syeda Anshrah Gillani"
+    ],
+    "summary": "Long-term time-series forecasting needs models that are accurate yet efficient enough for commodity hardware. Lightweight linear forecasters are remarkably strong in this regime, yet they leave two openings: reversible instance normalization (RevIN) de-normalizes the entire horizon with a single lookback statistic, which is inaccurate under non-stationarity, and time-domain trend/seasonal decomposition relies on a fixed, non-adaptive filter. We present FreqLite, an ultra-lightweight, channel-independent frequency-decomposed linear forecaster: a learnable, lossless, partition-of-unity spectral filter splits the input into bands that are forecast by per-band linear heads and, unlike low-pass-truncation approaches, the high-frequency band is retained and modeled. FreqLite is the best lightweight model on the standard long-term forecasting benchmarks and, at long lookback (L=336), attains a lower average error than a PatchTST Transformer (0.3244 vs. 0.3587 MSE) while using 4x fewer parameters, 2.2x less memory, and 2.2x less time per epoch on a single 4 GB laptop GPU; although modest in magnitude, its improvements are statistically significant under paired Wilcoxon tests across all matched cells (p < 1e-5). We further introduce Adaptive Reversible Instance Normalization (A-RevIN), a regime-adaptive reversible normalization that strictly generalizes RevIN (recovered exactly when its gate is closed), engages under non-stationarity, and reduces to RevIN without harm on stationary data. We validate this on both a real strongly non-stationary dataset (ILI, up to ~5% MSE reduction) and a controlled synthetic drift sweep in which A-RevIN's benefit and its learned gate both rise monotonically with injected non-stationarity. Every component is independently ablatable (Linear and RLinear are special cases of FreqLite), and all results are reproducible on commodity hardware."
+  },
+  {
+    "arxiv_id": "2606.00872",
+    "title": "Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images",
+    "published": "2026-05-30",
+    "year": 2026,
+    "authors": [
+      "Jan Philip Walter",
+      "Shashank Agnihotri",
+      "Margret Keuper"
+    ],
+    "summary": "AI-generated image detection is a moving-target problem: detectors trained on one generator often fail when a new generator appears, and only a few labeled examples are available. We study a simple image-to-table formulation for this regime, where each image is encoded by a frozen DINOv3 backbone, its CLS feature is reduced to a 500-dimensional structured row with PCA, and TabPFN performs real/fake classification by in-context tabular inference rather than task-specific classifier training. This turns fake-image detection into low-data structured prediction over learned visual features, making detector adaptation depend on the labeled context set instead of gradient-based fine-tuning. On GenImage, LATTE, a recent state-of-the-art detector, remains stronger when many labeled samples from all generators are available, by 7.4% in the largest pooled setting, but DINOv3-PCA-TabPFN is stronger in the practically important low-data regime, outperforming LATTE by up to 8.2%, and in transfer settings where the detector must generalize from one generator to another. These results position tabular foundation models as a strong complementary adaptation mechanism for image forensics, shifting adaptation from detector retraining to lightweight in-context updates with a small labeled set of examples. Code URL: https://github.com/jpwalter30/Towards-Generalizable-Detection-of-AI-Generated-Images"
+  },
+  {
+    "arxiv_id": "2605.30985",
+    "title": "Kairos: Lightweight Testing Framework for Timing-Induced Interaction Failures in LTE and 5G Core Networks",
+    "published": "2026-05-29",
+    "year": 2026,
+    "authors": [
+      "Wei Guo",
+      "Yuanhao Li",
+      "Hao Zheng",
+      "Junman Qin",
+      "Jun Kong",
+      "Jiapeng Li",
+      "Qiang Fu",
+      "Jiadai Wang",
+      "Jiajia Liu"
+    ],
+    "summary": "As cellular core networks evolve toward distributed and cloud-native architectures, control-plane interactions become more intricate and bring new challenges. Among these challenges, we find that introducing specific timing between two control-plane interactions can cause network function crash, which we define as timing-induced interaction failures. Prior research primarily addresses identifying malformed inputs and specification violations, while timing-induced interaction failures remain largely unexplored. In this paper, we conduct a systematic study of timing-induced interaction failures in LTE and 5G core networks. First, we establish a taxonomy of control-plane interaction patterns and analyze the failure modes of each pattern. Then, we design and implement Kairos, a lightweight testing framework to expose timing-induced interaction failures without analyzing cellular standard documents. Evaluating Kairos on two open source and two commercial LTE and 5G core networks, we uncover 20 new vulnerabilities and reproduce 34 existing issues. Our results show that timing-induced interaction failures are prevalent in LTE and 5G core networks and should be explicitly considered in future specifications."
+  },
+  {
+    "arxiv_id": "2605.24393",
+    "title": "Finite-Time Markov-Parameter Identification of LTI Systems Using Non-Causal FIR Models: A Unified Framework for Stable and Unstable Systems",
+    "published": "2026-05-23",
+    "year": 2026,
+    "authors": [
+      "Ahmad Al-Tawaha",
+      "Ming Jin",
+      "Khaled F. Aljanaideh"
+    ],
+    "summary": "We present a finite-time framework for identifying stable and unstable linear time-invariant (LTI) systems from a single closed-loop input-output trajectory. The method does not require knowledge of the stabilizing controller, an intermediate observer, or prior separation of the plant into stable and unstable components. The approach uses a non-causal finite impulse response (FIR) model obtained from a Laurent expansion of the transfer function. In this representation, stable dynamics are captured by causal Markov parameters, while unstable dynamics are captured by non-causal coefficients associated with reverse-time stable evolution. This avoids the growth of causal unstable Markov parameters. A key advantage is that the coefficients multiplying both the input and the process noise remain controlled by stable and reverse-time stable decay rates, rather than by growing forward-time unstable dynamics. To handle closed-loop data, we use the injected excitation as an instrumental variable, which removes the bias caused by correlation between the feedback input and the process noise. Under explicit instrument-strength and closed-loop concentration conditions, we derive a non-asymptotic error bound for the estimated Laurent/FIR Markov parameters with the usual $\\mathcal{O}(N^{-1/2})$ statistical rate, up to logarithmic factors and truncation terms. The bound captures the effects of process noise, measurement noise, FIR horizons, closed-loop state moments, and controller-dependent instrument conditioning. Numerical experiments support the finite-time analysis by showing the predicted Markov-parameter convergence rate and illustrating how controller-dependent instrument conditioning affects the sample complexity of closed-loop identification."
+  },
+  {
+    "arxiv_id": "2605.22892",
+    "title": "Is TabPFN the Silver Bullet for Insurance Pricing?",
+    "published": "2026-05-21",
+    "year": 2026,
+    "authors": [
+      "Bruno Deprez",
+      "Wouter Verbeke",
+      "Tim Verdonck"
+    ],
+    "summary": "Modelling claim frequency and severity for non-life insurance pricing predominantly relies on generalised linear models, with gradient-boosted machines as the leading machine learning alternative. Tabular foundation models (TFMs) present a fundamentally different inference paradigm. By pre-training on large collections of synthetic datasets, TFMs enable inference on new data through in-context learning, without any dataset-specific fitting or hyperparameter tuning. This paper presents a first empirical evaluation of TabPFN for motor insurance pricing, benchmarking it against GLM and XGBoost on two publicly available MTPL datasets. Our results show that TabPFN does not consistently outperform established baselines, exhibits substantially longer inference times, and is sensitive to the size of the in-context training set. While tabular foundation models represent a promising direction, particularly in data-scarce settings, their current performance does not offer a viable replacement for established actuarial methods."
+  },
+  {
+    "arxiv_id": "2605.16966",
+    "title": "Harnessing AI for Inverse Partial Differential Equation Problems: Past, Present, and Prospects",
+    "published": "2026-05-16",
+    "year": 2026,
+    "authors": [
+      "Zhentao Tan",
+      "Yuze Hao",
+      "Boyi Zou",
+      "Mingsheng Long",
+      "Yi Yang",
+      "Gang Bao"
+    ],
+    "summary": "Solving inverse partial differential equation (PDE) problems is a fundamental topic in scientific research due to its broad significance across a wide range of real-world applications. Inverse PDE problems arise across medical imaging, geophysics, materials science, and aerodynamics, where the goal is to infer hidden causes, design structures, or control physical states. In this paper, we provide a comprehensive review of recent advances in solving inverse PDE problems using artificial intelligence (AI). We first introduce the basic formulation, key challenges, and traditional numerical foundations of inverse PDE problems, and then organize it into three major categories: inverse problems, inverse design, and control problems. For each category, we further present a methodological paradigms, and review representative state-of-the-art approaches from recent years. We then summarize representative applications across scientific and industrial domains, including mechanical systems, aerodynamic problems, thermal systems, full-waveform inversion, system identification, and medical imaging. Finally, we discuss open challenges and future prospects, such as physics-informed architectures, limited real-world data, uncertainty quantification, and inverse foundation models. This survey aims to provide the first unified and systematic perspective on AI for inverse PDE problems, demonstrating how modern learning-based methods are reshaping inverse problems, inverse design, and control problems in PDE-governed systems."
+  },
+  {
+    "arxiv_id": "2605.17046",
+    "title": "1GC-7RC: One Graphic Card -- Seven Research Challenges! How Good Are AI Agents at Doing Your Job?",
+    "published": "2026-05-16",
+    "year": 2026,
+    "authors": [
+      "Robin-Nico Kampa",
+      "Fabian Deuser",
+      "Anna Bößendörfer",
+      "Konrad Habel",
+      "Norbert Oswald"
+    ],
+    "summary": "Autonomous AI coding agents are becoming a core tool for ML practitioners in industry and research alike. Despite this growing adoption, no standardized benchmark exists to evaluate their ability to design, implement, and train models from scratch across diverse domains. We introduce **1GC-7RC** (*Single Graphic Card: Seven Research Challenges*), a benchmark comprising seven ML tasks spanning language modeling, image classification, semantic segmentation, graph learning, tabular prediction, time-series forecasting, and text classification. Each task provides a locked data-preparation and evaluation script together with a baseline training script; the agent may only modify the training code, has no access to pretrained weights (with one controlled exception for semantic segmentation), no internet access, and must complete each task within a task-specific wall-clock budget (40-120 minutes) on a single GPU. We evaluate seven coding agents: five proprietary (Claude Code with Sonnet 4.6, Opus 4.6, and Opus 4.7; Codex CLI with GPT 5.5; and OpenCode with Qwen 3.6+) and two open-source (OpenCode with Kimi K2.5, Kimi K2.6). Across 5 runs per agent-task pair, we report substantial performance differences that reveal varying levels of implicit ML knowledge, planning ability, and time-budget management. The benchmark, harness, and all evaluation artifacts are publicly available on GitHub at https://github.com/Strolchii/1GC-7RC-Benchmark to facilitate reproducible comparison of future agents. Because our benchmark design is modular, the benchmark can be extended to new tasks and domains, adapted to different GPU budgets, and used to study multi-agent settings, making it a flexible platform for future research on autonomous research agents."
+  },
+  {
+    "arxiv_id": "2605.09842",
+    "title": "Yield Curve Forecasting using Machine Learning and Econometrics: A Comparative Analysis",
+    "published": "2026-05-11",
+    "year": 2026,
+    "authors": [
+      "Aman Singh",
+      "Tokunbo Ogunfunmi",
+      "Sanjiv Das"
+    ],
+    "summary": "While machine learning has revolutionized many fields such as natural language processing (NLP) and computer vision, its impact on time-series forecasting is still widely disputed, especially in the finance domain. This paper compares forecasting performance on U.S. Treasury yield curve data across econometrics/time-series analysis, classical machine learning, and deep learning methods, using daily data over 47 years. The Treasury yield curve is important because it is widely used by every participant in the bond markets, which are larger than equity markets. We examine a variety of methods that have not been tested on yield curve forecasting, especially deep learning algorithms. The algorithms include the Autoregressive Integrated Moving Average (ARIMA) model and its extensions, naive benchmarks, ensemble methods, Recurrent Neural Networks (RNNs), and multiple transformers built for forecasting. ARIMA and naive econometric models outperform other models overall, except in one time block. Of the machine learning methods, TimeGPT, LGBM and RNNs perform the best. Furthermore, the paper explores whether stationary or nonstationary data are more appropriate as input to deep learning models."
+  },
+  {
+    "arxiv_id": "2605.04055",
+    "title": "A Self-Attentive Meta-Optimizer with Group-Adaptive Learning Rates and Weight Decay",
+    "published": "2026-04-10",
+    "year": 2026,
+    "authors": [
+      "JiangBo Zhao",
+      "ZhaoXin Liu"
+    ],
+    "summary": "Adaptive optimizers like AdamW apply uniform hyperparameters across all parameter groups, ignoring heterogeneous optimization dynamics across layers and modules. We address this limitation by proposing MetaAdamW - a new optimizer that integrates a self-attention mechanism to dynamically modulate per-group learning rates and weight decay. The modulation factors are produced by a lightweight Transformer encoder that operates on statistical features (gradient norms, momentum norms, correlations) extracted from each parameter group. To train the attention module, we introduce a meta-learning objective that combines gradient alignment, loss decrease, and generalization gap. A key novel contribution is the extension of homoscedastic uncertainty weighting (HUW) with task-specific priorities that directly scale the regularization terms - enabling domain knowledge to guide automatic loss balancing. Extensive experiments on five diverse tasks-time series forecasting (ETT), language modeling (WikiText-2), machine translation (Multi30k), image classification (CIFAR-10), and sentiment analysis (IMDB) - demonstrate that MetaAdamW consistently outperforms the standard AdamW baseline in terms of validation loss, accuracy, or perplexity. Depending on the task, MetaAdamW either reduces overall training time (by up to 17.11%) or improves performance (by up to 11.08%) while introducing only moderate overhead; in some cases, it can also mitigate issues of insufficient convergence caused by premature early stopping. Ablation studies validate the effectiveness of each component, including feature versions, grouping strategies, and the proposed priority-injected uncertainty weighting."
+  },
+  {
+    "arxiv_id": "2603.15417",
+    "title": "Amplification Effects in Test-Time Reinforcement Learning: Safety and Reasoning Vulnerabilities",
+    "published": "2026-03-16",
+    "year": 2026,
+    "authors": [
+      "Vanshaj Khattar",
+      "Md Rafi ur Rashid",
+      "Moumita Choudhury",
+      "Jing Liu",
+      "Toshiaki Koike-Akino",
+      "Ming Jin",
+      "Ye Wang"
+    ],
+    "summary": "Test-time training (TTT) has recently emerged as a promising method to improve the reasoning abilities of large language models (LLMs), in which the model directly learns from test data without access to labels. However, this reliance on test data also makes TTT methods vulnerable to harmful prompt injections. In this paper, we investigate safety vulnerabilities of TTT methods, where we study a representative self-consistency-based test-time learning method: test-time reinforcement learning (TTRL), a recent TTT method that improves LLM reasoning by rewarding self-consistency using majority vote as a reward signal. We show that harmful prompt injection during TTRL amplifies the model's existing behaviors, i.e., safety amplification when the base model is relatively safe, and harmfulness amplification when it is vulnerable to the injected data. In both cases, there is a decline in reasoning ability, which we refer to as the reasoning tax. We also show that TTT methods such as TTRL can be exploited adversarially using specially designed \"HarmInject\" prompts to force the model to answer jailbreak and reasoning queries together, resulting in stronger harmfulness amplification. Overall, our results highlight that TTT methods that enhance LLM reasoning by promoting self-consistency can lead to amplification behaviors and reasoning degradation, highlighting the need for safer TTT methods."
+  },
+  {
+    "arxiv_id": "2603.09066",
+    "title": "Time-dependent photospheric radiative transfer in structured GRB jets: spectral evolution and polarization diagnostics",
+    "published": "2026-03-10",
+    "year": 2026,
+    "authors": [
+      "Yue Xu",
+      "Ming Jin",
+      "Qingwen Tang"
+    ],
+    "summary": "Photospheric emission from relativistic gamma-ray burst (GRB) jets is a promising mechanism for producing the Band-like spectra observed in the prompt phase, yet the connections between jet structure, dissipation location, and polarization signatures remain unclear.We investigate time-dependent photospheric radiation transfer in structured relativistic jets by coupling two-dimensional axisymmetric special relativistic hydrodynamic (SRHD) simulations with Monte Carlo photon propagation.Photon escape and subphotospheric dissipation are characterized using the residual line-of-sight optical depth tau_out evaluated along each photon trajectory, allowing a direction-dependent treatment of photon decoupling in structured jets. The radiative transfer includes Klein-Nishina Compton scattering and polarization evolution using the Mueller matrix formalism.We perform a systematic parameter study exploring the effects of viewing angle, electron-positron pair loading (Zpm), and the optical-depth window of subphotospheric dissipation. The model produces time-resolved spectra, peak-energy evolution Epk(t), Band parameters, polarization degree Pi(E,t), and last-scattering statistics.We find that jet angular structure and the geometry of the line-of-sight optical depth strongly regulate spectral evolution and polarization signatures. The dissipation depth and pair loading jointly control the stability of Epk, the formation of high-energy spectral tails, and the energy dependence of polarization. These results provide quantitative predictions for GRB prompt-emission spectra and polarization that can be tested with current and upcoming high-energy polarimeters."
+  },
+  {
+    "arxiv_id": "2602.23630",
+    "title": "BTTackler: A Diagnosis-based Framework for Efficient Deep Learning Hyperparameter Optimization",
+    "published": "2026-02-27",
+    "year": 2026,
+    "authors": [
+      "Zhongyi Pei",
+      "Zhiyao Cen",
+      "Yipeng Huang",
+      "Chen Wang",
+      "Lin Liu",
+      "Philip Yu",
+      "Mingsheng Long"
+    ],
+    "summary": "Hyperparameter optimization (HPO) is known to be costly in deep learning, especially when leveraging automated approaches. Most of the existing automated HPO methods are accuracy-based, i.e., accuracy metrics are used to guide the trials of different hyperparameter configurations amongst a specific search space. However, many trials may encounter severe training problems, such as vanishing gradients and insufficient convergence, which can hardly be reflected by accuracy metrics in the early stages of the training and often result in poor performance. This leads to an inefficient optimization trajectory because the bad trials occupy considerable computation resources and reduce the probability of finding excellent hyperparameter configurations within a time limitation. In this paper, we propose \\textbf{Bad Trial Tackler (BTTackler)}, a novel HPO framework that introduces training diagnosis to identify training problems automatically and hence tackles bad trials. BTTackler diagnoses each trial by calculating a set of carefully designed quantified indicators and triggers early termination if any training problems are detected. Evaluations are performed on representative HPO tasks consisting of three classical deep neural networks (DNN) and four widely used HPO methods. To better quantify the effectiveness of an automated HPO method, we propose two new measurements based on accuracy and time consumption. Results show the advantage of BTTackler on two-fold: (1) it reduces 40.33\\% of time consumption to achieve the same accuracy comparable to baseline methods on average and (2) it conducts 44.5\\% more top-10 trials than baseline methods on average within a given time budget. We also released an open-source Python library that allows users to easily apply BTTackler to automated HPO processes with minimal code changes."
+  },
+  {
+    "arxiv_id": "2602.21520",
+    "title": "Robust Electrocaloric Performance Enabled by Highly-Polar Frustrated Nanodomains in NaNbO3-Based Ferrodistortive Relaxor",
+    "published": "2026-02-25",
+    "year": 2026,
+    "authors": [
+      "Feng Li",
+      "Changshun Dai",
+      "He Qi",
+      "Jiecheng Liu",
+      "Xiaoming Shi",
+      "Heng Zhou",
+      "Qiong Yang",
+      "Mingsheng Long",
+      "Lei Shan",
+      "Chunchang Wang",
+      "Jianli Wang",
+      "Zhenxiang Cheng"
+    ],
+    "summary": "Solid-state refrigeration technologies, represented by electrocaloric effect (ECE), are renowned for zero global-warming-potential and high cooling efficiency. Synergistically achieving high electrocaloric effect (ΔT) and wide temperature span (ΔTspan) for EC materials takes a leapfrog toward practical cooling applications, typical for integrated circuits. Guided by phase-field simulation, Ba(Ti, Hf)O3 dubbed as a polar wrench, establishes polar frustration by setting up local stress field and manipulating octahedral oxygen tilt (OOT) in NaNbO3-based relaxor. The resultant P4bm framework entails short-range and highly-polar ferrodistortive nanodomains, i.e., the abundant highly-polar nanodomains facilitate to increase entropy change and robust OOT enables to impede thermal perturbations. Consequently, a large ΔT of 0.85 K and 0.70 K with an ultrawide ΔTspan of 118 K and 130 K is obtained, contributing to an ultrahigh figure of merit of > 90 K2 in NaNbO3-Ba(Ti, Hf)O3, significantly outperforms its counterparts. The local structure responsible for robust EC performances are decrypted through 2D information from atomic-resolution scanning transmission electron microscope, 3D big-box model constructed from neutron total scattering and DFT calculations. These findings highlight that polar frustration strategy in ferrodistortive relaxor enables to pioneer emergent EC performances, and also unearth potential entropy-change-based ferroelectric and ferromagnetic materials beyond."
+  },
+  {
+    "arxiv_id": "2602.20399",
+    "title": "GeoPT: Scaling Physics Simulation via Lifted Geometric Pre-Training",
+    "published": "2026-02-23",
+    "year": 2026,
+    "authors": [
+      "Haixu Wu",
+      "Minghao Guo",
+      "Zongyi Li",
+      "Zhiyang Dou",
+      "Mingsheng Long",
+      "Kaiming He",
+      "Wojciech Matusik"
+    ],
+    "summary": "Neural simulators promise efficient surrogates for physics simulation, but scaling them is bottlenecked by the prohibitive cost of generating high-fidelity training data. Pre-training on abundant off-the-shelf geometries offers a natural alternative, yet faces a fundamental gap: supervision on static geometry alone ignores dynamics and can lead to negative transfer on physics tasks. We present GeoPT, a unified pre-trained model for general physics simulation based on lifted geometric pre-training. The core idea is to augment geometry with synthetic dynamics, enabling dynamics-aware self-supervision without physics labels. Pre-trained on over one million samples, GeoPT consistently improves industrial-fidelity benchmarks spanning fluid mechanics for cars, aircraft, and ships, and solid mechanics in crash simulation, reducing labeled data requirements by 20-60% and accelerating convergence by 2$\\times$. These results show that lifting with synthetic dynamics bridges the geometry-physics gap, unlocking a scalable path for neural simulation and potentially beyond. Code is available at https://github.com/Physics-Scaling/GeoPT."
+  },
+  {
+    "arxiv_id": "2602.11832",
+    "title": "JEPA-VLA: Video Predictive Embedding is Needed for VLA Models",
+    "published": "2026-02-12",
+    "year": 2026,
+    "authors": [
+      "Shangchen Miao",
+      "Ningya Feng",
+      "Jialong Wu",
+      "Ye Lin",
+      "Xu He",
+      "Dong Li",
+      "Mingsheng Long"
+    ],
+    "summary": "Recent vision-language-action (VLA) models built upon pretrained vision-language models (VLMs) have achieved significant improvements in robotic manipulation. However, current VLAs still suffer from low sample efficiency and limited generalization. This paper argues that these limitations are closely tied to an overlooked component, pretrained visual representation, which offers insufficient knowledge on both aspects of environment understanding and policy prior. Through an in-depth analysis, we find that commonly used visual representations in VLAs, whether pretrained via language-image contrastive learning or image-based self-supervised learning, remain inadequate at capturing crucial, task-relevant environment information and at inducing effective policy priors, i.e., anticipatory knowledge of how the environment evolves under successful task execution. In contrast, we discover that predictive embeddings pretrained on videos, in particular V-JEPA 2, are adept at flexibly discarding unpredictable environment factors and encoding task-relevant temporal dynamics, thereby effectively compensating for key shortcomings of existing visual representations in VLAs. Building on these observations, we introduce JEPA-VLA, a simple yet effective approach that adaptively integrates predictive embeddings into existing VLAs. Our experiments demonstrate that JEPA-VLA yields substantial performance gains across a range of benchmarks, including LIBERO, LIBERO-plus, RoboTwin2.0, and real-robot tasks."
+  },
+  {
+    "arxiv_id": "2602.07429",
+    "title": "Brep2Shape: Boundary and Shape Representation Alignment via Self-Supervised Transformers",
+    "published": "2026-02-07",
+    "year": 2026,
+    "authors": [
+      "Yuanxu Sun",
+      "Yuezhou Ma",
+      "Haixu Wu",
+      "Guanyang Zeng",
+      "Muye Chen",
+      "Jianmin Wang",
+      "Mingsheng Long"
+    ],
+    "summary": "Boundary representation (B-rep) is the industry standard for computer-aided design (CAD). While deep learning shows promise in processing B-rep models, existing methods suffer from a representation gap: continuous approaches offer analytical precision but are visually abstract, whereas discrete methods provide intuitive clarity at the expense of geometric precision. To bridge this gap, we introduce Brep2Shape, a novel self-supervised pre-training method designed to align abstract boundary representations with intuitive shape representations. Our method employs a geometry-aware task where the model learns to predict dense spatial points from parametric Bézier control points, enabling the network to better understand physical manifolds derived from abstract coefficients. To enhance this alignment, we propose a Dual Transformer backbone with parallel streams that independently encode surface and curve tokens to capture their distinct geometric properties. Moreover, the topology attention is integrated to model the interdependencies between surfaces and curves, thereby maintaining topological consistency. Experimental results demonstrate that Brep2Shape offers significant scalability, achieving state-of-the-art accuracy and faster convergence across various downstream tasks.Code is available at this repository: https://github.com/thuml/Brep2Shape."
+  },
+  {
+    "arxiv_id": "2602.04940",
+    "title": "Transolver-3: Scaling Up Transformer Solvers to Industrial-Scale Geometries",
+    "published": "2026-02-04",
+    "year": 2026,
+    "authors": [
+      "Hang Zhou",
+      "Haixu Wu",
+      "Haonan Shangguan",
+      "Yuezhou Ma",
+      "Huikun Weng",
+      "Jianmin Wang",
+      "Mingsheng Long"
+    ],
+    "summary": "Deep learning has emerged as a transformative tool for the neural surrogate modeling of partial differential equations (PDEs), known as neural PDE solvers. However, scaling these solvers to industrial-scale geometries with over $10^8$ cells remains a fundamental challenge due to the prohibitive memory complexity of processing high-resolution meshes. We present Transolver-3, a new member of the Transolver family as a highly scalable framework designed for high-fidelity physics simulations. To bridge the gap between limited GPU capacity and the resolution requirements of complex engineering tasks, we introduce two key architectural optimizations: faster slice and deslice by exploiting matrix multiplication associative property and geometry slice tiling to partition the computation of physical states. Combined with an amortized training strategy by learning on random subsets of original high-resolution meshes and a physical state caching technique during inference, Transolver-3 enables high-fidelity field prediction on industrial-scale meshes. Extensive experiments demonstrate that Transolver-3 can handle meshes with over 160 million cells, achieving impressive performance across three challenging simulation benchmarks, including aircraft and automotive design tasks. Code is available at https://github.com/thuml/Transolver-3."
+  },
+  {
+    "arxiv_id": "2602.02763",
+    "title": "Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Attacks",
+    "published": "2026-02-02",
+    "year": 2026,
+    "authors": [
+      "Bohan Wang",
+      "Zewen Liu",
+      "Lu Lin",
+      "Hui Liu",
+      "Li Xiong",
+      "Ming Jin",
+      "Wei Jin"
+    ],
+    "summary": "Interpretable time series deep learning systems are often assessed by checking temporal consistency on explanations, implicitly treating this as evidence of robustness. We show that this assumption can fail: Predictions and explanations can be adversarially decoupled, enabling targeted misclassification while the explanation remains plausible and consistent with a chosen reference rationale. We propose TSEF (Time Series Explanation Fooler), a dual-target attack that jointly manipulates the classifier and explainer outputs. In contrast to single-objective misclassification attacks that disrupt explanation and spread attribution mass broadly, TSEF achieves targeted prediction changes while keeping explanations consistent with the reference. Across multiple datasets and explainer backbones, our results consistently reveal that explanation stability is a misleading proxy for decision robustness and motivate coupling-aware robustness evaluations for trustworthy time series tasks."
+  },
+  {
+    "arxiv_id": "2602.01133",
+    "title": "Parallel Training in Spiking Neural Networks",
+    "published": "2026-02-01",
+    "year": 2026,
+    "authors": [
+      "Yanbin Huang",
+      "Man Yao",
+      "Yuqi Pan",
+      "Changze Lv",
+      "Siyuan Xu",
+      "Xiaoqing Zheng",
+      "Bo Xu",
+      "Guoqi Li"
+    ],
+    "summary": "The bio-inspired integrate-fire-reset mechanism of spiking neurons constitutes the foundation for efficient processing in Spiking Neural Networks (SNNs). Recent progress in large models demands that spiking neurons support highly parallel computation to scale efficiently on modern GPUs. This work proposes a novel functional perspective that provides general guidance for designing parallel spiking neurons. We argue that the reset mechanism, which induces complex temporal dependencies and hinders parallel training, should be removed. However, any such modification should satisfy two principles: 1) preserving the functions of reset as a core biological mechanism; and 2) enabling parallel training without sacrificing the serial inference ability of spiking neurons, which underpins their efficiency at test time. To this end, we identify the functions of the reset and analyze how to reconcile parallel training with serial inference, upon which we propose a dynamic decay spiking neuron. We conduct comprehensive testing of our method in terms of: 1) Training efficiency and extrapolation capability. On 16k-length sequences, we achieve a 25.6x training speedup over the pioneering parallel spiking neuron, and our models trained on 2k-length can stably perform inference on sequences as long as 30k. 2) Generality. We demonstrate the consistent effectiveness of the proposed method across five task categories (image classification, neuromorphic event processing, time-series forecasting, language modeling, and reinforcement learning), three network architectures (spiking CNN/Transformer/SSMs), and two spike activation modes (spike/integer activation). 3) Energy consumption. The spiking firing of our neuron is lower than that of vanilla and existing parallel spiking neurons."
+  },
+  {
+    "arxiv_id": "2601.19834",
+    "title": "Visual Generation Unlocks Human-Like Reasoning through Multimodal World Models",
+    "published": "2026-01-27",
+    "year": 2026,
+    "authors": [
+      "Jialong Wu",
+      "Xiaoying Zhang",
+      "Hongyi Yuan",
+      "Xiangcheng Zhang",
+      "Tianhao Huang",
+      "Changjing He",
+      "Chaoyi Deng",
+      "Renrui Zhang",
+      "Youbin Wu",
+      "Mingsheng Long"
+    ],
+    "summary": "Humans construct internal world models and reason by manipulating the concepts within these models. Recent advances in AI, particularly chain-of-thought (CoT) reasoning, approximate such human cognitive abilities, where world models are believed to be embedded within large language models. Expert-level performance in formal and abstract domains such as mathematics and programming has been achieved in current systems by relying predominantly on verbal reasoning. However, they still lag far behind humans in domains like physical and spatial intelligence, which require richer representations and prior knowledge. The emergence of unified multimodal models (UMMs) capable of both verbal and visual generation has therefore sparked interest in more human-like reasoning grounded in complementary multimodal pathways, though their benefits remain unclear. From a world-model perspective, this paper presents the first principled study of when and how visual generation benefits reasoning. Our key position is the visual superiority hypothesis: for certain tasks--particularly those grounded in the physical world--visual generation more naturally serves as world models, whereas purely verbal world models encounter bottlenecks arising from representational limitations or insufficient prior knowledge. Theoretically, we formalize internal world modeling as a core component of CoT reasoning and analyze distinctions among different forms of world models. Empirically, we identify tasks that necessitate interleaved visual-verbal CoT reasoning, constructing a new evaluation suite, VisWorld-Eval. Controlled experiments on a state-of-the-art UMM show that interleaved CoT significantly outperforms purely verbal CoT on tasks that favor visual world modeling, but offers no clear advantage otherwise. Together, this work clarifies the potential of multimodal world modeling for more powerful, human-like multimodal AI."
+  },
+  {
+    "arxiv_id": "2511.16905",
+    "title": "Predicting Talent Breakout Rate using Twitter and TV data",
+    "published": "2025-11-21",
+    "year": 2025,
+    "authors": [
+      "Bilguun Batsaikhan",
+      "Hiroyuki Fukuda"
+    ],
+    "summary": "Early detection of rising talents is of paramount importance in the field of advertising. In this paper, we define a concept of talent breakout and propose a method to detect Japanese talents before their rise to stardom. The main focus of the study is to determine the effectiveness of combining Twitter and TV data on predicting time-dependent changes in social data. Although traditional time-series models are known to be robust in many applications, the success of neural network models in various fields (e.g.\\ Natural Language Processing, Computer Vision, Reinforcement Learning) continues to spark an interest in the time-series community to apply new techniques in practice. Therefore, in order to find the best modeling approach, we have experimented with traditional, neural network and ensemble learning methods. We observe that ensemble learning methods outperform traditional and neural network models based on standard regression metrics. However, by utilizing the concept of talent breakout, we are able to assess the true forecasting ability of the models, where neural networks outperform traditional and ensemble learning methods in terms of precision and recall."
+  },
+  {
+    "arxiv_id": "2510.12497",
+    "title": "Mitigating the Noise Shift for Denoising Generative Models via Noise Awareness Guidance",
+    "published": "2025-10-14",
+    "year": 2025,
+    "authors": [
+      "Jincheng Zhong",
+      "Boyuan Jiang",
+      "Xin Tao",
+      "Pengfei Wan",
+      "Kun Gai",
+      "Mingsheng Long"
+    ],
+    "summary": "Existing denoising generative models rely on solving discretized reverse-time SDEs or ODEs. In this paper, we identify a long-overlooked yet pervasive issue in this family of models: a misalignment between the pre-defined noise level and the actual noise level encoded in intermediate states during sampling. We refer to this misalignment as noise shift. Through empirical analysis, we demonstrate that noise shift is widespread in modern diffusion models and exhibits a systematic bias, leading to sub-optimal generation due to both out-of-distribution generalization and inaccurate denoising updates. To address this problem, we propose Noise Awareness Guidance (NAG), a simple yet effective correction method that explicitly steers sampling trajectories to remain consistent with the pre-defined noise schedule. We further introduce a classifier-free variant of NAG, which jointly trains a noise-conditional and a noise-unconditional model via noise-condition dropout, thereby eliminating the need for external classifiers. Extensive experiments, including ImageNet generation and various supervised fine-tuning tasks, show that NAG consistently mitigates noise shift and substantially improves the generation quality of mainstream diffusion models."
+  },
+  {
+    "arxiv_id": "2510.11282",
+    "title": "Vision-LLMs for Spatiotemporal Traffic Forecasting",
+    "published": "2025-10-13",
+    "year": 2025,
+    "authors": [
+      "Ning Yang",
+      "Hengyu Zhong",
+      "Haijun Zhang",
+      "Randall Berry"
+    ],
+    "summary": "Accurate spatiotemporal traffic forecasting is a critical prerequisite for proactive resource management in dense urban mobile networks. While large language models have shown promise in time series analysis, they inherently struggle to model the complex spatial dependencies of grid-based traffic data. Effectively extending large language models to this domain is challenging, as representing the vast amount of information from dense geographical grids can be inefficient and overwhelm the model's context. To address these challenges, we propose ST-Vision-LLM, a novel framework that reframes spatiotemporal forecasting as a vision-language fusion problem. Our approach leverages a Vision-LLM visual encoder to process historical global traffic matrices as image sequences, providing the model with a comprehensive global view to inform cell-level predictions. To overcome the inefficiency of large language models in handling numerical data, we introduce an efficient encoding scheme that represents floating-point values as single tokens via a specialized vocabulary, coupled with a two-stage numerical alignment fine-tuning process. The model is first trained with supervised fine-tuning and then further optimized for predictive accuracy using group relative policy optimization, a memory-efficient reinforcement learning method. Evaluations on real-world mobile traffic datasets demonstrate that ST-Vision-LLM outperforms existing methods by 15.6% in long-term prediction accuracy and exceeds the best baseline by around 30% on average in cross-domain few-shot scenarios. Our extensive experiments validate the model's strong generalization capabilities across various data-scarce environments."
+  },
+  {
+    "arxiv_id": "2509.23816",
+    "title": "Test-time GNN Model Evaluation on Dynamic Graphs",
+    "published": "2025-09-28",
+    "year": 2025,
+    "authors": [
+      "Bo Li",
+      "Xin Zheng",
+      "Ming Jin",
+      "Can Wang",
+      "Shirui Pan"
+    ],
+    "summary": "Dynamic graph neural networks (DGNNs) have emerged as a leading paradigm for learning from dynamic graphs, which are commonly used to model real-world systems and applications. However, due to the evolving nature of dynamic graph data distributions over time, well-trained DGNNs often face significant performance uncertainty when inferring on unseen and unlabeled test graphs in practical deployment. In this case, evaluating the performance of deployed DGNNs at test time is crucial to determine whether a well-trained DGNN is suited for inference on an unseen dynamic test graph. In this work, we introduce a new research problem: DGNN model evaluation, which aims to assess the performance of a specific DGNN model trained on observed dynamic graphs by estimating its performance on unseen dynamic graphs during test time. Specifically, we propose a Dynamic Graph neural network Evaluator, dubbed DyGEval, to address this new problem. The proposed DyGEval involves a two-stage framework: (1) test-time dynamic graph simulation, which captures the training-test distributional differences as supervision signals and trains an evaluator; and (2) DyGEval development and training, which accurately estimates the performance of the well-trained DGNN model on the test-time dynamic graphs. Extensive experiments demonstrate that the proposed DyGEval serves as an effective evaluator for assessing various DGNN backbones across different dynamic graphs under distribution shifts."
+  },
+  {
+    "arxiv_id": "2505.16474",
+    "title": "Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models",
+    "published": "2025-05-22",
+    "year": 2025,
+    "authors": [
+      "Yu Zhang",
+      "Xingzhuo Guo",
+      "Haoran Xu",
+      "Jialong Wu",
+      "Mingsheng Long"
+    ],
+    "summary": "Diffusion and flow-based models have enabled significant progress in generation tasks across various modalities and have recently found applications in predictive learning. However, unlike typical generation tasks that encourage sample diversity, predictive learning entails different sources of stochasticity and requires sampling consistency aligned with the ground-truth trajectory, which is a limitation we empirically observe in diffusion models. We argue that a key bottleneck in learning sampling-consistent predictive diffusion models lies in suboptimal predictive ability, which we attribute to the entanglement of condition understanding and target denoising within shared architectures and co-training schemes. To address this, we propose Foresight Diffusion (ForeDiff), a framework for predictive diffusion models that improves sampling consistency by decoupling condition understanding from target denoising. ForeDiff incorporates a separate deterministic predictive stream to process conditioning inputs independently of the denoising stream, and further leverages a pretrained predictor to extract informative representations that guide generation. Extensive experiments on robot video prediction and scientific spatiotemporal forecasting show that ForeDiff improves both predictive accuracy and sampling consistency over strong baselines, offering a promising direction for predictive diffusion models."
+  },
+  {
+    "arxiv_id": "2505.14357",
+    "title": "Vid2World: Crafting Video Diffusion Models to Interactive World Models",
+    "published": "2025-05-20",
+    "year": 2025,
+    "authors": [
+      "Siqiao Huang",
+      "Jialong Wu",
+      "Qixing Zhou",
+      "Shangchen Miao",
+      "Mingsheng Long"
+    ],
+    "summary": "World models, which predict future transitions from past observation and action sequences, have shown great promise for improving data efficiency in sequential decision-making. However, existing world models often require extensive domain-specific training and still produce low-fidelity, coarse predictions, limiting their usefulness in complex environments. In contrast, video diffusion models trained on large-scale internet data have demonstrated impressive capabilities in generating high-quality videos that capture diverse real-world dynamics. In this work, we present Vid2World, a general approach for leveraging and transferring pre-trained video diffusion models into interactive world models. To bridge the gap, Vid2World systematically explores video diffusion causalization, reshaping both the architecture and training objective of pre-trained models to enable autoregressive generation. Additionally, it incorporates a causal action guidance mechanism to enhance action controllability in the resulting interactive world models. Extensive experiments across multiple domains, including robot manipulation, 3D game simulation, and open-world navigation, demonstrate that our method offers a scalable and effective pathway for repurposing highly capable video diffusion models into interactive world models."
+  },
+  {
+    "arxiv_id": "2505.13934",
+    "title": "RLVR-World: Training World Models with Reinforcement Learning",
+    "published": "2025-05-20",
+    "year": 2025,
+    "authors": [
+      "Jialong Wu",
+      "Shaofeng Yin",
+      "Ningya Feng",
+      "Mingsheng Long"
+    ],
+    "summary": "World models predict state transitions in response to actions and are increasingly developed across diverse modalities. However, standard training objectives such as maximum likelihood estimation (MLE) often misalign with task-specific goals of world models, i.e., transition prediction metrics like accuracy or perceptual quality. In this paper, we present RLVR-World, a unified framework that leverages reinforcement learning with verifiable rewards (RLVR) to directly optimize world models for such metrics. Despite formulating world modeling as autoregressive prediction of tokenized sequences, RLVR-World evaluates metrics of decoded predictions as verifiable rewards. We demonstrate substantial performance gains on both language- and video-based world models across domains, including text games, web navigation, and robot manipulation. Our work indicates that, beyond recent advances in reasoning language models, RLVR offers a promising post-training paradigm for enhancing the utility of generative models more broadly. Code, datasets, models, and video samples are available at the project website: https://thuml.github.io/RLVR-World."
+  },
+  {
+    "arxiv_id": "2505.18190",
+    "title": "PhySense: Sensor Placement Optimization for Accurate Physics Sensing",
+    "published": "2025-05-19",
+    "year": 2025,
+    "authors": [
+      "Yuezhou Ma",
+      "Haixu Wu",
+      "Hang Zhou",
+      "Huikun Weng",
+      "Jianmin Wang",
+      "Mingsheng Long"
+    ],
+    "summary": "Physics sensing plays a central role in many scientific and engineering domains, which inherently involves two coupled tasks: reconstructing dense physical fields from sparse observations and optimizing scattered sensor placements to observe maximum information. While deep learning has made rapid advances in sparse-data reconstruction, existing methods generally omit optimization of sensor placements, leaving the mutual enhancement between reconstruction and placement on the shelf. To change this suboptimal practice, we propose PhySense, a synergistic two-stage framework that learns to jointly reconstruct physical fields and to optimize sensor placements, both aiming for accurate physics sensing. The first stage involves a flow-based generative model enhanced by cross-attention to adaptively fuse sparse observations. Leveraging the reconstruction feedback, the second stage performs sensor placement via projected gradient descent to satisfy spatial constraints. We further prove that the learning objectives of the two stages are consistent with classical variance-minimization principles, providing theoretical guarantees. Extensive experiments across three challenging benchmarks, especially a 3D geometry dataset, indicate PhySense achieves state-of-the-art physics sensing accuracy and discovers informative sensor placements previously unconsidered. Code is available at this repository: https://github.com/thuml/PhySense."
+  },
+  {
+    "arxiv_id": "2505.12044",
+    "title": "FlashBias: Fast Computation of Attention with Bias",
+    "published": "2025-05-17",
+    "year": 2025,
+    "authors": [
+      "Haixu Wu",
+      "Minghao Guo",
+      "Yuezhou Ma",
+      "Yuanxu Sun",
+      "Jianmin Wang",
+      "Wojciech Matusik",
+      "Mingsheng Long"
+    ],
+    "summary": "Attention with bias, which extends standard attention by introducing prior knowledge as an additive bias matrix to the query-key scores, has been widely deployed in vision, language, protein-folding and other advanced scientific models, underscoring its status as a key evolution of this foundational module. However, introducing bias terms creates a severe efficiency bottleneck in attention computation. It disrupts the tightly fused memory-compute pipeline that underlies the speed of accelerators like FlashAttention, thereby stripping away most of their performance gains and leaving biased attention computationally expensive. Surprisingly, despite its common usage, targeted efficiency optimization for attention with bias remains absent, which seriously hinders its application in complex tasks. Diving into the computation of FlashAttention, we prove that its optimal efficiency is determined by the rank of the attention weight matrix. Inspired by this theoretical result, this paper presents FlashBias based on the low-rank compressed sensing theory, which can provide fast-exact computation for many widely used attention biases and a fast-accurate approximation for biases in general formalizations. FlashBias can fully take advantage of the extremely optimized matrix multiplication operation in modern GPUs, achieving 1.5$\\times$ speedup for Pairformer in AlphaFold 3, and over 2$\\times$ speedup for attention with bias in vision and language models without loss of accuracy. Code is available at this repository: https://github.com/thuml/FlashBias."
+  },
+  {
+    "arxiv_id": "2504.01521",
+    "title": "Domain Guidance: A Simple Transfer Approach for a Pre-trained Diffusion Model",
+    "published": "2025-04-02",
+    "year": 2025,
+    "authors": [
+      "Jincheng Zhong",
+      "Xiangcheng Zhang",
+      "Jianmin Wang",
+      "Mingsheng Long"
+    ],
+    "summary": "Recent advancements in diffusion models have revolutionized generative modeling. However, the impressive and vivid outputs they produce often come at the cost of significant model scaling and increased computational demands. Consequently, building personalized diffusion models based on off-the-shelf models has emerged as an appealing alternative. In this paper, we introduce a novel perspective on conditional generation for transferring a pre-trained model. From this viewpoint, we propose *Domain Guidance*, a straightforward transfer approach that leverages pre-trained knowledge to guide the sampling process toward the target domain. Domain Guidance shares a formulation similar to advanced classifier-free guidance, facilitating better domain alignment and higher-quality generations. We provide both empirical and theoretical analyses of the mechanisms behind Domain Guidance. Our experimental results demonstrate its substantial effectiveness across various transfer benchmarks, achieving over a 19.6% improvement in FID and a 23.4% improvement in FD$_\\text{DINOv2}$ compared to standard fine-tuning. Notably, existing fine-tuned models can seamlessly integrate Domain Guidance to leverage these benefits, without additional training."
+  },
+  {
+    "arxiv_id": "2503.18292",
+    "title": "Jenga: Effective Memory Management for Serving LLM with Heterogeneity",
+    "published": "2025-03-24",
+    "year": 2025,
+    "authors": [
+      "Chen Zhang",
+      "Kuntai Du",
+      "Shu Liu",
+      "Woosuk Kwon",
+      "Xiangxi Mo",
+      "Yufeng Wang",
+      "Xiaoxuan Liu",
+      "Kaichao You",
+      "Zhuohan Li",
+      "Mingsheng Long",
+      "Jidong Zhai",
+      "Joseph Gonzalez",
+      "Ion Stoica"
+    ],
+    "summary": "Large language models (LLMs) are widely used but expensive to run, especially as inference workloads grow. To lower costs, maximizing the request batch size by managing GPU memory efficiently is crucial. While PagedAttention has recently been proposed to improve the efficiency of memory management, we find that the growing heterogeneity in the embeddings dimensions, attention, and access patterns of modern LLM architectures introduces new challenges for memory allocation. In this paper, we present Jenga, a novel memory allocation framework for heterogeneous embeddings in LLMs. Jenga tackles two key challenges: (1) minimizing memory fragmentation when managing embeddings of different sizes, and (2) enabling flexible caching and eviction policies tailored to the specific token-dependency patterns of various layers. Jenga employs a two-level memory allocator, leveraging the least common multiple (LCM) of embedding sizes to optimize memory usage and providing APIs to express layer-specific caching logic to enhance memory reuse. We implemente Jenga on vLLM, a state-of-the-art LLM inference engine, and evaluate it with diverse LLMs, datasets, and GPU configurations. Evaluations show that Jenga improves GPU memory utilization by up to 79.6%, and increases serving throughput by up to 4.92x (1.80x on average)."
+  }
+]
