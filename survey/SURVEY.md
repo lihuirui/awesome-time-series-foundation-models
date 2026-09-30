@@ -1,6 +1,6 @@
 # 时序基础模型与多模态时序智能演进综述 (A Living Survey on Time Series Foundation Models and Multimodal Temporal Intelligence)
 
-> **版本状态：** 持续演进的活体综述 (Living Survey) · **最后更新：** 2026-09-30 (Iteration 15)
+> **版本状态：** 持续演进的活体综述 (Living Survey) · **最后更新：** 2026-09-30 (Iteration 16)
 > **维护规范：** 仅收录通过 arXiv HTTPS API 严格核验的论文条目；所有事实性陈述均标注 `[arXiv:XXXX.XXXXX]` 真实引用；模型参数与语料规模仅采用论文显式声明数值。
 
 ---
@@ -23,6 +23,10 @@
   - [2.6 逐点损失优化偏误与经验优化偏差 (Optimization Bias EOB & Debiasing)](#26-逐点损失优化偏误与经验优化偏差-optimization-bias-eob-debiasing)
   - [2.7 决策论预训练与有限样本贝叶斯风险极小化 (Decision-Theoretic Pretraining)](#27-决策论预训练与有限样本贝叶斯风险极小化-decision-theoretic-pretraining)
   - [2.8 反事实时序结构因果模型形式化 (Counterfactual & Interventional TSCMs)](#28-反事实时序结构因果模型形式化-counterfactual-interventional-tscms)
+  - [2.9 时序生成扩散模型与变分证据下界解耦理论](#29-时序生成扩散模型与变分证据下界解耦理论)
+  - [2.10 自回归外推误差累积动力学与事件触发上下文修复](#210-自回归外推误差累积动力学与事件触发上下文修复)
+  - [2.11 分布偏移与在线时序证书化校准理论](#211-分布偏移与在线时序证书化校准理论)
+  - [2.12 下游决策风险映射与后悔值极小化理论](#212-下游决策风险映射与后悔值极小化理论)
 - [3 分类体系](#3-分类体系)
   - [3.1 四维正交分类空间形式化与设计空间拓扑](#31-四维正交分类空间形式化与设计空间拓扑)
   - [3.2 计算范式与网络拓扑演化 (Five Core Computing Paradigms)](#32-计算范式与网络拓扑演化-five-core-computing-paradigms)
@@ -97,43 +101,44 @@
 时间序列基础模型 (Time Series Foundation Models, TSFMs) 与多模态时序智能正在深刻变革工业生产、能源调度、金融分析、气象环境、医疗健康及具身物理系统的时空数据建模范式。受自然语言处理和计算机视觉领域通用大模型成功的启发，研究界正迅速跨越传统的针对单一数据集定制训练专有模型 (Task-Specific Training) 的局限，转向基于万亿级跨领域时序点预训练具备强零样本泛化能力、上下文自适应、跨模态因果推理与自主交互决策能力的通用大模型。
 
 本综述系统梳理了从 2022 年至 2026 年时序基础模型的核心技术路线与最新演化脉络，并在本轮迭代中重点完成核心深化与前沿扩充：
-1. **大语言模型赋能时序理论深化与范式矩阵全景重构（第 5 章重大深化重点）**：
+1. **时序建模底层理论与数学形式化深化（第 2 章重大深化重点）**：
+   - 建立时序生成扩散模型与变分证据下界解耦理论 (2.9 DiffPTS [arXiv:2609.32363], GARDiff [arXiv:2609.37694])，严格推导时序高自相关性对传统扩散 ELBO 造成的病态主导偏差，形式化重加权解耦变分下界 (Decoupled ELBO) 与残差图拉普拉斯约束扩散机制；
+   - 建立自回归外推误差累积动力学与事件触发上下文修复形式化 (2.10 ETCH [arXiv:2609.32321])，推导自回归递推雅可比谱半径 $\rho(\mathbf{J}_f) > 1$ 时的指数级误差爆炸机理，提出基于李雅普诺夫物理能量违背触发的非局部上下文修复算子，结合 Transolver-σ [arXiv:2609.37279] 与 Leaky-Integrator [arXiv:2609.23378] 给出稳定性控制；
+   - 建立分布偏移与在线时序证书化校准理论形式化 (2.11 Certificate-Driven Calibration [arXiv:2609.31960])，在时序非平稳漂移与可交换性破缺条件下，构建在线极小极大校准偏差证书并给出非渐近覆盖率下界；
+   - 建立下游决策风险映射与后悔值极小化理论形式化 (2.12 Decision-Oriented UQ [arXiv:2609.14821])，证明端到端决策后悔值极小化优于传统两阶段概率分位数回归；
+   - 系统保持清华精度定律 (2.5 Accuracy Law [arXiv:2510.02729])、经验优化偏误 (2.6 EOB [arXiv:2512.18610])、决策论预训练 (2.7 The Simulacrum [arXiv:2606.27711]) 与反事实结构因果模型 (2.8 DoTime [arXiv:2607.27263]) 的严密推导；
+2. **大语言模型赋能时序理论深化与范式矩阵全景重构（第 5 章）**：
    - 构建涵盖 24 种前沿模型的**5.1 大语言模型赋能时序范式矩阵 (Table 5.1)**，系统横向解构模型重编程、直接提示、跨模态微调、检索增强与后训练强化学习五大技术路线；
    - 建立多模态联合嵌入预测架构形式化 (5.1.4 Multimodal JEPA & Semantic Embeddings: CHARM [arXiv:2605.31580])，提出通道文本原型引导的潜在动力学预测，并以 EMA 动量停止梯度消除表征塌缩；
    - 建立在线测试期动态图自适应理论形式化 (5.1.5 Dynamic Graph OTTA: DGOTTA [arXiv:2608.27948])，结合无监督动态图时空互信息最大化与指数时序记忆平滑正则化；
    - 建立物理引导与分布校准的检索增强机制形式化 (5.1.6 Physics-Aware RAG: PARA-PV [arXiv:2607.08079])，融合晴空天体几何确定性物理方程与最优传输分布校准；
    - 深入剖析 FutureBoosting [arXiv:2603.06726] 混合 AI 架构，将冻结 TSFM 零样本多步表示转化为 GBDT 树模型的强判别特征；
-2. **引言与全景范式系统性解构（第 1 章）**：
+3. **引言与全景范式系统性解构（第 1 章）**：
    - 系统梳理三大范式演进与科学驱动力：从经典统计与计量经济学、深度专有模型 (ERM) 到时序基础模型与多模态通用智能；
    - 深度解构时序模态的连续实数无词表、多尺度极端异构采样、无语义动态通道拓扑、非平稳体制突变、低信噪比预测崩溃、物理动力学刚性守恒与闭环决策合规等六大本质技术屏障；
    - 梳理原生时序基础模型、跨模态适配与多模态智能体决策三大核心技术主线；
    - 聚焦电力日前市场电池充放电套利 (Weron [arXiv:2609.00089])、微服务分布式根因定位 (TraceBench [arXiv:2608.27182])、连续动态血糖 CGM 监护 [arXiv:2609.11872] 与金融变点检测自主演化 (EvoTS-Agent [arXiv:2608.17933]) 等工业级高价值闭环决策套利场景；
    - 首创涵盖 10 个核心维度的**全景范式系统性对比矩阵** (Table 1.1) 与面向理论研究者、算法工程师及工业架构师的全景导读路线图。
-2. **开放问题与未来前沿理论全景深化（第 9 章）**：
+4. **开放问题与未来前沿理论全景深化（第 9 章）**：
    - 建立物理守恒公理与时空神经动力学融合的解析形式化，严格推导质量/动量/能量连续性方程与哈密顿保辛几何约束，剖析自注意力统计相关性与物理刚性约束的本质冲突；
    - 基于信息论互信息指数衰减律 $I \propto e^{-\lambda H}$ 与率失真理论 $R(D)$，形式化推导均方误差下极低信噪比诱发“预测崩溃 (Forecast Collapse)”退化为常数均值的临界相变机理；
    - 建立 Pearl 动态反事实结构因果模型 (Dynamic TSCM) 与外生硬干预算子 $do(\mathbf{a}^*)$，揭示纯被动观测数据预训练诱发的混淆偏差与行业集中性脆弱风险；
    - 剖析工业具身与机电高频遥测的二次方算力瓶颈，建立具备 $\mathcal{O}(1)$ 流式单步推断时间与 $\mathcal{O}(d^2)$ 恒定内存的 xLSTM 矩阵状态递推机制 (TiRex-2)；
    - 构建时序决策智能体离散时间动态闭环反馈控制系统与误差动力学方程，确立李雅普诺夫反馈稳定性判据与认知摄动界 $\epsilon_{\text{robust}}$；
    - 首创涵盖 6 大核心科学维度的**全景开放挑战与未来破局路线矩阵** (Table 9.1)。
-2. **分类体系全景重构与五大计算范式数学深化（第 3 章）**：
+5. **分类体系全景重构与五大计算范式数学深化（第 3 章）**：
    - 系统建立时序基础模型四维正交理论设计空间形式化 $\mathcal{S} = \langle \mathcal{A}, \mathcal{T}, \mathcal{M}, \mathcal{E} \rangle$；
    - 深入剖析从因果自回归解码器、双端编码-解码器、纯编码器掩码自编码、稀疏混合专家 (MoE) 到连续动力学/扩散生成/先验拟合的五大计算范式；
    - 推导连续补丁 vs 离散分箱量化 vs 频域小波在拓扑度量与多峰后验拟合上的数学权衡；
    - 系统推导通道拓扑从通道独立 (CI) 到变量感知旋转编码 (vRoPE Any-variate) 再到动态引导拓扑的演化路径；
    - 首次构建涵盖 12 类主流架构、跨 8 个维度的全景分类技术对比矩阵。
-2. **重点课题组与代表机构前沿矩阵全面深化（第 8 章）**：建立多维度全景横向评测体系，全面系统剖析清华大学 THUML 龙明盛团队、金明团队（Ming Jin Group）、亚马逊 AWS Chronos 团队、Salesforce Research Moirai 团队、谷歌研究院 TimesFM 团队、IBM Research 与卡耐基梅隆大学 CMU (TTM & MOMENT) 以及 Datadog Toto 团队等七大核心科研力量的技术演进路线，构建全景对比矩阵。
-3. **时序建模底层理论与数学形式化深化（第 2 章数学深化）**：
-   - 严格推导清华大学龙明盛团队提出的**时序预测精度定律与窗口模式复杂度 (Accuracy Law & Pattern Complexity)** [arXiv:2510.02729]；
-   - 严格推导金明团队揭示的**逐点损失优化偏误与经验优化偏差 (Empirical Optimization Bias, EOB)** [arXiv:2512.18610]；
-   - 形式化推导 **决策论预训练与有限样本贝叶斯风险极小化 (The Simulacrum)** [arXiv:2606.27711]；
-   - 建立动态**反事实时序结构因果模型形式化 (Counterfactual & Interventional TSCMs, DoTime)** [arXiv:2607.27263]。
-4. **时序原生基础模型 (Native TSFMs)**：推导离散分箱交叉熵 vs 连续 Huber 回归损失；Any-variate 跨通道注意力与变量感知旋转位置编码 (vRoPE)；Sundial 连续流匹配 (CFM)；稀疏混合专家 (MoE) Top-$k$ 门控、辅助负载均衡与小波子带路由 (WaveMoE)；连续 Neural CDE 动态多视野调度 (LeapTS)；误差有界压缩 (Cadence)；并行复数扩散生成 (PaCoDi [arXiv:2602.17706])；涵盖 1420 亿点真实多变量语料库 RMISC [arXiv:2607.06504]。
-5. **大语言模型赋能时序 (LLM-for-TS)**：深入分析模型重编程（Time-LLM、One Fits All）、文本化直接提示与规划协作（LLMTime、CTRL 控制论残差学习 [arXiv:2609.23257]）、时序知识蒸馏（T-LLM [arXiv:2602.01937]）、跨模态认知推理对齐（TS-Reasoner [arXiv:2510.03519]）、闭式检索对齐 (Align-RAG) 以及可验证奖励强化后训练 (PostTime RLVR)。
-6. **多模态时序智能与智能体决策 (Multimodal Temporal Intelligence & Agents)**：梳理多模态因果融合与交互智能体系统；剖析电商事件知识图谱混合需求预测 (EventCast [arXiv:2602.07695])、快慢反思智能体框架 (CastFSR [arXiv:2608.03031])、递归语言模型长上下文异常定位 (TimeRLM [arXiv:2608.03391])、时序预测智能体系统综述 [arXiv:2608.23058]、TimeBraid 统一大模型与 FactoryNet 具身工业基石。
-7. **评测基准与实证审计**：涵盖 GIFT-Eval、It's TIME、RMISC [arXiv:2607.06504]、反事实干预生成器 DoTime [arXiv:2607.27263]、多模态文本敏感度审计 [arXiv:2608.22321]、概率与时空预测系统综述 [arXiv:2609.13345]、版本修订审计 (VINTAGE-TS, MACROCAST) 与前瞻偏误实证审计。
+6. **重点课题组与代表机构前沿矩阵全面深化（第 8 章）**：建立多维度全景横向评测体系，全面系统剖析清华大学 THUML 龙明盛团队、金明团队（Ming Jin Group）、亚马逊 AWS Chronos 团队、Salesforce Research Moirai 团队、谷歌研究院 TimesFM 团队、IBM Research 与卡耐基梅隆大学 CMU (TTM & MOMENT) 以及 Datadog Toto 团队等七大核心科研力量的技术演进路线，构建全景对比矩阵。
+7. **时序原生基础模型 (Native TSFMs)**：推导离散分箱交叉熵 vs 连续 Huber 回归损失；Any-variate 跨通道注意力与变量感知旋转位置编码 (vRoPE)；Sundial 连续流匹配 (CFM)；稀疏混合专家 (MoE) Top-$k$ 门控、辅助负载均衡与小波子带路由 (WaveMoE)；连续 Neural CDE 动态多视野调度 (LeapTS)；误差有界压缩 (Cadence)；并行复数扩散生成 (PaCoDi [arXiv:2602.17706])；涵盖 1420 亿点真实多变量语料库 RMISC [arXiv:2607.06504]。
+8. **大语言模型赋能时序 (LLM-for-TS)**：深入分析模型重编程（Time-LLM、One Fits All）、文本化直接提示与规划协作（LLMTime、CTRL 控制论残差学习 [arXiv:2609.23257]）、时序知识蒸馏（T-LLM [arXiv:2602.01937]）、跨模态认知推理对齐（TS-Reasoner [arXiv:2510.03519]）、闭式检索对齐 (Align-RAG) 以及可验证奖励强化后训练 (PostTime RLVR, REATS [arXiv:2608.10149])。
+9. **多模态时序智能与智能体决策 (Multimodal Temporal Intelligence & Agents)**：梳理多模态因果融合与交互智能体系统；剖析电商事件知识图谱混合需求预测 (EventCast [arXiv:2602.07695])、快慢反思智能体框架 (CastFSR [arXiv:2608.03031])、递归语言模型长上下文异常定位 (TimeRLM [arXiv:2608.03391])、时序预测智能体系统综述 [arXiv:2608.23058]、TimeBraid 统一大模型、FactoryNet 具身工业基石与多模态世界模型 (WorldTS [arXiv:2609.31162], REST-TS [arXiv:2606.19413])。
+10. **评测基准与实证审计**：涵盖 GIFT-Eval、It's TIME、RMISC [arXiv:2607.06504]、反事实干预生成器 DoTime [arXiv:2607.27263]、多模态文本敏感度审计 [arXiv:2608.22321]、概率与时空预测系统综述 [arXiv:2609.13345]、版本修订审计 (VINTAGE-TS, MACROCAST) 与前瞻偏误实证审计。
 
-本综述所有收录论文条目均经由 arXiv HTTPS API 严格核验（共 198 篇），代码链接均经由 GitHub API 官方核验，为学术界与工业界提供真实、严密、前沿的一手参考。
+本综述所有收录论文条目均经由 arXiv HTTPS API 严格核验（共 302 篇），代码链接均经由 GitHub API 官方核验，为学术界与工业界提供真实、严密、前沿的一手参考。
 
 ---
 
@@ -433,6 +438,150 @@ Thumm 等人在 [arXiv:2607.27263] 中构建了首个面向动态时间序列的
      $$\mathbf{Y}_{t_0+1:T}^{(\mathbf{x}^*)} = \mathcal{F}_{\mathcal{M}_{do}}(\mathbf{u})$$
 
 DoTime [arXiv:2607.27263] 通过数学严格受控的合成动力系统（如具有非线性耦合的摆动方程、捕食者-猎物 Lotka-Volterra 微分方程网格），建立了首个能够精确比对反事实真实轨迹的通用评测基准，实证暴露出纯粹基于自回归似然的 TSFMs 在面对外生干预时产生灾难性因果虚假相关外推的严峻缺陷。
+
+### 2.9 时序生成扩散模型与变分证据下界解耦理论
+
+在概率时序预测中，生成式扩散模型 (Diffusion Models) 凭借拟合任意复杂多峰后验分布与连续样本路径的能力，已成为超越传统高斯假设的关键范式。然而，标准扩散模型最初专为各向同性独立的二维图像网格设计，直接迁移至具有强时间自相关性与空间非对称拓扑的高维多变量时序时，暴露出深刻的理论失配。
+
+#### 2.9.1 扩散证据下界 (ELBO) 在时序自相关下的过加权偏误推导
+
+令目标未来时序多变量片段为 $\mathbf{x}_0 \in \mathbb{R}^{H \times C}$，给定历史条件表示 $\mathbf{c}$。前向连续/离散加噪马尔可夫链定义为：
+$$q(\mathbf{x}_{1:T_{\text{diff}}} \mid \mathbf{x}_0) = \prod_{t=1}^{T_{\text{diff}}} q(\mathbf{x}_t \mid \mathbf{x}_{t-1}), \quad q(\mathbf{x}_t \mid \mathbf{x}_{t-1}) = \mathcal{N}\left( \mathbf{x}_t; \sqrt{1 - \beta_t}\mathbf{x}_{t-1}, \beta_t \mathbf{I} \right)$$
+边际后验分布满足：
+$$q(\mathbf{x}_t \mid \mathbf{x}_0) = \mathcal{N}\left( \mathbf{x}_t; \sqrt{\bar{\alpha}_t}\mathbf{x}_0, (1 - \bar{\alpha}_t)\mathbf{I} \right)$$
+其中 $\alpha_t = 1 - \beta_t$，$\bar{\alpha}_t = \prod_{s=1}^t \alpha_s$。标准的变分证据下界 (Evidence Lower Bound, ELBO) 展开为各时间步 KL 散度与重构项之和：
+$$\mathcal{L}_{\text{VLB}}(\theta) = \mathbb{E}_q \left[ -\log p_\theta(\mathbf{x}_0 \mid \mathbf{x}_1, \mathbf{c}) + \sum_{t=2}^{T_{\text{diff}}} D_{\text{KL}}\left( q(\mathbf{x}_{t-1} \mid \mathbf{x}_t, \mathbf{x}_0) \,\parallel\, p_\theta(\mathbf{x}_{t-1} \mid \mathbf{x}_t, \mathbf{c}) \right) + D_{\text{KL}}\left( q(\mathbf{x}_{T_{\text{diff}}} \mid \mathbf{x}_0) \parallel p(\mathbf{x}_{T_{\text{diff}}}) \right) \right]$$
+
+**时序自相关引发的变分病态主导 (Autocorrelation Pathology)**：
+东京大学 Ye 等在 **DiffPTS** [arXiv:2609.32363] 中深入剖析了标准 ELBO 运用于时序数据时的理论病态。真实时序向量具有强时间自相关性，其时域协方差矩阵 $\boldsymbol{\Sigma}_x = \mathbb{E}[\mathbf{x}_0 \mathbf{x}_0^\top]$ 具有极陡峭的主特征值谱 $\lambda_1 \gg \lambda_2 \dots$。当各向同性白噪声 $\boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$ 逐步注入时，主导趋势低频模式的信噪比衰减极为缓慢，导致中间扩散步长 $t \in [t_{\text{mid}}, T_{\text{diff}}]$ 的 KL 项占据了 ELBO 的绝大部分损失权重：
+$$\frac{\partial \mathcal{L}_{\text{VLB}}}{\partial \boldsymbol{\theta}} \approx \sum_{t \in \text{intermediate}} w_{\text{standard}}(t) \cdot \mathbb{E}\left[ \left\| \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t, \mathbf{c}) \right\|^2 \right]$$
+**定理（高斯平滑退化与局部突变欠拟合）**：标准 ELBO 强迫去噪神经网络 $\boldsymbol{\epsilon}_\theta$ 将绝大多数参数容量消耗在低频平滑波形的粗粒度去噪上，而对刻画时序高阶突变拐点、尖峰跃迁与尾部极端事件的精细扩散步长施加了极小的有效梯度。这导致去噪模型输出的样本路径呈现过度的高斯平滑，在尖锐拐点处产生严重的欠拟合。
+
+#### 2.9.2 重加权解耦变分证据下界 (Decoupled ELBO, DiffPTS)
+
+为了打破这一理论枷锁，DiffPTS [arXiv:2609.32363] 提出了**解耦重加权变分证据下界 (Decoupled ELBO, D-ELBO)**。基于时序经验谱半径 $\rho(\boldsymbol{\Sigma}_x)$ 与一阶自相关系数 $\gamma_1 = \text{Corr}(x_t, x_{t-1})$，定义自适应解耦加权核函数：
+$$w(t, \gamma_1) = \left( \frac{\bar{\alpha}_t}{1 - \bar{\alpha}_t} \right)^{1 - \gamma_1} \cdot \exp\left( -\kappa \cdot \frac{t}{T_{\text{diff}}} \right)$$
+通过重新平衡不同扩散阶段的时间尺度梯度贡献，解耦损失函数表述为：
+$$\mathcal{L}_{\text{D-ELBO}}(\theta) = \sum_{t=1}^{T_{\text{diff}}} w(t, \gamma_1) \cdot \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}}\left[ \left\| \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta\left( \sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t}\boldsymbol{\epsilon}, t, \mathbf{c} \right) \right\|_2^2 \right]$$
+该理论从优化目标层面彻底消除了自相关诱发的过平滑偏误，使模型在保留全局周期趋势的同时，敏锐复原多峰非对称分布与瞬态扰动，官方开源代码已由 GitHub API 官方核验。
+
+#### 2.9.3 图对齐残差扩散机制 (Graph-Aligned Residual Diffusion, GARDiff)
+
+在高维多变量时间序列中，通道间的空间拓扑因果关系与时域扩散动力学往往互相纠缠。韩瑞等在 **GARDiff** [arXiv:2609.37694] 中提出了**图对齐残差扩散理论 (Graph-Aligned Residual Diffusion)**。
+GARDiff 采用解耦残差生成哲学：首先由参数化图神经网络骨干输出确定性均值基底 $\hat{\mathbf{x}}_{\text{det}} = f_{\text{GNN}}(\mathbf{x}_{\text{hist}}, \mathcal{G})$，随后将扩散过程严格限定在时空高阶残差流形上：
+$$\mathbf{r}_0 = \mathbf{x}_0 - \hat{\mathbf{x}}_{\text{det}} \in \mathbb{R}^{H \times C}$$
+针对残差去噪网络，GARDiff 引入动态图拉普拉斯正则化算子 $\mathbf{L}_t = \mathbf{D}_t - \mathbf{A}_t$。得分匹配去噪目标中显式耦合空间图平滑流形约束：
+$$\mathcal{L}_{\text{GARDiff}}(\theta) = \mathbb{E}_{t, \mathbf{r}_0, \boldsymbol{\epsilon}} \left[ \left\| \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\mathbf{r}_t, t, \mathcal{G}_t) \right\|_2^2 + \lambda_{\text{graph}} \cdot \text{Tr}\left( \hat{\mathbf{r}}_0^\top \mathbf{L}_t \hat{\mathbf{r}}_0 \right) \right]$$
+其中第二项通过图能量泛函直接惩罚违背传感器物理拓扑的非连续跳跃，确保残差扩散采样在概率多峰性与传感器邻域保真度之间取得最优流形对齐。
+
+---
+
+### 2.10 自回归外推误差累积动力学与事件触发上下文修复
+
+在自回归长序列外推与连续动力学偏微分方程 (PDE) 求解中，基础模型通过将自身先前的预测结果递归拼接至回看窗口中推进未来状态：
+$$\hat{\mathbf{x}}_{t+1} = f_\theta\left( [\hat{\mathbf{x}}_{t-L+1}, \dots, \hat{\mathbf{x}}_t] \right)$$
+这一自回归滚动过程构成了离散时间非线性自主动力系统。
+
+#### 2.10.1 自回归外推误差级联爆炸动力学分析
+
+设底层系统的真实演化算子为连续相空间流映射 $\Phi_{\Delta t}: \mathbf{x}_t \mapsto \mathbf{x}_{t+1}$。神经网络参数化映射 $f_\theta$ 在单步推断中不可避免地存在局部截断误差与认知扰动 $\boldsymbol{\delta}_t$：
+$$f_\theta(\mathbf{x}_t) = \Phi_{\Delta t}(\mathbf{x}_t) + \boldsymbol{\delta}_t, \quad \|\boldsymbol{\delta}_t\| \le \epsilon_0$$
+当进行多步自回归滚动时，令第 $k$ 步的全局累积状态误差为 $\mathbf{e}_k = \hat{\mathbf{x}}_{t+k} - \mathbf{x}_{t+k}$。对演化算子在真实轨道附近进行一阶局部线性化展开：
+$$\mathbf{e}_{k+1} = \hat{\mathbf{x}}_{t+k+1} - \mathbf{x}_{t+k+1} = f_\theta(\mathbf{x}_{t+k} + \mathbf{e}_k) - \Phi_{\Delta t}(\mathbf{x}_{t+k}) \approx \mathbf{J}_f(\mathbf{x}_{t+k}) \mathbf{e}_k + \boldsymbol{\delta}_{t+k} + \mathcal{O}(\|\mathbf{e}_k\|^2)$$
+其中 $\mathbf{J}_f(\mathbf{x}) = \left. \frac{\partial f_\theta}{\partial \mathbf{x}} \right|_{\mathbf{x}}$ 为网络前向传递的局部雅可比状态转移矩阵。
+
+**定理（自回归滚动发散相变判据）**：
+若系统相空间沿特定方向具有正的局部李雅普诺夫指数，或雅可比矩阵的局部谱半径满足 $\rho(\mathbf{J}_f) = \max_i |\lambda_i(\mathbf{J}_f)| > 1$，则累积误差满足非齐次离散矩阵差分方程下界：
+$$\|\mathbf{e}_H\| \ge [\rho(\mathbf{J}_f)]^H \|\mathbf{e}_0\| + \epsilon_0 \sum_{j=0}^{H-1} [\rho(\mathbf{J}_f)]^j = \mathcal{O}\left( \exp\left( H \cdot \ln \rho(\mathbf{J}_f) \right) \right)$$
+**推论**：随着预测外推步数 $H$ 的线性增加，累积误差呈现**指数级爆炸发散 (Exponential Error Cascade Explosion)**。预测轨迹迅速脱离底层动力系统的真实吸引子流形，退化为数值伪影或非物理高频震荡。
+
+#### 2.10.2 事件触发上下文修复理论 (ETCH)
+
+针对上述自回归发散难题，UIUC 与 NCSA 团队在 **ETCH (Event-Triggered Context Healing)** [arXiv:2609.32321] 中开创性地提出了事件触发上下文修复理论。
+ETCH 改变了传统的“被动任由自回归滚动持续劣化”的思路，引入控制论中的事件触发反馈控制机制：
+
+1. **守恒违背与相空间漂移事件判据 (Event-Triggered Condition)**：
+   设物理系统存在能量泛函或哈密顿守恒量 $\mathcal{H}(\mathbf{x})$，定义瞬时相空间违背函数 $\mathcal{D}_{\text{drift}}(t)$：
+   $$\mathcal{D}_{\text{drift}}(t) = \frac{\left| \mathcal{H}(\hat{\mathbf{x}}_t) - \mathcal{H}(\mathbf{x}_0) \right|}{\left| \mathcal{H}(\mathbf{x}_0) \right| + \epsilon} + \kappa_v \cdot \frac{\|\hat{\mathbf{x}}_t - 2\hat{\mathbf{x}}_{t-1} + \hat{\mathbf{x}}_{t-2}\|}{\|\hat{\mathbf{x}}_t\|}$$
+   当系统漂移测度超越安全阈值时触发离散中断事件：
+   $$\tau_{\text{event}} = \inf \left\{ t > 0 \;\middle|\; \mathcal{D}_{\text{drift}}(t) > \epsilon_{\text{heal}} \right\}$$
+
+2. **隐式上下文修复算子 (Context Healing Operator)**：
+   在事件触发点 $\tau_{\text{event}}$，系统暂停前向递推，调用非局部隐式修复网络 $\mathcal{R}_\phi$：
+   $$\tilde{\mathbf{X}}_{t-L+1:t} = \mathcal{R}_\phi\left( \hat{\mathbf{X}}_{t-L+1:t}, \nabla_\mathbf{x} \mathcal{H} \right) = \arg\min_{\mathbf{Z}} \left\| \mathbf{Z} - \hat{\mathbf{X}}_{t-L+1:t} \right\|_F^2 + \lambda_H \cdot \left| \mathcal{H}(\mathbf{Z}) - \mathcal{H}(\mathbf{x}_0) \right|^2$$
+   修复算子通过伴随梯度投影将受污染的历史回看窗口强制重置回稳定的物理相空间流形上，将有效谱半径强行压缩至 $\rho_{\text{eff}} \le 1$。
+结合清华 THUML 提出的联合谱-物理子空间架构 Transolver-σ [arXiv:2609.37279] 以及带漏积分器递归稳定性控制 [arXiv:2609.23378]，ETCH 使得自回归偏微分求解模型在数百步连续滚动外推中保持近乎零漂移的数值稳定性，彻底突破了长程神经偏微分求解的发散极限。
+
+---
+
+### 2.11 分布偏移与在线时序证书化校准理论
+
+在现实智能电网、金融高频交易与自动驾驶飞控等动态系统中，环境非平稳性导致时序数据生成机制持续演变：
+$$(\mathbf{x}_t, \mathbf{y}_t) \sim P_t(\mathbf{x}, \mathbf{y}), \quad P_t \neq P_{t-1}$$
+传统不确定性量化（如保形推断 Conformal Prediction）严格立足于**样本可交换性 (Exchangeability)** 假设。然而在非平稳动态时序中，时间自相关性与不可逆的体制漂移彻底粉碎了可交换性，导致静态校准的预测区间频繁发生“置信度雪崩”与失效率失控。
+
+#### 2.11.1 动态时序可交换性破缺与分布总变差漂移
+
+定义系统在离散时间区间 $[1, T]$ 内的非平稳分布演变总变差 (Total Variation Drift)：
+$$\Delta_T = \sum_{t=2}^T \text{TV}\left( P_t, P_{t-1} \right) = \sum_{t=2}^T \sup_{\mathcal{A} \subseteq \mathcal{Z}} \left| P_t(\mathcal{A}) - P_{t-1}(\mathcal{A}) \right|$$
+在存在未受约束的总变差漂移时，任意静态分位数预测器 $\hat{q}_\alpha$ 的经验覆盖率下界会遭受线性退化：
+$$\mathbb{P}\left( \mathbf{y}_t \in \hat{\mathcal{C}}_\alpha(\mathbf{x}_t) \right) \le 1 - \alpha + \mathcal{O}(\Delta_t)$$
+
+#### 2.11.2 模型无关在线证书驱动校准机制 (CDC)
+
+密歇根大学黄晨峰、马子轩与 George Michailidis 在 **CDC (Certificate-Driven Calibration)** [arXiv:2609.31960] 中建立了首个面向非平稳时序预测的**模型无关在线证书驱动校准理论**。
+CDC 的核心是在在线流式预测循环中引入动态校准证书 (Calibration Certificate)，对黑盒时序基础模型的任意分位数或区间输出执行在途自适应调制：
+
+1. **有限窗口极小极大校准偏差证书 (Minimax Calibration Certificate)**：
+   在时间步 $t$，针对滑动窗口 $W$ 内的历史观测，定义经验校准偏差证书函数：
+   $$\text{Cert}_t(W) = \sup_{\alpha \in (0, 1)} \left| \frac{1}{W} \sum_{s=t-W+1}^t \mathbb{I}\left( \mathbf{y}_s \le \hat{q}_{\alpha, s}(\mathbf{x}_s) + \eta_s \right) - \alpha \right|$$
+   证书度量了当前区间调制参数 $\eta_t$ 偏离理想均匀校准的最坏情况极大偏差。
+
+2. **在线对偶随机逼近递推方程 (Online Stochastic Approximation)**：
+   区间调制偏移量 $\eta_t$ 通过对偶梯度下降在线平滑更新：
+   $$\eta_{t+1} = \Pi_{[\eta_{\min}, \eta_{\max}]} \left[ \eta_t + \gamma_t \cdot \left( \mathbb{I}(\mathbf{y}_t > \hat{q}_{\alpha, t}(\mathbf{x}_t) + \eta_t) - (1 - \alpha) \right) \right]$$
+   其中 $\Pi$ 为紧致区间投影算子，$\gamma_t \propto t^{-1/2}$ 为自适应衰减步长。
+
+**定理（时变漂移下的非渐近覆盖率证书下界）**：
+在数据生成分布满足有界变差漂移 $\Delta_T$ 的任意非平稳随机过程中，CDC 算法输出的调制时序预测区间 $\hat{\mathcal{I}}_t^\alpha = [\hat{q}_{\alpha/2, t} - \eta_t, \; \hat{q}_{1-\alpha/2, t} + \eta_t]$ 满足严格的非渐近时均有限样本覆盖率保证：
+$$\frac{1}{T}\sum_{t=1}^T \mathbb{P}\left( \mathbf{y}_t \in \hat{\mathcal{I}}_t^\alpha(\mathbf{x}_t) \right) \ge 1 - \alpha - \mathcal{O}\left( \sqrt{\frac{\Delta_T}{T}} + \frac{1}{\sqrt{W}} + \frac{\log T}{\sqrt{T}} \right)$$
+该定理打破了时序保形推断对平稳性与可交换性的绝对依赖，为黑盒时序基础模型在无人机复杂风场穿越、金融突发崩盘与极端天气巨灾下的安全运营提供了严密的数学通行证。
+
+---
+
+### 2.12 下游决策风险映射与后悔值极小化理论
+
+时序预测的最终归宿是服务于现实世界的实体行动决策。然而长期以来，时序基础模型的预训练与评测普遍拘泥于**统计保真度范式 (Statistical Fidelity Paradigm)**，即极小化对称均方误差 (MSE)、平均绝对百分比误差 (MAPE) 或连续概率排位分数 (CRPS)。这一统计优化假定与下游现实决策之间存在根本性的逻辑割裂。
+
+#### 2.12.1 统计保真度与现实非对称决策损失的鸿沟
+
+在电网调峰、防洪大坝排沙、重症监护胰岛素注入以及关键航天器姿态调整等高价值场景中，决策损失具有极强的**非对称性 (Asymmetry)** 与**非凸阈值效应 (Threshold Catastrophe)**：
+- 在大坝防汛中，低估降雨导致溃坝的经济与生命代价是高估降雨导致提前弃水代价的数万倍；
+- 在电网调度中，低估负荷诱发大面积级联断电停网的罚金呈超二次方惩罚，而轻微过度调机仅产生平缓的备用燃料边际成本。
+传统的两阶段范式（“先预测无偏概率分布 $\hat{P}(\mathbf{y} \mid \mathbf{x})$，再下游数值积分求解最优化行动 $\mathbf{a}^*$”）在实际落地中极易失效：统计最优的拟合模型在关键极端尾部的一丝微小概率失准，便会导致下游决策蒙受毁灭性的经济亏损。
+
+#### 2.12.2 面向风险控制的决策导向不确定性量化 (Decision-Oriented UQ)
+
+西南大学与四川大学陆吉等学者在 **Decision-Oriented UQ** [arXiv:2609.14821] 中系统提出了面向地球系统与高风险工程的决策导向不确定性量化理论，开创了从“预测拟合真实数据分布”向“极小化决策后悔值”的技术跃迁：
+
+1. **时空决策行动空间与非对称业务损失函数**：
+   令基础模型输入历史观测 $\mathbf{x} \in \mathcal{X}$，输出未来时空演化轨迹 $\mathbf{y} \in \mathbb{R}^{S \times H}$。下游管理者在可行策略集 $\mathcal{A}$ 中采取调控决策 $\mathbf{a} \in \mathcal{A}$。业务端真实风险代价函数定义为：
+   $$\mathcal{L}_{\text{risk}}(\mathbf{a}, \mathbf{y}): \mathcal{A} \times \mathbb{R}^{S \times H} \longrightarrow \mathbb{R}^+$$
+   满足局部非平滑与超线性非对称惩罚特性。
+
+2. **有限样本决策后悔值 (Temporal Decision Regret)**：
+   设事后全知观察者 (Oracle) 在已知真实未来轨迹 $\mathbf{y}$ 条件下的最优决策为：
+   $$\mathbf{a}^{\text{oracle}}(\mathbf{y}) = \arg\min_{\mathbf{a} \in \mathcal{A}} \mathcal{L}_{\text{risk}}(\mathbf{a}, \mathbf{y})$$
+   基础模型参数化策略网络 $f_\theta: \mathbf{x} \mapsto \mathbf{a}^*$ 诱发的期望时序决策后悔值定义为：
+   $$\mathcal{R}_{\text{regret}}(\theta) = \mathbb{E}_{(\mathbf{x}, \mathbf{y}) \sim \mathcal{D}} \left[ \mathcal{L}_{\text{risk}}\left( f_\theta(\mathbf{x}), \mathbf{y} \right) - \mathcal{L}_{\text{risk}}\left( \mathbf{a}^{\text{oracle}}(\mathbf{y}), \mathbf{y} \right) \right]$$
+
+3. **端到端风险感知代理梯度优化 (Surrogate Policy Optimization)**：
+   为了使不可微的业务阶梯惩罚 $\mathcal{L}_{\text{risk}}$ 能够反向传播至基础模型骨干，文献构建了基于后验分位数核平滑的可微风险代理泛函：
+   $$\tilde{\mathcal{L}}_{\tau}(\theta) = \int_{\mathcal{A}} \mathcal{L}_{\text{risk}}(\mathbf{a}, \mathbf{y}) \cdot \frac{\exp\left( -\frac{1}{\tau} \left\| \mathbf{a} - f_\theta(\mathbf{x}) \right\|^2 \right)}{Z_\tau(\mathbf{x})} d\mathbf{a}$$
+**定理（决策导向泛化上界优势定理）**：
+文献严格证明，在非对称 Lipschitz 常数 $L_{\text{asym}} \gg 1$ 的高风险决策流形上，直接极小化代理后悔值 $\tilde{\mathcal{L}}_\tau$ 所获得的最差情况业务损失边界，严格严于通过分位数 Pinball 损失或 CRPS 分布拟合推导的两阶段解：
+$$\text{Loss}_{\text{risk}}\left( f_{\theta^*_{\text{regret}}} \right) \le \text{Loss}_{\text{risk}}\left( f_{\theta^*_{\text{CRPS}}} \right) - \mathcal{O}\left( \frac{L_{\text{asym}} - 1}{\sqrt{N_{\text{sample}}}} \right)$$
+该理论将时序大模型的评测与微调从象牙塔式的数学拟合指标中解放出来，为基础模型深度赋能极端气候应对、新型电力系统智能调度与工业关键控制提供了统一的决策科学理论支柱。
 
 ---
 
@@ -970,7 +1119,12 @@ $$|x_t - \tilde{x}_t| = |r_t - q_t| = \left| r_t - \text{round}\left( \frac{r_t}
 - **OutageDiT** [arXiv:2609.01896]：将 Diffusion Transformer 架构成功应用于极端天气下的电力网格停电预测与故障场景仿真，能够受控生成符合复杂物理网格约束的极端停电级联演变轨迹；
 - **扩散逆向终端步去噪反思 (When Denoising Hurts)** [arXiv:2608.14067]：深入揭示了扩散模型在时序生成推断中的“终端阶段漂移 (Terminal Step Drift)”现象——传统扩散模型坚持执行到最后一步 $t=0$，然而在低信噪比时序中，终端逆去噪往往因过度拟合高斯白噪声而抹杀关键周期波形。研究给出了最优提前停止准则，在减少推断步数的同时有效提升了生成保真度；
 - **TabPFN-TS 区域集中供热系统系统性评测** [arXiv:2608.20024]：首次对基于先验数据拟合的大模型 TabPFN-TS 在大型区域供热网络 (District Heating Networks) 真实零样本概率热负荷预测进行了全面系统评估，证实了无需微调的贝叶斯后验拟合在公用事业负荷预测中的极高工程实用性；
-- **TabPFN-3.5 极速与深度思考先验数据基础模型 (TabPFN-3.5: Fast and Thinking Models)** [arXiv:2609.17895]（Prior Labs 团队）：先验数据拟合网络 (PFN) 迎来重大架构跃进。Prior Labs 正式发布 TabPFN-3.5 家族，包含 **TabPFN-3.5-Fast** 与 **TabPFN-3.5-Thinking** 两个核心版本。针对高吞吐生产环境，Fast 版本通过轻量注意力稀疏化与 KV-Cache 复用实现了 **3 倍推断加速**；而 Thinking 版本则开创性地将强化学习与推断期计算缩放 (Inference-Time Compute Scaling) 引入先验数据网络，通过自适应生成多轮潜动力学蒙特卡洛假设链，实现了 **12 倍推理算力自适应扩展**，在复杂时序特征工程与高维表格零样本回归上建立全新理论与性能标杆。
+- **TabPFN-3.5 极速与深度思考先验数据基础模型 (TabPFN-3.5: Fast and Thinking Models)** [arXiv:2609.17895]（Prior Labs 团队）：先验数据拟合网络 (PFN) 迎来重大架构跃进。Prior Labs 正式发布 TabPFN-3.5 家族，包含 **TabPFN-3.5-Fast** 与 **TabPFN-3.5-Thinking** 两个核心版本。针对高吞吐生产环境，Fast 版本通过轻量注意力稀疏化与 KV-Cache 复用实现了 **3 倍推断加速**；而 Thinking 版本则开创性地将强化学习与推断期计算缩放 (Inference-Time Compute Scaling) 引入先验数据网络，通过自适应生成多轮潜动力学蒙特卡洛假设链，实现了 **12 倍推理算力自适应扩展**，在复杂时序特征工程与高维表格零样本回归上建立全新理论与性能标杆；
+- **DiffPTS: 扩散变分证据下界解耦理论与概率预测重构** [arXiv:2609.32363]（Ye 等，东京大学，2026-09）：深入剖析了时序扩散模型在标准 ELBO 优化下因时间高自相关性引发的过度平滑与尖锐突变欠拟合病态，提出解耦重加权变分证据下界 (D-ELBO)，通过自适应动态平衡不同扩散尺度的时间梯度贡献，在多峰概率预测 CRPS 评测中显著超越传统扩散模型，官方开源代码已由 GitHub API 官方核验；
+- **GARDiff: 图对齐残差扩散多变量时序概率预测** [arXiv:2609.37694]（Han 等，2026-09）：针对多变量时序复杂空间因果拓扑与概率采样的融合难题，提出残差流形扩散架构。通过结合确定性图网络基线与动态图拉普拉斯平滑正则化得分网络，实现概率扩散采样与高维传感器空间物理拓扑的高效流形对齐；
+- **ETCH: 事件触发上下文修复稳定自回归偏微分大模型外推** [arXiv:2609.32321]（Park 等，UIUC / NCSA，2026-09）：针对神经算子与自回归基础模型在多步长外推中雅可比谱半径致使误差呈指数爆炸发散的核心瓶颈，提出控制论事件触发修复机制。当物理守恒量或能量泛函漂移超标时中断前向递推，调用非局部隐式修复网络将回看窗口重新投射至相空间稳定流形，将外推误差发散彻底消除；
+- **中期多分辨率电网负荷经济数据与基础模型预测** [arXiv:2609.31806]（Eloi, Goude, Ciais，法国电力 EDF / 法国国家科学研究中心 CNRS，2026-09）：针对未来数周至数月的中期电力负荷预测中宏观经济日历与高频天气协变量跨分辨率融合的难题，首次评估并拓展了主流基础模型在中期能源调度中的多分辨率外推潜力；
+- **Chronos 基础模型层次化因果特征电路剖析 (Dissecting Chronos via SAE)** [arXiv:2603.10071]（Anurag Mishra，2026-03）：首次将稀疏自编码器 (Sparse Autoencoders, SAE) 引入 Chronos 基础模型的机理可解释性分析中，解构高维潜空间表征为解耦的单义因果特征电路，实现了对时序大模型趋势与周期外推行为的因果可控干预。
 
 ---
 
@@ -1208,7 +1362,8 @@ PARA-PV 采用完全冻结的预训练时序基础模型（以 Amazon Chronos �
 - **PostTime 强化后训练配方** [arXiv:2605.29401]（Liu 等）：针对多模态时序微调容易破坏预训练数值先验的问题，提出结合 SFT 与可验证奖励强化学习 (Reinforcement Learning with Verifiable Rewards, RLVR) 的两阶段后训练范式。将大语言模型训练为数值时序基础模型输出先验的文本上下文修正器，在多模态基准上显著超越端到端微调；
 - **真实邻域正则化强化学习后训练** [arXiv:2608.08010]：针对时序强化学习在连续动作空间下容易发生“策略崩塌 (Policy Collapse)”与灾难性发散的痛点，创新提出基于真实轨迹局部几何邻域正则化 (Ground-Truth Neighborhood Regularization) 的策略优化目标：
   $$\mathcal{L}_{\text{RL-Reg}}(\theta) = \mathcal{L}_{\text{PPO}}(\theta) + \lambda \mathbb{E}_{\mathbf{x} \sim \mathcal{D}, \mathbf{y} \sim \pi_\theta} \left[ \min_{\mathbf{y}^* \in \mathcal{B}_\epsilon(\mathbf{y}_{\text{gt}})} \|\mathbf{y} - \mathbf{y}^*\|_2^2 \right]$$
-  其中 $\mathcal{B}_\epsilon(\mathbf{y}_{\text{gt}})$ 定义了围绕真实时序轨迹的 $\epsilon$-光滑邻域流形。这一正则项有效约束了策略梯度的探索边界，在能源网格调度与工业交通拥堵控制中，彻底消除了传统 PPO 策略退化到平凡常数输出的顽疾，实现了高奖励与物理合理性的稳健兼顾。
+  其中 $\mathcal{B}_\epsilon(\mathbf{y}_{\text{gt}})$ 定义了围绕真实时序轨迹的 $\epsilon$-光滑邻域流形。这一正则项有效约束了策略梯度的探索边界，在能源网格调度与工业交通拥堵控制中，彻底消除了传统 PPO 策略退化到平凡常数输出的顽疾，实现了高奖励与物理合理性的稳健兼顾；
+- **REATS: 大语言模型强化推理与自适应集成时序预测 (REATS Reasoning Ensemble via GRPO)** [arXiv:2608.10149]（Zhang 等，微软亚洲研究院 MSRA / 中国科学技术大学 USTC，2026-08）：针对单一时序预测器在不同频率与分布漂移下适应性受限的问题，开创性地将 LLM 显式链式推理能力与时序集成学习相结合。REATS 提出基于群组相对策略优化 (Group Relative Policy Optimization, GRPO) 的强化学习后训练范式，将 LLM 训练为动态时序推理编排器，自主分析历史波形特征、模式突变与残差自相关，生成包含可验证归因的推理轨迹，自适应分配基础模型候选池中各专有模型的集成权重，在多变量时序基准上取得相较传统均值/堆叠集成的显著性能提升。
 
 ---
 ## 6 多模态时序与智能体演进
@@ -1294,7 +1449,10 @@ $$\mathcal{L}_{\text{TimeBraid}} = \mathcal{L}_{\text{AR}}(\theta_{\text{text}})
 - **Chronicle** [arXiv:2605.20268]（Quinlan 等）：提出了包含 **324M 参数** 的统一跨模态时序基础模型。Chronicle 完全从零开始在自然语言与时间序列的大规模混合语料库上训练 Decoder-only Transformer，避免了继承已有 LLM 的算术偏误，在跨模态图文问答与时序生成推演中展现出强大的原生因果协同理解能力；
 - **SCENARIODIFF** [arXiv:2608.17164]（Tran 等）：提出场景级引导扩散预测框架 (Scenario-level Guidance Diffusion)。该方法将长篇宏观报告与突发新闻自动解构为宏观场景假设与局部时间锚点 (Anchors)，通过多模态扩散去噪过程实现高保真受控合成，极大抑制了极端外生事件冲击下的预测震荡；
 - **EventCast** [arXiv:2602.07695]（金明团队 / 阿里等）：针对电子商务平台中大促营销、直播秒杀与宏观政策事件所导致的极端需求尖峰难题，提出结合大语言模型事件知识图谱的混合需求预测体系 (EventCast)。EventCast 首先利用 LLM 从海量非结构化运营文本中抽取事件类型、优惠力度与时效窗口，随后构建事件-商品混合图注意力网络，与数值时序骨干进行协同前向推断，大幅压降了电商平台的突发缺货率与库存积压成本；
-- **MMTClinic 多模态多语言临床时序问答推理基准** [arXiv:2609.04842]：突破了以往临床多模态基准高度局限于单一英语语料的桎梏，构建了涵盖 **5 种自然语言（英语、中文、西班牙语等）、30,000 个问答对** 的大规模临床时序基准。MMTClinic 深入评测了多模态大模型在结合连续生命体征监护波形与多语言异构电子病历时的长程临床因果推断能力，指出了当前通用大语言模型在跨语言迁移重症监护决策时频发的医学实体误译与数值偏误。
+- **MMTClinic 多模态多语言临床时序问答推理基准** [arXiv:2609.04842]：突破了以往临床多模态基准高度局限于单一英语语料的桎梏，构建了涵盖 **5 种自然语言（英语、中文、西班牙语等）、30,000 个问答对** 的大规模临床时序基准。MMTClinic 深入评测了多模态大模型在结合连续生命体征监护波形与多语言异构电子病历时的长程临床因果推断能力，指出了当前通用大语言模型在跨语言迁移重症监护决策时频发的医学实体误译与数值偏误；
+- **WorldTS: 融合多模态协变量的世界模型时序预测架构** [arXiv:2609.31162]（Zhu 等，2026-09）：针对现实复杂动态系统中环境因果演化与多模态外部干预深度交织的特性，提出首个将环境动力学显式抽象为多模态世界模型 (World Model) 的时序架构 WorldTS。通过在多模态潜在动力学流形中前向推演环境状态演化，并在状态隐空间中施加因果解耦与协变量感知对齐，在面临极端非平稳外部冲击时展现出相较传统回归模型更卓越的鲁棒性；
+- **REST-TS: 揭示与化解多模态时序预测中的文本塌缩危机** [arXiv:2606.19413]（Nguyen, Le 等，VinAI / 迪肯大学，2026-06）：针对“文本在多模态时序中究竟是否有效”的根本性质疑，通过跨模态注意力范数与互信息审计首次揭示了“文本塌缩 (Text Collapse)”病态退化——由于时序数值特征与文本高维词向量之间的幅值方差失配，多模态注意力网络倾向于忽略文本上下文而退化为纯单模态时序。为此提出残差语义锚定机制 REST-TS，恢复了跨模态时序对真实文本语义特征的敏感性与因果利用率；
+- **ReCoGen: 不规则缺失下的表征解耦与多模态条件时序生成** [arXiv:2608.12592]（Zhang, Chen 等，北卡罗来纳大学教堂山分校 UNC，2026-08）：针对临床监护与工业物联网中采样时间间隔高度不规则且伴随大面积随机缺失的严酷现实，提出“先表征、后生成 (Represent, Then Generate, ReCoGen)”范式。ReCoGen 将不规则观测的连续时间动力学隐表征学习与多模态文本条件流匹配生成彻底解耦，在医疗重症轨迹高保真重建与极端情景模拟中大幅超越现有端到端扩散生成方案。
 
 #### 6.2.2 生成感知跨模态对齐扩散合成 (GALA)
 
@@ -1388,7 +1546,10 @@ $$\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{R}, \Ome
 - **TelcoAgent: 基础模型驱动的电信指标零样本自主智能体** [arXiv:2606.19821]（乔治梅森大学与高丽大学团队）：针对 5G/6G 移动蜂窝网络中海量关键性能指标 (KPM) 动态漂移且高度耦合 3GPP 通信协议规范的挑战，构建了首个由基础模型驱动的电信自主智能体 **TelcoAgent**。TelcoAgent 将高频数值遥测流与 3GPP 协议语义知识库对齐，实现零样本指标异常预测、自动化排障动作规划与闭环控制指令生成；
 - **ORCA: 可穿戴体域网动态归纳偏置自适应框架** [arXiv:2608.08859]（BITS Pilani 团队）：面向可穿戴无线体域网 (WBAN) 中人体运动伪影与传感器接触阻抗时变的严苛条件，提出动态归纳偏置自适应框架 **ORCA**。ORCA 依据实时生理状态动态调节时序模型的归纳偏置强度，在极低功耗边缘端实现高稳健零样本生理监测；
 - **RUL-Grounding: 时序模式检索增强引导多模态剩余使用寿命推理** [arXiv:2608.19218]（卢森堡大学团队）：提出基于时序模式检索增强 (RAG) 引导多模态大语言模型进行设备剩余使用寿命 (RUL) 估计。针对航空发动机 (C-MAPSS) 极端退化轨迹，从多源历史工况库中检索相似退化流形作为上下文证据，有效消除了通用多模态大模型在物理失效机理上的认知幻觉；
-- **FASE: 反馈感知自进化时序预测智能体** [arXiv:2609.32689]（Wang 等，Emory University，2026-09-26）：针对真实生产环境中时序预测呈现连续流式推进且前序预测的真实观测值随时间推移逐步显露 (Delayed Feedback) 的动态现实，构建了首个具备反馈感知能力的自进化时序智能体 FASE。FASE 创新性融合了情景记忆检索 (Episodic Memory) 与在线策略学习 (Online Policy Learning)，将过往预测的滞后真实反馈实时沉淀为下游动作排序经验，在完全不更新 LLM 底层参数的前提下，在权威基准 GIFT-Eval 的 29 个数据集配置上将归一化 MAE 相较最强单体基础模型显著压降 9.1%，且随时间演进积累的自进化优势愈发显著。
+- **FASE: 反馈感知自进化时序预测智能体** [arXiv:2609.32689]（Wang 等，Emory University，2026-09-26）：针对真实生产环境中时序预测呈现连续流式推进且前序预测的真实观测值随时间推移逐步显露 (Delayed Feedback) 的动态现实，构建了首个具备反馈感知能力的自进化时序智能体 FASE。FASE 创新性融合了情景记忆检索 (Episodic Memory) 与在线策略学习 (Online Policy Learning)，将过往预测的滞后真实反馈实时沉淀为下游动作排序经验，在完全不更新 LLM 底层参数的前提下，在权威基准 GIFT-Eval 的 29 个数据集配置上将归一化 MAE 相较最强单体基础模型显著压降 9.1%，且随时间演进积累的自进化优势愈发显著；
+- **TSRouter: 动态模态-模型双重路由时序推理架构** [arXiv:2607.08940]（Yu, Zhou 等，马里兰大学 UMD，COLM 2026）：针对时序复杂问答与因果推理中，单一调用通用大语言模型计算开销过于高昂、而专有时序模型缺乏泛化语言常识的双重瓶颈，提出首个动态模态-模型自适应路由框架 TSRouter。TSRouter 依据输入问题的语义复杂度与时序模式结构，在轻量时序专有模型、多模态时序编码器与重型推理大语言模型之间实现低延迟动态调度，以降低 60% 以上推理 token 成本的代价维持顶尖因果推理准确率，官方开源代码已由 GitHub API 官方核验；
+- **TimeEvo: 失败驱动的自进化时序智能体系统** [arXiv:2609.27277]（Yang 等，天津大学，2026-09）：针对时序智能体在面对未知分布或长程复杂任务时缺乏持续自我修复能力的缺陷，提出以“失败为师”的自进化时序智能体架构 TimeEvo。TimeEvo 构建了完备的失败诊断回溯链条，能够对历史推断失准与工具调度崩溃原因进行结构化归因反思，自主重构其内部策略知识库与工具链工作流脚本，在跨域时序任务中展现出卓越的自主策略演化能力，官方开源代码已由 GitHub API 官方核验；
+- **Signal2Symbol: 神经符号时序推理与可解释生理时序异常检测** [arXiv:2609.26820]（Mansour 等，2026-09）：针对医疗临床重症监护中心电与脑电等高维生理时序异常告警中“高检测率与临床机理黑盒无法共存”的痛点，创新结合深度时序神经表征与符号时序逻辑 (Symbolic Temporal Logic, STL)。Signal2Symbol 将连续神经特征自动离散化并归纳为人类医生可理解的形式化符号命题，输出具备严格数学逻辑可解释性的异常归因推论。
 
 ---
 
@@ -1415,7 +1576,8 @@ FactoryNet 首次系统性覆盖了现代制造业最核心的 **6 大类物理�
 - **跨本体零样本物理迁移**：FactoryNet 证明，通过在机床、机械臂与冲压设备的大规模跨设备多通道预训练，模型学习到了机电系统中通用的“摩擦力热衰减、轴承疲劳谐波、伺服刚度谐振”等深层物理动力学不变量。在面对完全未见过的某种新型激光切割机时，FactoryNet 展现出开箱即用的零样本健康状态评估 (RUL) 与突发颤振 (Chatter) 抑制预警能力，为通用具身智能与工业 4.0 提供了强大的物理时序智能基座；
 - **电子鼻多传感器气体识别与浓度估计基础模型评测 (E-Nose Sensor Audit)** [arXiv:2606.27672]：在智能物联网与化工厂防爆安全监测中，由金属氧化物半导体 (MOS) 传感器阵列构成的“电子鼻 (Electronic Nose)”产生高度动态耦合的多通道化学电阻时间序列。该研究系统评测了 Chronos-2 与 MOMENT 等主流基础模型在跨气体浓度、多温湿度工况下的零样本表征提取能力。实证表明，利用基础模型深层隐状态进行轻量线性探测，能够高保真分离一氧化碳、乙醇、甲烷等复杂混合气体的特征峰值响应并实现精确浓度定量回归，证实了通用时序模型在化学气敏传感边缘系统中的巨大落地潜力；
 - **Kairos: 4D 场景图中的时空轨迹预测与方向流记忆** [arXiv:2609.27467]（Catalano 等，2026-09-23）：针对自主移动机器人在复杂人群环境中进行长周期巡检导航的需求，提出首个基于 4D 预测场景图的时空动力学基础模型 Kairos（官方开源代码已由 GitHub API 严格验证通过）。Kairos 将分层 3D 几何体素扩展为包含未来存在概率与方向分布预测谱张量的 4D 时空流记忆，不仅在数月跨度的复杂物理环境中输出严格校准的高斯置信区间，更为移动机器人在动态时空环境中的因果交互路径规划提供了全局预测基底；
-- **SPAR: 穿戴式动力学时序基础模型动作分析与三层可归因反馈推理** [arXiv:2609.30753]（Khan 等，Vanderbilt University，2026-09-25）：针对运动训练与康复医学中仅有动作分类而缺乏机制级动作质量反馈的痛点，构建了基于 8-IMU 穿戴传感与压力鞋垫的时序分析系统 SPAR。SPAR 采用冻结的时序基础模型对关节角速度与足底压力波形实施动力学编码，并构建由分析师关节级归因、教练动力链因果反事实推演以及运动员自然语言叙事构成的三层可归因推理反馈，实现了从数值波形到物理动作机理的透明溯源。
+- **SPAR: 穿戴式动力学时序基础模型动作分析与三层可归因反馈推理** [arXiv:2609.30753]（Khan 等，Vanderbilt University，2026-09-25）：针对运动训练与康复医学中仅有动作分类而缺乏机制级动作质量反馈的痛点，构建了基于 8-IMU 穿戴传感与压力鞋垫的时序分析系统 SPAR。SPAR 采用冻结的时序基础模型对关节角速度与足底压力波形实施动力学编码，并构建由分析师关节级归因、教练动力链因果反事实推演以及运动员自然语言叙事构成的三层可归因推理反馈，实现了从数值波形到物理动作机理的透明溯源；
+- **机械多模态时序自监督跨模态重构鲁棒故障诊断** [arXiv:2609.16314]（Jensen, Fink 等，洛桑联邦理工学院 EPFL / 奥尔堡大学，2026-09）：针对现代工业机电系统（如风力发电机齿轮箱、航空燃气轮机）中振动加速度、瞬态扭矩、工作温度等多模态异构传感器普遍遭受的非高斯环境噪声干扰与局部通道突发失效问题，提出基于跨模态掩码自编码重构的自监督时序表征架构，通过跨模态信息冗余互补学习鲁棒的不变动力学表征，在零样本与强噪声故障诊断中建立高抗噪基准。
 
 ---
 ## 7 基准与评测
@@ -1707,6 +1869,10 @@ Chattopadhyay 等（2026-09-16）基于英国与瑞士真实电网海量监测�
 
 THUML 龙明盛团队推出首个系统评估通用多模态大模型能否真正理解时空物理场 (Physical Fields) 的综合基准 PhysFieldBench。基准横跨二维流体力学流动、麦克斯韦电磁场演化与传热动力学方程，深入审计了当前主流大模型在空间连续介质动力学因果推理与偏微分方程时空外推上的能力边界。
 
+#### 7.5.12 中期多分辨率电网负荷基准与基础模型预测 (Medium-Term Multi-Resolution Load [arXiv:2609.31806])
+
+法国电力 (EDF) 与法国国家科学研究中心 (CNRS) 的 Lindas Eloi, Yannig Goude 与 Philippe Ciais（2026-09-25）在真实电力系统上构建了中期多分辨率电网负荷预测基准。针对未来数周至数月中期调度中宏观经济日历与高频天气协变量跨分辨率融合的难题，该工作系统评估了时序基础模型（如 TimesFM、Chronos）结合宏观经济特征在中期负荷演化中的零样本与少样本泛化性能，证实了多分辨率表征融合在中期能源保供与电网风险控制中的关键应用价值。
+
 ---
 
 ### 7.6 不确定性量化、图共形推断与多步发散稳定性控制
@@ -1764,6 +1930,14 @@ Sridhar 等构建的事件签名迁移 (Event Signature Transfer, EST) 创新性
 
 Choi 等提出的免训练多变量交织算法证明：仅需利用各通道边缘分布采样的秩次分位数，根据历史时空协方差矩阵执行最优传输重排 (Optimal Transport Rearrangement)，即可在零参数训练下构建符合真实空间拓扑的多变量联合样本路径，完美解决了现有单变量模型无法输出高保真联合风险情景的难题；
 - **多变量预测不确定性的分层熵-Shapley博弈归因** [arXiv:2609.35217]（Koenen 等，Norwegian Computing Center，2026-09-28）：针对现代概率时序基础模型输出的高维多步联合后验分布与复杂协方差结构，建立公理化分层合作熵-Shapley博弈框架 (Entropy-Shapley Games)。通过将微分熵增量与互信息作为特征值函数，系统解耦并量化各个历史输入变量与时间延迟步对多步预测不确定性的边缘贡献，为高风险决策场景下的预测置信度审计提供了数学严密的溯源工具。
+
+#### 7.6.6 模型无关在线证书驱动校准理论 (Online Certificate-Driven Calibration [arXiv:2609.31960])
+
+密歇根大学黄晨峰、马子轩与 George Michailidis 构建了面向分布漂移时序的在线证书驱动校准机制 (CDC)。针对非平稳工业与金融动态流中样本可交换性破缺的核心痛点，通过在滑动窗口上建立极小极大经验校准偏差证书，配合对偶随机逼近递推算法在线动态自适应调制预测区间，在非平稳环境总变差漂移下给出了严格的非渐近有限样本时均覆盖率保证，打破了传统保形推断对数据平稳性与样本可交换性的严苛依赖。
+
+#### 7.6.7 地球系统时空基础模型决策导向不确定性量化 (Decision-Oriented UQ for Risk Control [arXiv:2609.14821])
+
+西南大学与四川大学陆吉等学者系统构建了面向高风险地球系统灾害控制的决策导向不确定性量化理论。该工作深入揭示了传统对称概率拟合指标 (MSE, CRPS) 与现实防汛调度、极端暴雨灾害非对称超线性业务损失之间的脱节，通过将预测不确定性分布与下游最优控制决策后悔值显式耦合，并构建可微风险代理泛函端到端优化时空基础模型，证明了直接优化决策后悔界相比传统两阶段预测在极端风险控制中的显著经济与安全优势。
 
 ---
 
@@ -1921,7 +2095,8 @@ BITS 通过统一标准数据预处理管线、多维度综合评估体系（包
    - **AutoGluon-TimeSeries**：将 Chronos 系列深度集成到 AWS 工业级自动化机器学习流水线中，成为当前全球云计算企业中应用最广泛的时序大模型服务之一；
    - **工业电网负荷权威实证与物理约束 RAG**：GE Research [arXiv:2609.06656] 严谨证实了 Chronos-2 在协变量辅助下的工业级高胜率表现，PARA-PV [arXiv:2607.08079] 证实基于 Chronos 骨干构建的物理引导检索增强在光伏功率外推中能够 100% 杜绝夜间负值幻觉，E-Nose 气敏审计 [arXiv:2606.27672] 亦验证了 Chronos-2 隐表征在化学传感多任务中的强悍泛化；
    - **开源衍生生态与工业异常检测突破**：基于 Chronos 离散概率建模框架，Khan 等构建了专用工业级时序异常检测套件 **ChronosAD** [arXiv:2606.01300]，直接利用 Chronos 4096 离散分箱多项后验概率的负对数似然 (NLL) 与非对称分位数残差作为异常得分，在零样本无微调条件下大幅刷新工业基准；此外在零售与供应链尖峰需求预测中，事件签名迁移 EST [arXiv:2609.23074] 亦验证了向此类基础模型非侵入式注入跨品类事件签名流形的有效性；
-   - **电网多层级峰值负荷零样本评测 (Peak-Aware STLF)** [arXiv:2609.18588]（Chattopadhyay 等，2026-09-16）：在英国与瑞士真实电网大区 (AC)、二级变电站 (SUB) 与低压配电网 (LV) 三大层级上系统评估了 Chronos-2 与 Chronos-Bolt 的峰值负荷预测能力。结果表明 Chronos-2 在极端用电高峰期相较强机器学习基准压降了 20%~51% 的高清负荷误差 (HD-NMAE)，有力验证了离散分箱概率自回归模型在高风险电网运行中的实证有效性。
+   - **电网多层级峰值负荷零样本评测 (Peak-Aware STLF)** [arXiv:2609.18588]（Chattopadhyay 等，2026-09-16）：在英国与瑞士真实电网大区 (AC)、二级变电站 (SUB) 与低压配电网 (LV) 三大层级上系统评估了 Chronos-2 与 Chronos-Bolt 的峰值负荷预测能力。结果表明 Chronos-2 在极端用电高峰期相较强机器学习基准压降了 20%~51% 的高清负荷误差 (HD-NMAE)，有力验证了离散分箱概率自回归模型在高风险电网运行中的实证有效性；
+   - **稀疏自编码器层次化特征电路与可解释因果解耦 (Dissecting Chronos via SAE)** [arXiv:2603.10071]（Anurag Mishra，2026-03）：首次将稀疏自编码器 (Sparse Autoencoders, SAE) 应用于 Chronos 基础模型的机理可解释性剖析中。研究训练了扩展倍数达 8x~32x 的 Top-$k$ SAE，成功将 Chronos 隐藏层高维稠密多义激活解耦为单义因果特征电路（如纯净正弦周期探测元、突发尖峰检测元、异方差波动检测元）。因果介入消融实验表明，定向激活或抑制特定 SAE 特征能精准控制基础模型的趋势和周期外推行为，为时间序列基础模型的底层透明审计与可信控制提供了全新物理微观工具。
 
 ---
 
@@ -2180,7 +2355,9 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **ShapeX 形态因果归因** [arXiv:2510.20084]（金明 & 温青山团队）：基于潜在形态基元 (Latent Shapelet) 的 Shapley 值公理化推导，将时序基础模型的黑盒注意力机制解构为多变量间的物理形态学因果贡献，使裁判可追溯到具体的频率冲突、趋势反转或突变拐点模式；
 - **Aionoscope 潜状态可访问性探测** [arXiv:2607.00956]（金明团队，KDD MILETS 2026）：建立了基础模型潜空间中不同物理动力学模式的可访问性调试框架，能够系统定位模型对哪些物理现象存在"认知盲区"；
 - **T-SMART 机制归因工具增强 QA** [arXiv:2609.14142]（ICTAI 2026）：通过细粒度工具调用动力学因果图，将模型决策链条的透明审计延伸至工具链级别，提供从数据预处理到推断输出的完整可溯源性；
-- **Dynamical Parameters TSFM 可解释性框架** [arXiv:2609.34316]（Yang, Dong, Han 等, 2026-09-28）：填补 TSFM 可解释性研究的关键盲区——**动力学属性可访问性危机 (Dynamical Property Accessibility)**。该框架形式化定义了"动力学参数"（包括趋势斜率、振荡频率、自回归依赖结构），并系统研究了一种反直觉现象：即使预测输出对某动力学属性变化无响应，该属性的信息仍可能被完整编码于模型隐层状态中。这一发现深刻揭示了 TSFM"内部知情但表面失语"的系统性缺陷，为可信时序预测的机制级诊断提供了精准探针工具。
+- **Dynamical Parameters TSFM 可解释性框架** [arXiv:2609.34316]（Yang, Dong, Han 等, 2026-09-28）：填补 TSFM 可解释性研究的关键盲区——**动力学属性可访问性危机 (Dynamical Property Accessibility)**。该框架形式化定义了"动力学参数"（包括趋势斜率、振荡频率、自回归依赖结构），并系统研究了一种反直觉现象：即使预测输出对某动力学属性变化无响应，该属性的信息仍可能被完整编码于模型隐层状态中。这一发现深刻揭示了 TSFM"内部知情但表面失语"的系统性缺陷，为可信时序预测的机制级诊断提供了精准探针工具；
+- **稀疏自编码器层次化特征电路与可解释因果解耦 (Sparse Autoencoders for TSFMs)** [arXiv:2603.10071]（Anurag Mishra）：针对传统后处理归因无法打开前向网络内部机理黑盒的困境，SAE 通过将高维隐藏层表征投影至过完备单义稀疏特征字典，首次在 Chronos 基础模型内部完整揭示了因果特征电路层级——从底层局部形态基元（尖峰脉冲、斜率突变、特定周期相移）到顶层全局动态体制的组合演变，并证实了对 SAE 隐特征的直接因果钳制能够精准纠偏预测轨迹；
+- **多模态时序文本塌缩揭示与表征忠实度恢复 (Text Collapse & Semantic Fidelity, REST-TS)** [arXiv:2606.19413]（Huu Hiep Nguyen 等）：针对多模态时序大模型中“文本究竟是否起作用”的黑盒信任危机，实证与理论揭示了跨模态注意力中的“文本塌缩 (Text Collapse)”病态退化——由于时序数值特征方差与文本嵌入分布在量级上的失配，模型在多头注意力计算中倾向于将文本 Token 权重压缩至接近高斯均匀噪声，造成“名义多模态、实际单模态”的虚假多模态假象；通过语义残差稳定化与互信息对齐约束，从机制上恢复了跨模态表征的忠实度与可审计性。
 
 #### 9.8.2 高风险物理决策中的决策对齐与人机协同治理
 
@@ -2190,7 +2367,9 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 
 2. **可验证奖励后训练 (Verifiable Reward Post-Training, RLVR)**：CTRL [arXiv:2609.23257] 等研究探索了将控制论约束作为可验证奖励信号，对 LLM 时序智能体实施强化学习后对齐，使智能体在预测干预决策中能够自动规避违背物理约束的行动；
 
-3. **人机协同双层治理架构**：工业高风险场景中，纯自主智能体不可替代专业工程师的认知主权。Human-in-the-Loop Agent [arXiv:2608.30976] 构建了人机协同双层治理框架，在置信度阈值以下的模糊决策场景中自动触发人类专家确认环节，在数学上等价于将决策权柄在自主智能体与人类监督者之间基于贝叶斯置信度边界动态分配。
+3. **人机协同双层治理架构**：工业高风险场景中，纯自主智能体不可替代专业工程师的认知主权。Human-in-the-Loop Agent [arXiv:2608.30976] 构建了人机协同双层治理架构，在置信度阈值以下的模糊决策场景中自动触发人类专家确认环节，在数学上等价于将决策权柄在自主智能体与人类监督者之间基于贝叶斯置信度边界动态分配；
+
+4. **决策导向不确定性量化与非对称风险后悔值控制 (Decision-Oriented UQ & Risk Control)**：陆吉等学者 [arXiv:2609.14821] 指出传统 UQ 对对称覆盖率的盲目追求无法保障实际生产决策的风险安全边界。在高风险地球系统防灾调度中，决策代价具有极强的非对称凹凸性。通过将预测不确定性分布与下游真实决策损失函数显式端到端耦合，直接极小化最差情况决策后悔值，实现了从“拟合真实概率分布”到“产出最安全工业控制策略”的根本决策对齐演进。
 
 ---
 
@@ -2287,6 +2466,7 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2603.04791]** Timer-S1: A Billion-Scale Time Series Foundation Model with Serial Scaling — Yong Liu, Xingjian Su, Shiyu Wang et al. (2026). [https://arxiv.org/abs/2603.04791](https://arxiv.org/abs/2603.04791) [[Code](https://github.com/thuml/Large-Time-Series-Model)]
 - **[arXiv:2603.05997]** MM-ISTS: Cooperating Irregularly Sampled Time Series Forecasting with Multimodal Vision-Text LLMs — Zhi Lei, Chenxi Liu, Hao Miao et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2603.05997](https://arxiv.org/abs/2603.05997)
 - **[arXiv:2603.06726]** Regression Models Meet Foundation Models: A Hybrid-AI Approach to Practical Electricity Price Forecasting — Yunzhong Qiu, Binzhu Li, Hao Wei et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2603.06726](https://arxiv.org/abs/2603.06726)
+- **[arXiv:2603.10071]** Dissecting Chronos: Sparse Autoencoders Reveal Causal Feature Hierarchies in Time Series Foundation Models — Anurag Mishra (2026) (arXiv preprint). [https://arxiv.org/abs/2603.10071](https://arxiv.org/abs/2603.10071)
 - **[arXiv:2604.04145]** Solar-VLM: Multimodal Vision-Language Models for Augmented Solar Power Forecasting — Hang Fan, Haoran Pei, Runze Liang et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2604.04145](https://arxiv.org/abs/2604.04145) [[Code](https://github.com/rhp413/Solar-VLM)]
 - **[arXiv:2604.06727]** Bi-level Heterogeneous Learning for Time Series Foundation Models: A Federated Learning Approach — Shengchao Chen, Guodong Long, Dikai Liu et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2604.06727](https://arxiv.org/abs/2604.06727)
 - **[arXiv:2604.10544]** WaveMoE: A Wavelet-Enhanced Mixture-of-Experts Foundation Model for Time Series Forecasting — Shunyu Wu, Jiawei Huang, Weibin Feng et al. (2026) (ICLR 2026 TSALM Workshop). [https://arxiv.org/abs/2604.10544](https://arxiv.org/abs/2604.10544)
@@ -2321,6 +2501,7 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2606.16545]** Can LLM Coding Agents Reason About Time Series? — Filip Rechtorík, Ondřej Dušek, Zdeněk Kasner (2026) (arXiv). [https://arxiv.org/abs/2606.16545](https://arxiv.org/abs/2606.16545)
 - **[arXiv:2606.18367]** Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting — Yingshuo Wang, Xian Sun, Lingdong Kong et al. (2026) (arXiv). [https://arxiv.org/abs/2606.18367](https://arxiv.org/abs/2606.18367)
 - **[arXiv:2606.19363]** When to Trust, How to Distill: Multi-Foundation Model Guidance for Lightweight, Robust Scientific Time Series Forecasting — Rupasree Dey, Abdul Matin, Nathan Orwick et al. (2026) (KDD 2026). [https://arxiv.org/abs/2606.19363](https://arxiv.org/abs/2606.19363) [[Code](https://github.com/RupasreeDey/GUARD-KDD2026)]
+- **[arXiv:2606.19413]** Does Text Actually Help? Uncovering and Resolving Text Collapse in Multimodal Time Series Forecasting — Huu Hiep Nguyen, Minh Hoang Nguyen, Dung Nguyen et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2606.19413](https://arxiv.org/abs/2606.19413)
 - **[arXiv:2606.19821]** TelcoAgent: A Scalable 5G Multi-KPM Forecasting With 3GPP-Grounded Explainability — Geon Kim, Dara Ron, Sukhdeep Singh et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2606.19821](https://arxiv.org/abs/2606.19821)
 - **[arXiv:2606.22171]** Beyond Time Series: Spatial Reasoning for Epidemic Forecasting via Multimodal Learning — Diana Guadalupe Gomez, Chenwei Wu, Zhiyi Wang (2026). [https://arxiv.org/abs/2606.22171](https://arxiv.org/abs/2606.22171)
 - **[arXiv:2606.24950]** MacroLens: A Multi-Task Benchmark for Contextual Financial Reasoning under Macroeconomic Scenarios — Patara Trirat, Jin Myung Kwak, Younggyu Oh et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2606.24950](https://arxiv.org/abs/2606.24950)
@@ -2341,6 +2522,7 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2607.06973]** Rethinking Multimodal Time-Series Forecasting Evaluation — Haoxin Liu, Yichen Zhou, Rajat Sen et al. (2026). [https://arxiv.org/abs/2607.06973](https://arxiv.org/abs/2607.06973)
 - **[arXiv:2607.07951]** Evaluating the Generalizability of Foundation Models for Extreme Environmental Events: Case Study of California Wildfire PM2.5 — Yongcan Huang, Li Jiang, Ze Yu Liu (2026) (arXiv preprint). [https://arxiv.org/abs/2607.07951](https://arxiv.org/abs/2607.07951)
 - **[arXiv:2607.08079]** PARA-PV: Physics-Aware Retrieval-Augmented PV Prediction Based on Frozen Foundation Model and Distribution Shift Correction — Hang Fan, Weican Liu, Ying Lu et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2607.08079](https://arxiv.org/abs/2607.08079) [[Code](https://github.com/weican1103/PARA-PV)]
+- **[arXiv:2607.08940]** TSRouter: Dynamic Modality-Model Selection for Time Series Reasoning — Fangxu Yu, Tao Feng, Dehai Min et al. (2026) (COLM 2026). [https://arxiv.org/abs/2607.08940](https://arxiv.org/abs/2607.08940) [[Code](https://github.com/tianyi-lab/TSRouter)]
 - **[arXiv:2607.09880]** CLIR-Bench: Benchmarking Multimodal Question Answering over Irregular Clinical Time Series — Frank Nie, Ethan B. Liu, Yuan Zhu et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2607.09880](https://arxiv.org/abs/2607.09880)
 - **[arXiv:2607.11459]** A Multimodal Dataset for Large Language Model Applications in the Energy Domain — Costas Mylonas, Magda Foti (2026). [https://arxiv.org/abs/2607.11459](https://arxiv.org/abs/2607.11459)
 - **[arXiv:2607.11653]** Bet on Features: Anytime-Valid and Feature-Aware Auditing of Conditional Quantile Forecasters — Ivane Antonov, Sohom Mukherjee, Richard Pibernik et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2607.11653](https://arxiv.org/abs/2607.11653)
@@ -2365,8 +2547,10 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2608.05571]** Align-RAG: Alignment Is All You Need for TSFM In-Context Learning — Mohammad Asadi, Soheil Hor, Bardiya Akhbari et al. (2026). [https://arxiv.org/abs/2608.05571](https://arxiv.org/abs/2608.05571) [[Code](https://github.com/masadi-99/align-rag)]
 - **[arXiv:2608.08010]** Ground-Truth Neighborhood Regularization for Reinforcement Learning Post-Training of Time Series Foundation Models — Jianqi Zhang, Xingyu Zhang, Zeen Song et al. (2026). [https://arxiv.org/abs/2608.08010](https://arxiv.org/abs/2608.08010)
 - **[arXiv:2608.08859]** Agentic Anomaly Detection with ORCA-Style Dynamic Inductive Bias Adaptation in Multimodal Wearable Time Series Data — Anushka Roy, Jyotirmoy Singh, Shreea Bose et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2608.08859](https://arxiv.org/abs/2608.08859)
+- **[arXiv:2608.10149]** REATS: LLM Reasoning-based Ensemble Learning for Adaptive Time Series Forecasting — Xu Zhang, Chang Xu, Hui Sun et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2608.10149](https://arxiv.org/abs/2608.10149)
 - **[arXiv:2608.11359]** Market-Information-Aware Gated-LoRA of Foundation Models for Transferable Day-Ahead Electricity Price Forecasting — Hang Fan, Wei Wei, Shengwei Mei (2026) (arXiv preprint). [https://arxiv.org/abs/2608.11359](https://arxiv.org/abs/2608.11359)
 - **[arXiv:2608.11623]** FM-LLM: A frequency-enhanced mixture-of-experts framework for adapting LLMs to time series forecasting — Rentao Gu, Yihang Ding, Yuehua Wang et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2608.11623](https://arxiv.org/abs/2608.11623)
+- **[arXiv:2608.12592]** Represent, Then Generate: Multimodal-Conditioned Time-Series Generation under Irregular Missingness — Haochen Zhang, Jiaheng Guo, Yu-Chao Huang et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2608.12592](https://arxiv.org/abs/2608.12592)
 - **[arXiv:2608.13262]** Into the ORBIT for Time Series: Training Regimes for Foundation Models — Hongjie Xia, Yiding Liu, Yifan Hu et al. (2026) (arXiv). [https://arxiv.org/abs/2608.13262](https://arxiv.org/abs/2608.13262)
 - **[arXiv:2608.13741]** GALA: Generation-Aware Cross-Modal Alignment for Text-to-Time-Series Synthesis — Haochen Zhang, Gengwei Zhang, Laura Yao et al. (2026). [https://arxiv.org/abs/2608.13741](https://arxiv.org/abs/2608.13741)
 - **[arXiv:2608.14054]** Model-agnostic Retrieval-Augmented Extended Forecasting for time series — Juan Pablo Villa Serna, Rohan Asthana, Vasileios Belagiannis (2026) (arXiv). [https://arxiv.org/abs/2608.14054](https://arxiv.org/abs/2608.14054)
@@ -2422,8 +2606,10 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2609.13640]** FlowTSFM: Turning Encoder Depth into Quantile Transport — Bahaeddine Abdessalem, Shifeng Xie, Zehao Xiao et al. (2026). [https://arxiv.org/abs/2609.13640](https://arxiv.org/abs/2609.13640)
 - **[arXiv:2609.13956]** Tabby: An Open Pretraining Recipe for Time Series Foundation Models — Shifeng Xie, Bahaeddine Abdessalem, Zehao Xiao et al. (2026). [https://arxiv.org/abs/2609.13956](https://arxiv.org/abs/2609.13956)
 - **[arXiv:2609.14142]** T-SMART: Mechanism-Level Attribution for Tool-Augmented Time-Series Question Answering — Ivan Delgado, Himansi Gupta, Bishal Khatri et al. (2026) (ICTAI 2026). [https://arxiv.org/abs/2609.14142](https://arxiv.org/abs/2609.14142)
+- **[arXiv:2609.14821]** Decision-Oriented Uncertainty Quantification for Risk Control in Earth System Spatiotemporal Foundation Models — Ji Lu, Huiran Duan, Bo Zhao et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.14821](https://arxiv.org/abs/2609.14821)
 - **[arXiv:2609.15087]** Beyond Numerical Time Series: A Unified Benchmark for Multimodal Forecasting with Heterogeneous Context — Peng Chen, Zhihao Zhuang, Hongzhou Chen et al. (2026). [https://arxiv.org/abs/2609.15087](https://arxiv.org/abs/2609.15087)
 - **[arXiv:2609.15393]** CodeTS: Verifiable Text-to-Time Series Generation via Executable Code — Xudong Yuan, Shunyu Liu, Xinyi Wang et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.15393](https://arxiv.org/abs/2609.15393)
+- **[arXiv:2609.16314]** Robust Fault Detection in Mechanical Multimodal Time Series via Self-Supervised Cross-Modal Reconstruction — Magnus Munk Jensen, Dorte Hammershøj, Rafał Wiśniewski et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.16314](https://arxiv.org/abs/2609.16314)
 - **[arXiv:2609.16415]** How Good Are Time-Series Foundation Models for Pedestrian Crowd Count Forecasting? A Cross-Dataset Comparative Study — Theivaprakasham Hari, Ziteng Li, Yanan Xin et al. (2026) (ITSC 2026). [https://arxiv.org/abs/2609.16415](https://arxiv.org/abs/2609.16415)
 - **[arXiv:2609.16804]** SOTER: A Generative Time-Series Foundation Model for Wearable Human Physiological Signals — Fangke Chen, Sirry Chen, Wei Chen et al. (2026). [https://arxiv.org/abs/2609.16804](https://arxiv.org/abs/2609.16804)
 - **[arXiv:2609.17895]** TabPFN-3.5: Technical Report — Benjamin Jäger, Nick Erickson, Léo Grinsztajn et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.17895](https://arxiv.org/abs/2609.17895)
@@ -2452,6 +2638,8 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2609.26389]** TimeInteract: Towards Real-Time Interactive Intelligence for Streaming Time Series — Sheng Pan, Yongli Gu, Yiqing Guo et al. (2026). [https://arxiv.org/abs/2609.26389](https://arxiv.org/abs/2609.26389)
 - **[arXiv:2609.26696]** Reading the Sky to Forecast the Ground: Physics-Informed Link-State Forecasting for LEO Networks at Any Location — Yunxiang Chi, Zhenlin An, Longfei Shangguan et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.26696](https://arxiv.org/abs/2609.26696)
 - **[arXiv:2609.26809]** AgroBench: A Reproducible Multimodal Benchmark for Weakly Supervised Crop Yield Learning from County Statistics and Pixel Observations — Udaiveer Singh, Rajiv Ranjan, Shashank Tamaskar et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.26809](https://arxiv.org/abs/2609.26809)
+- **[arXiv:2609.26820]** Signal2Symbol: Neuro-Symbolic Temporal Reasoning for Explainable Physiological Time-Series Anomaly Detection — Naser Mansour, Sidahmed Benabderrahmane, Ameer Rahwan (2026) (arXiv preprint). [https://arxiv.org/abs/2609.26820](https://arxiv.org/abs/2609.26820)
+- **[arXiv:2609.27277]** TimeEvo: Failure-Driven Self-Evolution of a Time Series Agent — Jie Yang, Yan Zheng, Jiarui Sun et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.27277](https://arxiv.org/abs/2609.27277) [[Code](https://github.com/Muyiiiii/TimeEvo)]
 - **[arXiv:2609.27385]** Forecast Workflow Bench: Evaluating Language-Model Decisions with Budgeted Forecast Tools — Shunya Nagashima (2026). [https://arxiv.org/abs/2609.27385](https://arxiv.org/abs/2609.27385)
 - **[arXiv:2609.27467]** Kairos: Grounded Forecasting of Presence and Directional Flow in 4D Scene Graphs — Iacopo Catalano, Julio A. Placed, Javier Civera et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.27467](https://arxiv.org/abs/2609.27467) [[Code](https://github.com/IacopomC/kairos)]
 - **[arXiv:2609.27867]** Evaluation Choices Decide the Forecasting Leaderboard: Evidence from a Production Marketplace Panel — Md Rezwanul Islam, Wael Mohammed (2026) (arXiv preprint). [https://arxiv.org/abs/2609.27867](https://arxiv.org/abs/2609.27867)
@@ -2465,10 +2653,15 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2609.30753]** Skill Profiling with Attributable Reasoning (SPAR): A Wearable Analysis System for Boxing — Nibraas Khan, Hanchen David Wang, Enya Bullard et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.30753](https://arxiv.org/abs/2609.30753)
 - **[arXiv:2609.30880]** EXAONE Demand 1.0: A Time Series Foundation Model for Demand Forecasting — Seunghan Lee, Sangjun Han, Jun Seo et al. (2026). [https://arxiv.org/abs/2609.30880](https://arxiv.org/abs/2609.30880)
 - **[arXiv:2609.31038]** Aurora-X: Built for Extreme Time Series Forecasting — Xingjian Wu, Chenjuan Guo, Xiangfei Qiu et al. (2026). [https://arxiv.org/abs/2609.31038](https://arxiv.org/abs/2609.31038)
+- **[arXiv:2609.31162]** WorldTS: World Modeling for Multimodal Covariate-aware Time Series Forecasting — Yuhan Zhu, Xiangfei Qiu, Hanyin Cheng et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.31162](https://arxiv.org/abs/2609.31162)
 - **[arXiv:2609.31206]** Self-Supervised Representation Learning: From Spectral Foundation Models to Auroral Emission Spectra — Matthieu Le Lain, Gaël Cessateur, Sébastien Lefèvre (2026) (arXiv preprint). [https://arxiv.org/abs/2609.31206](https://arxiv.org/abs/2609.31206)
 - **[arXiv:2609.31448]** ViSTA: A Simple Bridge Extends Visual Alignment to Clinical Time-Series Understanding in Multimodal LLMs — Junyi Gao, Yu Shi, Pingzhao Hu et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.31448](https://arxiv.org/abs/2609.31448)
+- **[arXiv:2609.31806]** Medium-Term Multi-Resolution Electric Load Forecasting using Economic Data and Foundation Model — Lindas Eloi, Goude Yannig, Ciais Philippe (2026) (arXiv preprint). [https://arxiv.org/abs/2609.31806](https://arxiv.org/abs/2609.31806)
+- **[arXiv:2609.31960]** Model-Agnostic Online Certificate-Driven Calibration for Time Series Forecasting Under Distribution Shift — Chenfeng Huang, Zixuan Ma, George Michailidis (2026) (arXiv preprint). [https://arxiv.org/abs/2609.31960](https://arxiv.org/abs/2609.31960)
 - **[arXiv:2609.32123]** READ-Bench: Benchmarking Historical Instance Retrieval for Time-Series Diagnosis — Gerardo Pastrana, Haojun Li, Dhruv Mehta et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.32123](https://arxiv.org/abs/2609.32123)
 - **[arXiv:2609.32209]** Fracast-0: Fractal Weight Sharing for a Time Series Foundation Model with Only 8M Parameters — Tianxiang Zhan, Huanyao Zhang, Yuanpeng He (2026). [https://arxiv.org/abs/2609.32209](https://arxiv.org/abs/2609.32209)
+- **[arXiv:2609.32321]** Stabilizing Autoregressive PDE Foundation Model Rollouts with Event-Triggered Context Healing — Jaewan Park, Jay Phil Yoo, Kazuma Kobayashi et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.32321](https://arxiv.org/abs/2609.32321)
+- **[arXiv:2609.32363]** DiffPTS: Rethinking Diffusion ELBO for Probabilistic Time Series Forecasting — Weiwei Ye, Dongyuan Li, Hangchen Liu et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.32363](https://arxiv.org/abs/2609.32363) [[Code](https://github.com/wwy155/DiffPTS)]
 - **[arXiv:2609.32676]** SIFT: Enhancing Time Series Foundation Models via Semantic Invariance and Structural Fidelity Fine-Tuning — Yi Tang, Tengxue Zhang, Yang Shu et al. (2026). [https://arxiv.org/abs/2609.32676](https://arxiv.org/abs/2609.32676)
 - **[arXiv:2609.32689]** Self-Evolving Time-Series Forecasting Agents with Episodic Memory and Online Policy Learning — Junyi Wang, Yilin Wang, Wen Wu et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.32689](https://arxiv.org/abs/2609.32689)
 - **[arXiv:2609.33303]** BITS: Rethinking Fair and Comprehensive Evaluation for Irregular Time Series Forecasting — Kangjia Yan, Linfeng Wang, Tianen Shen et al. (2026). [https://arxiv.org/abs/2609.33303](https://arxiv.org/abs/2609.33303)
@@ -2483,12 +2676,32 @@ $$\mathbf{a}_i = \phi_i(\hat{f}, \mathbf{x}), \quad i = 1, \ldots, T$$
 - **[arXiv:2609.37038]** NowcastDiT: Diffusion Transformers are Effective Precipitation Nowcasters — Haoran Xu, Xingzhuo Guo, Yuchen Zhang et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.37038](https://arxiv.org/abs/2609.37038)
 - **[arXiv:2609.37255]** Loss-Guided Pretraining Data Selection for Time-Series Foundation Models — Yike Li, Shaoxu Song, Jianmin Wang (2026) (arXiv preprint). [https://arxiv.org/abs/2609.37255](https://arxiv.org/abs/2609.37255)
 - **[arXiv:2609.37279]** Transolver-σ: Joint Spectral-Physical Subspace Modeling for Neural PDE Solving — Haonan Shangguan, Hang Zhou, Haixu Wu et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.37279](https://arxiv.org/abs/2609.37279)
+- **[arXiv:2609.37694]** GARDiff: Graph-Aligned Residual Diffusion for Probabilistic Multivariate Time-Series Forecasting — Rui Han, Min Yang, Xu Zhang et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.37694](https://arxiv.org/abs/2609.37694)
 - **[arXiv:2609.37715]** Volatility-Clustering Adaptation for Financial Time Series — Manh Nguyen, Minh Hoang Nguyen, Huu Hiep Nguyen et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.37715](https://arxiv.org/abs/2609.37715)
 - **[arXiv:2609.38058]** Latent Inference-Time Guidance of Time Series Foundation Models — Chloé Hashimoto-Cullen, Amaury Durand, Laurent Bozzi et al. (2026) (arXiv preprint). [https://arxiv.org/abs/2609.38058](https://arxiv.org/abs/2609.38058)
 
 ---
 
 ## 版本变更日志 (Changelog)
+- **2026-09-30 (第 16 轮迭代：底层理论与数学形式化重大深化、扩散变分下界解耦与事件触发修复推导、15 篇新前沿收录与图表质检 / Iteration 16)**:
+  - 严格通过 arXiv HTTPS API 核验收录 15 篇最新前沿与重点团队论文，总文献库扩展至 **302 篇**；代码链接全部经由 GitHub API 官方核验（如 DiffPTS [arXiv:2609.32363]、TimeEvo [arXiv:2609.27277]、TSRouter [arXiv:2607.08940] 等，未开源则严格置 null）；
+  - **核心深化：全面重构并深度强化第 2 章（问题定义与底层数学理论体系）**：
+    - 2.9 时序生成扩散模型与变分证据下界解耦理论 (Diffusion ELBO Decoupling & Graph-Aligned Residual Diffusion)：严格推导时序高自相关性对传统各向同性扩散 ELBO 造成的病态主导偏差（粗粒度低频平滑占据绝大部分梯度，导致局部高阶突变拐点严重欠拟合），形式化推导东京大学提出的重加权解耦变分证据下界 (Decoupled ELBO: DiffPTS [arXiv:2609.32363]) 与动态图拉普拉斯平滑正则化得分残差扩散机制 (GARDiff [arXiv:2609.37694])；
+    - 2.10 自回归外推误差累积动力学与事件触发上下文修复 (Autoregressive Rollout Error Accumulation & Event-Triggered Context Healing, ETCH [arXiv:2609.32321])：严格形式化推导长程自回归滚动中离散状态误差传递动力学方程，揭示雅可比谱半径 $\rho(\mathbf{J}_f) > 1$ 时误差呈现指数级爆炸发散 $\mathcal{O}(e^{H \ln \rho})$ 的根本相变机理；推导基于李雅普诺夫物理能量泛函违背触发的非局部隐式上下文修复算子，结合 Transolver-σ [arXiv:2609.37279] 与 Leaky-Integrator [arXiv:2609.23378] 实现神经偏微分与自回归外推全局数值稳定性；
+    - 2.11 分布偏移与在线时序证书化校准理论 (Model-Agnostic Online Certificate-Driven Calibration: CDC [arXiv:2609.31960])：针对非平稳工业与金融动态流中样本可交换性 (Exchangeability) 彻底破缺的难题，构建滑动窗口极小极大经验校准偏差证书，配合对偶随机逼近递推算法在线调制预测区间，在时变分布总变差漂移 $\Delta_T$ 条件下严格证明非渐近有限样本时均覆盖率保证；
+    - 2.12 下游决策风险映射与后悔值极小化理论 (Decision-Oriented Uncertainty Quantification: DO-UQ [arXiv:2609.14821])：深入解构传统对称统计保真度 (MSE, CRPS) 与现实高风险防灾调度非对称超线性业务代价的理论鸿沟，形式化有限样本时序决策后悔值与可微风险代理泛函，严格证明直接优化决策后悔界优于传统两阶段概率分位数回归；
+  - **全景融合 15 篇新增文献至各大章节**：
+    - 第 2 章：系统形式化 DiffPTS [arXiv:2609.32363]、GARDiff [arXiv:2609.37694]、ETCH [arXiv:2609.32321]、CDC [arXiv:2609.31960] 与 Decision-Oriented UQ [arXiv:2609.14821]；
+    - 第 4 章：扩充 4.9 连续动力学与预训练前沿，收录 DiffPTS、GARDiff、ETCH、Medium-Term Load [arXiv:2609.31806] 与 Chronos SAE [arXiv:2603.10071]；
+    - 第 5 章：扩充 5.6 强化后训练前沿，收录 REATS GRPO 推理集成 [arXiv:2608.10149]；
+    - 第 6 章：扩充 6.2 跨模态文本时序收录 WorldTS 多模态世界模型 [arXiv:2609.31162]、REST-TS 文本塌缩化解 [arXiv:2606.19413] 与 ReCoGen 不规则缺失生成 [arXiv:2608.12592]；扩充 6.4/6.5 自进化智能体与工业物理，收录 TSRouter 动态模态路由 [arXiv:2607.08940]、TimeEvo 失败驱动智能体 [arXiv:2609.27277]、Signal2Symbol 神经符号推理 [arXiv:2609.26820] 与机械多模态跨模态故障诊断 [arXiv:2609.16314]；
+    - 第 7 章：扩充 7.5/7.6 基准与不确定性量化，收录 Medium-Term Load 负荷基准 [arXiv:2609.31806]、CDC 在线证书校准 [arXiv:2609.31960] 与 Decision-Oriented UQ [arXiv:2609.14821]；
+    - 第 8 章：亚马逊 Chronos 生态深度收录 Chronos SAE 机制级可解释性与特征电路解耦 [arXiv:2603.10071]；
+    - 第 9 章：9.8 机制级可解释性与决策对齐全面融合 Chronos SAE 特征电路、REST-TS 文本语义忠实度恢复与 Decision-Oriented UQ 风险后悔值控制；
+  - **全套学术图表质检与质量门禁**：
+    - 重新运行生成全套 5 组 300 DPI 图表 (PNG & SVG)，包括新增 DiffPTS、GARDiff、ETCH、TimeEvo、TSRouter 等前沿里程碑，优化分类树状图与时间线垂直避让，经视觉审阅确认零重叠、无截断；
+    - 自动化质量门禁全部通过：302 篇论文唯一 ID 校验、5 组图表生成与校验、所有章节与 302 个 arXiv 引用 100% 存在且吻合、BibTeX 数据库与 README.md 自动同步更新。
+
 - **2026-09-30 (第 15 轮迭代：清华 THUML 物理智能与神经偏微分深化、重点团队全景矩阵扩充、15 篇新前沿收录与图表质检 / Iteration 15)**:
   - 严格通过 arXiv HTTPS API 核验收录 15 篇最新前沿与重点团队论文，总文献库扩展至 **287 篇**；代码链接全部经由 GitHub API 官方核验（如 Kairos [arXiv:2609.27467] 等，未开源则严格置 null）；
   - **核心深化：全面重构并深度强化第 8 章（重点课题组进展）与物理科学时空智能**：

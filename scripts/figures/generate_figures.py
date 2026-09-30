@@ -87,36 +87,35 @@ def plot_timeline(papers: list[dict]) -> None:
         ("CITRAS-FM", "2026-06-09", "Hitachi", -3.2, 12),
         ("MACROCAST", "2026-06-27", "Academia", 5.2, -10),
         ("TiRex-2", "2026-07-01", "NXAI", 6.3, 8),
-        ("LeNEPA", "2026-07-01", "Ming Jin", 1.5, -6),
+        ("LeNEPA", "2026-07-01", "Ming Jin", 1.5, -10),
         ("Zeus", "2026-07-02", "Academia", 3.6, 0),
         ("RMISC", "2026-07-07", "Academia", -1.6, -12),
+        ("TSRouter", "2026-07-09", "Academia", 2.4, 12),
         ("VLT", "2026-07-16", "Academia", -6.4, 10),
+        ("ClinPRISM", "2026-07-28", "Academia", -2.8, -12),
+        ("EvtGraph", "2026-08-05", "THUML", 5.4, -10),
         ("Align-RAG", "2026-08-06", "Harvard", 4.2, 16),
         ("ReasonCast", "2026-08-15", "Academia", -4.2, -8),
+        ("DGOTTA", "2026-08-28", "Ming Jin", -1.6, -14),
         ("TSPFN", "2026-08-31", "Academia", 1.6, -4),
-        ("OutageDiT", "2026-09-01", "Academia", -5.8, -2),
-        ("Cadence", "2026-09-05", "Academia", -2.0, -12),
+        ("OutageDiT", "2026-09-01", "Academia", -5.8, -10),
+        ("Cadence", "2026-09-05", "Academia", -2.2, -12),
         ("EXAONE Fin", "2026-09-07", "LG AI", 5.8, -6),
         ("IPM-FM", "2026-09-08", "Academia", -1.4, -8),
-        ("FlowTSFM", "2026-09-12", "Academia", 2.4, -10),
-        ("Tabby", "2026-09-12", "Academia", -3.6, -5),
+        ("FlowTSFM", "2026-09-12", "Academia", 1.6, -18),
+        ("Tabby", "2026-09-12", "Academia", -3.2, -16),
+        ("CodeTS", "2026-09-14", "ZJU", -4.6, -12),
+        ("TabPFN-3.5", "2026-09-15", "Prior Labs", -6.6, -6),
         ("TW3Cast", "2026-09-16", "Academia", 3.2, -12),
-        ("t_0", "2026-09-21", "Academia", -5.2, 14),
-        ("MUSE", "2026-09-21", "Academia", 4.4, 12),
+        ("MUSE", "2026-09-21", "Academia", 4.8, -8),
+        ("t_0", "2026-09-21", "Academia", -5.2, 10),
+        ("Gnomon", "2026-09-22", "Academia", 6.5, 8),
+        ("TimeEvo", "2026-09-23", "Academia", -6.2, 18),
         ("TimeBraid", "2026-09-24", "Academia", 1.4, 16),
-        ("SwitchPFN", "2026-09-24", "Academia", -2.0, 22),
-        ("GUARD", "2026-06-10", "Academia", -4.2, -16),
-        ("Darts FM", "2026-06-25", "Unit8", 2.0, 14),
-        ("FutureBoosting", "2026-03-06", "THUML", 4.4, -14),
-        ("TempusBench", "2026-04-13", "Academia", -2.2, 10),
-        ("Solar-VLM", "2026-04-05", "Academia", -1.2, 22),
-        ("ChronosAD", "2026-05-31", "Academia", -2.6, 8),
-        ("DGOTTA", "2026-08-28", "Ming Jin", -3.2, 16),
-        ("TabPFN-3.5", "2026-09-15", "Prior Labs", -6.4, 10),
-        ("Gnomon", "2026-09-22", "Academia", 6.4, 12),
-        ("CodeTS", "2026-09-14", "ZJU", -4.4, -18),
-        ("ClinPRISM", "2026-07-28", "Academia", -2.4, -12),
-        ("EvtGraph", "2026-08-05", "THUML", 5.4, -12)
+        ("SwitchPFN", "2026-09-24", "Academia", -1.8, -8),
+        ("ETCH", "2026-09-26", "Academia", 3.6, 16),
+        ("DiffPTS", "2026-09-26", "Academia", -3.4, 14),
+        ("GARDiff", "2026-09-29", "Academia", 5.2, 12)
     ]
 
     dates = [datetime.datetime.strptime(m[1], "%Y-%m-%d") for m in milestones]
@@ -318,28 +317,28 @@ def plot_taxonomy_tree(papers: list[dict]) -> None:
     # Sub-nodes
     subnodes = [
         (13.0, [
-            ("Multi-Wavelet, Shapelet & TabPFN\n• m-WCN, ShapeX, TabPFN-3.5, TiRex-2, Reverso, Darts FM", 60),
-            ("Physics LEO, Trust Distill & Hybrid Boost\n• Gnomon (LEO TSFM), FutureBoosting, GUARD, F2D, PaCoDi", 45),
+            ("Multi-Wavelet, Diffusion & TabPFN\n• DiffPTS, GARDiff, m-WCN, ShapeX, TabPFN-3.5, TiRex-2, Darts FM", 60),
+            ("Physics LEO, Context Healing & Boost\n• ETCH (PDE Healing), Gnomon, FutureBoosting, GUARD, PaCoDi", 45),
             ("Sparse MoE, Wavelet & Loss Theory\n• Time-MoE, Timer-S1, WaveMoE, Procrustean Bed, Olivia", 30),
-            ("Federated Heterogeneity & Anomaly Models\n• ChronosAD, Federated TSFM, CITRAS-FM, TTM, TSPFN, VLT", 15)
+            ("Chronos SAE, Federated & Anomaly\n• Chronos SAE, ChronosAD, FedTSFM, CITRAS-FM, TTM, TSPFN", 15)
         ], "#ebf8ff", "#2b6cb0"),
 
         (37.5, [
-            ("Industrial Tokens & Dynamic TTA\n• Industrial Tokenization, TS-RAG RUL, FM-LLM, DGOTTA, PARA-PV", 60),
+            ("Reasoning Ensemble & Dynamic TTA\n• REATS (GRPO Ensemble), TS-RAG RUL, FM-LLM, DGOTTA, PARA-PV", 60),
             ("Multimodal JEPA & Semantic Embeddings\n• CHARM (JEPA TS), LLM Feature Pools, T-LLM, MILM", 45),
             ("Semantic Alignment, Control & RL\n• TS-Reasoner, CTRL, STReasoner, RL Post-Training", 30),
             ("In-Context Retrieval & Model-Agnostic R-AF\n• Align-RAG, Model-Agnostic R-AF, Retrieval Regimes", 15)
         ], "#e6fffa", "#2c7a7b"),
 
         (62.5, [
-            ("Clinical 16-Token & Event Graphs\n• ClinPRISM (4B), EvtGraph, EHR-FM, TelcoAgent, ORCA, MLLM4TS", 60),
-            ("Executable Code & Satellite Fusion\n• CodeTS (Python TS), Solar-VLM, MUSE, SAGE, MM-ISTS", 45),
-            ("Macro Scenarios, Clinical QA & Reasoning\n• MacroLens, CLIR-Bench, MMTClinic, EvoTS-Agent", 30),
+            ("World Modeling, Agents & Graph Routing\n• WorldTS, TSRouter (COLM'26), TimeEvo (Self-Evol), REST-TS", 60),
+            ("Neuro-Symbolic & Multimodal Flow Gen\n• Signal2Symbol (Allen LTL), ReCoGen, Cross-Modal Fault, CodeTS", 45),
+            ("Clinical 16-Token, Event Graphs & VLM\n• ClinPRISM (4B), EvtGraph, Solar-VLM, MUSE, MM-ISTS", 30),
             ("Unified TS-Text & Diffusion Synthesis\n• TimeBraid, Chronicle (324M), SCENARIODIFF, GALA", 15)
         ], "#feebc8", "#9c4221"),
 
         (87.0, [
-            ("Anytime Martingale & Wildfire Audits\n• Bet on Features (Antonov), Wildfire PM2.5, TempusBench, OrderFusion+", 60),
+            ("Online Certificates & Decision UQ\n• Certificate-Driven Calibration, Decision-Oriented UQ, Bet on Features", 60),
             ("Production Market, Feeder & Volatility\n• Marketplace Audit (Islam), VOLARE (Brini), KIT Feeder", 45),
             ("Environmental, Agriculture & Sensor Audits\n• Air Quality Arena, AgroBench, E-Nose Sensor Audit, Wearable HRV", 30),
             ("EPF Contamination & Graph Conformal\n• EPF Contamination (Pan), Graph Conformal (Niresi), GE Chronos-2", 15)

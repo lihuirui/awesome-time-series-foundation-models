@@ -1,5 +1,52 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-30 (第 16 轮运行：底层理论与数学形式化重大深化、扩散变分下界解耦与事件触发修复推导、15 篇新前沿收录与图表质检 / Iteration 16)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 16 轮迭代（近 45 天高影响力文献全量检索与核验、第 2 章问题定义与底层数学理论体系重大深化、形式化推导 2.9 时序扩散 ELBO 解耦理论、2.10 自回归外推误差累积动力学与事件触发上下文修复 ETCH、2.11 分布偏移与在线证书化校准理论 CDC、2.12 下游决策风险映射与后悔值极小化理论 DO-UQ；全量 15 篇前沿文献入库核验与综述全章节融合、全套学术图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：302 篇经 arXiv HTTPS API 严格核验的论文（原 287 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 本轮新增与核验论文 (15 篇)
+通过 arXiv Atom API 官方接口全量核验收录：
+1. **[arXiv:2609.37694]** *GARDiff: Graph-Aligned Residual Diffusion for Probabilistic Multivariate Time-Series Forecasting* — Rui Han, Min Yang, Xu Zhang et al. (GARDiff Team). 提出图对齐残差扩散框架，将确定性图网络预测基底与时空高阶残差流形扩散相结合，并在得分匹配中引入动态图拉普拉斯正则化算子，实现概率扩散采样与高维传感器空间物理拓扑的高效流形对齐。
+2. **[arXiv:2609.32321]** *Stabilizing Autoregressive PDE Foundation Model Rollouts with Event-Triggered Context Healing* — Jaewan Park, Jay Phil Yoo, Kazuma Kobayashi et al. (UIUC / NCSA). 严格分析长程自回归滚动中雅可比谱半径致使误差呈指数级爆炸发散的机理，提出控制论事件触发上下文修复 (ETCH) 机制，当物理守恒量或能量泛函漂移超标时中断递推并将历史窗口投影回稳定吸引子流形。
+3. **[arXiv:2609.32363]** *DiffPTS: Rethinking Diffusion ELBO for Probabilistic Time Series Forecasting* — Weiwei Ye, Dongyuan Li, Hangchen Liu et al. (东京大学; code: `wwy155/DiffPTS`). 揭示时序高自相关性导致标准扩散 ELBO 中间加噪步 KL 散度过度主导、强迫模型过拟合高斯平滑而忽略局部突变拐点的理论缺陷，提出重加权解耦变分证据下界 (D-ELBO)。
+4. **[arXiv:2609.31806]** *Medium-Term Multi-Resolution Electric Load Forecasting using Economic Data and Foundation Model* — Lindas Eloi, Yannig Goude, Philippe Ciais (法国电力 EDF / 法国国家科学研究中心 CNRS). 构建中期多分辨率电网负荷基准，系统评估与拓展基础模型结合宏观经济日历与高频天气协变量在中期电力调度中的多分辨率外推潜力。
+5. **[arXiv:2609.31162]** *WorldTS: World Modeling for Multimodal Covariate-aware Time Series Forecasting* — Yuhan Zhu, Xiangfei Qiu, Hanyin Cheng et al. (WorldTS Team). 将复杂物理环境动力学演化显式抽象为多模态世界模型，在潜在动力学流形中推演环境状态演化，并在状态隐空间中施加因果解耦与协变量感知对齐。
+6. **[arXiv:2609.31960]** *Model-Agnostic Online Certificate-Driven Calibration for Time Series Forecasting Under Distribution Shift* — Chenfeng Huang, Zixuan Ma, George Michailidis (密歇根大学). 针对非平稳动态流中样本可交换性破缺的核心难题，构建滑动窗口极小极大经验校准偏差证书并引入对偶随机逼近递推算法在线动态自适应调制预测区间，证明非平稳环境总变差漂移下的非渐近有限样本覆盖率保证。
+7. **[arXiv:2609.27277]** *TimeEvo: Failure-Driven Self-Evolution of a Time Series Agent* — Jie Yang, Yan Zheng, Jiarui Sun et al. (天津大学; code: `Muyiiiii/TimeEvo`). 提出以“失败为师”的自进化时序智能体系统，构建完备的失败诊断回溯链条，结构化归因反思历史预测失准与工具崩溃原因，自主重构内部策略知识库与工具链工作流脚本。
+8. **[arXiv:2609.26820]** *Signal2Symbol: Neuro-Symbolic Temporal Reasoning for Explainable Physiological Time-Series Anomaly Detection* — Naser Mansour, Sidahmed Benabderrahmane, Ameer Rahwan (Signal2Symbol Team). 创新结合深度时序神经表征与符号时序逻辑 (STL)，将连续生理神经特征自动归纳为人类医生可理解的形式化符号命题，输出具备严格数学逻辑可解释性的异常归因推论。
+9. **[arXiv:2609.16314]** *Robust Fault Detection in Mechanical Multimodal Time Series via Self-Supervised Cross-Modal Reconstruction* — Magnus Munk Jensen, Dorte Hammershøj, Rafał Wiśniewski, Olga Fink (EPFL / 奥尔堡大学). 针对工业机电系统中多模态异构传感器遭受强非高斯噪声与局部通道突发失效的难题，提出基于跨模态掩码自编码重构的自监督时序表征架构，学习鲁棒的不变动力学表征。
+10. **[arXiv:2609.14821]** *Decision-Oriented Uncertainty Quantification for Risk Control in Earth System Spatiotemporal Foundation Models* — Ji Lu, Huiran Duan, Bo Zhao et al. (西南大学 / 四川大学). 深入揭示传统对称统计概率指标与现实高风险防灾非对称业务损失的脱节，提出决策导向不确定性量化理论 (DO-UQ)，将预测不确定性与下游决策后悔值显式耦合，端到端优化时空基础模型。
+11. **[arXiv:2608.12592]** *Represent, Then Generate: Multimodal-Conditioned Time-Series Generation under Irregular Missingness* — Haochen Zhang, Jiaheng Guo, Yu-Chao Huang, Tianlong Chen et al. (北卡罗来纳大学教堂山分校 UNC). 提出“先表征、后生成 (ReCoGen)”范式，将临床监护与工业物联网中不规则缺失连续动力学隐表征学习与多模态文本条件流匹配生成彻底解耦。
+12. **[arXiv:2608.10149]** *REATS: LLM Reasoning-based Ensemble Learning for Adaptive Time Series Forecasting* — Xu Zhang, Chang Xu, Hui Sun, Jiang Bian et al. (微软亚洲研究院 MSRA / 中国科学技术大学 USTC). 开创性地将 LLM 显式链式推理能力与时序集成学习相结合，提出基于群组相对策略优化 (GRPO) 的强化学习后训练范式，将 LLM 训练为动态时序推理编排器。
+13. **[arXiv:2607.08940]** *TSRouter: Dynamic Modality-Model Selection for Time Series Reasoning* — Fangxu Yu, Tao Feng, Dehai Min, Tianyi Zhou et al. (马里兰大学 UMD; COLM 2026; code: `tianyi-lab/TSRouter`). 提出首个动态模态-模型自适应路由框架 TSRouter，依据语义复杂度与时序模式结构在轻量专有时序模型与重型推理大语言模型之间低延迟动态调度，降低 60% 以上推理 token 成本。
+14. **[arXiv:2606.19413]** *Does Text Actually Help? Uncovering and Resolving Text Collapse in Multimodal Time Series Forecasting* — Huu Hiep Nguyen, Minh Hoang Nguyen, Dung Nguyen, Trung Le, Dinh Phung, Hung Le (VinAI / 迪肯大学). 首次揭示多模态时序注意力网络中的“文本塌缩 (Text Collapse)”病态退化——由于幅值方差失配，多模态注意力网络倾向于忽略文本上下文而退化为纯单模态时序，提出残差语义锚定机制 REST-TS 恢复真实文本语义利用率。
+15. **[arXiv:2603.10071]** *Dissecting Chronos: Sparse Autoencoders Reveal Causal Feature Hierarchies in Time Series Foundation Models* — Anurag Mishra (Chronos SAE Research). 首次将稀疏自编码器 (SAE) 引入 Chronos 基础模型的机理可解释性剖析中，解构高维稠密潜表征为解耦的单义因果特征电路，并证实了对 SAE 隐特征的直接因果钳制能够精准纠偏预测轨迹。
+
+### 3. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：重构并深度强化第 2 章（问题定义与底层数学理论体系）**：
+  - 2.9 时序生成扩散模型与变分证据下界解耦理论：推导时序高自相关性导致的标准扩散 ELBO 变分病态主导，形式化重加权解耦变分证据下界 (D-ELBO, DiffPTS) 与动态图拉普拉斯正则化残差扩散机制 (GARDiff)；
+  - 2.10 自回归外推误差累积动力学与事件触发上下文修复：严格推导离散状态误差传递动力学方程，揭示雅可比谱半径 $\rho(\mathbf{J}_f) > 1$ 时误差呈指数级爆炸发散 $\mathcal{O}(e^{H \ln \rho})$ 的根本相变机理；推导基于李雅普诺夫物理能量泛函违背触发的非局部隐式上下文修复算子 (ETCH)，结合 Transolver-σ 与 Leaky-Integrator 实现神经偏微分与自回归外推全局数值稳定性；
+  - 2.11 分布偏移与在线时序证书化校准理论：构建滑动窗口极小极大经验校准偏差证书并引入对偶随机逼近递推算法在线动态调制预测区间，在非平稳时变分布总变差漂移 $\Delta_T$ 条件下严格证明非渐近有限样本时均覆盖率保证 (CDC)；
+  - 2.12 下游决策风险映射与后悔值极小化理论：形式化有限样本时序决策后悔值与可微风险代理泛函，严格证明直接优化决策后悔界优于传统两阶段概率分位数回归 (DO-UQ)；
+- **全景融合 15 篇新增文献至各大章节**：
+  - 第 2 章：系统形式化 DiffPTS [arXiv:2609.32363]、GARDiff [arXiv:2609.37694]、ETCH [arXiv:2609.32321]、CDC [arXiv:2609.31960] 与 Decision-Oriented UQ [arXiv:2609.14821]；
+  - 第 4 章：扩充 4.9 连续动力学与预训练前沿，收录 DiffPTS、GARDiff、ETCH、Medium-Term Load [arXiv:2609.31806] 与 Chronos SAE [arXiv:2603.10071]；
+  - 第 5 章：扩充 5.6 强化后训练前沿，收录 REATS GRPO 推理集成 [arXiv:2608.10149]；
+  - 第 6 章：扩充 6.2 跨模态文本时序收录 WorldTS 多模态世界模型 [arXiv:2609.31162]、REST-TS 文本塌缩化解 [arXiv:2606.19413] 与 ReCoGen 不规则缺失生成 [arXiv:2608.12592]；扩充 6.4/6.5 自进化智能体与工业物理，收录 TSRouter 动态模态路由 [arXiv:2607.08940]、TimeEvo 失败驱动智能体 [arXiv:2609.27277]、Signal2Symbol 神经符号推理 [arXiv:2609.26820] 与机械多模态跨模态故障诊断 [arXiv:2609.16314]；
+  - 第 7 章：扩充 7.5/7.6 基准与不确定性量化，收录 Medium-Term Load 负荷基准 [arXiv:2609.31806]、CDC 在线证书校准 [arXiv:2609.31960] 与 Decision-Oriented UQ [arXiv:2609.14821]；
+  - 第 8 章：亚马逊 Chronos 生态深度收录 Chronos SAE 机制级可解释性与特征电路解耦 [arXiv:2603.10071]；
+  - 第 9 章：9.8 机制级可解释性与决策对齐全面融合 Chronos SAE 特征电路、REST-TS 文本语义忠实度恢复与 Decision-Oriented UQ 风险后悔值控制；
+- **全量同步参考文献**：Section 10 收录全部 302 篇核验文献，同步生成 302 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 4. 学术图表质检与质量门禁
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- 自动化运行质量门禁：302 篇论文唯一 ID 校验、5 组图表生成与校验、所有章节与 302 个 arXiv 引用 100% 存在且吻合、BibTeX 数据库与 README.md 自动同步更新全部一次性通过。
+
+---
+
 ## 2026-09-30 (第 15 轮运行：清华 THUML 物理智能与神经偏微分深化、重点团队全景矩阵扩充、15 篇新前沿收录与图表质检 / Iteration 15)
 
 ### 1. 今日运行概览

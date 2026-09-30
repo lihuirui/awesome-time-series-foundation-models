@@ -10035,6 +10035,548 @@
         "evaluation"
       ],
       "notes": "Evaluates Amazon Chronos-2 and Chronos-Bolt against LightGBM/XGBoost on peak-aware short-term load forecasting across three distribution grid aggregation levels (area code, secondary substation, LV feeders). Chronos-2 reduces mean HD-NMAE by 20-51%. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.37694",
+      "title": "GARDiff: Graph-Aligned Residual Diffusion for Probabilistic Multivariate Time-Series Forecasting",
+      "authors": [
+        "Rui Han",
+        "Min Yang",
+        "Xu Zhang",
+        "Xinghao Yang",
+        "Wei Liu",
+        "Yongshun Gong"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-29",
+      "venue": "arXiv preprint",
+      "group": "GARDiff Team",
+      "architecture": "diffusion",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "probabilistic forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "diffusion",
+        "forecasting"
+      ],
+      "notes": "Proposes graph-aligned residual diffusion (GARDiff) for multivariate probabilistic time series forecasting, addressing inter-channel misalignment in decoupled diffusion frameworks via dynamic graph learning. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.32321",
+      "title": "Stabilizing Autoregressive PDE Foundation Model Rollouts with Event-Triggered Context Healing",
+      "authors": [
+        "Jaewan Park",
+        "Jay Phil Yoo",
+        "Kazuma Kobayashi",
+        "Seid Koric",
+        "Syed Bahauddin Alam",
+        "Iwona Jasiuk",
+        "Souvik Chakraborty",
+        "Diab W. Abueidda"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-26",
+      "venue": "arXiv preprint",
+      "group": "UIUC / NCSA",
+      "architecture": "decoder-only",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "physics"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "pde solving",
+        "spatiotemporal"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "physics",
+        "forecasting"
+      ],
+      "notes": "Proposes Event-Triggered Context Healing (ETCH) to stabilize autoregressive spatio-temporal PDE foundation model rollouts by monitoring drift events and performing localized latent state context healing to suppress exponential error cascading. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.32363",
+      "title": "DiffPTS: Rethinking Diffusion ELBO for Probabilistic Time Series Forecasting",
+      "authors": [
+        "Weiwei Ye",
+        "Dongyuan Li",
+        "Hangchen Liu",
+        "Haotong Jiang",
+        "Yoshihide Sekimoto",
+        "Renhe Jiang"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-26",
+      "venue": "arXiv preprint",
+      "group": "University of Tokyo",
+      "architecture": "diffusion",
+      "tokenization": "point",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "probabilistic forecasting"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/wwy155/DiffPTS",
+      "categories": [
+        "tsfm-native",
+        "diffusion",
+        "forecasting"
+      ],
+      "notes": "Rethinks diffusion evidence lower bound (ELBO) for probabilistic time series forecasting, identifying point-wise and trend-wise decomposition to improve diffusion training stability. Code verified on GitHub."
+    },
+    {
+      "arxiv_id": "2609.31806",
+      "title": "Medium-Term Multi-Resolution Electric Load Forecasting using Economic Data and Foundation Model",
+      "authors": [
+        "Lindas Eloi",
+        "Goude Yannig",
+        "Ciais Philippe"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-25",
+      "venue": "arXiv preprint",
+      "group": "EDF / CNRS",
+      "architecture": "encoder-decoder",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "energy"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-eval",
+        "energy",
+        "forecasting"
+      ],
+      "notes": "EDF and CNRS study evaluating time series foundation models (Chronos) combined with macroeconomic covariates for multi-resolution electric load forecasting up to years ahead. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.31162",
+      "title": "WorldTS: World Modeling for Multimodal Covariate-aware Time Series Forecasting",
+      "authors": [
+        "Yuhan Zhu",
+        "Xiangfei Qiu",
+        "Hanyin Cheng",
+        "Wangmeng Shen",
+        "Chenjuan Guo",
+        "Bin Yang",
+        "Jilin Hu",
+        "Christian S. Jensen"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-25",
+      "venue": "arXiv preprint",
+      "group": "WorldTS Team",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "world modeling",
+        "multimodal"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "world-model",
+        "forecasting"
+      ],
+      "notes": "Formulates multimodal covariate-aware time series forecasting as a world model learning latent environment transitions from historical observations and multimodal context. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.31960",
+      "title": "Model-Agnostic Online Certificate-Driven Calibration for Time Series Forecasting Under Distribution Shift",
+      "authors": [
+        "Chenfeng Huang",
+        "Zixuan Ma",
+        "George Michailidis"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-25",
+      "venue": "arXiv preprint",
+      "group": "University of Michigan",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "uncertainty quantification",
+        "calibration",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "evaluation-benchmark",
+        "calibration",
+        "forecasting"
+      ],
+      "notes": "Develops model-agnostic online certificate-driven calibration providing finite-sample coverage guarantees for time series foundation models under concept drift and distribution shift. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.27277",
+      "title": "TimeEvo: Failure-Driven Self-Evolution of a Time Series Agent",
+      "authors": [
+        "Jie Yang",
+        "Yan Zheng",
+        "Jiarui Sun",
+        "Xiran Fan",
+        "Junpeng Wang",
+        "Liang Wang",
+        "Zelin Xu",
+        "Qinghua Liu",
+        "Zhengyu Fang",
+        "Yiwei Cai",
+        "Philip S. Yu"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-23",
+      "venue": "arXiv preprint",
+      "group": "Tianjin University",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "agent",
+        "reasoning",
+        "tool learning"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/Muyiiiii/TimeEvo",
+      "categories": [
+        "multimodal-ts",
+        "agent",
+        "reasoning"
+      ],
+      "notes": "Proposes TimeEvo, an autonomous self-evolving time series agent that dynamically diagnoses tool execution failures, synthesizes novel analytical tools, and refines execution strategies. Verified on GitHub."
+    },
+    {
+      "arxiv_id": "2609.26820",
+      "title": "Signal2Symbol: Neuro-Symbolic Temporal Reasoning for Explainable Physiological Time-Series Anomaly Detection",
+      "authors": [
+        "Naser Mansour",
+        "Sidahmed Benabderrahmane",
+        "Ameer Rahwan"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-20",
+      "venue": "arXiv preprint",
+      "group": "Signal2Symbol Team",
+      "architecture": "other",
+      "tokenization": "discrete",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly detection",
+        "reasoning",
+        "healthcare"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "neuro-symbolic",
+        "anomaly-detection"
+      ],
+      "notes": "Neuro-symbolic framework for physiological time series anomaly detection, converting ECG/EEG signals into symbolic token transactions and applying Allen interval algebra and formal concept analysis lattices. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.16314",
+      "title": "Robust Fault Detection in Mechanical Multimodal Time Series via Self-Supervised Cross-Modal Reconstruction",
+      "authors": [
+        "Magnus Munk Jensen",
+        "Dorte Hammershøj",
+        "Rafał Wiśniewski",
+        "Olga Fink"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-14",
+      "venue": "arXiv preprint",
+      "group": "EPFL / Aalborg University",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "sensor"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "anomaly detection",
+        "fault detection",
+        "industrial"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "industrial",
+        "anomaly-detection"
+      ],
+      "notes": "Multimodal sensor anomaly detection framework reconstructing each mechanical modality from the others, achieving robustness to sensor noise and out-of-distribution shifts under test-time thresholding. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.14821",
+      "title": "Decision-Oriented Uncertainty Quantification for Risk Control in Earth System Spatiotemporal Foundation Models",
+      "authors": [
+        "Ji Lu",
+        "Huiran Duan",
+        "Bo Zhao",
+        "Xianglong Wang",
+        "Yiru Fang",
+        "Kuo Yang",
+        "Xiaoqin Feng",
+        "Jianping Gou"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-13",
+      "venue": "arXiv preprint",
+      "group": "Southwest University / Sichuan University",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "spatiotemporal"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "uncertainty quantification",
+        "decision making"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "evaluation-benchmark",
+        "decision-theory",
+        "uncertainty-quantification"
+      ],
+      "notes": "Decision-oriented uncertainty quantification for spatiotemporal foundation models, mapping forecast distribution samples and utility functions to action-conditional risks, reducing decision regret by 18.7%. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2608.12592",
+      "title": "Represent, Then Generate: Multimodal-Conditioned Time-Series Generation under Irregular Missingness",
+      "authors": [
+        "Haochen Zhang",
+        "Jiaheng Guo",
+        "Yu-Chao Huang",
+        "Nicholas Konz",
+        "Tianlong Chen"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-12",
+      "venue": "arXiv preprint",
+      "group": "UNC Chapel Hill",
+      "architecture": "flow",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text",
+        "clinical"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "generation",
+        "imputation",
+        "healthcare"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "generation",
+        "healthcare"
+      ],
+      "notes": "ReCoGen: two-stage multimodal-conditioned time series generation framework under irregular missingness, combining per-modality masked autoencoders with a flow-matching generator for physiological monitoring. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2608.10149",
+      "title": "REATS: LLM Reasoning-based Ensemble Learning for Adaptive Time Series Forecasting",
+      "authors": [
+        "Xu Zhang",
+        "Chang Xu",
+        "Hui Sun",
+        "Nan Ma",
+        "Zijian Zhang",
+        "Peng Wang",
+        "Wei Wang",
+        "Li Zhao"
+      ],
+      "year": 2026,
+      "release_date": "2026-08-10",
+      "venue": "arXiv preprint",
+      "group": "Microsoft Research / USTC",
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "ensemble",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "llm-time-series",
+        "reasoning",
+        "ensemble"
+      ],
+      "notes": "REATS leverages LLM reasoning with Group Relative Policy Optimization (GRPO) and reciprocal reward mapping to perform dynamic ensemble weighting across heterogeneous time series models. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2607.08940",
+      "title": "TSRouter: Dynamic Modality-Model Selection for Time Series Reasoning",
+      "authors": [
+        "Fangxu Yu",
+        "Tao Feng",
+        "Dehai Min",
+        "Lu Cheng",
+        "Ge Liu",
+        "Tianyi Zhou"
+      ],
+      "year": 2026,
+      "release_date": "2026-07-09",
+      "venue": "COLM 2026",
+      "group": "University of Maryland",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "reasoning",
+        "multimodal routing",
+        "model selection"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/tianyi-lab/TSRouter",
+      "categories": [
+        "multimodal-ts",
+        "reasoning",
+        "model-routing"
+      ],
+      "notes": "COLM 2026. Heterogeneous graph-based dynamic routing framework selecting optimal modality (text vs visual line plot) and foundation model (LLM vs VLM) for time series reasoning queries. Verified on GitHub."
+    },
+    {
+      "arxiv_id": "2606.19413",
+      "title": "Does Text Actually Help? Uncovering and Resolving Text Collapse in Multimodal Time Series Forecasting",
+      "authors": [
+        "Huu Hiep Nguyen",
+        "Minh Hoang Nguyen",
+        "Dung Nguyen",
+        "Hung Le"
+      ],
+      "year": 2026,
+      "release_date": "2026-06-17",
+      "venue": "arXiv preprint",
+      "group": "VinAI / Deakin University",
+      "architecture": "encoder-decoder",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "multimodal",
+        "representation"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "representation",
+        "forecasting"
+      ],
+      "notes": "Identifies text collapse where numerical dominance causes multimodal TSFMs to ignore text descriptions. Proposes REST-TS (Residual-Exclusive Supervision for Text) to enforce genuine semantic feature extraction. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2603.10071",
+      "title": "Dissecting Chronos: Sparse Autoencoders Reveal Causal Feature Hierarchies in Time Series Foundation Models",
+      "authors": [
+        "Anurag Mishra"
+      ],
+      "year": 2026,
+      "release_date": "2026-03-10",
+      "venue": "arXiv preprint",
+      "group": "Independent / Chronos SAE Research",
+      "architecture": "encoder-decoder",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": "710M",
+      "pretrain_corpus": null,
+      "tasks": [
+        "interpretability",
+        "probabilistic forecasting",
+        "mechanistic interpretability"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "interpretability",
+        "forecasting"
+      ],
+      "notes": "First mechanistic interpretability analysis of Amazon Chronos-T5-Large (710M) using TopK Sparse Autoencoders (SAEs) and 392 single-feature ablation experiments, establishing that mid-encoder layers encode causally critical change-detection and abrupt dynamics rather than periodic patterns. Verified via arXiv API."
     }
   ]
 }
