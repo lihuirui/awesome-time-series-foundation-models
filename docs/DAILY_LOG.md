@@ -1,5 +1,49 @@
 # Maintenance Daily Log / 每日维护日志
 
+## 2026-09-30 (第 15 轮运行：清华 THUML 物理智能与神经偏微分深化、重点团队全景矩阵扩充、15 篇新前沿收录与图表质检 / Iteration 15)
+
+### 1. 今日运行概览
+- **维护人员**：Antigravity Autonomous Agent (`lihuirui`)
+- **运行性质**：第 15 轮迭代（近 45 天高影响力文献全量检索与核验、第 8 章重点课题组进展深度重构与物理科学时空智能深化、全景对比矩阵 Table 8.1 扩展、全量 15 篇前沿文献入库核验与综述全章节融合、全套图表生成与排版质检、全自动化质量门禁）
+- **文献总数**：287 篇经 arXiv HTTPS API 严格核验的论文（原 272 篇 + 本轮新增 15 篇，严格遵守 <=15 篇增量约束）
+
+### 2. 本轮新增与核验论文 (15 篇)
+通过 arXiv Atom API 官方接口全量核验收录：
+1. **[arXiv:2609.37279]** *Transolver-σ: Joint Spectral-Physical Subspace Modeling for Neural PDE Solving* — Haonan Shangguan, Hang Zhou, Haixu Wu, Yuezhou Ma, Jianmin Wang, Mingsheng Long (清华大学 THUML). 针对时间相关偏微分方程神经求解器自回归外推 (autoregressive rollout) 误差指数级累积失真的瓶颈，提出谱空间-物理空间联合子空间建模架构 Transolver-σ，在解耦的物理动力学流形上实现长期稳定的时空演化模拟。
+2. **[arXiv:2609.37038]** *NowcastDiT: Diffusion Transformers are Effective Precipitation Nowcasters* — Haoran Xu, Xingzhuo Guo, Yuchen Zhang, Jincheng Zhong, Jianmin Wang, Mingsheng Long (清华大学 THUML). 系统探索了标准 Diffusion Transformer (DiT) 架构在强时空非平稳性雷达降水临近预报中的生成式建模威力，确立了生成式时空大模型的基础范式。
+3. **[arXiv:2609.38058]** *Latent Inference-Time Guidance of Time Series Foundation Models* — Chloé Hashimoto-Cullen, Amaury Durand, Laurent Bozzi, Benjamin Guedj, Yannig Goude, Sylvain Le Corff (EDF R&D / Sorbonne / UCL). 提出完全无需重新微调的隐空间推断期引导机制 (LIG)，通过对隐层表征施加可微目标与物理约束的反向梯度修正，使模型自适应输出符合先验边界的预测分布。
+4. **[arXiv:2609.37715]** *Volatility-Clustering Adaptation for Financial Time Series* — Manh Nguyen, Minh Hoang Nguyen, Huu Hiep Nguyen, Van Dai Do, Hung Le. 揭示了低信噪比金融场景下无差别全量微调导致严重过拟合与虚假相关学习的根源，提出基于广义自回归条件异方差波动聚集 (Volatility Clustering) 机制的动态窗口筛选微调算法。
+5. **[arXiv:2609.37255]** *Loss-Guided Pretraining Data Selection for Time-Series Foundation Models* — Yike Li, Shaoxu Song, Jianmin Wang (清华大学软件学院). 针对海量预训练时序数据低质样本盲目采样稀释模型容量的难题，提出首个静态损失引导数据选择框架 L-GDS，基于梯度学习信号智能筛选最具信息量的训练窗口。
+6. **[arXiv:2609.36619]** *SemPSG: A Semantic Channel-Aware Foundation Model for Polysomnography Analysis* — Junyu Chen, Chenxi Liu, Shiqin Tang, Hao Miao, Wanyun Ling, Ziyue Li, Hongbin Liu, Gaofeng Meng (中科院自动化所 / 慕尼黑工大). 构建了首个具备语义通道感知能力的生理时序基础模型 SemPSG，通过将生理信号通道与临床文本本体知识实施隐空间跨模态嵌入对齐，天然兼容任意子集通道配置。
+7. **[arXiv:2609.34072]** *PhysFieldBench: Can Multimodal Models Understand Physical Fields?* — Yuezhou Ma, Huikun Weng, Jialong Wu, Chenyi Zhao, Hang Zhou, Haonan Shangguan, Jianmin Wang, Mingsheng Long (清华大学 THUML). 推出首个全面评估多模态大模型能否真正理解时空物理场（流体流动、电磁波传播、热传导）的系统性基准，填补了科学时空大模型评估体系的关键空白。
+8. **[arXiv:2609.35217]** *A Hierarchy of Entropy-Shapley Games for Multivariate Predictive Uncertainty* — Niklas Koenen, Claudia Battistin, Jeriek Van den Abeele, Martin Jullum (Norwegian Computing Center). 针对现代概率时序基础模型输出的高维多步联合后验分布与复杂协方差结构，建立公理化分层合作熵-Shapley博弈框架 (Entropy-Shapley Games)，系统解耦各个输入变量与时间延迟步对多步预测不确定性的边缘贡献。
+9. **[arXiv:2609.32689]** *Self-Evolving Time-Series Forecasting Agents with Episodic Memory and Online Policy Learning* — Junyi Wang, Yilin Wang, Wen Wu, Chao Zhang (Emory University). 构建具备反馈感知能力的自进化时序智能体 FASE，创新性融合情景记忆检索 (Episodic Memory) 与在线策略学习 (Online Policy Learning)，在完全不更新 LLM 参数前提下将 GIFT-Eval 归一化 MAE 显著压降 9.1%。
+10. **[arXiv:2609.32123]** *READ-Bench: Benchmarking Historical Instance Retrieval for Time-Series Diagnosis* — Gerardo Pastrana, Haojun Li, Dhruv Mehta, Anoushka Vyas, Sina Khoshfetrat Pakazad, Henrik Ohlsson, John Paparrizos (Ohio State / C3 AI). 构建覆盖 12 个多变量时序诊断语料的基准 READ-Bench，实证揭示引入少量标注案例的高斯过程重排序 (Gaussian-Process Reranker) 能在所有 12 个数据集上将 NDCG@10 显著提升 +0.11 至 +0.16。
+11. **[arXiv:2609.30753]** *Skill Profiling with Attributable Reasoning (SPAR): A Wearable Analysis System for Boxing* — Nibraas Khan, Hanchen David Wang, Enya Bullard, Ritam Ghosh, Meiyi Ma, Nilanjan Sarkar (Vanderbilt University). 采用冻结的时序基础模型对关节角速度与足底压力波形实施动力学编码，构建分析师关节级归因、教练动力链因果反事实推演与运动员自然语言叙事的三层可归因推理反馈系统 SPAR。
+12. **[arXiv:2609.31448]** *ViSTA: A Simple Bridge Extends Visual Alignment to Clinical Time-Series Understanding in Multimodal LLMs* — Junyi Gao, Yu Shi, Pingzhao Hu, Ewen M Harrison (爱丁堡大学团队). 设计仅含 51.6 万 (0.516M) 可训练参数的极简轻量适配器 ViSTA，将不规则临床数值测点连续映射为对视觉 Token 的几何修正偏置，在 MIMIC-IV 重症监护急性肾损伤与死亡率预测上达到顶尖水准。
+13. **[arXiv:2609.31206]** *Self-Supervised Representation Learning: From Spectral Foundation Models to Auroral Emission Spectra* — Matthieu Le Lain, Gaël Cessateur, Sébastien Lefèvre. 在 22.3 万条无标注极光发射光谱一维波形上预训练 1D Vision Transformer 掩码自编码器，在零下游标注条件下无损恢复关键物理谱线发射比 ($R^2=0.91$)。
+14. **[arXiv:2609.27467]** *Kairos: Grounded Forecasting of Presence and Directional Flow in 4D Scene Graphs* — Iacopo Catalano, Julio A. Placed, Javier Civera, Jorge Peña Queralta. 提出首个基于 4D 预测场景图的时空动力学基础模型 Kairos，将分层 3D 几何体素扩展为包含未来存在概率与方向分布预测谱张量的 4D 时空流记忆，官方代码经 GitHub API 验证 (`https://github.com/IacopomC/kairos`)。
+15. **[arXiv:2609.18588]** *Peak-Aware Short-Term Load Forecasting Across Distribution Grid Aggregation Levels* — Souhardya Chattopadhyay, Julian Oelhaf et al. 在英国与瑞士真实电网大区 (AC)、二级变电站 (SUB) 与低压配电网 (LV) 三大层级上系统评估了 Amazon Chronos-2 与 Chronos-Bolt 的峰值负荷预测能力，证明 Chronos-2 在极端用电高峰期相较强机器学习基准压降了 20%~51% 的高清负荷误差 (HD-NMAE)。
+
+### 3. 活体综述重点深化 (`survey/SURVEY.md`)
+- **核心深化：重构并深度强化第 8 章（重点课题组进展）与物理科学时空智能**：
+  - 8.1 龙明盛团队（清华大学 THUML）：深入剖析从一维大时序模型向高维科学物理智能的演化，系统纳入谱空间-物理空间联合子空间神经偏微分方程求解架构 (Transolver-σ [arXiv:2609.37279])、标准 Diffusion Transformer 强非平稳雷达降水临近预报 (NowcastDiT [arXiv:2609.37038])、首个多模态物理场动力学综合评测基准 (PhysFieldBench [arXiv:2609.34072]) 以及清华软件学院静态损失引导预训练数据选择算法 (L-GDS [arXiv:2609.37255])；
+  - 8.3 亚马逊 AWS 团队：纳入配电网多层级（大区、变电站、低压馈线）短时峰值负荷零样本实证评测 (Peak-Aware STLF [arXiv:2609.18588])，实证验证 Chronos-2 在极端用电高峰期相比强树模型压降 20%~51% 高清负荷误差的关键工业价值；
+  - 8.8 综合对比矩阵 (Table 8.1)：全面更新清华 THUML 与亚马逊 AWS 的核心模型矩阵、架构演进代际、联合谱-物理子空间机制与电网分位数自适应；
+- **全景融合 15 篇新增文献至各大章节**：
+  - 第 4 章：Transolver-σ 神经偏微分求解 [arXiv:2609.37279]、NowcastDiT 扩散临近预报 [arXiv:2609.37038]、极光发射光谱一维自编码 [arXiv:2609.31206]、隐空间推断期引导 LIG [arXiv:2609.38058]、波动聚集自适应微调 [arXiv:2609.37715]；
+  - 第 6 章：SemPSG 语义多导睡眠生理大模型 [arXiv:2609.36619]、ViSTA 临床时序图表桥接 [arXiv:2609.31448]、FASE 反馈感知自进化智能体 [arXiv:2609.32689]、Kairos 4D 场景图时空预测 [arXiv:2609.27467]、SPAR 穿戴式动力学分析与三层可归因反馈 [arXiv:2609.30753]；
+  - 第 7 章：Peak-Aware STLF 电网峰值负荷基准 [arXiv:2609.18588]、READ-Bench 时序故障诊断检索基准 [arXiv:2609.32123]、PhysFieldBench 物理场动力学基准 [arXiv:2609.34072]、分层熵-Shapley博弈不确定性归因 [arXiv:2609.35217]；
+  - 第 8 章：清华大学 THUML 生态扩充 Transolver-σ、NowcastDiT、PhysFieldBench、L-GDS；亚马逊生态扩充 Peak-Aware STLF；
+  - 第 9 章：将 L-GDS 纳入 9.7.1 预训练数据选择，将熵-Shapley博弈纳入 9.8.1 机制级解释；
+- **全量同步参考文献**：Section 10 收录全部 287 篇核验文献，同步生成 287 条 BibTeX 记录 (`survey/references.bib`) 与 README.md。
+
+### 4. 学术图表质检与质量门禁
+- 运行 `scripts/figures/generate_figures.py` 重新生成全部 5 套图表 (PNG+SVG)；
+- 自动化运行质量门禁：287 篇论文唯一 ID 校验、5 组图表生成与校验、所有章节与 287 个 arXiv 引用 100% 存在且吻合、BibTeX 数据库与 README.md 自动同步更新全部一次性通过。
+
+---
+
 ## 2026-09-29 (第 13-14 轮运行：数据效率、长尾泛化与可解释性决策对齐理论深化、29 篇前沿收录与图表质检 / Iteration 13-14)
 
 ### 1. 今日运行概览

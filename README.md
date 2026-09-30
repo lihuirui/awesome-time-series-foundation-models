@@ -14,7 +14,7 @@
 **Maintainer focus:** 龙明盛/THUML · 金明 groups · Chronos-family · major TSFMs.
 
 
-**Stats:** 272 verified papers in [`data/papers.json`](data/papers.json) (updated 2026-09-29).
+**Stats:** 287 verified papers in [`data/papers.json`](data/papers.json) (updated 2026-09-30).
 
 
 ## Visual Landscape / 演化图景
@@ -55,6 +55,7 @@
 ## Time-Series Foundation Models / 时序基础模型
 
 - **$t_0$: A Time-Series Foundation Model for Forecasting with Context** — Lucas Meyer, Claudio Sole, Huikan Xiang et al. (2026) [[arXiv](https://arxiv.org/abs/2609.24559)] — _t₀; TSFM for forecasting with context._
+- **A Hierarchy of Entropy-Shapley Games for Multivariate Predictive Uncertainty** — Niklas Koenen, Claudia Battistin, Jeriek Van den Abeele et al. (2026) [[arXiv](https://arxiv.org/abs/2609.35217)] *(arXiv preprint)*
 - **A Hybrid Attention Model Learning Unified Time-aware Patch Representation for Irregular Multivariate Time Series Forecasting** — Zhihao Lin, Li Lin, Qi Zhang et al. (2026) [[arXiv](https://arxiv.org/abs/2609.22836)] *(arXiv)*
 - **A Unified Shape-Aware Foundation Model for Time Series Classification** — Zhen Liu, Yucheng Wang, Boyuan Li et al. (2026) [[arXiv](https://arxiv.org/abs/2601.06429)] *(AAAI 2026)* — _UniShape: unified shape-aware foundation model tailored for time series classification using interpretable shapelets._
 - **Agentic Anomaly Detection with ORCA-Style Dynamic Inductive Bias Adaptation in Multimodal Wearable Time Series Data** — Anushka Roy, Jyotirmoy Singh, Shreea Bose et al. (2026) [[arXiv](https://arxiv.org/abs/2608.08859)] *(arXiv preprint)*
@@ -103,17 +104,21 @@
 - **Interweaving Marginals into Multivariate Sample Paths: Training-Free Dependence Construction for Probabilistic Time Series Foundation Models** — Jinmyeong Choi, Jinkwan Jang, Seul Lee et al. (2026) [[arXiv](https://arxiv.org/abs/2609.25980)] — _Training-free post-processing coupling frozen univariate TSFM marginal distributions into joint multivariate forecast paths._
 - **Into the ORBIT for Time Series: Training Regimes for Foundation Models** — Hongjie Xia, Yiding Liu, Yifan Hu et al. (2026) [[arXiv](https://arxiv.org/abs/2608.13262)] *(arXiv)*
 - **It's All in the Way You Say It: The Role of Information Representation in LLM-Based Glycemic-Event Prediction** — Andrea Apicella, Pasquale Arpaia, Matteo Orefice et al. (2026) [[arXiv](https://arxiv.org/abs/2609.08772)] *(arXiv preprint (journal submission))*
+- **Kairos: Grounded Forecasting of Presence and Directional Flow in 4D Scene Graphs** — Iacopo Catalano, Julio A. Placed, Javier Civera et al. (2026) [[arXiv](https://arxiv.org/abs/2609.27467)] *(arXiv preprint)* [[Code](https://github.com/IacopomC/kairos)]
 - **KiT: A Foundation Model for Financial Time-Series Forecasting using DiffusionTransformer** — Boyu Zhang, Haorui Li (2026) [[arXiv](https://arxiv.org/abs/2609.34507)]
 - **Knowledge-Graph-Augmented Chronos-2 for HEC-RAS Surrogate Forecasting** — Edward Holmberg, Elias Ioup, Mahdi Abdelguerfi (2026) [[arXiv](https://arxiv.org/abs/2609.21381)]
+- **Latent Inference-Time Guidance of Time Series Foundation Models** — Chloé Hashimoto-Cullen, Amaury Durand, Laurent Bozzi et al. (2026) [[arXiv](https://arxiv.org/abs/2609.38058)] *(arXiv preprint)*
 - **LeNEPA: No-Augmentation Next-Latent Prediction for Time-Series Representation Learning** — Alexander Chemeris, Ming Jin, Randall Balestriero (2026) [[arXiv](https://arxiv.org/abs/2607.00958)] *(KDD MILETS 2026)* [[Code](https://github.com/langotime/lenepa-milets-2026)] — _No-augmentation next-latent prediction (JEPA-style) representation learning avoiding destructive time series data augmentations._
 - **Leaky-integrator reconstruction: taming error accumulation in recursive differenced time-series forecasting** — Zijiang Yang (2026) [[arXiv](https://arxiv.org/abs/2609.23378)] *(arXiv preprint)*
 - **LeapTS: Rethinking Time Series Forecasting as Adaptive Multi-Horizon Scheduling** — Sheng Pan, Ming Jin, Bo Du et al. (2026) [[arXiv](https://arxiv.org/abs/2605.10292)] *(arXiv)*
 - **Leveraging Industrial Foundation Models at the Edge of Particle Physics Detectors via Distillation Learning and Hardware Co-design** — Gia Ancone, Qibin Liu, Liangyu Wu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.23385)] *(arXiv preprint)*
+- **Loss-Guided Pretraining Data Selection for Time-Series Foundation Models** — Yike Li, Shaoxu Song, Jianmin Wang (2026) [[arXiv](https://arxiv.org/abs/2609.37255)] *(arXiv preprint)*
 - **MACROCAST: A Vintage-Consistent Time Series Foundation Model for Real-Time Macroeconomic Forecasting** — Andrea Carriero, Davide Pettenuzzo, Shubhranshu Shekhar (2026) [[arXiv](https://arxiv.org/abs/2606.28670)] *(arXiv)* — _Vintage-consistent macroeconomic TSFM strictly avoiding revision leakage via synthetic pretraining._
 - **Memory in Deep Time-Series Models** — Minh Hoang Nguyen, Huu Hiep Nguyen, Manh Nguyen et al. (2026) [[arXiv](https://arxiv.org/abs/2609.06006)] *(arXiv)* — _Systematically evaluates memory retention, state-space capacity, and retrieval mechanisms in deep time-series models and foundation models._
 - **Model-agnostic Retrieval-Augmented Extended Forecasting for time series** — Juan Pablo Villa Serna, Rohan Asthana, Vasileios Belagiannis (2026) [[arXiv](https://arxiv.org/abs/2608.14054)] *(arXiv)*
 - **NOAH: Learning the Full Patient Journey. A Longitudinal Multimodal Time-Aware Model for Representation and Forecasting** — Tobias Susetzky, Raphael Rehms, Dmitrii Seletkov et al. (2026) [[arXiv](https://arxiv.org/abs/2609.09140)]
 - **Neuralized Multi-Wavelet Decomposition for Time Series Classification and Forecasting** — Xiaohan Jiang, Jingyuan Wang, Jiahao Ji et al. (2026) [[arXiv](https://arxiv.org/abs/2609.29317)] *(arXiv preprint)*
+- **NowcastDiT: Diffusion Transformers are Effective Precipitation Nowcasters** — Haoran Xu, Xingzhuo Guo, Yuchen Zhang et al. (2026) [[arXiv](https://arxiv.org/abs/2609.37038)] *(arXiv preprint)*
 - **OATS: Online Data Augmentation for Time Series Foundation Models** — Junwei Deng, Chang Xu, Jiaqi W. Ma et al. (2026) [[arXiv](https://arxiv.org/abs/2601.19040)] [[Code](https://github.com/microsoft/TimeCraft)] — _Online dynamic data augmentation via diffusion for pretraining TSFMs; part of Microsoft TimeCraft._
 - **Olivia: Harmonizing Time Series Foundation Models with Power Spectral Density** — Jingru Fei, Kun Yi, Alex Xing Wang et al. (2026) [[arXiv](https://arxiv.org/abs/2605.17340)] *(ICML 2026)* [[Code](https://github.com/TSTS13/Olivia)] — _ICML 2026; Introduces Harmonizer module to align heterogeneous datasets in power spectral density domain._
 - **OrderFusion+: Probabilistic Buy--Sell Price Trajectory Forecasting in Intraday Electricity Markets** — Runyao Yu, Derek W. Bunn (2026) [[arXiv](https://arxiv.org/abs/2609.23598)] *(arXiv preprint)*
@@ -134,6 +139,10 @@
 - **SIFT: Enhancing Time Series Foundation Models via Semantic Invariance and Structural Fidelity Fine-Tuning** — Yi Tang, Tengxue Zhang, Yang Shu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.32676)]
 - **SOTER: A Generative Time-Series Foundation Model for Wearable Human Physiological Signals** — Fangke Chen, Sirry Chen, Wei Chen et al. (2026) [[arXiv](https://arxiv.org/abs/2609.16804)] — _Generative foundation model for physiological signals; PSD-guided MoE and neural CDE decoder pretrained on 226B points._
 - **Scale-Aware Pretraining of Time Series Foundation Models via Multi-Patch Token Alignment and Hybrid Masking** — Taihua Chen, Xiang Ma, Yixin Zhang et al. (2026) [[arXiv](https://arxiv.org/abs/2608.20005)] — _Scale-aware pretraining handling diverse temporal frequencies through multi-patch token alignment and hybrid masking._
+- **Self-Evolving Time-Series Forecasting Agents with Episodic Memory and Online Policy Learning** — Junyi Wang, Yilin Wang, Wen Wu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.32689)] *(arXiv preprint)*
+- **Self-Supervised Representation Learning: From Spectral Foundation Models to Auroral Emission Spectra** — Matthieu Le Lain, Gaël Cessateur, Sébastien Lefèvre (2026) [[arXiv](https://arxiv.org/abs/2609.31206)] *(arXiv preprint)*
+- **SemPSG: A Semantic Channel-Aware Foundation Model for Polysomnography Analysis** — Junyu Chen, Chenxi Liu, Shiqin Tang et al. (2026) [[arXiv](https://arxiv.org/abs/2609.36619)] *(arXiv preprint)*
+- **Skill Profiling with Attributable Reasoning (SPAR): A Wearable Analysis System for Boxing** — Nibraas Khan, Hanchen David Wang, Enya Bullard et al. (2026) [[arXiv](https://arxiv.org/abs/2609.30753)] *(arXiv preprint)*
 - **SwitchPFN: Shared Switching Dynamics for Frozen In-Context Time Series Classification** — Zhenyi Zhu, Jacqueline Pang, Peilin Shen et al. (2026) [[arXiv](https://arxiv.org/abs/2609.29814)]
 - **Systematic Evaluation of TabPFN-TS for Zero-Shot Probabilistic Heat Load Forecasting in District Heating Networks** — Ben Spoek, Karim K. Ben Hicham, Kai Derzsi et al. (2026) [[arXiv](https://arxiv.org/abs/2608.20024)] *(arXiv)*
 - **TRACE: A Temporal Conditional Estimation for Multimodal Time Series Foundation Models** — Ziwen Kan, Yishuo Chen, Kecheng Li et al. (2026) [[arXiv](https://arxiv.org/abs/2606.06285)] — _TRACE; multimodal time series foundation models._
@@ -151,7 +160,10 @@
 - **Timer-S1: A Billion-Scale Time Series Foundation Model with Serial Scaling** — Yong Liu, Xingjian Su, Shiyu Wang et al. (2026) [[arXiv](https://arxiv.org/abs/2603.04791)] [[Code](https://github.com/thuml/Large-Time-Series-Model)] — _THUML / 龙明盛; Timer-S1 8.3B MoE with Serial-Token Prediction; TimeBench._
 - **Toto 2.0: Time Series Forecasting Enters the Scaling Era** — Emaad Khwaja, Chris Lettieri, Gerald Woo et al. (2026) [[arXiv](https://arxiv.org/abs/2605.20119)] [[Code](https://github.com/DataDog/toto)] — _Datadog Toto 2.0; scaling time series foundation models up to 2.5B parameters._
 - **Towards Scaling Quantum Fine-Tuning of Foundational Time Series Models for Classification** — Sang Hyub Kim, Julien Baglio, Rajiv Krishnakumar (2026) [[arXiv](https://arxiv.org/abs/2609.05408)]
+- **Transolver-σ: Joint Spectral-Physical Subspace Modeling for Neural PDE Solving** — Haonan Shangguan, Hang Zhou, Haixu Wu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.37279)] *(arXiv preprint)*
 - **Unified Zero-Shot Time Series Forecasting: A Darts Foundation** — Zhihao Dai, Dennis Bader, Alain Gysi (2026) [[arXiv](https://arxiv.org/abs/2606.27438)] *(arXiv preprint)* [[Code](https://github.com/unit8co/darts)]
+- **ViSTA: A Simple Bridge Extends Visual Alignment to Clinical Time-Series Understanding in Multimodal LLMs** — Junyi Gao, Yu Shi, Pingzhao Hu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.31448)] *(arXiv preprint)*
+- **Volatility-Clustering Adaptation for Financial Time Series** — Manh Nguyen, Minh Hoang Nguyen, Huu Hiep Nguyen et al. (2026) [[arXiv](https://arxiv.org/abs/2609.37715)] *(arXiv preprint)*
 - **WaveMoE: A Wavelet-Enhanced Mixture-of-Experts Foundation Model for Time Series Forecasting** — Shunyu Wu, Jiawei Huang, Weibin Feng et al. (2026) [[arXiv](https://arxiv.org/abs/2604.10544)] *(ICLR 2026 TSALM Workshop)* — _ICLR 2026 TSALM; Wavelet-enhanced MoE foundation model routing sub-frequency temporal components._
 - **When Denoising Hurts: Rethinking the Terminal Step of Diffusion Time Series Forecasters -- Extended Version** — Dat Nguyen-Cong, Luong Tran, Tung Kieu (2026) [[arXiv](https://arxiv.org/abs/2608.14067)] *(arXiv)*
 - **When Does Retrieval Help Time-Series Forecasting?** — Mert Onur Cakiroglu, Elham Buxton, Mehmet Dalkilic et al. (2026) [[arXiv](https://arxiv.org/abs/2609.20193)] *(arXiv)* [[Code](https://github.com/KurbanIntelligenceLab/retrieval-regime)]
@@ -316,8 +328,11 @@
 - **How Good Are Time-Series Foundation Models for Pedestrian Crowd Count Forecasting? A Cross-Dataset Comparative Study** — Theivaprakasham Hari, Ziteng Li, Yanan Xin et al. (2026) [[arXiv](https://arxiv.org/abs/2609.16415)] *(ITSC 2026)* — _Comprehensive cross-dataset evaluation of Chronos, TimesFM, and Moirai on pedestrian crowd dynamics and surge forecasting._
 - **It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks** — Zhongzheng Qiao, Sheng Pan, Anni Wang et al. (2026) [[arXiv](https://arxiv.org/abs/2602.12147)] [[Code](https://huggingface.co/spaces/Real-TSF/TIME-leaderboard)] — _ICML 2026; THUML+Jin coauthors; leakage-aware zero-shot._
 - **LiveHouse-TS: An Open-world Living Benchmark for Time Series Foundation Models** — Haomin Wen, Ziyu Zhou, Qingxiang Liu et al. (2026) [[arXiv](https://arxiv.org/abs/2608.17299)] — _LiveHouse-TS; open-world living benchmark for TSFMs._
+- **Peak-Aware Short-Term Load Forecasting Across Distribution Grid Aggregation Levels** — Souhardya Chattopadhyay, Julian Oelhaf, Antonia Schoening et al. (2026) [[arXiv](https://arxiv.org/abs/2609.18588)] *(arXiv preprint)*
 - **Perturbational Validity for Foundation Models of Brain Dynamics: A Controlled Proof-of-Principle Simulation** — José C. Garcí Alanis, Sarah Alizadeh, Marco Rothermel et al. (2026) [[arXiv](https://arxiv.org/abs/2609.12710)] *(arXiv preprint)*
+- **PhysFieldBench: Can Multimodal Models Understand Physical Fields?** — Yuezhou Ma, Huikun Weng, Jialong Wu et al. (2026) [[arXiv](https://arxiv.org/abs/2609.34072)] *(arXiv preprint)*
 - **Probabilistic Low-Voltage Peak Load Forecasting with Time Series Foundation Models Evaluated on Application-Oriented Metrics** — Benedikt Kaas, Manuel Treutlein, Hannes Benedikt Gerber et al. (2026) [[arXiv](https://arxiv.org/abs/2607.01966)] *(arXiv preprint)*
+- **READ-Bench: Benchmarking Historical Instance Retrieval for Time-Series Diagnosis** — Gerardo Pastrana, Haojun Li, Dhruv Mehta et al. (2026) [[arXiv](https://arxiv.org/abs/2609.32123)] *(arXiv preprint)*
 - **Semantics or Structure? Auditing Text Sensitivity in Multimodal Time-Series Forecasting** — Karthik Sridhar, Atharva Gupta, Nishant Pradhan et al. (2026) [[arXiv](https://arxiv.org/abs/2608.22321)] *(arXiv)*
 - **TempusBench: An Evaluation Framework for Time-Series Forecasting** — Denizalp Goktas, Gerardo Riaño-Briceño, Alif Abdullah et al. (2026) [[arXiv](https://arxiv.org/abs/2604.11529)] *(arXiv preprint)* [[Code](https://github.com/Smlcrm/TempusBench)]
 - **Towards Reliable Zero-Shot Crowd Forecasting: Evaluating Time Series Foundation Models for Special Event Pedestrian Forecasting** — Ziteng Li, Yanan Xin, Tina Comes et al. (2026) [[arXiv](https://arxiv.org/abs/2607.17758)] *(arXiv preprint)*

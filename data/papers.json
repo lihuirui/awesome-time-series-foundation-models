@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "papers": [
     {
       "arxiv_id": "2202.07125",
@@ -9502,6 +9502,539 @@
         "financial"
       ],
       "notes": "MFAST: Market-Friction-Aware Sentiment-to-Trading framework. Decoder-only LMs outperform encoder baselines in classification, calibration, return prediction under market friction constraints. Integrates temporal discipline, probability calibration, and reproducible validation. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.37279",
+      "title": "Transolver-σ: Joint Spectral-Physical Subspace Modeling for Neural PDE Solving",
+      "authors": [
+        "Haonan Shangguan",
+        "Hang Zhou",
+        "Haixu Wu",
+        "Yuezhou Ma",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-29",
+      "venue": "arXiv preprint",
+      "group": "THUML",
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "physics"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "pde solving",
+        "physics"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "physics",
+        "forecasting"
+      ],
+      "notes": "THUML (Mingsheng Long) group. Joint spectral-physical subspace modeling for time-dependent PDE solving. Solves error accumulation in autoregressive rollouts by projecting dynamics into decoupled spectral and physical subspaces. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.37038",
+      "title": "NowcastDiT: Diffusion Transformers are Effective Precipitation Nowcasters",
+      "authors": [
+        "Haoran Xu",
+        "Xingzhuo Guo",
+        "Yuchen Zhang",
+        "Jincheng Zhong",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-29",
+      "venue": "arXiv preprint",
+      "group": "THUML",
+      "architecture": "diffusion",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "precipitation nowcasting",
+        "spatiotemporal"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "diffusion",
+        "tsfm-native",
+        "forecasting"
+      ],
+      "notes": "THUML (Mingsheng Long) group. Evaluates standard Diffusion Transformers (DiT) for precipitation nowcasting under spatiotemporal variability, establishing strong generative baselines. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.38058",
+      "title": "Latent Inference-Time Guidance of Time Series Foundation Models",
+      "authors": [
+        "Chloé Hashimoto-Cullen",
+        "Amaury Durand",
+        "Laurent Bozzi",
+        "Benjamin Guedj",
+        "Yannig Goude",
+        "Sylvain Le Corff"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-29",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "guidance",
+        "inference-time"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "forecasting"
+      ],
+      "notes": "EDF R&D / UCL / Sorbonne. Latent Inference-Time Guidance (LIG) for TSFMs. Guides frozen foundation model latent representations during inference without retraining to incorporate exogenous constraints and physical laws. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.37715",
+      "title": "Volatility-Clustering Adaptation for Financial Time Series",
+      "authors": [
+        "Manh Nguyen",
+        "Minh Hoang Nguyen",
+        "Huu Hiep Nguyen",
+        "Van Dai Do",
+        "Hung Le"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-29",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "financial forecasting",
+        "fine-tuning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "financial",
+        "fine-tuning"
+      ],
+      "notes": "Demonstrates failure of naive fine-tuning on financial TSFMs due to low signal-to-noise ratio. Introduces volatility-clustering adaptation to filter informative periods for domain adaptation. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.37255",
+      "title": "Loss-Guided Pretraining Data Selection for Time-Series Foundation Models",
+      "authors": [
+        "Yike Li",
+        "Shaoxu Song",
+        "Jianmin Wang"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-29",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "pretraining",
+        "data selection"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "pretraining"
+      ],
+      "notes": "Tsinghua University (Shaoxu Song). Static data-selection framework scoring training windows by gradient learning signals, improving sample efficiency across billions of observations in TSFM pretraining. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.36619",
+      "title": "SemPSG: A Semantic Channel-Aware Foundation Model for Polysomnography Analysis",
+      "authors": [
+        "Junyu Chen",
+        "Chenxi Liu",
+        "Shiqin Tang",
+        "Hao Miao",
+        "Wanyun Ling",
+        "Ziyue Li",
+        "Hongbin Liu",
+        "Gaofeng Meng"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-29",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "clinical forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "clinical"
+      ],
+      "notes": "Semantic channel-aware foundation model for polysomnography (PSG) physiological time series. Handles heterogeneous channel layouts across clinical centers via text-semantic channel bindings. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.34072",
+      "title": "PhysFieldBench: Can Multimodal Models Understand Physical Fields?",
+      "authors": [
+        "Yuezhou Ma",
+        "Huikun Weng",
+        "Jialong Wu",
+        "Chenyi Zhao",
+        "Hang Zhou",
+        "Haonan Shangguan",
+        "Jianmin Wang",
+        "Mingsheng Long"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-28",
+      "venue": "arXiv preprint",
+      "group": "THUML",
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "image",
+        "text",
+        "physics"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "evaluation",
+        "physics reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "multimodal-ts",
+        "physics"
+      ],
+      "notes": "THUML (Mingsheng Long) group. First comprehensive benchmark evaluating whether multimodal foundation models can understand spatiotemporal physical fields (fluid, electromagnetic, thermal dynamics). Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.35217",
+      "title": "A Hierarchy of Entropy-Shapley Games for Multivariate Predictive Uncertainty",
+      "authors": [
+        "Niklas Koenen",
+        "Claudia Battistin",
+        "Jeriek Van den Abeele",
+        "Martin Jullum"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-28",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "interpretability",
+        "uncertainty quantification"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "interpretability",
+        "evaluation"
+      ],
+      "notes": "Formulates a hierarchy of cooperative Entropy-Shapley games to attribute multivariate predictive uncertainty in probabilistic time series models to input features and historical time steps. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.32689",
+      "title": "Self-Evolving Time-Series Forecasting Agents with Episodic Memory and Online Policy Learning",
+      "authors": [
+        "Junyi Wang",
+        "Yilin Wang",
+        "Wen Wu",
+        "Chao Zhang"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-26",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "other",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "agent",
+        "forecasting"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "agent",
+        "llm-for-ts"
+      ],
+      "notes": "FASE framework: Feedback-Aware Self-Evolving forecasting agent combining episodic memory and online policy learning. Converts historical performance feedback into ranking guidance, outperforming static TSFM baselines by 9.1% NMAE on GIFT-Eval. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.32123",
+      "title": "READ-Bench: Benchmarking Historical Instance Retrieval for Time-Series Diagnosis",
+      "authors": [
+        "Gerardo Pastrana",
+        "Haojun Li",
+        "Dhruv Mehta",
+        "Anoushka Vyas",
+        "Sina Khoshfetrat Pakazad",
+        "Henrik Ohlsson",
+        "John Paparrizos"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-26",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "other",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "benchmark",
+        "retrieval",
+        "diagnosis"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "retrieval",
+        "applications"
+      ],
+      "notes": "Ohio State / C3 AI. Comprehensive benchmark across 12 diagnostic datasets evaluating historical-case retrieval and reranking for multivariate time-series diagnosis. Shows Gaussian-process reranking outperforms complex LLM reasoning. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.30753",
+      "title": "Skill Profiling with Attributable Reasoning (SPAR): A Wearable Analysis System for Boxing",
+      "authors": [
+        "Nibraas Khan",
+        "Hanchen David Wang",
+        "Enya Bullard",
+        "Ritam Ghosh",
+        "Ruj Haan",
+        "Aarav Agrawal",
+        "Meiyi Ma",
+        "Nilanjan Sarkar"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-25",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "interpretability",
+        "reasoning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "applications",
+        "multimodal-ts"
+      ],
+      "notes": "Wearable analysis system using frozen TSFM to encode 8-IMU and pressure-insole biomechanical time series, generating multi-tiered attributable reasoning (analyst attribution, kinetic counterfactual, plain-language narrative). Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.31448",
+      "title": "ViSTA: A Simple Bridge Extends Visual Alignment to Clinical Time-Series Understanding in Multimodal LLMs",
+      "authors": [
+        "Junyi Gao",
+        "Yu Shi",
+        "Pingzhao Hu",
+        "Ewen M Harrison"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-25",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "decoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts",
+        "image",
+        "text"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "clinical forecasting",
+        "question answering"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "multimodal-ts",
+        "clinical"
+      ],
+      "notes": "University of Edinburgh. ViSTA adapter bridges irregular numerical clinical time series into pretrained vision-language model chart representations with only 0.516M trainable parameters. SOTA on MIMIC-IV acute kidney injury and mortality prediction. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.31206",
+      "title": "Self-Supervised Representation Learning: From Spectral Foundation Models to Auroral Emission Spectra",
+      "authors": [
+        "Matthieu Le Lain",
+        "Gaël Cessateur",
+        "Sébastien Lefèvre"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-25",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "encoder-only",
+      "tokenization": "patch",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "classification",
+        "representation learning"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "tsfm-native",
+        "physics",
+        "representation"
+      ],
+      "notes": "Pretrains 1D ViT masked autoencoder on 223,000 unlabelled auroral emission spectra. Evaluates transferability of astronomical spectral foundation models (SpecFormer, SpectraFM) to 1D scientific spectroscopy. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.27467",
+      "title": "Kairos: Grounded Forecasting of Presence and Directional Flow in 4D Scene Graphs",
+      "authors": [
+        "Iacopo Catalano",
+        "Julio A. Placed",
+        "Javier Civera",
+        "Jorge Peña Queralta"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-23",
+      "venue": "arXiv preprint",
+      "group": null,
+      "architecture": "other",
+      "tokenization": "point",
+      "modalities": [
+        "ts",
+        "image"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "spatiotemporal",
+        "robotics"
+      ],
+      "open_weights": true,
+      "code_url": "https://github.com/IacopomC/kairos",
+      "categories": [
+        "applications",
+        "forecasting",
+        "multimodal-ts"
+      ],
+      "notes": "Extends 3D scene graphs to 4D predictive directional-flow memory for mobile robots in human-populated environments. Spectral predictors forecast future presence rate and directional flow with calibrated credible intervals. Code verified at https://github.com/IacopomC/kairos via GitHub API. Verified via arXiv API."
+    },
+    {
+      "arxiv_id": "2609.18588",
+      "title": "Peak-Aware Short-Term Load Forecasting Across Distribution Grid Aggregation Levels",
+      "authors": [
+        "Souhardya Chattopadhyay",
+        "Julian Oelhaf",
+        "Antonia Schoening",
+        "Jessica Deuschel",
+        "Bitan Bhattacharyya",
+        "Christian Bergler",
+        "Andreas Maier",
+        "Siming Bayer"
+      ],
+      "year": 2026,
+      "release_date": "2026-09-16",
+      "venue": "arXiv preprint",
+      "group": "Amazon",
+      "architecture": "decoder-only",
+      "tokenization": "quantized bins",
+      "modalities": [
+        "ts"
+      ],
+      "params": null,
+      "pretrain_corpus": null,
+      "tasks": [
+        "forecasting",
+        "benchmark",
+        "grid load"
+      ],
+      "open_weights": null,
+      "code_url": null,
+      "categories": [
+        "benchmark",
+        "forecasting",
+        "evaluation"
+      ],
+      "notes": "Evaluates Amazon Chronos-2 and Chronos-Bolt against LightGBM/XGBoost on peak-aware short-term load forecasting across three distribution grid aggregation levels (area code, secondary substation, LV feeders). Chronos-2 reduces mean HD-NMAE by 20-51%. Verified via arXiv API."
     }
   ]
 }
